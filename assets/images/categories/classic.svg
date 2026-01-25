@@ -1,0 +1,27 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Classic Pack - Playing cards icon -->
+  <defs>
+    <linearGradient id="gradClassic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8787;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Card 1 - Back -->
+  <rect x="35" y="40" width="50" height="70" rx="6" fill="url(#gradClassic)" opacity="0.6"
+        transform="rotate(-10 60 75)"/>
+
+  <!-- Card 2 - Middle -->
+  <rect x="40" y="35" width="50" height="70" rx="6" fill="url(#gradClassic)" opacity="0.8"
+        transform="rotate(5 65 70)"/>
+
+  <!-- Card 3 - Front -->
+  <rect x="35" y="30" width="50" height="70" rx="6" fill="#FFFFFF" stroke="url(#gradClassic)" stroke-width="2"/>
+
+  <!-- Decorative symbols on front card -->
+  <circle cx="47" cy="45" r="3" fill="url(#gradClassic)"/>
+  <circle cx="73" cy="45" r="3" fill="url(#gradClassic)"/>
+  <circle cx="47" cy="85" r="3" fill="url(#gradClassic)"/>
+  <circle cx="73" cy="85" r="3" fill="url(#gradClassic)"/>
+  <rect x="52" cy="58" width="16" height="4" rx="2" fill="url(#gradClassic)"/>
+</svg>

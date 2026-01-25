@@ -1,0 +1,52 @@
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Onboarding 2: Categories - Stacked geometric cards -->
+
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8787;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Card Stack - 4 cards representing categories -->
+
+  <!-- Card 4 - Back (Teal) -->
+  <rect x="60" y="160" width="160" height="100" rx="16" fill="url(#grad3)"
+        transform="rotate(-5 140 210)"/>
+
+  <!-- Card 3 - Middle-Back (Amber) -->
+  <rect x="70" y="130" width="160" height="100" rx="16" fill="url(#grad4)"
+        transform="rotate(3 150 180)"/>
+
+  <!-- Card 2 - Middle-Front (Coral) -->
+  <rect x="65" y="100" width="160" height="100" rx="16" fill="url(#grad2)"
+        transform="rotate(-2 145 150)"/>
+
+  <!-- Card 1 - Front (Purple) -->
+  <rect x="60" y="70" width="160" height="100" rx="16" fill="url(#grad1)"/>
+
+  <!-- Decorative elements on front card -->
+  <circle cx="90" cy="100" r="8" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="110" cy="100" r="8" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="130" cy="100" r="8" fill="#FFFFFF" opacity="0.3"/>
+  <rect x="85" y="125" width="90" height="6" rx="3" fill="#FFFFFF" opacity="0.4"/>
+  <rect x="85" y="140" width="70" height="6" rx="3" fill="#FFFFFF" opacity="0.3"/>
+
+  <!-- Floating decorative shapes -->
+  <circle cx="240" cy="100" r="20" fill="url(#grad2)" opacity="0.3"/>
+  <circle cx="40" cy="80" r="15" fill="url(#grad3)" opacity="0.3"/>
+  <path d="M30 200 L45 230 L15 230 Z" fill="url(#grad1)" opacity="0.4"/>
+  <path d="M250 180 L265 210 L235 210 Z" fill="url(#grad4)" opacity="0.4"/>
+</svg>

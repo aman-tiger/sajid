@@ -1,0 +1,61 @@
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Onboarding 4: Review/Support - Geometric heart and stars -->
+
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8787;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FBBF24;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Large central geometric heart -->
+  <path d="M 140 180 L 90 130 Q 70 110 70 85 Q 70 50 100 50 Q 120 50 140 70 Q 160 50 180 50 Q 210 50 210 85 Q 210 110 190 130 Z"
+        fill="url(#grad2)"/>
+
+  <!-- Inner smaller heart for depth -->
+  <path d="M 140 160 L 105 125 Q 95 115 95 100 Q 95 80 115 80 Q 127 80 140 92 Q 153 80 165 80 Q 185 80 185 100 Q 185 115 175 125 Z"
+        fill="#FFFFFF" opacity="0.3"/>
+
+  <!-- 5 Rating stars around the heart -->
+
+  <!-- Star 1 - Top left -->
+  <path d="M60 50 L66 66 L83 66 L69 77 L75 93 L60 82 L45 93 L51 77 L37 66 L54 66 Z"
+        fill="url(#grad4)"/>
+
+  <!-- Star 2 - Top right -->
+  <path d="M220 50 L226 66 L243 66 L229 77 L235 93 L220 82 L205 93 L211 77 L197 66 L214 66 Z"
+        fill="url(#grad4)"/>
+
+  <!-- Star 3 - Right -->
+  <path d="M240 140 L246 156 L263 156 L249 167 L255 183 L240 172 L225 183 L231 167 L217 156 L234 156 Z"
+        fill="url(#grad1)"/>
+
+  <!-- Star 4 - Bottom left -->
+  <path d="M60 200 L66 216 L83 216 L69 227 L75 243 L60 232 L45 243 L51 227 L37 216 L54 216 Z"
+        fill="url(#grad3)"/>
+
+  <!-- Star 5 - Bottom right -->
+  <path d="M220 200 L226 216 L243 216 L229 227 L235 243 L220 232 L205 243 L211 227 L197 216 L214 216 Z"
+        fill="url(#grad3)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="40" cy="120" r="10" fill="url(#grad2)" opacity="0.3"/>
+  <circle cx="240" cy="80" r="8" fill="url(#grad3)" opacity="0.3"/>
+  <circle cx="30" cy="180" r="6" fill="url(#grad1)" opacity="0.3"/>
+
+  <!-- Sparkle elements -->
+  <path d="M140 30 L142 40 L140 50 L138 40 Z M130 40 L140 42 L150 40 L140 38 Z"
+        fill="url(#grad4)" opacity="0.6"/>
+</svg>

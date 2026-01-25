@@ -1,0 +1,31 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hot Questions 18+ - Flame icon -->
+  <defs>
+    <linearGradient id="gradHot" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBBF24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main flame shape -->
+  <path d="M 60 20 Q 65 30 65 40 Q 65 45 62 50 Q 70 45 75 55 Q 80 65 80 75 Q 80 90 70 100 Q 60 110 50 100 Q 40 90 40 75 Q 40 65 45 55 Q 50 45 48 40 Q 48 30 55 25 Q 57 22 60 20 Z"
+        fill="url(#gradHot)"/>
+
+  <!-- Inner flame for depth -->
+  <path d="M 60 35 Q 62 42 62 48 Q 62 52 60 55 Q 65 52 68 58 Q 72 65 72 72 Q 72 82 65 88 Q 60 93 55 88 Q 48 82 48 72 Q 48 65 52 58 Q 55 52 54 48 Q 54 42 57 37 Q 58 36 60 35 Z"
+        fill="#FBBF24" opacity="0.6"/>
+
+  <!-- Flame highlight -->
+  <ellipse cx="58" cy="45" rx="3" ry="8" fill="#FFFFFF" opacity="0.4"/>
+
+  <!-- Small flame sparks -->
+  <circle cx="45" cy="50" r="3" fill="#F59E0B" opacity="0.7"/>
+  <circle cx="75" cy="50" r="3" fill="#EF4444" opacity="0.7"/>
+  <circle cx="38" cy="70" r="2" fill="#FBBF24" opacity="0.6"/>
+  <circle cx="82" cy="70" r="2" fill="#EF4444" opacity="0.6"/>
+
+  <!-- Heat waves -->
+  <path d="M 30 30 Q 28 35 30 40" stroke="#F59E0B" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M 90 30 Q 92 35 90 40" stroke="#EF4444" stroke-width="2" fill="none" opacity="0.3"/>
+</svg>

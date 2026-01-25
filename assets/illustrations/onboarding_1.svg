@@ -1,0 +1,52 @@
+<svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Onboarding 1: Party Celebration - Geometric stars, circles, confetti -->
+
+  <!-- Background circles with gradients -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8787;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2DD4BF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Large circle - Purple -->
+  <circle cx="140" cy="140" r="80" fill="url(#grad1)" opacity="0.3"/>
+
+  <!-- Medium circle - Coral -->
+  <circle cx="200" cy="100" r="50" fill="url(#grad2)" opacity="0.4"/>
+
+  <!-- Small circle - Teal -->
+  <circle cx="80" cy="180" r="35" fill="url(#grad3)" opacity="0.5"/>
+
+  <!-- Star 1 - Large center -->
+  <path d="M140 60 L152 96 L190 96 L160 118 L172 154 L140 132 L108 154 L120 118 L90 96 L128 96 Z"
+        fill="url(#grad2)"/>
+
+  <!-- Star 2 - Small top right -->
+  <path d="M220 60 L225 74 L240 74 L228 83 L233 97 L220 88 L207 97 L212 83 L200 74 L215 74 Z"
+        fill="url(#grad1)"/>
+
+  <!-- Star 3 - Small bottom left -->
+  <path d="M60 220 L65 234 L80 234 L68 243 L73 257 L60 248 L47 257 L52 243 L40 234 L55 234 Z"
+        fill="url(#grad3)"/>
+
+  <!-- Confetti pieces - triangles -->
+  <path d="M180 180 L190 200 L170 200 Z" fill="#FF6B6B"/>
+  <path d="M100 80 L110 100 L90 100 Z" fill="#7C3AED"/>
+  <path d="M240 160 L250 180 L230 180 Z" fill="#14B8A6"/>
+  <path d="M40 100 L50 120 L30 120 Z" fill="#FF8787"/>
+
+  <!-- Rectangles rotated -->
+  <rect x="200" y="200" width="40" height="12" rx="6" fill="#8B5CF6"
+        transform="rotate(25 220 206)"/>
+  <rect x="50" y="50" width="35" height="10" rx="5" fill="#2DD4BF"
+        transform="rotate(-30 67 55)"/>
+</svg>
