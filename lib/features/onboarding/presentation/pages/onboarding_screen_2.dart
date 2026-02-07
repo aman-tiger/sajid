@@ -4,6 +4,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../widgets/onboarding_button.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class OnboardingScreen2 extends StatelessWidget {
   final VoidCallback onNext;
@@ -15,6 +16,7 @@ class OnboardingScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -46,7 +48,7 @@ class OnboardingScreen2 extends StatelessWidget {
 
               // Title
               Text(
-                'Pick Your Perfect Pack!',
+                t.onboarding_2_title,
                 style: AppTextStyles.h1(),
                 textAlign: TextAlign.center,
               ),
@@ -55,7 +57,7 @@ class OnboardingScreen2 extends StatelessWidget {
 
               // Subtitle
               Text(
-                'Exciting, daring, or wild? The choice is yours!\nExplore 6 unique categories packed with hundreds of questions.',
+                t.onboarding_2_subtitle,
                 style: AppTextStyles.bodyLarge(color: AppColors.textGrey),
                 textAlign: TextAlign.center,
               ),
@@ -64,7 +66,7 @@ class OnboardingScreen2 extends StatelessWidget {
 
               // Continue Button
               OnboardingButton(
-                text: 'Continue',
+                text: t.button_continue,
                 onPressed: onNext,
               ),
 

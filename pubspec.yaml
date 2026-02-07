@@ -62,6 +62,29 @@ dependencies:
   # Local Storage
   shared_preferences: ^2.3.3
 
+  # Phase 2: Share & Localization
+  share_plus: ^10.1.2
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  package_info_plus: ^8.0.0
+
+  # Phase 3: Monetization
+  qonversion_flutter: ^11.3.0
+
+  # Phase 4: Backend Integration
+  # Firebase - using latest versions compatible with Kotlin 2.2
+  firebase_core: ^4.4.0
+  firebase_analytics: ^12.1.1
+  firebase_crashlytics: ^5.0.7
+  firebase_messaging: ^16.1.1
+
+  # Amplitude Analytics - using latest
+  amplitude_flutter: ^4.3.10
+
+  # Sentry Error Monitoring - using latest
+  sentry_flutter: ^9.11.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -84,6 +107,9 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  # Enable localization generation
+  generate: true
+
   # Assets
   assets:
     - assets/images/
@@ -91,6 +117,13 @@ flutter:
     - assets/images/categories/
     - assets/icons/
     - assets/illustrations/
+    # Question JSON files
+    - assets/questions/Classic/
+    - assets/questions/party-vibe-check/
+    - assets/questions/girls only/
+    - assets/questions/Сouple/
+    - assets/questions/hot-spicy/
+    - assets/questions/bros only/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

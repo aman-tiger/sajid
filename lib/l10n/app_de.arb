@@ -1,0 +1,227 @@
+{
+  "@@locale": "de",
+  "onboarding_1_title": "Bereit für eine epische Nacht?",
+  "onboarding_1_subtitle": "Tauche ein in das ultimative Spielerlebnis!",
+  "onboarding_2_title": "6 Epische Spielpakete",
+  "onboarding_2_subtitle": "Von klassisch bis pikant - finde deinen perfekten Vibe!",
+  "onboarding_3_title": "1.500 Fragen",
+  "onboarding_3_subtitle": "Endloser Spaß mit Freunden erwartet dich!",
+  "onboarding_4_title": "Bewerte deine Erfahrung",
+  "onboarding_4_subtitle": "Hilf uns, das Spiel noch besser zu machen!",
+  "button_continue": "Weiter",
+  "button_start_game": "Spiel Starten",
+  "button_skip": "Überspringen",
+  "button_get_started": "Loslegen",
+  "button_back": "Zurück",
+  "button_next": "Weiter",
+  "button_save": "Speichern",
+  "button_cancel": "Abbrechen",
+  "button_ok": "OK",
+  "button_close": "Schließen",
+  "button_share": "Teilen",
+  "button_rate_now": "Jetzt Bewerten",
+  "button_maybe_later": "Vielleicht Später",
+  "main_menu_title": "Ich Habe Noch Nie",
+  "main_menu_subtitle": "Wähle Dein Paket",
+  "main_menu_buy_subscription": "Alle Pakete Freischalten",
+  "main_menu_settings": "Einstellungen",
+  "main_menu_free": "Kostenlos",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Klassik Paket",
+  "category_classic_desc": "Der perfekte Start für jedes Treffen!",
+  "category_party_name": "Party Paket",
+  "category_party_desc": "Bringe Energie in deine Feier mit spannenden Herausforderungen!",
+  "category_girls_name": "Mädels 18+",
+  "category_girls_desc": "Mutige und gewagte Fragen für einen Mädelsabend!",
+  "category_couples_name": "Pärchen Paket",
+  "category_couples_desc": "Verbinde dich mit deinem Partner wie nie zuvor!",
+  "category_hot_name": "Heiße Fragen 18+",
+  "category_hot_desc": "Dreh die Hitze auf mit pikanten Fragen!",
+  "category_guys_name": "Jungs Paket",
+  "category_guys_desc": "Epische Herausforderungen für die Jungs!",
+  "game_never_have_i_ever": "Ich Habe Noch Nie...",
+  "game_swipe_hint": "Wischen zum Navigieren",
+  "game_loading": "Lade Fragen...",
+  "game_error_title": "Hoppla!",
+  "game_error_no_questions": "Keine Fragen für diese Kategorie verfügbar",
+  "game_error_failed_load": "Fehler beim Laden der Fragen",
+  "game_button_previous": "Zurück",
+  "game_button_next": "Weiter",
+  "game_button_shuffle": "Mischen",
+  "game_button_share": "Teilen",
+  "game_share_text": "Ich Habe Noch Nie... {question}\n\nLade die App Ich Habe Noch Nie herunter und spiele mit Freunden!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Einstellungen",
+  "settings_section_account": "Konto",
+  "settings_section_app": "App-Einstellungen",
+  "settings_section_support": "Support & Feedback",
+  "settings_section_about": "Über",
+  "settings_premium_member": "Premium-Mitglied",
+  "settings_free_plan": "Kostenloser Plan",
+  "settings_premium_desc": "Genieße unbegrenzten Zugang zu allen Paketen!",
+  "settings_free_desc": "Upgrade für alle Premium-Inhalte",
+  "settings_restore_purchases": "Käufe Wiederherstellen",
+  "settings_restore_purchases_desc": "Stelle deine früheren Käufe wieder her",
+  "settings_language": "Sprache",
+  "settings_language_desc": "App-Sprache ändern",
+  "settings_dark_mode": "Dunkelmodus",
+  "settings_how_to_play": "Spielanleitung",
+  "settings_how_to_play_desc": "Lerne, wie man spielt",
+  "settings_share_app": "App Teilen",
+  "settings_share_app_desc": "Mit Freunden teilen",
+  "settings_rate_us": "Bewerte Uns",
+  "settings_rate_us_desc": "Bewerte uns im Store",
+  "settings_app_version": "App-Version",
+  "settings_terms": "Nutzungsbedingungen",
+  "settings_privacy": "Datenschutzrichtlinie",
+  "settings_restore_dialog_title": "Käufe Wiederherstellen",
+  "settings_restore_dialog_message": "Deine Käufe werden wiederhergestellt, wenn Phase 3 implementiert ist.",
+  "settings_share_message": "Schau dir Ich Habe Noch Nie an! Die ultimative Party-Spiel-App. Jetzt herunterladen!",
+  "settings_share_subject": "Ich Habe Noch Nie - Lustiges Party-Spiel",
+  "how_to_play_title": "Spielanleitung",
+  "how_to_play_header_title": "Ich Habe Noch Nie",
+  "how_to_play_header_subtitle": "Das Ultimative Party-Spiel",
+  "how_to_play_step_1_title": "Wähle Dein Paket",
+  "how_to_play_step_1_desc": "Wähle aus 6 spannenden Kategorien, die zu deiner Party-Stimmung passen.",
+  "how_to_play_step_2_title": "Lies die Frage",
+  "how_to_play_step_2_desc": "Jeder Spieler liest abwechselnd \"Ich Habe Noch Nie...\"-Fragen laut vor.",
+  "how_to_play_step_3_title": "Wahrheit oder Aktion",
+  "how_to_play_step_3_desc": "Spieler, die es GETAN haben, müssen es zugeben oder eine lustige Herausforderung absolvieren!",
+  "how_to_play_step_4_title": "Nächste Frage",
+  "how_to_play_step_4_desc": "Wische oder tippe, um zur nächsten Frage zu gelangen und den Spaß fortzusetzen!",
+  "how_to_play_step_5_title": "Hab Spaß!",
+  "how_to_play_step_5_desc": "Genieße lustige Momente und lerne deine Freunde besser kennen!",
+  "how_to_play_step_label": "Schritt {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Profi-Tipps",
+  "how_to_play_tip_1": "Nutze den Misch-Button, um Fragen zu randomisieren",
+  "how_to_play_tip_2": "Teile deine Lieblingsfragen mit Freunden",
+  "how_to_play_tip_3": "Premium-Pakete schalten über 1.500 exklusive Fragen frei",
+  "how_to_play_tip_4": "Am besten mit 3+ Spielern für maximalen Spaß!",
+  "language_title": "Sprache",
+  "language_subtitle": "Wähle deine bevorzugte Sprache",
+  "language_english": "English",
+  "language_spanish": "Español",
+  "language_german": "Deutsch",
+  "language_french": "Français",
+  "language_korean": "한국어",
+  "language_changed_title": "Sprache Geändert",
+  "language_changed_message": "Die Sprache wurde auf {language} geändert. Die App wird in der finalen Version vollständig übersetzt sein.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "Premium Freischalten",
+  "paywall_subtitle": "Erhalte unbegrenzten Zugang zu allen Spielpaketen",
+  "paywall_choose_plan": "Wähle deinen Plan",
+  "paywall_feature_1": "🎉 Schalte Alle 5 Premium-Pakete Frei",
+  "paywall_feature_2": "🔥 1.500 Exklusive Fragen",
+  "paywall_feature_3": "🌍 5 Sprachen Verfügbar",
+  "paywall_feature_4": "🚀 Regelmäßige Inhalts-Updates",
+  "paywall_weekly_plan": "Wöchentlich",
+  "paywall_monthly_plan": "Monatlich",
+  "paywall_yearly_plan": "Jährlich",
+  "paywall_best_value": "Bester Wert",
+  "paywall_trial_text": "3 Tage kostenlos, dann {price}/Woche",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Kostenlose Testversion Starten",
+  "paywall_subscribe": "Jetzt Abonnieren",
+  "paywall_restore": "Käufe Wiederherstellen",
+  "paywall_terms": "Nutzungsbedingungen",
+  "paywall_privacy": "Datenschutzrichtlinie",
+  "paywall_cancel_anytime": "Jederzeit kündbar. Es gelten die Bedingungen.",
+  "paywall_loading": "Lade Abonnement-Pläne...",
+  "paywall_error": "Fehler beim Laden der Abonnement-Pläne. Bitte versuche es erneut.",
+  "subscription_active": "Du hast ein aktives Abonnement",
+  "subscription_expired": "Dein Abonnement ist abgelaufen",
+  "subscription_purchase_success": "Kauf erfolgreich! Genieße Premium-Inhalte.",
+  "subscription_purchase_cancelled": "Kauf abgebrochen",
+  "subscription_purchase_error": "Kauf fehlgeschlagen. Bitte versuche es erneut.",
+  "subscription_restore_success": "Käufe erfolgreich wiederhergestellt!",
+  "subscription_restore_error": "Keine Käufe zum Wiederherstellen gefunden.",
+  "subscription_checking": "Überprüfe Abonnement-Status...",
+  "error_generic": "Etwas ist schief gelaufen. Bitte versuche es erneut.",
+  "error_network": "Netzwerkfehler. Bitte überprüfe deine Verbindung.",
+  "error_loading_questions": "Fehler beim Laden der Fragen: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Fehler beim Laden der Einstellungen: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Lädt...",
+  "common_retry": "Erneut Versuchen",
+  "common_done": "Fertig",
+  "common_error": "Fehler",
+  "common_success": "Erfolg",
+  "common_warning": "Warnung",
+  "common_info": "Information",
+  "common_and": "und",
+  "onboarding_terms_prefix": "Wenn Sie fortfahren, stimmen Sie unseren ",
+  "onboarding_terms_of_use": "Nutzungsbedingungen",
+  "price_per_week": "pro Woche",
+  "price_per_weeks": "pro {count} Wochen",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "pro Monat",
+  "price_per_months": "pro {count} Monate",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "pro Jahr",
+  "price_per_years": "pro {count} Jahre",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "error_page_not_found": "Seite nicht gefunden: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  }
+}

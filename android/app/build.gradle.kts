@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.neverhaveever.never_have_ever"
+    namespace = "com.hidavo.neverever"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -20,8 +20,8 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.neverhaveever.never_have_ever"
+        // Bundle ID: com.hidavo.neverever
+        applicationId = "com.hidavo.neverever"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
@@ -42,3 +42,7 @@ android {
 flutter {
     source = "../.."
 }
+
+// Apply Firebase plugins AFTER flutter block to avoid project evaluation issues
+apply(plugin = "com.google.gms.google-services")
+apply(plugin = "com.google.firebase.crashlytics")

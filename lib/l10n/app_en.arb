@@ -1,0 +1,227 @@
+{
+  "@@locale": "en",
+  "onboarding_1_title": "Ready for an Epic Night?",
+  "onboarding_1_subtitle": "Dive into the ultimate game experience!",
+  "onboarding_2_title": "6 Epic Game Packs",
+  "onboarding_2_subtitle": "From classic to spicy - find your perfect vibe!",
+  "onboarding_3_title": "1,500 Questions",
+  "onboarding_3_subtitle": "Endless fun with friends awaits!",
+  "onboarding_4_title": "Rate Your Experience",
+  "onboarding_4_subtitle": "Help us make the game even better!",
+  "button_continue": "Continue",
+  "button_start_game": "Start Game",
+  "button_skip": "Skip",
+  "button_get_started": "Get Started",
+  "button_back": "Back",
+  "button_next": "Next",
+  "button_save": "Save",
+  "button_cancel": "Cancel",
+  "button_ok": "OK",
+  "button_close": "Close",
+  "button_share": "Share",
+  "button_rate_now": "Rate Now",
+  "button_maybe_later": "Maybe Later",
+  "common_and": "and",
+  "main_menu_title": "Never Have I Ever",
+  "main_menu_subtitle": "Choose Your Pack",
+  "main_menu_buy_subscription": "Unlock All Packs",
+  "main_menu_settings": "Settings",
+  "main_menu_free": "Free",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Classic Pack",
+  "category_classic_desc": "The perfect starter to kick off any gathering!",
+  "category_party_name": "Party Pack",
+  "category_party_desc": "Energize your celebration with exciting challenges!",
+  "category_girls_name": "Girls 18+",
+  "category_girls_desc": "Bold and daring questions for a girls night out!",
+  "category_couples_name": "Couples Pack",
+  "category_couples_desc": "Connect with your partner like never before!",
+  "category_hot_name": "Hot Questions 18+",
+  "category_hot_desc": "Turn up the heat with spicy questions!",
+  "category_guys_name": "Guys Pack",
+  "category_guys_desc": "Epic challenges designed for the bros!",
+  "game_never_have_i_ever": "Never Have I Ever...",
+  "game_swipe_hint": "Swipe to navigate",
+  "game_loading": "Loading questions...",
+  "game_error_title": "Oops!",
+  "game_error_no_questions": "No questions available for this category",
+  "game_error_failed_load": "Failed to load questions",
+  "game_button_previous": "Previous",
+  "game_button_next": "Next",
+  "game_button_shuffle": "Shuffle",
+  "game_button_share": "Share",
+  "game_share_text": "Never Have I Ever... {question}\n\nDownload Never Have I Ever app and play with friends!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Settings",
+  "settings_section_account": "Account",
+  "settings_section_app": "App Settings",
+  "settings_section_support": "Support & Feedback",
+  "settings_section_about": "About",
+  "settings_premium_member": "Premium Member",
+  "settings_free_plan": "Free Plan",
+  "settings_premium_desc": "Enjoy unlimited access to all packs!",
+  "settings_free_desc": "Upgrade to unlock all premium content",
+  "settings_restore_purchases": "Restore Purchases",
+  "settings_restore_purchases_desc": "Restore your previous purchases",
+  "settings_language": "Language",
+  "settings_language_desc": "Change app language",
+  "settings_dark_mode": "Dark Mode",
+  "settings_how_to_play": "How to Play",
+  "settings_how_to_play_desc": "Learn how to play the game",
+  "settings_share_app": "Share App",
+  "settings_share_app_desc": "Share with friends",
+  "settings_rate_us": "Rate Us",
+  "settings_rate_us_desc": "Rate us on the store",
+  "settings_app_version": "App Version",
+  "settings_terms": "Terms & Conditions",
+  "settings_privacy": "Privacy Policy",
+  "settings_restore_dialog_title": "Restore Purchases",
+  "settings_restore_dialog_message": "Your purchases will be restored when Phase 3 is implemented.",
+  "settings_share_message": "Check out Never Have I Ever! The ultimate party game app. Download now!",
+  "settings_share_subject": "Never Have I Ever - Fun Party Game",
+  "how_to_play_title": "How to Play",
+  "how_to_play_header_title": "Never Have I Ever",
+  "how_to_play_header_subtitle": "The Ultimate Party Game",
+  "how_to_play_step_1_title": "Choose Your Pack",
+  "how_to_play_step_1_desc": "Select from 6 exciting categories that match your party vibe.",
+  "how_to_play_step_2_title": "Read the Question",
+  "how_to_play_step_2_desc": "Each player takes turns reading \"Never Have I Ever...\" questions aloud.",
+  "how_to_play_step_3_title": "Truth or Action",
+  "how_to_play_step_3_desc": "Players who HAVE done it must admit it or complete a fun challenge!",
+  "how_to_play_step_4_title": "Next Question",
+  "how_to_play_step_4_desc": "Swipe or tap to move to the next question and keep the fun going!",
+  "how_to_play_step_5_title": "Have Fun!",
+  "how_to_play_step_5_desc": "Enjoy hilarious moments and get to know your friends better!",
+  "how_to_play_step_label": "Step {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Pro Tips",
+  "how_to_play_tip_1": "Use the shuffle button to randomize questions",
+  "how_to_play_tip_2": "Share your favorite questions with friends",
+  "how_to_play_tip_3": "Premium packs unlock 1,500+ exclusive questions",
+  "how_to_play_tip_4": "Best played with 3+ players for maximum fun!",
+  "onboarding_terms_prefix": "By continuing, you agree to our ",
+  "onboarding_terms_of_use": "Terms of Use",
+  "language_title": "Language",
+  "language_subtitle": "Select your preferred language",
+  "language_english": "English",
+  "language_spanish": "Español",
+  "language_german": "Deutsch",
+  "language_french": "Français",
+  "language_korean": "한국어",
+  "language_changed_title": "Language Changed",
+  "language_changed_message": "Language has been changed to {language}. The app will be fully translated in the final version.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "Unlock Premium",
+  "paywall_subtitle": "Get unlimited access to all game packs",
+  "paywall_choose_plan": "Choose Your Plan",
+  "paywall_feature_1": "🎉 Unlock All 5 Premium Packs",
+  "paywall_feature_2": "🔥 1,500 Exclusive Questions",
+  "paywall_feature_3": "🌍 5 Languages Available",
+  "paywall_feature_4": "🚀 Regular Content Updates",
+  "paywall_weekly_plan": "Weekly",
+  "paywall_monthly_plan": "Monthly",
+  "paywall_yearly_plan": "Yearly",
+  "paywall_best_value": "Best Value",
+  "paywall_trial_text": "3 days free, then {price}/week",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "per week",
+  "price_per_weeks": "per {count} weeks",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "per month",
+  "price_per_months": "per {count} months",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "per year",
+  "price_per_years": "per {count} years",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Start Free Trial",
+  "paywall_subscribe": "Subscribe Now",
+  "paywall_restore": "Restore Purchases",
+  "paywall_terms": "Terms & Conditions",
+  "paywall_privacy": "Privacy Policy",
+  "paywall_cancel_anytime": "Cancel anytime. Terms apply.",
+  "paywall_loading": "Loading subscription plans...",
+  "paywall_error": "Failed to load subscription plans. Please try again.",
+  "subscription_active": "You have an active subscription",
+  "subscription_expired": "Your subscription has expired",
+  "subscription_purchase_success": "Purchase successful! Enjoy premium content.",
+  "subscription_purchase_cancelled": "Purchase cancelled",
+  "subscription_purchase_error": "Purchase failed. Please try again.",
+  "subscription_restore_success": "Purchases restored successfully!",
+  "subscription_restore_error": "No purchases found to restore.",
+  "subscription_checking": "Checking subscription status...",
+  "error_generic": "Something went wrong. Please try again.",
+  "error_network": "Network error. Please check your connection.",
+  "error_loading_questions": "Failed to load questions: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Failed to load settings: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Loading...",
+  "common_retry": "Retry",
+  "common_done": "Done",
+  "common_error": "Error",
+  "common_success": "Success",
+  "common_warning": "Warning",
+  "common_info": "Info",
+  "error_page_not_found": "Page not found: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  }
+}

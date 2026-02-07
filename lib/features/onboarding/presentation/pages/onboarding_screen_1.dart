@@ -5,6 +5,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../widgets/onboarding_button.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class OnboardingScreen1 extends StatelessWidget {
   final VoidCallback onNext;
@@ -28,6 +29,7 @@ class OnboardingScreen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -59,7 +61,7 @@ class OnboardingScreen1 extends StatelessWidget {
 
               // Title
               Text(
-                'Ready for an Epic Night?',
+                t.onboarding_1_title,
                 style: AppTextStyles.h1(),
                 textAlign: TextAlign.center,
               ),
@@ -68,7 +70,7 @@ class OnboardingScreen1 extends StatelessWidget {
 
               // Subtitle
               Text(
-                'Dive into the ultimate game experience!\nUnlock thrilling questions and unforgettable moments with friends.',
+                t.onboarding_1_subtitle,
                 style: AppTextStyles.bodyLarge(color: AppColors.textGrey),
                 textAlign: TextAlign.center,
               ),
@@ -77,7 +79,7 @@ class OnboardingScreen1 extends StatelessWidget {
 
               // Continue Button
               OnboardingButton(
-                text: 'Continue',
+                text: t.button_continue,
                 onPressed: () async {
                   await _requestNotificationPermission();
                   onNext();
@@ -91,7 +93,7 @@ class OnboardingScreen1 extends StatelessWidget {
                 alignment: WrapAlignment.center,
                 children: [
                   Text(
-                    'By continuing, you agree to our ',
+                    t.onboarding_terms_prefix,
                     style: AppTextStyles.caption(),
                   ),
                   GestureDetector(
@@ -99,12 +101,12 @@ class OnboardingScreen1 extends StatelessWidget {
                       // TODO: Navigate to Terms of Use
                     },
                     child: Text(
-                      'Terms of Use',
+                      t.onboarding_terms_of_use,
                       style: AppTextStyles.caption(color: AppColors.primary),
                     ),
                   ),
                   Text(
-                    ' and ',
+                    ' ${t.common_and} ',
                     style: AppTextStyles.caption(),
                   ),
                   GestureDetector(
@@ -112,7 +114,7 @@ class OnboardingScreen1 extends StatelessWidget {
                       // TODO: Navigate to Privacy Policy
                     },
                     child: Text(
-                      'Privacy Policy',
+                      t.settings_privacy,
                       style: AppTextStyles.caption(color: AppColors.primary),
                     ),
                   ),

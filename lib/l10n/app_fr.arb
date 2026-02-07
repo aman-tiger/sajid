@@ -1,0 +1,227 @@
+{
+  "@@locale": "fr",
+  "onboarding_1_title": "Prêt pour une Soirée Épique?",
+  "onboarding_1_subtitle": "Plongez dans l'expérience de jeu ultime!",
+  "onboarding_2_title": "6 Packs de Jeu Épiques",
+  "onboarding_2_subtitle": "Du classique au pimenté - trouvez votre ambiance parfaite!",
+  "onboarding_3_title": "1 500 Questions",
+  "onboarding_3_subtitle": "Un plaisir infini avec des amis vous attend!",
+  "onboarding_4_title": "Évaluez Votre Expérience",
+  "onboarding_4_subtitle": "Aidez-nous à améliorer le jeu encore plus!",
+  "button_continue": "Continuer",
+  "button_start_game": "Démarrer le Jeu",
+  "button_skip": "Passer",
+  "button_get_started": "Commencer",
+  "button_back": "Retour",
+  "button_next": "Suivant",
+  "button_save": "Enregistrer",
+  "button_cancel": "Annuler",
+  "button_ok": "OK",
+  "button_close": "Fermer",
+  "button_share": "Partager",
+  "button_rate_now": "Évaluer Maintenant",
+  "button_maybe_later": "Peut-être Plus Tard",
+  "main_menu_title": "Je N'ai Jamais",
+  "main_menu_subtitle": "Choisissez Votre Pack",
+  "main_menu_buy_subscription": "Déverrouiller Tous les Packs",
+  "main_menu_settings": "Paramètres",
+  "main_menu_free": "Gratuit",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Pack Classique",
+  "category_classic_desc": "Le démarreur parfait pour toute réunion!",
+  "category_party_name": "Pack Fête",
+  "category_party_desc": "Dynamisez votre célébration avec des défis passionnants!",
+  "category_girls_name": "Filles 18+",
+  "category_girls_desc": "Questions audacieuses et osées pour une soirée entre filles!",
+  "category_couples_name": "Pack Couples",
+  "category_couples_desc": "Connectez-vous avec votre partenaire comme jamais auparavant!",
+  "category_hot_name": "Questions Épicées 18+",
+  "category_hot_desc": "Augmentez la température avec des questions torrides!",
+  "category_guys_name": "Pack Garçons",
+  "category_guys_desc": "Défis épiques conçus pour les gars!",
+  "game_never_have_i_ever": "Je N'ai Jamais...",
+  "game_swipe_hint": "Glissez pour naviguer",
+  "game_loading": "Chargement des questions...",
+  "game_error_title": "Oups!",
+  "game_error_no_questions": "Aucune question disponible pour cette catégorie",
+  "game_error_failed_load": "Échec du chargement des questions",
+  "game_button_previous": "Précédent",
+  "game_button_next": "Suivant",
+  "game_button_shuffle": "Mélanger",
+  "game_button_share": "Partager",
+  "game_share_text": "Je N'ai Jamais... {question}\n\nTéléchargez l'application Je N'ai Jamais et jouez avec des amis!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Paramètres",
+  "settings_section_account": "Compte",
+  "settings_section_app": "Paramètres de l'Application",
+  "settings_section_support": "Assistance & Commentaires",
+  "settings_section_about": "À Propos",
+  "settings_premium_member": "Membre Premium",
+  "settings_free_plan": "Plan Gratuit",
+  "settings_premium_desc": "Profitez d'un accès illimité à tous les packs!",
+  "settings_free_desc": "Passez au premium pour débloquer tout le contenu",
+  "settings_restore_purchases": "Restaurer les Achats",
+  "settings_restore_purchases_desc": "Restaurez vos achats précédents",
+  "settings_language": "Langue",
+  "settings_language_desc": "Changer la langue de l'application",
+  "settings_dark_mode": "Mode Sombre",
+  "settings_how_to_play": "Comment Jouer",
+  "settings_how_to_play_desc": "Apprenez à jouer au jeu",
+  "settings_share_app": "Partager l'Application",
+  "settings_share_app_desc": "Partager avec des amis",
+  "settings_rate_us": "Évaluez-Nous",
+  "settings_rate_us_desc": "Évaluez-nous sur le store",
+  "settings_app_version": "Version de l'Application",
+  "settings_terms": "Conditions Générales",
+  "settings_privacy": "Politique de Confidentialité",
+  "settings_restore_dialog_title": "Restaurer les Achats",
+  "settings_restore_dialog_message": "Vos achats seront restaurés lorsque la Phase 3 sera implémentée.",
+  "settings_share_message": "Découvrez Je N'ai Jamais! L'application de jeu de soirée ultime. Téléchargez maintenant!",
+  "settings_share_subject": "Je N'ai Jamais - Jeu de Soirée Amusant",
+  "how_to_play_title": "Comment Jouer",
+  "how_to_play_header_title": "Je N'ai Jamais",
+  "how_to_play_header_subtitle": "Le Jeu de Soirée Ultime",
+  "how_to_play_step_1_title": "Choisissez Votre Pack",
+  "how_to_play_step_1_desc": "Sélectionnez parmi 6 catégories passionnantes qui correspondent à l'ambiance de votre soirée.",
+  "how_to_play_step_2_title": "Lisez la Question",
+  "how_to_play_step_2_desc": "Chaque joueur lit à tour de rôle des questions \"Je N'ai Jamais...\" à voix haute.",
+  "how_to_play_step_3_title": "Vérité ou Action",
+  "how_to_play_step_3_desc": "Les joueurs qui l'ONT fait doivent l'admettre ou relever un défi amusant!",
+  "how_to_play_step_4_title": "Question Suivante",
+  "how_to_play_step_4_desc": "Glissez ou touchez pour passer à la question suivante et continuer le plaisir!",
+  "how_to_play_step_5_title": "Amusez-Vous!",
+  "how_to_play_step_5_desc": "Profitez de moments hilarants et apprenez à mieux connaître vos amis!",
+  "how_to_play_step_label": "Étape {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Conseils de Pro",
+  "how_to_play_tip_1": "Utilisez le bouton mélanger pour randomiser les questions",
+  "how_to_play_tip_2": "Partagez vos questions préférées avec des amis",
+  "how_to_play_tip_3": "Les packs premium débloquent plus de 1 500 questions exclusives",
+  "how_to_play_tip_4": "Se joue mieux avec 3+ joueurs pour un maximum de plaisir!",
+  "language_title": "Langue",
+  "language_subtitle": "Sélectionnez votre langue préférée",
+  "language_english": "English",
+  "language_spanish": "Español",
+  "language_german": "Deutsch",
+  "language_french": "Français",
+  "language_korean": "한국어",
+  "language_changed_title": "Langue Modifiée",
+  "language_changed_message": "La langue a été changée en {language}. L'application sera entièrement traduite dans la version finale.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "Déverrouiller Premium",
+  "paywall_subtitle": "Obtenez un accès illimité à tous les packs de jeu",
+  "paywall_choose_plan": "Choisissez votre plan",
+  "paywall_feature_1": "🎉 Déverrouillez les 5 Packs Premium",
+  "paywall_feature_2": "🔥 1 500 Questions Exclusives",
+  "paywall_feature_3": "🌍 5 Langues Disponibles",
+  "paywall_feature_4": "🚀 Mises à Jour Régulières du Contenu",
+  "paywall_weekly_plan": "Hebdomadaire",
+  "paywall_monthly_plan": "Mensuel",
+  "paywall_yearly_plan": "Annuel",
+  "paywall_best_value": "Meilleure Valeur",
+  "paywall_trial_text": "3 jours gratuits, puis {price}/semaine",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Commencer l'Essai Gratuit",
+  "paywall_subscribe": "S'Abonner Maintenant",
+  "paywall_restore": "Restaurer les Achats",
+  "paywall_terms": "Conditions Générales",
+  "paywall_privacy": "Politique de Confidentialité",
+  "paywall_cancel_anytime": "Annulez à tout moment. Les conditions s'appliquent.",
+  "paywall_loading": "Chargement des plans d'abonnement...",
+  "paywall_error": "Échec du chargement des plans d'abonnement. Veuillez réessayer.",
+  "subscription_active": "Vous avez un abonnement actif",
+  "subscription_expired": "Votre abonnement a expiré",
+  "subscription_purchase_success": "Achat réussi! Profitez du contenu premium.",
+  "subscription_purchase_cancelled": "Achat annulé",
+  "subscription_purchase_error": "Échec de l'achat. Veuillez réessayer.",
+  "subscription_restore_success": "Achats restaurés avec succès!",
+  "subscription_restore_error": "Aucun achat à restaurer trouvé.",
+  "subscription_checking": "Vérification du statut d'abonnement...",
+  "error_generic": "Quelque chose s'est mal passé. Veuillez réessayer.",
+  "error_network": "Erreur réseau. Veuillez vérifier votre connexion.",
+  "error_loading_questions": "Échec du chargement des questions: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Échec du chargement des paramètres: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Chargement...",
+  "common_retry": "Réessayer",
+  "common_done": "Terminé",
+  "common_error": "Erreur",
+  "common_success": "Succès",
+  "common_warning": "Avertissement",
+  "common_info": "Information",
+  "common_and": "et",
+  "onboarding_terms_prefix": "En continuant, vous acceptez nos ",
+  "onboarding_terms_of_use": "Conditions d'utilisation",
+  "price_per_week": "par semaine",
+  "price_per_weeks": "par {count} semaines",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "par mois",
+  "price_per_months": "par {count} mois",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "par an",
+  "price_per_years": "par {count} ans",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "error_page_not_found": "Page introuvable : {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  }
+}

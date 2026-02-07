@@ -4,6 +4,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../widgets/onboarding_button.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class OnboardingScreen3 extends StatelessWidget {
   final VoidCallback onNext;
@@ -15,6 +16,7 @@ class OnboardingScreen3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -46,7 +48,7 @@ class OnboardingScreen3 extends StatelessWidget {
 
               // Title
               Text(
-                'Truth or Action!',
+                t.onboarding_3_title,
                 style: AppTextStyles.h1(),
                 textAlign: TextAlign.center,
               ),
@@ -55,7 +57,7 @@ class OnboardingScreen3 extends StatelessWidget {
 
               // Subtitle
               Text(
-                'Share secrets or complete exciting challenges!\nSwipe through cards and create unforgettable memories.',
+                t.onboarding_3_subtitle,
                 style: AppTextStyles.bodyLarge(color: AppColors.textGrey),
                 textAlign: TextAlign.center,
               ),
@@ -64,7 +66,7 @@ class OnboardingScreen3 extends StatelessWidget {
 
               // Continue Button
               OnboardingButton(
-                text: 'Continue',
+                text: t.button_continue,
                 onPressed: onNext,
               ),
 

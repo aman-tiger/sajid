@@ -1,55 +1,75 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/constants/categories.dart';
+import '../../../../core/bloc/subscription/subscription_bloc.dart';
+import '../../../../core/bloc/subscription/subscription_event.dart';
+import '../../../../core/bloc/subscription/subscription_state.dart';
+import '../../../../core/services/subscription_service.dart';
 import '../widgets/category_card.dart';
+import '../../../../l10n/app_localizations.dart';
 
-class MainMenuPage extends StatefulWidget {
+class MainMenuPage extends StatelessWidget {
   const MainMenuPage({super.key});
 
   @override
-  State<MainMenuPage> createState() => _MainMenuPageState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => SubscriptionBloc(
+        subscriptionService: SubscriptionService(),
+      )..add(const CheckSubscriptionStatusEvent()),
+      child: const _MainMenuPageContent(),
+    );
+  }
 }
 
-class _MainMenuPageState extends State<MainMenuPage> {
-  int _currentIndex = 0;
-  final bool _isSubscribed = false; // TODO: Replace with actual subscription status
+class _MainMenuPageContent extends StatefulWidget {
+  const _MainMenuPageContent();
 
-  void _onCategoryTap(String categoryId, bool isFree) {
-    if (isFree || _isSubscribed) {
+  @override
+  State<_MainMenuPageContent> createState() => _MainMenuPageContentState();
+}
+
+class _MainMenuPageContentState extends State<_MainMenuPageContent> {
+  int _currentIndex = 0;
+
+  void _onCategoryTap(BuildContext context, String categoryId, bool isFree, bool isSubscribed) {
+    if (isFree || isSubscribed) {
       // Navigate to game screen
-      debugPrint('Navigate to game with category: $categoryId');
-      // TODO: Navigate to question screen
+      context.push('/game/$categoryId');
     } else {
       // Navigate to paywall
-      debugPrint('Navigate to paywall');
-      // TODO: Navigate to paywall
+      context.push('/paywall');
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.surface,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.settings_outlined,
-              color: AppColors.textDark,
-            ),
-            onPressed: () {
-              debugPrint('Navigate to settings');
-              // TODO: Navigate to settings
-            },
+    return BlocBuilder<SubscriptionBloc, SubscriptionState>(
+      builder: (context, state) {
+        final isSubscribed = state is SubscriptionActive;
+        final t = AppLocalizations.of(context)!;
+
+        return Scaffold(
+          backgroundColor: AppColors.surface,
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
+            actions: [
+              IconButton(
+                icon: const Icon(
+                  Icons.settings_outlined,
+                  color: AppColors.textDark,
+                ),
+                onPressed: () => context.push('/settings'),
+              ),
+            ],
           ),
-        ],
-      ),
-      body: SafeArea(
+          body: SafeArea(
         child: Column(
           children: [
             const SizedBox(height: AppDimensions.spaceMd),
@@ -60,7 +80,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                 horizontal: AppDimensions.screenPaddingHorizontal,
               ),
               child: Text(
-                'Choose Your Adventure',
+                t.main_menu_title,
                 style: AppTextStyles.h2(),
                 textAlign: TextAlign.center,
               ),
@@ -74,7 +94,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                 horizontal: AppDimensions.screenPaddingHorizontal,
               ),
               child: Text(
-                'Select a pack and start the fun!',
+                t.main_menu_subtitle,
                 style: AppTextStyles.bodyMedium(color: AppColors.textGrey),
                 textAlign: TextAlign.center,
               ),
@@ -90,8 +110,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
                   final category = AppCategories.all[index];
                   return CategoryCard(
                     category: category,
-                    isSubscribed: _isSubscribed,
-                    onTap: () => _onCategoryTap(category.id, category.isFree),
+                    isSubscribed: isSubscribed,
+                    onTap: () => _onCategoryTap(context, category.id, category.isFree, isSubscribed),
                   );
                 },
                 options: CarouselOptions(
@@ -138,7 +158,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
             const SizedBox(height: AppDimensions.spaceLg),
 
             // Buy Subscription Button (only show if not subscribed)
-            if (!_isSubscribed)
+            if (!isSubscribed)
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: AppDimensions.screenPaddingHorizontal,
@@ -147,17 +167,14 @@ class _MainMenuPageState extends State<MainMenuPage> {
                   width: double.infinity,
                   height: AppDimensions.buttonHeightLarge,
                   child: ElevatedButton.icon(
-                    onPressed: () {
-                      debugPrint('Navigate to paywall');
-                      // TODO: Navigate to paywall
-                    },
+                    onPressed: () => context.push('/paywall'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.secondary,
                       foregroundColor: AppColors.textLight,
                     ),
                     icon: const Icon(Icons.star_rounded),
                     label: Text(
-                      'Unlock All Packs',
+                      t.main_menu_buy_subscription,
                       style: AppTextStyles.button(),
                     ),
                   ),
@@ -168,6 +185,8 @@ class _MainMenuPageState extends State<MainMenuPage> {
           ],
         ),
       ),
+        );
+      },
     );
   }
 }

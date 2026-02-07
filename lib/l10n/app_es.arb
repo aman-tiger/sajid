@@ -1,0 +1,227 @@
+{
+  "@@locale": "es",
+  "onboarding_1_title": "¿Listo para una Noche Épica?",
+  "onboarding_1_subtitle": "¡Sumérgete en la mejor experiencia de juego!",
+  "onboarding_2_title": "6 Paquetes de Juego Épicos",
+  "onboarding_2_subtitle": "¡Desde lo clásico hasta lo picante - encuentra tu vibra perfecta!",
+  "onboarding_3_title": "1,500 Preguntas",
+  "onboarding_3_subtitle": "¡Te espera diversión sin fin con amigos!",
+  "onboarding_4_title": "Califica tu Experiencia",
+  "onboarding_4_subtitle": "¡Ayúdanos a hacer el juego aún mejor!",
+  "button_continue": "Continuar",
+  "button_start_game": "Iniciar Juego",
+  "button_skip": "Omitir",
+  "button_get_started": "Comenzar",
+  "button_back": "Atrás",
+  "button_next": "Siguiente",
+  "button_save": "Guardar",
+  "button_cancel": "Cancelar",
+  "button_ok": "Aceptar",
+  "button_close": "Cerrar",
+  "button_share": "Compartir",
+  "button_rate_now": "Calificar Ahora",
+  "button_maybe_later": "Tal Vez Más Tarde",
+  "main_menu_title": "Yo Nunca Nunca",
+  "main_menu_subtitle": "Elige Tu Paquete",
+  "main_menu_buy_subscription": "Desbloquear Todos los Paquetes",
+  "main_menu_settings": "Configuración",
+  "main_menu_free": "Gratis",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Paquete Clásico",
+  "category_classic_desc": "¡El iniciador perfecto para cualquier reunión!",
+  "category_party_name": "Paquete de Fiesta",
+  "category_party_desc": "¡Energiza tu celebración con desafíos emocionantes!",
+  "category_girls_name": "Chicas +18",
+  "category_girls_desc": "¡Preguntas atrevidas y audaces para una noche de chicas!",
+  "category_couples_name": "Paquete de Parejas",
+  "category_couples_desc": "¡Conecta con tu pareja como nunca antes!",
+  "category_hot_name": "Preguntas Picantes +18",
+  "category_hot_desc": "¡Sube la temperatura con preguntas ardientes!",
+  "category_guys_name": "Paquete de Chicos",
+  "category_guys_desc": "¡Desafíos épicos diseñados para los hermanos!",
+  "game_never_have_i_ever": "Yo Nunca Nunca...",
+  "game_swipe_hint": "Desliza para navegar",
+  "game_loading": "Cargando preguntas...",
+  "game_error_title": "¡Ups!",
+  "game_error_no_questions": "No hay preguntas disponibles para esta categoría",
+  "game_error_failed_load": "Error al cargar preguntas",
+  "game_button_previous": "Anterior",
+  "game_button_next": "Siguiente",
+  "game_button_shuffle": "Mezclar",
+  "game_button_share": "Compartir",
+  "game_share_text": "Yo Nunca Nunca... {question}\n\n¡Descarga la app Yo Nunca Nunca y juega con amigos!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Configuración",
+  "settings_section_account": "Cuenta",
+  "settings_section_app": "Configuración de la App",
+  "settings_section_support": "Soporte y Comentarios",
+  "settings_section_about": "Acerca de",
+  "settings_premium_member": "Miembro Premium",
+  "settings_free_plan": "Plan Gratuito",
+  "settings_premium_desc": "¡Disfruta acceso ilimitado a todos los paquetes!",
+  "settings_free_desc": "Actualiza para desbloquear todo el contenido premium",
+  "settings_restore_purchases": "Restaurar Compras",
+  "settings_restore_purchases_desc": "Restaurar tus compras anteriores",
+  "settings_language": "Idioma",
+  "settings_language_desc": "Cambiar idioma de la app",
+  "settings_dark_mode": "Modo Oscuro",
+  "settings_how_to_play": "Cómo Jugar",
+  "settings_how_to_play_desc": "Aprende a jugar el juego",
+  "settings_share_app": "Compartir App",
+  "settings_share_app_desc": "Compartir con amigos",
+  "settings_rate_us": "Califícanos",
+  "settings_rate_us_desc": "Califícanos en la tienda",
+  "settings_app_version": "Versión de la App",
+  "settings_terms": "Términos y Condiciones",
+  "settings_privacy": "Política de Privacidad",
+  "settings_restore_dialog_title": "Restaurar Compras",
+  "settings_restore_dialog_message": "Tus compras serán restauradas cuando se implemente la Fase 3.",
+  "settings_share_message": "¡Mira Yo Nunca Nunca! La mejor app de juego para fiestas. ¡Descárgala ahora!",
+  "settings_share_subject": "Yo Nunca Nunca - Juego Divertido de Fiesta",
+  "how_to_play_title": "Cómo Jugar",
+  "how_to_play_header_title": "Yo Nunca Nunca",
+  "how_to_play_header_subtitle": "El Juego de Fiesta Definitivo",
+  "how_to_play_step_1_title": "Elige Tu Paquete",
+  "how_to_play_step_1_desc": "Selecciona de 6 categorías emocionantes que coincidan con tu vibra de fiesta.",
+  "how_to_play_step_2_title": "Lee la Pregunta",
+  "how_to_play_step_2_desc": "Cada jugador toma turnos leyendo preguntas \"Yo Nunca Nunca...\" en voz alta.",
+  "how_to_play_step_3_title": "Verdad o Acción",
+  "how_to_play_step_3_desc": "¡Los jugadores que lo HAYAN hecho deben admitirlo o completar un desafío divertido!",
+  "how_to_play_step_4_title": "Siguiente Pregunta",
+  "how_to_play_step_4_desc": "¡Desliza o toca para pasar a la siguiente pregunta y mantener la diversión!",
+  "how_to_play_step_5_title": "¡Diviértete!",
+  "how_to_play_step_5_desc": "¡Disfruta momentos divertidos y conoce mejor a tus amigos!",
+  "how_to_play_step_label": "Paso {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Consejos Pro",
+  "how_to_play_tip_1": "Usa el botón de mezclar para aleatorizar preguntas",
+  "how_to_play_tip_2": "Comparte tus preguntas favoritas con amigos",
+  "how_to_play_tip_3": "Los paquetes premium desbloquean más de 1,500 preguntas exclusivas",
+  "how_to_play_tip_4": "¡Se juega mejor con 3+ jugadores para máxima diversión!",
+  "language_title": "Idioma",
+  "language_subtitle": "Selecciona tu idioma preferido",
+  "language_english": "English",
+  "language_spanish": "Español",
+  "language_german": "Deutsch",
+  "language_french": "Français",
+  "language_korean": "한국어",
+  "language_changed_title": "Idioma Cambiado",
+  "language_changed_message": "El idioma se ha cambiado a {language}. La app estará completamente traducida en la versión final.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "Desbloquear Premium",
+  "paywall_subtitle": "Obtén acceso ilimitado a todos los paquetes de juego",
+  "paywall_choose_plan": "Elige tu plan",
+  "paywall_feature_1": "🎉 Desbloquea los 5 Paquetes Premium",
+  "paywall_feature_2": "🔥 1,500 Preguntas Exclusivas",
+  "paywall_feature_3": "🌍 5 Idiomas Disponibles",
+  "paywall_feature_4": "🚀 Actualizaciones de Contenido Regulares",
+  "paywall_weekly_plan": "Semanal",
+  "paywall_monthly_plan": "Mensual",
+  "paywall_yearly_plan": "Anual",
+  "paywall_best_value": "Mejor Valor",
+  "paywall_trial_text": "3 días gratis, luego {price}/semana",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Iniciar Prueba Gratuita",
+  "paywall_subscribe": "Suscribirse Ahora",
+  "paywall_restore": "Restaurar Compras",
+  "paywall_terms": "Términos y Condiciones",
+  "paywall_privacy": "Política de Privacidad",
+  "paywall_cancel_anytime": "Cancela en cualquier momento. Se aplican términos.",
+  "paywall_loading": "Cargando planes de suscripción...",
+  "paywall_error": "Error al cargar planes de suscripción. Por favor, inténtalo de nuevo.",
+  "subscription_active": "Tienes una suscripción activa",
+  "subscription_expired": "Tu suscripción ha expirado",
+  "subscription_purchase_success": "¡Compra exitosa! Disfruta del contenido premium.",
+  "subscription_purchase_cancelled": "Compra cancelada",
+  "subscription_purchase_error": "Error en la compra. Por favor, inténtalo de nuevo.",
+  "subscription_restore_success": "¡Compras restauradas exitosamente!",
+  "subscription_restore_error": "No se encontraron compras para restaurar.",
+  "subscription_checking": "Verificando estado de suscripción...",
+  "error_generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
+  "error_network": "Error de red. Por favor, verifica tu conexión.",
+  "error_loading_questions": "Error al cargar preguntas: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Error al cargar configuración: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Cargando...",
+  "common_retry": "Reintentar",
+  "common_done": "Hecho",
+  "common_error": "Error",
+  "common_success": "Éxito",
+  "common_warning": "Advertencia",
+  "common_info": "Información",
+  "common_and": "y",
+  "onboarding_terms_prefix": "Al continuar, aceptas nuestros ",
+  "onboarding_terms_of_use": "T?rminos de Uso",
+  "price_per_week": "por semana",
+  "price_per_weeks": "por {count} semanas",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "por mes",
+  "price_per_months": "por {count} meses",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "por a?o",
+  "price_per_years": "por {count} a?os",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "error_page_not_found": "P?gina no encontrada: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  }
+}

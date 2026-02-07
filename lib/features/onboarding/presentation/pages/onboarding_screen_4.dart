@@ -5,6 +5,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../widgets/onboarding_button.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class OnboardingScreen4 extends StatelessWidget {
   final VoidCallback onComplete;
@@ -26,6 +27,7 @@ class OnboardingScreen4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -57,7 +59,7 @@ class OnboardingScreen4 extends StatelessWidget {
 
               // Title
               Text(
-                'Love the Game?',
+                t.onboarding_4_title,
                 style: AppTextStyles.h1(),
                 textAlign: TextAlign.center,
               ),
@@ -66,7 +68,7 @@ class OnboardingScreen4 extends StatelessWidget {
 
               // Subtitle
               Text(
-                'Help us spread the joy by leaving a review!\nYour feedback helps us create better experiences.',
+                t.onboarding_4_subtitle,
                 style: AppTextStyles.bodyLarge(color: AppColors.textGrey),
                 textAlign: TextAlign.center,
               ),
@@ -75,7 +77,7 @@ class OnboardingScreen4 extends StatelessWidget {
 
               // Start Button
               OnboardingButton(
-                text: 'Get Started',
+                text: t.button_get_started,
                 onPressed: () async {
                   await _requestReview();
                   onComplete();

@@ -3,7 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/constants/categories.dart';
 import '../../../../core/models/category_model.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class CategoryCard extends StatelessWidget {
   final CategoryModel category;
@@ -19,7 +21,13 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final bool isLocked = !category.isFree && !isSubscribed;
+    final localizedName = AppCategories.localizedName(t, category.id);
+    final localizedDescription = AppCategories.localizedDescription(
+      t,
+      category.id,
+    );
 
     return GestureDetector(
       onTap: onTap,
@@ -86,7 +94,7 @@ class CategoryCard extends StatelessWidget {
                       children: [
                         // Category name
                         Text(
-                          category.name,
+                          localizedName,
                           style: AppTextStyles.cardTitle(),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -96,31 +104,13 @@ class CategoryCard extends StatelessWidget {
 
                         // Description
                         Text(
-                          category.description,
+                          localizedDescription,
                           style: AppTextStyles.cardDescription(),
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                         ),
 
                         const Spacer(),
-
-                        // Question count
-                        Row(
-                          children: [
-                            Icon(
-                              Icons.help_outline_rounded,
-                              size: AppDimensions.iconSizeSm,
-                              color: category.color,
-                            ),
-                            const SizedBox(width: AppDimensions.spaceXs),
-                            Text(
-                              '${category.questionCount} questions',
-                              style: AppTextStyles.caption(
-                                color: category.color,
-                              ),
-                            ),
-                          ],
-                        ),
                       ],
                     ),
                   ),
@@ -167,7 +157,7 @@ class CategoryCard extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            'Premium',
+                            t.main_menu_premium,
                             style: AppTextStyles.button(),
                           ),
                         ),
@@ -192,7 +182,7 @@ class CategoryCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(AppDimensions.radiusMd),
                   ),
                   child: Text(
-                    'FREE',
+                    t.main_menu_free,
                     style: AppTextStyles.caption(color: AppColors.textLight),
                   ),
                 ),
