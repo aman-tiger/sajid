@@ -126,18 +126,18 @@
       }
     }
   },
-  "paywall_title": "Déverrouiller Premium",
-  "paywall_subtitle": "Obtenez un accès illimité à tous les packs de jeu",
+  "paywall_title": "Passez Premium",
+  "paywall_subtitle": "Du fun non-stop vous attend",
   "paywall_choose_plan": "Choisissez votre plan",
-  "paywall_feature_1": "🎉 Déverrouillez les 5 Packs Premium",
-  "paywall_feature_2": "🔥 1 500 Questions Exclusives",
-  "paywall_feature_3": "🌍 5 Langues Disponibles",
-  "paywall_feature_4": "🚀 Mises à Jour Régulières du Contenu",
+  "paywall_feature_1": "Débloquez du contenu exclusif 18+",
+  "paywall_feature_2": "Nouvelles mises à jour régulières",
+  "paywall_feature_3": "Zéro publicité",
+  "paywall_feature_4": "Annulez à tout moment",
   "paywall_weekly_plan": "Hebdomadaire",
   "paywall_monthly_plan": "Mensuel",
   "paywall_yearly_plan": "Annuel",
   "paywall_best_value": "Meilleure Valeur",
-  "paywall_trial_text": "3 jours gratuits, puis {price}/semaine",
+  "paywall_trial_text": "Essayez GRATUITEMENT pendant 3 jours",
   "@paywall_trial_text": {
     "placeholders": {
       "price": {
@@ -150,7 +150,7 @@
   "paywall_restore": "Restaurer les Achats",
   "paywall_terms": "Conditions Générales",
   "paywall_privacy": "Politique de Confidentialité",
-  "paywall_cancel_anytime": "Annulez à tout moment. Les conditions s'appliquent.",
+  "paywall_cancel_anytime": "Annulez à tout moment",
   "paywall_loading": "Chargement des plans d'abonnement...",
   "paywall_error": "Échec du chargement des plans d'abonnement. Veuillez réessayer.",
   "subscription_active": "Vous avez un abonnement actif",

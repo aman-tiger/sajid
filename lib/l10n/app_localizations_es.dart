@@ -363,26 +363,25 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get paywall_title => 'Desbloquear Premium';
+  String get paywall_title => 'HAZTE PREMIUM';
 
   @override
-  String get paywall_subtitle =>
-      'Obtén acceso ilimitado a todos los paquetes de juego';
+  String get paywall_subtitle => 'Diversión sin parar te espera';
 
   @override
   String get paywall_choose_plan => 'Elige tu plan';
 
   @override
-  String get paywall_feature_1 => '🎉 Desbloquea los 5 Paquetes Premium';
+  String get paywall_feature_1 => 'Desbloquea contenido exclusivo 18+';
 
   @override
-  String get paywall_feature_2 => '🔥 1,500 Preguntas Exclusivas';
+  String get paywall_feature_2 => 'Nuevas actualizaciones regularmente';
 
   @override
-  String get paywall_feature_3 => '🌍 5 Idiomas Disponibles';
+  String get paywall_feature_3 => 'Cero anuncios';
 
   @override
-  String get paywall_feature_4 => '🚀 Actualizaciones de Contenido Regulares';
+  String get paywall_feature_4 => 'Cancela cuando quieras';
 
   @override
   String get paywall_weekly_plan => 'Semanal';
@@ -398,7 +397,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String paywall_trial_text(String price) {
-    return '3 días gratis, luego $price/semana';
+    return 'Prueba GRATIS por 3 días';
   }
 
   @override
@@ -441,8 +440,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get paywall_privacy => 'Política de Privacidad';
 
   @override
-  String get paywall_cancel_anytime =>
-      'Cancela en cualquier momento. Se aplican términos.';
+  String get paywall_cancel_anytime => 'Cancela cuando quieras';
 
   @override
   String get paywall_loading => 'Cargando planes de suscripción...';

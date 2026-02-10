@@ -129,18 +129,18 @@
       }
     }
   },
-  "paywall_title": "Unlock Premium",
-  "paywall_subtitle": "Get unlimited access to all game packs",
+  "paywall_title": "GO PREMIUM",
+  "paywall_subtitle": "Non-Stop Fun Awaits",
   "paywall_choose_plan": "Choose Your Plan",
-  "paywall_feature_1": "🎉 Unlock All 5 Premium Packs",
-  "paywall_feature_2": "🔥 1,500 Exclusive Questions",
-  "paywall_feature_3": "🌍 5 Languages Available",
-  "paywall_feature_4": "🚀 Regular Content Updates",
+  "paywall_feature_1": "Unlock exclusive 18+ content",
+  "paywall_feature_2": "New updates regularly",
+  "paywall_feature_3": "Zero ads",
+  "paywall_feature_4": "Cancel anytime",
   "paywall_weekly_plan": "Weekly",
   "paywall_monthly_plan": "Monthly",
   "paywall_yearly_plan": "Yearly",
   "paywall_best_value": "Best Value",
-  "paywall_trial_text": "3 days free, then {price}/week",
+  "paywall_trial_text": "Try FREE for 3 days",
   "@paywall_trial_text": {
     "placeholders": {
       "price": {
@@ -180,7 +180,7 @@
   "paywall_restore": "Restore Purchases",
   "paywall_terms": "Terms & Conditions",
   "paywall_privacy": "Privacy Policy",
-  "paywall_cancel_anytime": "Cancel anytime. Terms apply.",
+  "paywall_cancel_anytime": "Cancel anytime",
   "paywall_loading": "Loading subscription plans...",
   "paywall_error": "Failed to load subscription plans. Please try again.",
   "subscription_active": "You have an active subscription",

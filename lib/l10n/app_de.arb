@@ -126,18 +126,18 @@
       }
     }
   },
-  "paywall_title": "Premium Freischalten",
-  "paywall_subtitle": "Erhalte unbegrenzten Zugang zu allen Spielpaketen",
+  "paywall_title": "Werde Premium",
+  "paywall_subtitle": "Endloser Spaß wartet",
   "paywall_choose_plan": "Wähle deinen Plan",
-  "paywall_feature_1": "🎉 Schalte Alle 5 Premium-Pakete Frei",
-  "paywall_feature_2": "🔥 1.500 Exklusive Fragen",
-  "paywall_feature_3": "🌍 5 Sprachen Verfügbar",
-  "paywall_feature_4": "🚀 Regelmäßige Inhalts-Updates",
+  "paywall_feature_1": "Schalte exklusive 18+-Inhalte frei",
+  "paywall_feature_2": "Regelmäßig neue Updates",
+  "paywall_feature_3": "Keine Werbung",
+  "paywall_feature_4": "Jederzeit kündbar",
   "paywall_weekly_plan": "Wöchentlich",
   "paywall_monthly_plan": "Monatlich",
   "paywall_yearly_plan": "Jährlich",
   "paywall_best_value": "Bester Wert",
-  "paywall_trial_text": "3 Tage kostenlos, dann {price}/Woche",
+  "paywall_trial_text": "3 Tage KOSTENLOS testen",
   "@paywall_trial_text": {
     "placeholders": {
       "price": {
@@ -150,7 +150,7 @@
   "paywall_restore": "Käufe Wiederherstellen",
   "paywall_terms": "Nutzungsbedingungen",
   "paywall_privacy": "Datenschutzrichtlinie",
-  "paywall_cancel_anytime": "Jederzeit kündbar. Es gelten die Bedingungen.",
+  "paywall_cancel_anytime": "Jederzeit kündbar",
   "paywall_loading": "Lade Abonnement-Pläne...",
   "paywall_error": "Fehler beim Laden der Abonnement-Pläne. Bitte versuche es erneut.",
   "subscription_active": "Du hast ein aktives Abonnement",

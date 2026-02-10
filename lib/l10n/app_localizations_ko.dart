@@ -342,25 +342,25 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get paywall_title => '프리미엄 잠금 해제';
+  String get paywall_title => '프리미엄으로 업그레이드';
 
   @override
-  String get paywall_subtitle => '모든 게임 팩에 대한 무제한 액세스 받기';
+  String get paywall_subtitle => '끊임없는 즐거움이 기다립니다';
 
   @override
   String get paywall_choose_plan => '플랜 선택';
 
   @override
-  String get paywall_feature_1 => '🎉 5개의 프리미엄 팩 모두 잠금 해제';
+  String get paywall_feature_1 => '18+ 전용 콘텐츠 잠금 해제';
 
   @override
-  String get paywall_feature_2 => '🔥 1,500개의 독점 질문';
+  String get paywall_feature_2 => '정기적으로 새 업데이트';
 
   @override
-  String get paywall_feature_3 => '🌍 5개 언어 지원';
+  String get paywall_feature_3 => '광고 없음';
 
   @override
-  String get paywall_feature_4 => '🚀 정기적인 콘텐츠 업데이트';
+  String get paywall_feature_4 => '언제든지 취소 가능';
 
   @override
   String get paywall_weekly_plan => '주간';
@@ -376,7 +376,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String paywall_trial_text(String price) {
-    return '3일 무료, 그 후 주당 $price';
+    return '3일 무료 체험';
   }
 
   @override
@@ -419,7 +419,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get paywall_privacy => '개인정보 보호정책';
 
   @override
-  String get paywall_cancel_anytime => '언제든지 취소 가능. 약관이 적용됩니다.';
+  String get paywall_cancel_anytime => '언제든지 취소 가능';
 
   @override
   String get paywall_loading => '구독 플랜을 불러오는 중...';
