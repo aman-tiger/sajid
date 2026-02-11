@@ -20,23 +20,31 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
       
-      - name: Fix iOS deployment target
+      - name: Fix iOS deployment target to 15.0
         run: |
           echo "🔧 Setting iOS deployment target to 15.0..."
-          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile || \
-          sed -i '' "s/# platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
-          echo "📄 Podfile platform setting:"
+          
+          # Replace iOS version in Podfile
+          if grep -q "platform :ios" ios/Podfile; then
+            sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
+          else
+            sed -i '' "s/# platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
+          fi
+          
+          echo "✅ iOS deployment target set to 15.0"
           grep "platform :ios" ios/Podfile
       
-      - name: Disable code signing in Podfile
+      - name: Configure Podfile to disable code signing
         run: |
-          # Backup original
+          echo "🔧 Configuring Podfile..."
+          
+          # Backup original Podfile
           cp ios/Podfile ios/Podfile.backup
           
-          # Remove existing post_install if present
+          # Remove any existing post_install block
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
           
-          # Add new post_install with code signing disabled
+          # Add new post_install block with code signing disabled
           cat >> ios/Podfile <<'EOF'
 
 post_install do |installer|
@@ -50,72 +58,85 @@ post_install do |installer|
 end
 EOF
           
-          echo "✅ Code signing disabled for Pods"
-          echo "📄 Podfile (last 15 lines):"
-          tail -15 ios/Podfile
+          echo "✅ Podfile configured"
       
-      - name: Import code signing certificate and provisioning profile
+      - name: Import signing certificate and provisioning profile
         env:
           IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
           IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
           IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
         run: |
+          # Create variables
           CERT_PATH="$RUNNER_TEMP/build_certificate.p12"
           PP_PATH="$RUNNER_TEMP/build_pp.mobileprovision"
           KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
           
+          # Decode certificate and provisioning profile from secrets
           echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
           echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PP_PATH"
           
+          # Create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
+          # Import certificate to keychain
           security import "$CERT_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+          
+          # CRITICAL: Allow codesign to access the keychain
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
+          # Set keychain as default
           security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain
           security default-keychain -s "$KEYCHAIN_PATH"
           
+          # Extract provisioning profile UUID and name
           PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< "$(security cms -D -i "$PP_PATH")")
           PROFILE_NAME=$(/usr/libexec/PlistBuddy -c 'Print :Name' /dev/stdin <<< "$(security cms -D -i "$PP_PATH")")
           
+          # Install provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp "$PP_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
           
+          # Export variables for next steps
           echo "PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
           echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
           echo "PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
           
-          echo "✅ Certificate and profile imported"
-          echo "📋 Profile: $PROFILE_NAME"
-          echo "🆔 UUID: $PROFILE_UUID"
+          echo "✅ Certificate and provisioning profile imported"
+          echo "📋 Profile Name: $PROFILE_NAME"
+          echo "🆔 Profile UUID: $PROFILE_UUID"
           
+          # Verify certificate is accessible
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
-      - name: Run pod install
+      - name: Install CocoaPods dependencies
         run: |
+          echo "📦 Installing pods..."
           cd ios
           pod install
           cd ..
       
       - name: Resolve Swift Package Dependencies
         run: |
+          echo "📦 Resolving Swift packages..."
           xcodebuild -resolvePackageDependencies \
             -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release
       
-      - name: Build and Archive
+      - name: Build iOS Archive
         env:
           IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
         run: |
-          echo "📦 Building archive..."
+          echo "🔨 Building iOS archive..."
           
+          # Unlock keychain before build
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
+          # Build archive using xcodebuild with manual code signing
           xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release \
@@ -129,7 +150,7 @@ EOF
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
             clean archive
           
-          echo "✅ Archive created"
+          echo "✅ Archive created successfully"
           ls -lh build-output/app.xcarchive
       
       - name: Export IPA
@@ -137,6 +158,9 @@ EOF
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
+          echo "📦 Creating ExportOptions.plist..."
+          
+          # Create ExportOptions.plist for App Store distribution
           cat > ExportOptions.plist <<EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -170,16 +194,18 @@ EOF
             -exportPath build-output/ios \
             -exportOptionsPlist ExportOptions.plist
           
+          # Verify IPA was created
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
-            echo "❌ Error: IPA not found"
+            echo "❌ Error: IPA file not found"
             exit 1
           fi
           
-          echo "✅ IPA exported: $IPA_PATH"
+          echo "✅ IPA exported successfully"
+          echo "📦 IPA Path: $IPA_PATH"
           ls -lh "$IPA_PATH"
       
-      - name: Upload IPA as artifact
+      - name: Upload IPA to GitHub Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ios-release-ipa
@@ -192,13 +218,27 @@ EOF
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.IOS_APP_STORE_ISSUER_ID }}
           APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.IOS_APP_STORE_KEY_BASE64 }}
         run: |
+          echo "🔑 Creating App Store Connect API key..."
+          
+          # Create API key file with proper naming
           API_KEY_PATH="$RUNNER_TEMP/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
           echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > "$API_KEY_PATH"
           
+          # Verify API key was created
+          if [ ! -f "$API_KEY_PATH" ]; then
+            echo "❌ Error: API key file not created"
+            exit 1
+          fi
+          
+          # Find IPA file
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           
           echo "📦 Uploading to TestFlight..."
+          echo "IPA: $IPA_PATH"
+          echo "Key ID: $APP_STORE_CONNECT_API_KEY_ID"
+          echo "Issuer ID: $APP_STORE_CONNECT_ISSUER_ID"
           
+          # Upload IPA to TestFlight using altool
           xcrun altool --upload-app \
             --type ios \
             --file "$IPA_PATH" \
@@ -206,16 +246,23 @@ EOF
             --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" \
             --verbose
           
-          echo "✅ Uploaded to TestFlight!"
+          echo "✅ Successfully uploaded to TestFlight!"
       
-      - name: Clean up
+      - name: Clean up keychain and temporary files
         if: always()
         run: |
+          echo "🧹 Cleaning up..."
+          
+          # Delete keychain
           if [ -n "$KEYCHAIN_PATH" ] && [ -f "$KEYCHAIN_PATH" ]; then
             security delete-keychain "$KEYCHAIN_PATH" 2>/dev/null || true
+            echo "✓ Keychain deleted"
           fi
+          
+          # Delete temporary files
           rm -f "$RUNNER_TEMP"/*.p12 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
           rm -f ExportOptions.plist 2>/dev/null || true
-          echo "🧹 Cleanup completed"
+          
+          echo "✅ Cleanup completed"
