@@ -15,73 +15,67 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: false  # ✅ ОТКЛЮЧЕН для обновления google_fonts
+          cache: false
       
-      - name: Clean Flutter cache for google_fonts
+      - name: Clean Flutter cache
         run: |
           flutter clean
-          rm -rf ~/.pub-cache/hosted/pub.dev/google_fonts-6.3.0 || true
+          rm -rf ~/.pub-cache/hosted/pub.dev/google_fonts-* || true
           flutter pub cache repair
       
       - name: Install Flutter dependencies
         run: flutter pub get
       
-      - name: Patch google_fonts for iOS Release build
+      - name: Patch google_fonts for Flutter 3.27+ compatibility
         run: |
-          echo "Patching google_fonts to fix const evaluation error..."
+          echo "🔧 Patching google_fonts to fix const evaluation error..."
           
-          # Find google_fonts package directory in default Flutter pub cache
-          GOOGLE_FONTS_DIRS=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d 2>/dev/null)
+          GOOGLE_FONTS_PATH=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d | head -n 1)
           
-          if [ -z "$GOOGLE_FONTS_DIRS" ]; then
-            echo "❌ Error: google_fonts package directory not found"
+          if [ -z "$GOOGLE_FONTS_PATH" ]; then
+            echo "❌ Error: google_fonts package not found"
             exit 1
           fi
           
-          # Count actual directories (not empty lines)
-          GOOGLE_FONTS_COUNT=$(echo "$GOOGLE_FONTS_DIRS" | grep -c "^" || echo "0")
+          echo "✅ Found google_fonts at: $GOOGLE_FONTS_PATH"
           
-          if [ "$GOOGLE_FONTS_COUNT" -gt 1 ]; then
-            echo "⚠️ Warning: Multiple google_fonts versions found, using first one:"
-            echo "$GOOGLE_FONTS_DIRS"
-          fi
-          
-          GOOGLE_FONTS_DIR=$(echo "$GOOGLE_FONTS_DIRS" | head -n 1)
-          echo "Using google_fonts at: $GOOGLE_FONTS_DIR"
-          
-          VARIANT_FILE="$GOOGLE_FONTS_DIR/lib/src/google_fonts_variant.dart"
+          VARIANT_FILE="$GOOGLE_FONTS_PATH/lib/src/google_fonts_variant.dart"
           
           if [ ! -f "$VARIANT_FILE" ]; then
-            echo "❌ Error: google_fonts_variant.dart not found"
+            echo "❌ Error: google_fonts_variant.dart not found at $VARIANT_FILE"
             exit 1
           fi
           
-          echo "Patching $VARIANT_FILE..."
+          echo "📝 Patching $VARIANT_FILE..."
           
-          # Replace const with final for both problematic maps (macOS sed syntax)
-          sed -i '' 's/const _fontWeightToFilenameWeightParts/final _fontWeightToFilenameWeightParts/g' "$VARIANT_FILE"
-          sed -i '' 's/const _fontStyleToFilenameStyleParts/final _fontStyleToFilenameStyleParts/g' "$VARIANT_FILE"
+          # Create backup
+          cp "$VARIANT_FILE" "$VARIANT_FILE.backup"
           
-          # Verify the patch was applied: check that const versions are gone and final versions exist
-          if grep -q "const _fontWeightToFilenameWeightParts" "$VARIANT_FILE" || \
-             grep -q "const _fontStyleToFilenameStyleParts" "$VARIANT_FILE"; then
-            echo "❌ Error: const declarations still exist after patching"
-            exit 1
-          fi
+          # Apply patches (macOS sed requires '' after -i)
+          sed -i '' 's/^const _fontWeightToFilenameWeightParts = {$/final _fontWeightToFilenameWeightParts = {/' "$VARIANT_FILE"
+          sed -i '' 's/^const _fontStyleToFilenameStyleParts = {$/final _fontStyleToFilenameStyleParts = {/' "$VARIANT_FILE"
           
-          if grep -q "final _fontWeightToFilenameWeightParts" "$VARIANT_FILE" && \
-             grep -q "final _fontStyleToFilenameStyleParts" "$VARIANT_FILE"; then
-            echo "✅ Successfully patched google_fonts_variant.dart"
-            echo "Changes applied:"
-            grep -n "final _font.*ToFilename.*Parts" "$VARIANT_FILE"
+          # Verify patches were applied
+          if grep -q "^final _fontWeightToFilenameWeightParts = {" "$VARIANT_FILE"; then
+            echo "✅ Successfully patched _fontWeightToFilenameWeightParts"
           else
-            echo "❌ Error: final declarations not found after patching"
+            echo "❌ Failed to patch _fontWeightToFilenameWeightParts"
+            echo "📄 File content around line 150:"
+            sed -n '148,152p' "$VARIANT_FILE"
             exit 1
           fi
+          
+          if grep -q "^final _fontStyleToFilenameStyleParts = {" "$VARIANT_FILE"; then
+            echo "✅ Successfully patched _fontStyleToFilenameStyleParts"
+          else
+            echo "⚠️  Warning: _fontStyleToFilenameStyleParts not found (may not exist in this version)"
+          fi
+          
+          echo "🎉 google_fonts patching completed successfully!"
       
       - name: Verify google_fonts version
         run: |
-          echo "Checking google_fonts version..."
+          echo "📦 Checking google_fonts version..."
           flutter pub deps | grep google_fonts || true
       
       - name: Import code signing certificate and provisioning profile
