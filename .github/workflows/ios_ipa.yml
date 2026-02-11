@@ -55,30 +55,36 @@ jobs:
           echo "PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
           
           echo "Certificate and provisioning profile imported"
-          echo "Profile name: $PROFILE_NAME"
-          echo "Profile UUID: $PROFILE_UUID"
-          
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
-      - name: Update iOS deployment target and configure Podfile
+      - name: Update Podfile for iOS 15 and code signing
         run: |
-          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile || true
+          cp ios/Podfile ios/Podfile.original
           
-          if ! grep -q "CODE_SIGNING_REQUIRED" ios/Podfile; then
-            echo "" >> ios/Podfile
-            echo "post_install do |installer|" >> ios/Podfile
-            echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
-            echo "    flutter_additional_ios_build_settings(target)" >> ios/Podfile
-            echo "    target.build_configurations.each do |config|" >> ios/Podfile
-            echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = \"NO\"" >> ios/Podfile
-            echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = \"NO\"" >> ios/Podfile
-            echo "    end" >> ios/Podfile
-            echo "  end" >> ios/Podfile
-            echo "end" >> ios/Podfile
-          fi
+          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
           
-          echo "Podfile updated"
-          tail -20 ios/Podfile
+          sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
+          
+          echo "" >> ios/Podfile
+          echo "post_install do |installer|" >> ios/Podfile
+          echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
+          echo "    flutter_additional_ios_build_settings(target)" >> ios/Podfile
+          echo "    target.build_configurations.each do |config|" >> ios/Podfile
+          echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = \"NO\"" >> ios/Podfile
+          echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = \"NO\"" >> ios/Podfile
+          echo "    end" >> ios/Podfile
+          echo "  end" >> ios/Podfile
+          echo "end" >> ios/Podfile
+          
+          echo "Podfile updated:"
+          tail -15 ios/Podfile
+      
+      - name: Install CocoaPods dependencies
+        run: |
+          cd ios
+          pod install
+          cd ..
+          echo "Pods installed"
       
       - name: Build and Archive with Xcode
         env:
@@ -88,8 +94,6 @@ jobs:
           echo "Creating Xcode archive..."
           
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
-          
-          cd ios && pod install && cd ..
           
           xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
@@ -104,7 +108,7 @@ jobs:
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
             clean archive
           
-          echo "Archive created successfully"
+          echo "Archive created"
           ls -lh build-output/app.xcarchive
       
       - name: Export IPA
@@ -132,10 +136,8 @@ jobs:
           echo '</dict>' >> ExportOptions.plist
           echo '</plist>' >> ExportOptions.plist
           
-          echo "ExportOptions.plist created"
           cat ExportOptions.plist
           
-          echo "Exporting IPA..."
           xcodebuild -exportArchive \
             -archivePath build-output/app.xcarchive \
             -exportPath build-output/ios \
@@ -143,7 +145,7 @@ jobs:
           
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
-            echo "Error: IPA file not found"
+            echo "Error: IPA not found"
             exit 1
           fi
           
@@ -177,7 +179,7 @@ jobs:
             --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" \
             --verbose
           
-          echo "Uploaded to TestFlight!"
+          echo "Uploaded!"
       
       - name: Clean up
         if: always()
@@ -189,4 +191,4 @@ jobs:
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
           rm -f ExportOptions.plist 2>/dev/null || true
-          echo "Cleanup completed"
+          echo "Cleanup done"
