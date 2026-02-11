@@ -297,7 +297,7 @@ packages:
     dependency: "direct main"
     description:
       name: google_fonts
-      sha256: df9763500dadba0155373e9cb44e202ce21bd9ed5de6bdbd05c5854e86839cb8
+      sha256: 0833bef2b64c813de4eb57903dc8db26a9a5f0f32bd9de506b7ba22a3f9c23d7
       url: "https://pub.dev"
     source: hosted
     version: "6.1.0"
