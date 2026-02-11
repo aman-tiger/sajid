@@ -30,19 +30,29 @@ jobs:
       
       - name: Disable code signing in Podfile (CRITICAL!)
         run: |
-          cat >> ios/Podfile <<'EOF'
+          # Backup original
+          cp ios/Podfile ios/Podfile.backup
           
-          post_install do |installer|
-            installer.pods_project.targets.each do |target|
-              flutter_additional_ios_build_settings(target)
-              target.build_configurations.each do |config|
-                config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
-                config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
-              end
-            end
-          end
-          EOF
+          # Remove existing post_install if present
+          sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
+          
+          # Add new post_install with code signing disabled
+          cat >> ios/Podfile <<'EOF'
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+      config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+    end
+  end
+end
+EOF
+          
           echo "✅ Code signing disabled for Pods"
+          echo "📄 Podfile (last 15 lines):"
+          tail -15 ios/Podfile
       
       - name: Import code signing certificate and provisioning profile
         env:
