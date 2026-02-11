@@ -47,7 +47,7 @@ jobs:
           # CRITICAL: Set key partition list to allow codesign access
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
-          # Set default keychain
+          # Add to keychain search list (both user and system)
           security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain
           security default-keychain -s "$KEYCHAIN_PATH"
           
@@ -105,9 +105,19 @@ jobs:
           cat ios/ExportOptions.plist
       
       - name: Build IPA
+        env:
+          # Force Flutter/Xcode to use our keychain
+          FLUTTER_XCODE_CODE_SIGN_STYLE: Manual
         run: |
           echo "🔨 Building IPA for release..."
-          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
+          
+          # Unlock keychain before build
+          security unlock-keychain -p "${{ secrets.IOS_KEYCHAIN_PASSWORD }}" "$KEYCHAIN_PATH"
+          
+          # Build with explicit keychain
+          flutter build ipa --release \
+            --export-options-plist=ios/ExportOptions.plist \
+            --verbose
           
           # Verify IPA was created
           IPA_PATH=$(find build/ios/ipa -name "*.ipa" | head -n 1)
