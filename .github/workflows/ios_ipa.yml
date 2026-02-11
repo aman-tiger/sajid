@@ -32,6 +32,25 @@ jobs:
           echo "📄 Podfile platform setting:"
           grep "platform :ios" ios/Podfile
       
+      - name: Configure Xcode project settings
+        env:
+          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+        run: |
+          echo "⚙️ Configuring Xcode project..."
+          
+          # Disable automatic code signing in project.pbxproj
+          sed -i '' 's/CODE_SIGN_STYLE = Automatic;/CODE_SIGN_STYLE = Manual;/g' ios/Runner.xcodeproj/project.pbxproj
+          
+          # Set development team
+          sed -i '' "s/DEVELOPMENT_TEAM = \"\";/DEVELOPMENT_TEAM = \"${IOS_TEAM_ID}\";/g" ios/Runner.xcodeproj/project.pbxproj
+          sed -i '' "s/DEVELOPMENT_TEAM = [^;]*;/DEVELOPMENT_TEAM = \"${IOS_TEAM_ID}\";/g" ios/Runner.xcodeproj/project.pbxproj
+          
+          # Set bundle identifier
+          sed -i '' "s/PRODUCT_BUNDLE_IDENTIFIER = [^;]*;/PRODUCT_BUNDLE_IDENTIFIER = \"${IOS_BUNDLE_ID}\";/g" ios/Runner.xcodeproj/project.pbxproj
+          
+          echo "✅ Xcode project configured"
+      
       - name: Import code signing certificate and provisioning profile
         env:
           IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
@@ -83,27 +102,29 @@ jobs:
           # Verify certificate
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
-      - name: Build Flutter for iOS
-        run: |
-          echo "🔨 Building Flutter iOS framework..."
-          flutter build ios --release --no-codesign
-      
-      - name: Create archive with Xcode
+      - name: Build and Archive with Xcode
         env:
           IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
+          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
-          echo "📦 Creating Xcode archive..."
+          echo "🔨 Building and archiving iOS app..."
           
           # Unlock keychain
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
-          # Build archive
+          # Build and archive directly with xcodebuild
           xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release \
             -archivePath build/ios/Runner.xcarchive \
-            -allowProvisioningUpdates \
-            OTHER_CODE_SIGN_FLAGS="--keychain $KEYCHAIN_PATH" \
+            -destination 'generic/platform=iOS' \
+            DEVELOPMENT_TEAM="${IOS_TEAM_ID}" \
+            PRODUCT_BUNDLE_IDENTIFIER="${IOS_BUNDLE_ID}" \
+            CODE_SIGN_STYLE=Manual \
+            PROVISIONING_PROFILE_SPECIFIER="${PROFILE_NAME}" \
+            CODE_SIGN_IDENTITY="Apple Distribution" \
+            OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
             archive
           
           echo "✅ Archive created successfully"
