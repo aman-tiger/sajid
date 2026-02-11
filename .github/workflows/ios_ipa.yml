@@ -24,7 +24,6 @@ jobs:
         run: |
           echo "🔧 Setting iOS deployment target to 15.0..."
           
-          # Replace iOS version in Podfile
           if grep -q "platform :ios" ios/Podfile; then
             sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
           else
@@ -38,14 +37,11 @@ jobs:
         run: |
           echo "🔧 Configuring Podfile..."
           
-          # Backup original Podfile
           cp ios/Podfile ios/Podfile.backup
           
-          # Remove any existing post_install block
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
           
-          # Add new post_install block with code signing disabled
-          cat >> ios/Podfile <<'EOF'
+          cat >> ios/Podfile <<'PODFILE_EOF'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
@@ -56,7 +52,7 @@ post_install do |installer|
     end
   end
 end
-EOF
+PODFILE_EOF
           
           echo "✅ Podfile configured"
       
@@ -67,39 +63,30 @@ EOF
           IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
         run: |
-          # Create variables
           CERT_PATH="$RUNNER_TEMP/build_certificate.p12"
           PP_PATH="$RUNNER_TEMP/build_pp.mobileprovision"
           KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
           
-          # Decode certificate and provisioning profile from secrets
           echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
           echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PP_PATH"
           
-          # Create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
-          # Import certificate to keychain
           security import "$CERT_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
           
-          # CRITICAL: Allow codesign to access the keychain
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
-          # Set keychain as default
           security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain
           security default-keychain -s "$KEYCHAIN_PATH"
           
-          # Extract provisioning profile UUID and name
           PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< "$(security cms -D -i "$PP_PATH")")
           PROFILE_NAME=$(/usr/libexec/PlistBuddy -c 'Print :Name' /dev/stdin <<< "$(security cms -D -i "$PP_PATH")")
           
-          # Install provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp "$PP_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
           
-          # Export variables for next steps
           echo "PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
           echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
           echo "PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
@@ -108,7 +95,6 @@ EOF
           echo "📋 Profile Name: $PROFILE_NAME"
           echo "🆔 Profile UUID: $PROFILE_UUID"
           
-          # Verify certificate is accessible
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
       - name: Install CocoaPods dependencies
@@ -133,10 +119,8 @@ EOF
         run: |
           echo "🔨 Building iOS archive..."
           
-          # Unlock keychain before build
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
-          # Build archive using xcodebuild with manual code signing
           xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release \
@@ -160,8 +144,7 @@ EOF
         run: |
           echo "📦 Creating ExportOptions.plist..."
           
-          # Create ExportOptions.plist for App Store distribution
-          cat > ExportOptions.plist <<EOF
+          cat > ExportOptions.plist <<EXPORT_EOF
           <?xml version="1.0" encoding="UTF-8"?>
           <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
           <plist version="1.0">
@@ -183,7 +166,7 @@ EOF
             </dict>
           </dict>
           </plist>
-          EOF
+EXPORT_EOF
           
           echo "📄 ExportOptions.plist:"
           cat ExportOptions.plist
@@ -194,7 +177,6 @@ EOF
             -exportPath build-output/ios \
             -exportOptionsPlist ExportOptions.plist
           
-          # Verify IPA was created
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
             echo "❌ Error: IPA file not found"
@@ -220,17 +202,14 @@ EOF
         run: |
           echo "🔑 Creating App Store Connect API key..."
           
-          # Create API key file with proper naming
           API_KEY_PATH="$RUNNER_TEMP/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
           echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > "$API_KEY_PATH"
           
-          # Verify API key was created
           if [ ! -f "$API_KEY_PATH" ]; then
             echo "❌ Error: API key file not created"
             exit 1
           fi
           
-          # Find IPA file
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           
           echo "📦 Uploading to TestFlight..."
@@ -238,7 +217,6 @@ EOF
           echo "Key ID: $APP_STORE_CONNECT_API_KEY_ID"
           echo "Issuer ID: $APP_STORE_CONNECT_ISSUER_ID"
           
-          # Upload IPA to TestFlight using altool
           xcrun altool --upload-app \
             --type ios \
             --file "$IPA_PATH" \
@@ -253,13 +231,11 @@ EOF
         run: |
           echo "🧹 Cleaning up..."
           
-          # Delete keychain
           if [ -n "$KEYCHAIN_PATH" ] && [ -f "$KEYCHAIN_PATH" ]; then
             security delete-keychain "$KEYCHAIN_PATH" 2>/dev/null || true
             echo "✓ Keychain deleted"
           fi
           
-          # Delete temporary files
           rm -f "$RUNNER_TEMP"/*.p12 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
