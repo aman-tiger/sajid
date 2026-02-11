@@ -15,10 +15,21 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: true
+          cache: false  # ✅ ОТКЛЮЧЕН для обновления google_fonts
+      
+      - name: Clean Flutter cache for google_fonts
+        run: |
+          flutter clean
+          rm -rf ~/.pub-cache/hosted/pub.dev/google_fonts-6.3.0 || true
+          flutter pub cache repair
       
       - name: Install Flutter dependencies
         run: flutter pub get
+      
+      - name: Verify google_fonts version
+        run: |
+          echo "Checking google_fonts version..."
+          flutter pub deps | grep google_fonts || true
       
       - name: Import code signing certificate and provisioning profile
         env:
@@ -46,6 +57,7 @@ jobs:
           
           PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
           PROFILE_NAME=$(/usr/libexec/PlistBuddy -c 'Print :Name' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
+          PROFILE_BUNDLE_ID=$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")" | sed 's/.*\.//')
           
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
@@ -53,8 +65,13 @@ jobs:
           echo "PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
           echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
           echo "PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
+          echo "PROFILE_BUNDLE_ID=$PROFILE_BUNDLE_ID" >> "$GITHUB_ENV"
           
           echo "Certificate and provisioning profile imported"
+          echo "Profile name: $PROFILE_NAME"
+          echo "Profile UUID: $PROFILE_UUID"
+          echo "Profile Bundle ID: $PROFILE_BUNDLE_ID"
+          
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
       - name: Update Podfile for iOS 15 and code signing
@@ -76,7 +93,7 @@ jobs:
           echo "  end" >> ios/Podfile
           echo "end" >> ios/Podfile
           
-          echo "Podfile updated:"
+          echo "Podfile updated"
           tail -15 ios/Podfile
       
       - name: Install CocoaPods dependencies
@@ -90,8 +107,11 @@ jobs:
         env:
           IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
           echo "Creating Xcode archive..."
+          echo "Using Bundle ID: ${IOS_BUNDLE_ID}"
+          echo "Using Profile: ${PROFILE_NAME}"
           
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
@@ -101,14 +121,22 @@ jobs:
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
             -archivePath build-output/app.xcarchive \
-            PROVISIONING_PROFILE="${PROFILE_UUID}" \
+            PRODUCT_BUNDLE_IDENTIFIER="${IOS_BUNDLE_ID}" \
+            PROVISIONING_PROFILE_SPECIFIER="${PROFILE_NAME}" \
             CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM="${IOS_TEAM_ID}" \
             CODE_SIGN_IDENTITY="Apple Distribution" \
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
-            clean archive
+            -allowProvisioningUpdates \
+            clean archive 2>&1 | tee build.log
           
-          echo "Archive created"
+          if [ ! -d "build-output/app.xcarchive" ]; then
+            echo "❌ Archive failed! Last 100 lines of build log:"
+            tail -100 build.log
+            exit 1
+          fi
+          
+          echo "✅ Archive created successfully"
           ls -lh build-output/app.xcarchive
       
       - name: Export IPA
@@ -131,25 +159,28 @@ jobs:
           echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
           echo '  <dict>' >> ExportOptions.plist
           echo "    <key>${IOS_BUNDLE_ID}</key>" >> ExportOptions.plist
-          echo "    <string>${PROFILE_UUID}</string>" >> ExportOptions.plist
+          echo "    <string>${PROFILE_NAME}</string>" >> ExportOptions.plist
           echo '  </dict>' >> ExportOptions.plist
           echo '</dict>' >> ExportOptions.plist
           echo '</plist>' >> ExportOptions.plist
           
+          echo "ExportOptions.plist:"
           cat ExportOptions.plist
           
+          echo "Exporting IPA..."
           xcodebuild -exportArchive \
             -archivePath build-output/app.xcarchive \
             -exportPath build-output/ios \
-            -exportOptionsPlist ExportOptions.plist
+            -exportOptionsPlist ExportOptions.plist \
+            -allowProvisioningUpdates
           
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
-            echo "Error: IPA not found"
+            echo "❌ Error: IPA not found"
             exit 1
           fi
           
-          echo "IPA exported: $IPA_PATH"
+          echo "✅ IPA exported: $IPA_PATH"
           ls -lh "$IPA_PATH"
       
       - name: Upload IPA as artifact
@@ -179,7 +210,7 @@ jobs:
             --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" \
             --verbose
           
-          echo "Uploaded!"
+          echo "✅ Uploaded to TestFlight!"
       
       - name: Clean up
         if: always()
@@ -191,4 +222,5 @@ jobs:
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
           rm -f ExportOptions.plist 2>/dev/null || true
+          rm -f build.log 2>/dev/null || true
           echo "Cleanup done"
