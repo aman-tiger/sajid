@@ -39,7 +39,6 @@ jobs:
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
           security import "$CERT_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
-          
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
           security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain
@@ -55,31 +54,27 @@ jobs:
           echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
           echo "PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
           
-          echo "✅ Certificate and provisioning profile imported successfully"
-          echo "📋 Profile name: $PROFILE_NAME"
-          echo "🆔 Profile UUID: $PROFILE_UUID"
+          echo "Certificate and provisioning profile imported"
+          echo "Profile name: $PROFILE_NAME"
+          echo "Profile UUID: $PROFILE_UUID"
           
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
-      - name: Update iOS deployment target and disable Pod code signing
+      - name: Update iOS deployment target and configure Podfile
         run: |
-          # Update iOS version to 15.0
-          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile || echo "Platform already set"
+          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile || true
           
-          # Append to Podfile if post_install doesn't exist, otherwise skip
           if ! grep -q "CODE_SIGNING_REQUIRED" ios/Podfile; then
-            cat >> ios/Podfile << 'PODFILE_END'
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    flutter_additional_ios_build_settings(target)
-    target.build_configurations.each do |config|
-      config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
-      config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
-    end
-  end
-end
-PODFILE_END
+            echo "" >> ios/Podfile
+            echo "post_install do |installer|" >> ios/Podfile
+            echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
+            echo "    flutter_additional_ios_build_settings(target)" >> ios/Podfile
+            echo "    target.build_configurations.each do |config|" >> ios/Podfile
+            echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = \"NO\"" >> ios/Podfile
+            echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = \"NO\"" >> ios/Podfile
+            echo "    end" >> ios/Podfile
+            echo "  end" >> ios/Podfile
+            echo "end" >> ios/Podfile
           fi
           
           echo "Podfile updated"
@@ -90,7 +85,7 @@ PODFILE_END
           IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
         run: |
-          echo "📦 Creating Xcode archive..."
+          echo "Creating Xcode archive..."
           
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           
@@ -109,7 +104,7 @@ PODFILE_END
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
             clean archive
           
-          echo "✅ Archive created successfully"
+          echo "Archive created successfully"
           ls -lh build-output/app.xcarchive
       
       - name: Export IPA
@@ -117,32 +112,30 @@ PODFILE_END
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
-          cat > ExportOptions.plist << EXPORTEOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>method</key>
-  <string>app-store</string>
-  <key>teamID</key>
-  <string>${IOS_TEAM_ID}</string>
-  <key>uploadSymbols</key>
-  <true/>
-  <key>uploadBitcode</key>
-  <false/>
-  <key>provisioningProfiles</key>
-  <dict>
-    <key>${IOS_BUNDLE_ID}</key>
-    <string>${PROFILE_UUID}</string>
-  </dict>
-</dict>
-</plist>
-EXPORTEOF
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > ExportOptions.plist
+          echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> ExportOptions.plist
+          echo '<plist version="1.0">' >> ExportOptions.plist
+          echo '<dict>' >> ExportOptions.plist
+          echo '  <key>method</key>' >> ExportOptions.plist
+          echo '  <string>app-store</string>' >> ExportOptions.plist
+          echo '  <key>teamID</key>' >> ExportOptions.plist
+          echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
+          echo '  <key>uploadSymbols</key>' >> ExportOptions.plist
+          echo '  <true/>' >> ExportOptions.plist
+          echo '  <key>uploadBitcode</key>' >> ExportOptions.plist
+          echo '  <false/>' >> ExportOptions.plist
+          echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
+          echo '  <dict>' >> ExportOptions.plist
+          echo "    <key>${IOS_BUNDLE_ID}</key>" >> ExportOptions.plist
+          echo "    <string>${PROFILE_UUID}</string>" >> ExportOptions.plist
+          echo '  </dict>' >> ExportOptions.plist
+          echo '</dict>' >> ExportOptions.plist
+          echo '</plist>' >> ExportOptions.plist
           
-          echo "📄 ExportOptions.plist:"
+          echo "ExportOptions.plist created"
           cat ExportOptions.plist
           
-          echo "📦 Exporting IPA..."
+          echo "Exporting IPA..."
           xcodebuild -exportArchive \
             -archivePath build-output/app.xcarchive \
             -exportPath build-output/ios \
@@ -150,11 +143,11 @@ EXPORTEOF
           
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
-            echo "❌ Error: IPA file not found"
+            echo "Error: IPA file not found"
             exit 1
           fi
           
-          echo "✅ IPA exported: $IPA_PATH"
+          echo "IPA exported: $IPA_PATH"
           ls -lh "$IPA_PATH"
       
       - name: Upload IPA as artifact
@@ -175,7 +168,7 @@ EXPORTEOF
           
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           
-          echo "📦 Uploading to TestFlight..."
+          echo "Uploading to TestFlight..."
           
           xcrun altool --upload-app \
             --type ios \
@@ -184,7 +177,7 @@ EXPORTEOF
             --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" \
             --verbose
           
-          echo "✅ Uploaded to TestFlight!"
+          echo "Uploaded to TestFlight!"
       
       - name: Clean up
         if: always()
@@ -196,4 +189,4 @@ EXPORTEOF
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
           rm -f ExportOptions.plist 2>/dev/null || true
-          echo "🧹 Cleanup completed"
+          echo "Cleanup completed"
