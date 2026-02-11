@@ -43,10 +43,13 @@ jobs:
           
           # Import certificate to keychain
           security import "$CERT_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
-          security list-keychain -d user -s "$KEYCHAIN_PATH"
           
-          # Set key partition list to allow codesign to access the certificate
+          # CRITICAL: Set key partition list to allow codesign access
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          
+          # Set default keychain
+          security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain
+          security default-keychain -s "$KEYCHAIN_PATH"
           
           # Extract provisioning profile UUID and name
           PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
@@ -63,6 +66,9 @@ jobs:
           echo "✅ Certificate and provisioning profile imported successfully"
           echo "📋 Profile name: $PROFILE_NAME"
           echo "🆔 Profile UUID: $PROFILE_UUID"
+          
+          # Verify certificate
+          security find-identity -v -p codesigning "$KEYCHAIN_PATH"
       
       - name: Create ExportOptions.plist
         env:
@@ -149,7 +155,7 @@ jobs:
           echo "Key ID: $APP_STORE_CONNECT_API_KEY_ID"
           echo "Issuer ID: $APP_STORE_CONNECT_ISSUER_ID"
           
-          # Upload using altool (will be replaced by notarytool in future)
+          # Upload using altool
           xcrun altool --upload-app \
             --type ios \
             --file "$IPA_PATH" \
