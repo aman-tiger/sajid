@@ -26,6 +26,44 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
       
+      - name: Patch google_fonts for iOS Release build
+        run: |
+          echo "Patching google_fonts to fix const evaluation error..."
+          
+          # Find google_fonts package directory
+          GOOGLE_FONTS_DIR=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d | head -n 1)
+          
+          if [ -z "$GOOGLE_FONTS_DIR" ]; then
+            echo "❌ Error: google_fonts package directory not found"
+            exit 1
+          fi
+          
+          echo "Found google_fonts at: $GOOGLE_FONTS_DIR"
+          
+          VARIANT_FILE="$GOOGLE_FONTS_DIR/lib/src/google_fonts_variant.dart"
+          
+          if [ ! -f "$VARIANT_FILE" ]; then
+            echo "❌ Error: google_fonts_variant.dart not found"
+            exit 1
+          fi
+          
+          echo "Patching $VARIANT_FILE..."
+          
+          # Replace const with final for both problematic maps
+          sed -i '' 's/const _fontWeightToFilenameWeightParts/final _fontWeightToFilenameWeightParts/g' "$VARIANT_FILE"
+          sed -i '' 's/const _fontStyleToFilenameStyleParts/final _fontStyleToFilenameStyleParts/g' "$VARIANT_FILE"
+          
+          # Verify the patch was applied
+          if grep -q "final _fontWeightToFilenameWeightParts" "$VARIANT_FILE" && \
+             grep -q "final _fontStyleToFilenameStyleParts" "$VARIANT_FILE"; then
+            echo "✅ Successfully patched google_fonts_variant.dart"
+            echo "Changes applied:"
+            grep -n "final _font.*ToFilename.*Parts" "$VARIANT_FILE"
+          else
+            echo "❌ Error: Patch verification failed"
+            exit 1
+          fi
+      
       - name: Verify google_fonts version
         run: |
           echo "Checking google_fonts version..."
