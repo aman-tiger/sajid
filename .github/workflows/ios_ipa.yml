@@ -186,49 +186,59 @@ jobs:
           echo "✅ Archive created successfully"
           ls -lh build-output/app.xcarchive
       
-      - name: Export IPA
-        env:
-          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
-          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
-        run: |
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > ExportOptions.plist
-          echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> ExportOptions.plist
-          echo '<plist version="1.0">' >> ExportOptions.plist
-          echo '<dict>' >> ExportOptions.plist
-          echo '  <key>method</key>' >> ExportOptions.plist
-          echo '  <string>app-store</string>' >> ExportOptions.plist
-          echo '  <key>teamID</key>' >> ExportOptions.plist
-          echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
-          echo '  <key>uploadSymbols</key>' >> ExportOptions.plist
-          echo '  <true/>' >> ExportOptions.plist
-          echo '  <key>uploadBitcode</key>' >> ExportOptions.plist
-          echo '  <false/>' >> ExportOptions.plist
-          echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
-          echo '  <dict>' >> ExportOptions.plist
-          echo "    <key>${IOS_BUNDLE_ID}</key>" >> ExportOptions.plist
-          echo "    <string>${PROFILE_NAME}</string>" >> ExportOptions.plist
-          echo '  </dict>' >> ExportOptions.plist
-          echo '</dict>' >> ExportOptions.plist
-          echo '</plist>' >> ExportOptions.plist
-          
-          echo "ExportOptions.plist:"
-          cat ExportOptions.plist
-          
-          echo "Exporting IPA..."
-          xcodebuild -exportArchive \
-            -archivePath build-output/app.xcarchive \
-            -exportPath build-output/ios \
-            -exportOptionsPlist ExportOptions.plist \
-            -allowProvisioningUpdates
-          
-          IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
-          if [ -z "$IPA_PATH" ]; then
-            echo "❌ Error: IPA not found"
-            exit 1
-          fi
-          
-          echo "✅ IPA exported: $IPA_PATH"
-          ls -lh "$IPA_PATH"
+   - name: Export IPA
+  env:
+    IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+    IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+  run: |
+    cat > ExportOptions.plist <<EOF
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+      <key>method</key>
+      <string>app-store-connect</string>
+      <key>teamID</key>
+      <string>${IOS_TEAM_ID}</string>
+      <key>uploadSymbols</key>
+      <true/>
+      <key>uploadBitcode</key>
+      <false/>
+      <key>signingStyle</key>
+      <string>manual</string>
+      <key>stripSwiftSymbols</key>
+      <true/>
+      <key>manageAppVersionAndBuildNumber</key>
+      <false/>
+      <key>provisioningProfiles</key>
+      <dict>
+        <key>${IOS_BUNDLE_ID}</key>
+        <string>${PROFILE_NAME}</string>
+      </dict>
+      <key>signingCertificate</key>
+      <string>Apple Distribution</string>
+    </dict>
+    </plist>
+    EOF
+    
+    echo "ExportOptions.plist:"
+    cat ExportOptions.plist
+    
+    echo "Exporting IPA..."
+    xcodebuild -exportArchive \
+      -archivePath build-output/app.xcarchive \
+      -exportPath build-output/ios \
+      -exportOptionsPlist ExportOptions.plist \
+      -allowProvisioningUpdates
+    
+    IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
+    if [ -z "$IPA_PATH" ]; then
+      echo "❌ Error: IPA not found"
+      exit 1
+    fi
+    
+    echo "✅ IPA exported: $IPA_PATH"
+    ls -lh "$IPA_PATH"
       
       - name: Upload IPA as artifact
         uses: actions/upload-artifact@v4
