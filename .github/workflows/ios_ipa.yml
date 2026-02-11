@@ -26,6 +26,59 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
       
+      - name: Patch google_fonts for iOS Release build
+        run: |
+          echo "Patching google_fonts to fix const evaluation error..."
+          
+          # Find google_fonts package directory in default Flutter pub cache
+          GOOGLE_FONTS_DIRS=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d 2>/dev/null)
+          
+          if [ -z "$GOOGLE_FONTS_DIRS" ]; then
+            echo "❌ Error: google_fonts package directory not found"
+            exit 1
+          fi
+          
+          # Count actual directories (not empty lines)
+          GOOGLE_FONTS_COUNT=$(echo "$GOOGLE_FONTS_DIRS" | grep -c "^" || echo "0")
+          
+          if [ "$GOOGLE_FONTS_COUNT" -gt 1 ]; then
+            echo "⚠️ Warning: Multiple google_fonts versions found, using first one:"
+            echo "$GOOGLE_FONTS_DIRS"
+          fi
+          
+          GOOGLE_FONTS_DIR=$(echo "$GOOGLE_FONTS_DIRS" | head -n 1)
+          echo "Using google_fonts at: $GOOGLE_FONTS_DIR"
+          
+          VARIANT_FILE="$GOOGLE_FONTS_DIR/lib/src/google_fonts_variant.dart"
+          
+          if [ ! -f "$VARIANT_FILE" ]; then
+            echo "❌ Error: google_fonts_variant.dart not found"
+            exit 1
+          fi
+          
+          echo "Patching $VARIANT_FILE..."
+          
+          # Replace const with final for both problematic maps (macOS sed syntax)
+          sed -i '' 's/const _fontWeightToFilenameWeightParts/final _fontWeightToFilenameWeightParts/g' "$VARIANT_FILE"
+          sed -i '' 's/const _fontStyleToFilenameStyleParts/final _fontStyleToFilenameStyleParts/g' "$VARIANT_FILE"
+          
+          # Verify the patch was applied: check that const versions are gone and final versions exist
+          if grep -q "const _fontWeightToFilenameWeightParts" "$VARIANT_FILE" || \
+             grep -q "const _fontStyleToFilenameStyleParts" "$VARIANT_FILE"; then
+            echo "❌ Error: const declarations still exist after patching"
+            exit 1
+          fi
+          
+          if grep -q "final _fontWeightToFilenameWeightParts" "$VARIANT_FILE" && \
+             grep -q "final _fontStyleToFilenameStyleParts" "$VARIANT_FILE"; then
+            echo "✅ Successfully patched google_fonts_variant.dart"
+            echo "Changes applied:"
+            grep -n "final _font.*ToFilename.*Parts" "$VARIANT_FILE"
+          else
+            echo "❌ Error: final declarations not found after patching"
+            exit 1
+          fi
+      
       - name: Verify google_fonts version
         run: |
           echo "Checking google_fonts version..."
