@@ -1,52 +1,73 @@
 name: iOS IPA (Release)
+
 on:
   workflow_dispatch:
+
 jobs:
   build-ipa:
     runs-on: macos-latest
+    
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
       
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+          cache: true
       
-      - name: Install Dependencies
+      - name: Install Flutter dependencies
         run: flutter pub get
       
-      - name: Import Signing Certificate and Provisioning Profile
+      - name: Import code signing certificate and provisioning profile
         env:
           IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
           IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
           IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
         run: |
-          CERT_PATH="$RUNNER_TEMP/ios_cert.p12"
+          # Paths
+          CERT_PATH="$RUNNER_TEMP/ios_distribution.p12"
           PROFILE_PATH="$RUNNER_TEMP/profile.mobileprovision"
-          KEYCHAIN_PATH="$RUNNER_TEMP/build.keychain-db"
+          KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
           
+          # Decode certificate and provisioning profile
           echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
           echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
           
+          # Create temporary keychain
           security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          
+          # Import certificate to keychain
           security import "$CERT_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
           security list-keychain -d user -s "$KEYCHAIN_PATH"
           
+          # Set key partition list to allow codesign to access the certificate
+          security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+          
+          # Extract provisioning profile UUID and name
           PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
           PROFILE_NAME=$(/usr/libexec/PlistBuddy -c 'Print :Name' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
           
+          # Install provisioning profile
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
           
+          # Export variables for next steps
           echo "PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
+          echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
+          
+          echo "✅ Certificate and provisioning profile imported successfully"
+          echo "📋 Profile name: $PROFILE_NAME"
+          echo "🆔 Profile UUID: $PROFILE_UUID"
       
       - name: Create ExportOptions.plist
         env:
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
           cat > ios/ExportOptions.plist <<EOF
           <?xml version="1.0" encoding="UTF-8"?>
@@ -61,21 +82,43 @@ jobs:
             <string>${IOS_TEAM_ID}</string>
             <key>provisioningProfiles</key>
             <dict>
-              <key>com.hidavo.neverever</key>
+              <key>${IOS_BUNDLE_ID}</key>
               <string>${PROFILE_NAME}</string>
             </dict>
+            <key>uploadSymbols</key>
+            <true/>
+            <key>uploadBitcode</key>
+            <false/>
+            <key>compileBitcode</key>
+            <false/>
           </dict>
           </plist>
           EOF
+          
+          echo "📄 ExportOptions.plist created:"
+          cat ios/ExportOptions.plist
       
       - name: Build IPA
-        run: flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
+        run: |
+          echo "🔨 Building IPA for release..."
+          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
+          
+          # Verify IPA was created
+          IPA_PATH=$(find build/ios/ipa -name "*.ipa" | head -n 1)
+          if [ -z "$IPA_PATH" ]; then
+            echo "❌ Error: IPA file not found"
+            exit 1
+          fi
+          
+          echo "✅ IPA built successfully: $IPA_PATH"
+          ls -lh "$IPA_PATH"
       
-      - name: Upload IPA Artifact
+      - name: Upload IPA as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-ipa
+          name: ios-release-ipa
           path: build/ios/ipa/*.ipa
+          retention-days: 30
       
       - name: Upload to TestFlight
         env:
@@ -83,14 +126,51 @@ jobs:
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.IOS_APP_STORE_ISSUER_ID }}
           APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.IOS_APP_STORE_KEY_BASE64 }}
         run: |
-          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > AuthKey.p8
+          # Create API key file with proper naming
+          API_KEY_PATH="$RUNNER_TEMP/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
+          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > "$API_KEY_PATH"
+          
+          # Verify API key was created
+          if [ ! -f "$API_KEY_PATH" ]; then
+            echo "❌ Error: API key file not created"
+            exit 1
+          fi
+          
+          # Find IPA file
+          IPA_PATH=$(find build/ios/ipa -name "*.ipa" | head -n 1)
+          
+          if [ -z "$IPA_PATH" ]; then
+            echo "❌ Error: IPA file not found"
+            exit 1
+          fi
+          
+          echo "📦 Uploading to TestFlight..."
+          echo "IPA: $IPA_PATH"
+          echo "Key ID: $APP_STORE_CONNECT_API_KEY_ID"
+          echo "Issuer ID: $APP_STORE_CONNECT_ISSUER_ID"
+          
+          # Upload using altool (will be replaced by notarytool in future)
           xcrun altool --upload-app \
             --type ios \
-            --file build/ios/ipa/*.ipa \
+            --file "$IPA_PATH" \
             --apiKey "$APP_STORE_CONNECT_API_KEY_ID" \
-            --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID"
+            --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" \
+            --verbose
+          
+          echo "✅ Upload to TestFlight completed successfully!"
       
-      - name: Clean up keychain
+      - name: Clean up sensitive files
         if: always()
         run: |
-          security delete-keychain "$RUNNER_TEMP/build.keychain-db" || true
+          # Delete keychain
+          if [ -n "$KEYCHAIN_PATH" ] && [ -f "$KEYCHAIN_PATH" ]; then
+            security delete-keychain "$KEYCHAIN_PATH" 2>/dev/null || true
+            echo "🧹 Keychain deleted"
+          fi
+          
+          # Delete temporary files
+          rm -f "$RUNNER_TEMP"/*.p12 2>/dev/null || true
+          rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
+          rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
+          
+          echo "🧹 Cleanup completed"
