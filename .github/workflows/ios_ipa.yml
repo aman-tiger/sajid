@@ -22,11 +22,11 @@ jobs:
       
       - name: Fix iOS deployment target
         run: |
-          echo "🔧 Setting iOS deployment target to 13.0..."
+          echo "🔧 Setting iOS deployment target to 15.0..."
           
           # Update Podfile
-          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '13.0'/" ios/Podfile || \
-          sed -i '' "s/# platform :ios, '[0-9.]*'/platform :ios, '13.0'/" ios/Podfile
+          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile || \
+          sed -i '' "s/# platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
           
           # Verify change
           echo "📄 Podfile platform setting:"
