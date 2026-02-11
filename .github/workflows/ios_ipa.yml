@@ -30,14 +30,16 @@ jobs:
         run: |
           echo "Patching google_fonts to fix const evaluation error..."
           
-          # Find google_fonts package directory
-          GOOGLE_FONTS_DIRS=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d)
-          GOOGLE_FONTS_COUNT=$(echo "$GOOGLE_FONTS_DIRS" | wc -l)
+          # Find google_fonts package directory in default Flutter pub cache
+          GOOGLE_FONTS_DIRS=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d 2>/dev/null)
           
           if [ -z "$GOOGLE_FONTS_DIRS" ]; then
             echo "❌ Error: google_fonts package directory not found"
             exit 1
           fi
+          
+          # Count actual directories (not empty lines)
+          GOOGLE_FONTS_COUNT=$(echo "$GOOGLE_FONTS_DIRS" | grep -c "^" || echo "0")
           
           if [ "$GOOGLE_FONTS_COUNT" -gt 1 ]; then
             echo "⚠️ Warning: Multiple google_fonts versions found, using first one:"
