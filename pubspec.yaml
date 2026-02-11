@@ -57,7 +57,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
 
   # Fonts
-  google_fonts: ^6.2.1
+  google_fonts: ^6.1.0
 
   # Local Storage
   shared_preferences: ^2.3.3
