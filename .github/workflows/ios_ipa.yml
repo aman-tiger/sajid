@@ -15,7 +15,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: falsea
+          cache: false
 
       - name: Clean Flutter cache
         run: |
@@ -114,41 +114,54 @@ jobs:
 
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
 
-      # Flutter build runs FIRST — it upgrades Podfile and runs pod install internally.
-      # We must patch the Podfile AFTER this step so our changes aren't overwritten.
-      - name: Flutter build iOS
-        run: flutter build ios --release --no-codesign
-
-      # Now patch the Podfile AFTER flutter build has finished modifying it.
-      # Pod frameworks cannot use provisioning profiles. We disable signing
-      # on pod targets only so the export step doesn't try to provision them.
-      # The main Runner app is signed via xcodebuild flags in the archive step.
-      - name: Disable signing on pod targets
+      - name: Update Podfile for iOS 15
         run: |
+          cp ios/Podfile ios/Podfile.original
+
+          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
+
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
 
-          echo "" >> ios/Podfile
-          echo "post_install do |installer|" >> ios/Podfile
-          echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
-          echo "    flutter_additional_ios_build_settings(target)" >> ios/Podfile
-          echo "    target.build_configurations.each do |config|" >> ios/Podfile
-          echo "      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'" >> ios/Podfile
-          echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'" >> ios/Podfile
-          echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'" >> ios/Podfile
-          echo "    end" >> ios/Podfile
-          echo "  end" >> ios/Podfile
-          echo "end" >> ios/Podfile
+          # Disable code signing on ALL pod targets.
+          # Third-party frameworks (Firebase, Sentry, etc.) are binary XCFrameworks
+          # and cannot have provisioning profiles assigned to them. Setting
+          # CODE_SIGNING_ALLOWED=NO here prevents xcodebuild from even attempting
+          # to sign them, which would otherwise cause "does not support provisioning
+          # profiles" errors at both archive and export time.
+          cat >> ios/Podfile << 'PODFILE_EOF'
 
-          echo "Podfile patched after flutter build:"
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+      config.build_settings['CODE_SIGNING_REQUIRED']      = 'NO'
+      config.build_settings['CODE_SIGNING_ALLOWED']       = 'NO'
+      config.build_settings['CODE_SIGN_IDENTITY']         = ''
+    end
+  end
+end
+PODFILE_EOF
+
+          echo "Podfile updated"
           tail -20 ios/Podfile
 
-      - name: Re-run pod install to apply signing overrides
+      - name: Install CocoaPods dependencies
         run: |
           cd ios
           pod install
           cd ..
-          echo "Pods reinstalled with signing overrides"
+          echo "Pods installed"
 
+      - name: Flutter build iOS (no codesign)
+        run: flutter build ios --release --no-codesign
+
+      # ─── Archive ────────────────────────────────────────────────────────────
+      # We sign ONLY the Runner app target here. Pod frameworks were built with
+      # CODE_SIGNING_ALLOWED=NO (set in the Podfile post_install hook above), so
+      # xcodebuild will skip them. Passing the same flags on the command line
+      # re-confirms the intent and prevents Xcode from overriding the Podfile
+      # settings for the pods during the archive phase.
       - name: Archive with Xcode (manual signing)
         env:
           IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
@@ -156,13 +169,14 @@ jobs:
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
           echo "Creating Xcode archive..."
-          echo "Bundle ID: ${IOS_BUNDLE_ID}"
-          echo "Profile: ${PROFILE_NAME}"
-          echo "Team: ${IOS_TEAM_ID}"
+          echo "Bundle ID : ${IOS_BUNDLE_ID}"
+          echo "Profile   : ${PROFILE_NAME}"
+          echo "Team      : ${IOS_TEAM_ID}"
 
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
 
-          xcodebuild -workspace ios/Runner.xcworkspace \
+          xcodebuild \
+            -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release \
             -sdk iphoneos \
@@ -185,6 +199,12 @@ jobs:
           echo "Archive created successfully"
           ls -lh build-output/app.xcarchive
 
+      # ─── Export ─────────────────────────────────────────────────────────────
+      # Key fix: stripSwiftSymbols + manageAppVersionAndBuildNumber are omitted
+      # intentionally. The critical change vs. the original is that we add
+      # "compileBitcode = false" (bitcode is deprecated and can cause export
+      # issues on newer Xcode), and we pass the profile via UUID rather than
+      # display name to avoid any ambiguity when multiple profiles are installed.
       - name: Export signed IPA
         env:
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
@@ -193,27 +213,36 @@ jobs:
         run: |
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
 
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > ExportOptions.plist
-          echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> ExportOptions.plist
-          echo '<plist version="1.0">' >> ExportOptions.plist
-          echo '<dict>' >> ExportOptions.plist
-          echo '  <key>method</key>' >> ExportOptions.plist
-          echo '  <string>app-store-connect</string>' >> ExportOptions.plist
-          echo '  <key>teamID</key>' >> ExportOptions.plist
-          echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
-          echo '  <key>signingStyle</key>' >> ExportOptions.plist
-          echo '  <string>manual</string>' >> ExportOptions.plist
-          echo '  <key>signingCertificate</key>' >> ExportOptions.plist
-          echo '  <string>Apple Distribution</string>' >> ExportOptions.plist
-          echo '  <key>uploadSymbols</key>' >> ExportOptions.plist
-          echo '  <true/>' >> ExportOptions.plist
-          echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
-          echo '  <dict>' >> ExportOptions.plist
-          echo "    <key>${IOS_BUNDLE_ID}</key>" >> ExportOptions.plist
-          echo "    <string>${PROFILE_NAME}</string>" >> ExportOptions.plist
-          echo '  </dict>' >> ExportOptions.plist
-          echo '</dict>' >> ExportOptions.plist
-          echo '</plist>' >> ExportOptions.plist
+          # Use UUID (not display name) to unambiguously identify the profile.
+          # This is the most reliable way to reference a provisioning profile
+          # in ExportOptions.plist and avoids "profile not found" edge cases.
+          cat > ExportOptions.plist << PLIST_EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>method</key>
+  <string>app-store-connect</string>
+  <key>teamID</key>
+  <string>${IOS_TEAM_ID}</string>
+  <key>signingStyle</key>
+  <string>manual</string>
+  <key>signingCertificate</key>
+  <string>Apple Distribution</string>
+  <key>compileBitcode</key>
+  <false/>
+  <key>uploadSymbols</key>
+  <true/>
+  <key>provisioningProfiles</key>
+  <dict>
+    <!-- Map ONLY the app bundle ID. Pod frameworks have no bundle IDs
+         and must never appear here — that is what caused the original error. -->
+    <key>${IOS_BUNDLE_ID}</key>
+    <string>${PROFILE_UUID}</string>
+  </dict>
+</dict>
+</plist>
+PLIST_EOF
 
           echo "ExportOptions.plist:"
           cat ExportOptions.plist
@@ -222,7 +251,14 @@ jobs:
           xcodebuild -exportArchive \
             -archivePath build-output/app.xcarchive \
             -exportPath build-output/ios \
-            -exportOptionsPlist ExportOptions.plist
+            -exportOptionsPlist ExportOptions.plist \
+            2>&1 | tee export.log
+
+          if [ $? -ne 0 ]; then
+            echo "Export failed! Full export log:"
+            cat export.log
+            exit 1
+          fi
 
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
@@ -233,6 +269,7 @@ jobs:
           echo "Signed IPA exported: $IPA_PATH"
           ls -lh "$IPA_PATH"
 
+          # Verify codesigning
           mkdir -p /tmp/ipa-check
           unzip -q "$IPA_PATH" -d /tmp/ipa-check
           APP_PATH=$(find /tmp/ipa-check/Payload -name "*.app" -maxdepth 1 | head -n 1)
@@ -253,12 +290,16 @@ jobs:
           APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.IOS_APP_STORE_KEY_BASE64 }}
         run: |
           mkdir -p ~/.private_keys
-          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > ~/.private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
+          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode \
+            > ~/.private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
 
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
 
           echo "Uploading to TestFlight..."
 
+          # xcrun altool is deprecated in Xcode 15+; use xcrun notarytool or
+          # the uploadSymbols path instead. altool is kept here for compatibility
+          # but will print a deprecation warning on recent Xcode versions.
           xcrun altool --upload-app \
             --type ios \
             --file "$IPA_PATH" \
@@ -278,5 +319,5 @@ jobs:
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
           rm -rf ~/.private_keys 2>/dev/null || true
           rm -f ExportOptions.plist 2>/dev/null || true
-          rm -f build.log 2>/dev/null || true
+          rm -f build.log export.log 2>/dev/null || true
           echo "Cleanup done"
