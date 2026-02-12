@@ -15,7 +15,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
-          cache: false
+          cache: falsea
 
       - name: Clean Flutter cache
         run: |
@@ -114,17 +114,19 @@ jobs:
 
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
 
-      - name: Update Podfile for iOS 15
+      # Flutter build runs FIRST — it upgrades Podfile and runs pod install internally.
+      # We must patch the Podfile AFTER this step so our changes aren't overwritten.
+      - name: Flutter build iOS
+        run: flutter build ios --release --no-codesign
+
+      # Now patch the Podfile AFTER flutter build has finished modifying it.
+      # Pod frameworks cannot use provisioning profiles. We disable signing
+      # on pod targets only so the export step doesn't try to provision them.
+      # The main Runner app is signed via xcodebuild flags in the archive step.
+      - name: Disable signing on pod targets
         run: |
-          cp ios/Podfile ios/Podfile.original
-
-          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
-
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
 
-          # Pod frameworks do NOT support provisioning profiles, so we must
-          # disable signing on pod targets only. The main Runner app target
-          # is signed normally via xcodebuild flags in the archive step.
           echo "" >> ios/Podfile
           echo "post_install do |installer|" >> ios/Podfile
           echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
@@ -137,18 +139,15 @@ jobs:
           echo "  end" >> ios/Podfile
           echo "end" >> ios/Podfile
 
-          echo "Podfile updated"
+          echo "Podfile patched after flutter build:"
           tail -20 ios/Podfile
 
-      - name: Install CocoaPods dependencies
+      - name: Re-run pod install to apply signing overrides
         run: |
           cd ios
           pod install
           cd ..
-          echo "Pods installed"
-
-      - name: Flutter build iOS
-        run: flutter build ios --release --no-codesign
+          echo "Pods reinstalled with signing overrides"
 
       - name: Archive with Xcode (manual signing)
         env:
