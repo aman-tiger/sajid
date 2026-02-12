@@ -6,78 +6,74 @@ on:
 jobs:
   build-ipa:
     runs-on: macos-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: false
-      
+
       - name: Clean Flutter cache
         run: |
           flutter clean
           rm -rf ~/.pub-cache/hosted/pub.dev/google_fonts-* || true
           flutter pub cache repair
-      
+
       - name: Install Flutter dependencies
         run: flutter pub get
-      
+
       - name: Patch google_fonts for Flutter 3.27+ compatibility
         run: |
-          echo "🔧 Patching google_fonts to fix const evaluation error..."
-          
+          echo "Patching google_fonts to fix const evaluation error..."
+
           GOOGLE_FONTS_PATH=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d | head -n 1)
-          
+
           if [ -z "$GOOGLE_FONTS_PATH" ]; then
-            echo "❌ Error: google_fonts package not found"
+            echo "Error: google_fonts package not found"
             exit 1
           fi
-          
-          echo "✅ Found google_fonts at: $GOOGLE_FONTS_PATH"
-          
+
+          echo "Found google_fonts at: $GOOGLE_FONTS_PATH"
+
           VARIANT_FILE="$GOOGLE_FONTS_PATH/lib/src/google_fonts_variant.dart"
-          
+
           if [ ! -f "$VARIANT_FILE" ]; then
-            echo "❌ Error: google_fonts_variant.dart not found at $VARIANT_FILE"
+            echo "Error: google_fonts_variant.dart not found at $VARIANT_FILE"
             exit 1
           fi
-          
-          echo "📝 Patching $VARIANT_FILE..."
-          
-          # Create backup
+
+          echo "Patching $VARIANT_FILE..."
+
           cp "$VARIANT_FILE" "$VARIANT_FILE.backup"
-          
-          # Apply patches (macOS sed requires '' after -i)
+
           sed -i '' 's/^const _fontWeightToFilenameWeightParts = {$/final _fontWeightToFilenameWeightParts = {/' "$VARIANT_FILE"
           sed -i '' 's/^const _fontStyleToFilenameStyleParts = {$/final _fontStyleToFilenameStyleParts = {/' "$VARIANT_FILE"
-          
-          # Verify patches were applied
+
           if grep -q "^final _fontWeightToFilenameWeightParts = {" "$VARIANT_FILE"; then
-            echo "✅ Successfully patched _fontWeightToFilenameWeightParts"
+            echo "Successfully patched _fontWeightToFilenameWeightParts"
           else
-            echo "❌ Failed to patch _fontWeightToFilenameWeightParts"
-            echo "📄 File content around line 150:"
+            echo "Failed to patch _fontWeightToFilenameWeightParts"
             sed -n '148,152p' "$VARIANT_FILE"
             exit 1
           fi
-          
+
           if grep -q "^final _fontStyleToFilenameStyleParts = {" "$VARIANT_FILE"; then
-            echo "✅ Successfully patched _fontStyleToFilenameStyleParts"
+            echo "Successfully patched _fontStyleToFilenameStyleParts"
           else
-            echo "⚠️  Warning: _fontStyleToFilenameStyleParts not found (may not exist in this version)"
+            echo "Warning: _fontStyleToFilenameStyleParts not found (may not exist in this version)"
           fi
-          
-          echo "🎉 google_fonts patching completed successfully!"
-      
+
+          echo "google_fonts patching completed"
+
       - name: Verify google_fonts version
         run: |
-          echo "📦 Checking google_fonts version..."
+          echo "Checking google_fonts version..."
           flutter pub deps | grep google_fonts || true
-      
+
       - name: Import code signing certificate and provisioning profile
         env:
           IOS_CERTIFICATE_BASE64: ${{ secrets.IOS_CERTIFICATE_BASE64 }}
@@ -88,80 +84,85 @@ jobs:
           CERT_PATH="$RUNNER_TEMP/ios_distribution.p12"
           PROFILE_PATH="$RUNNER_TEMP/profile.mobileprovision"
           KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
-          
+
           echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
           echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
-          
+
           security create-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
           security set-keychain-settings -lut 21600 "$KEYCHAIN_PATH"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
-          
+
           security import "$CERT_PATH" -P "$IOS_CERTIFICATE_PASSWORD" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
-          
+
           security list-keychain -d user -s "$KEYCHAIN_PATH" login.keychain
           security default-keychain -s "$KEYCHAIN_PATH"
-          
+
           PROFILE_UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
           PROFILE_NAME=$(/usr/libexec/PlistBuddy -c 'Print :Name' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")")
-          PROFILE_BUNDLE_ID=$(/usr/libexec/PlistBuddy -c 'Print :Entitlements:application-identifier' /dev/stdin <<< "$(security cms -D -i "$PROFILE_PATH")" | sed 's/.*\.//')
-          
+
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp "$PROFILE_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
-          
+
           echo "PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
           echo "KEYCHAIN_PATH=$KEYCHAIN_PATH" >> "$GITHUB_ENV"
           echo "PROFILE_UUID=$PROFILE_UUID" >> "$GITHUB_ENV"
-          echo "PROFILE_BUNDLE_ID=$PROFILE_BUNDLE_ID" >> "$GITHUB_ENV"
-          
+
           echo "Certificate and provisioning profile imported"
           echo "Profile name: $PROFILE_NAME"
           echo "Profile UUID: $PROFILE_UUID"
-          echo "Profile Bundle ID: $PROFILE_BUNDLE_ID"
-          
+
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
-      
-      - name: Update Podfile for iOS 15 and code signing
+
+      - name: Update Podfile for iOS 15
         run: |
           cp ios/Podfile ios/Podfile.original
-          
+
           sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
-          
+
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
-          
+
+          # Pod frameworks do NOT support provisioning profiles, so we must
+          # disable signing on pod targets only. The main Runner app target
+          # is signed normally via xcodebuild flags in the archive step.
           echo "" >> ios/Podfile
           echo "post_install do |installer|" >> ios/Podfile
           echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
           echo "    flutter_additional_ios_build_settings(target)" >> ios/Podfile
           echo "    target.build_configurations.each do |config|" >> ios/Podfile
-          echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = \"NO\"" >> ios/Podfile
-          echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = \"NO\"" >> ios/Podfile
+          echo "      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'" >> ios/Podfile
+          echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'" >> ios/Podfile
+          echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'" >> ios/Podfile
           echo "    end" >> ios/Podfile
           echo "  end" >> ios/Podfile
           echo "end" >> ios/Podfile
-          
+
           echo "Podfile updated"
-          tail -15 ios/Podfile
-      
+          tail -20 ios/Podfile
+
       - name: Install CocoaPods dependencies
         run: |
           cd ios
           pod install
           cd ..
           echo "Pods installed"
-      
-      - name: Build and Archive with Xcode
+
+      - name: Flutter build iOS
+        run: flutter build ios --release --no-codesign
+
+      - name: Archive with Xcode (manual signing)
         env:
           IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
         run: |
           echo "Creating Xcode archive..."
-          echo "Using Bundle ID: ${IOS_BUNDLE_ID}"
-          echo "Using Profile: ${PROFILE_NAME}"
-          
+          echo "Bundle ID: ${IOS_BUNDLE_ID}"
+          echo "Profile: ${PROFILE_NAME}"
+          echo "Team: ${IOS_TEAM_ID}"
+
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
-          
+
           xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -configuration Release \
@@ -174,35 +175,39 @@ jobs:
             DEVELOPMENT_TEAM="${IOS_TEAM_ID}" \
             CODE_SIGN_IDENTITY="Apple Distribution" \
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
-            -allowProvisioningUpdates \
-            clean archive 2>&1 | tee build.log
-          
+            archive 2>&1 | tee build.log
+
           if [ ! -d "build-output/app.xcarchive" ]; then
-            echo "❌ Archive failed! Last 100 lines of build log:"
+            echo "Archive failed! Last 100 lines of build log:"
             tail -100 build.log
             exit 1
           fi
-          
-          echo "✅ Archive created successfully"
+
+          echo "Archive created successfully"
           ls -lh build-output/app.xcarchive
-      
-      - name: Export IPA
+
+      - name: Export signed IPA
         env:
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+          IOS_KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
         run: |
+          security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
+
           echo '<?xml version="1.0" encoding="UTF-8"?>' > ExportOptions.plist
           echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> ExportOptions.plist
           echo '<plist version="1.0">' >> ExportOptions.plist
           echo '<dict>' >> ExportOptions.plist
           echo '  <key>method</key>' >> ExportOptions.plist
-          echo '  <string>app-store</string>' >> ExportOptions.plist
+          echo '  <string>app-store-connect</string>' >> ExportOptions.plist
           echo '  <key>teamID</key>' >> ExportOptions.plist
           echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
+          echo '  <key>signingStyle</key>' >> ExportOptions.plist
+          echo '  <string>manual</string>' >> ExportOptions.plist
+          echo '  <key>signingCertificate</key>' >> ExportOptions.plist
+          echo '  <string>Apple Distribution</string>' >> ExportOptions.plist
           echo '  <key>uploadSymbols</key>' >> ExportOptions.plist
           echo '  <true/>' >> ExportOptions.plist
-          echo '  <key>uploadBitcode</key>' >> ExportOptions.plist
-          echo '  <false/>' >> ExportOptions.plist
           echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
           echo '  <dict>' >> ExportOptions.plist
           echo "    <key>${IOS_BUNDLE_ID}</key>" >> ExportOptions.plist
@@ -210,55 +215,60 @@ jobs:
           echo '  </dict>' >> ExportOptions.plist
           echo '</dict>' >> ExportOptions.plist
           echo '</plist>' >> ExportOptions.plist
-          
+
           echo "ExportOptions.plist:"
           cat ExportOptions.plist
-          
-          echo "Exporting IPA..."
+
+          echo "Exporting signed IPA..."
           xcodebuild -exportArchive \
             -archivePath build-output/app.xcarchive \
             -exportPath build-output/ios \
-            -exportOptionsPlist ExportOptions.plist \
-            -allowProvisioningUpdates
-          
+            -exportOptionsPlist ExportOptions.plist
+
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
           if [ -z "$IPA_PATH" ]; then
-            echo "❌ Error: IPA not found"
+            echo "Error: IPA not found after export"
             exit 1
           fi
-          
-          echo "✅ IPA exported: $IPA_PATH"
+
+          echo "Signed IPA exported: $IPA_PATH"
           ls -lh "$IPA_PATH"
-      
+
+          mkdir -p /tmp/ipa-check
+          unzip -q "$IPA_PATH" -d /tmp/ipa-check
+          APP_PATH=$(find /tmp/ipa-check/Payload -name "*.app" -maxdepth 1 | head -n 1)
+          codesign -dvvv "$APP_PATH" 2>&1
+          rm -rf /tmp/ipa-check
+
       - name: Upload IPA as artifact
         uses: actions/upload-artifact@v4
         with:
           name: ios-release-ipa
           path: build-output/ios/*.ipa
           retention-days: 30
-      
+
       - name: Upload to TestFlight
         env:
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.IOS_APP_STORE_KEY_ID }}
           APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.IOS_APP_STORE_ISSUER_ID }}
           APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.IOS_APP_STORE_KEY_BASE64 }}
         run: |
-          API_KEY_PATH="$RUNNER_TEMP/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
-          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > "$API_KEY_PATH"
-          
+          mkdir -p ~/.private_keys
+          echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > ~/.private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
+
           IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
-          
+
           echo "Uploading to TestFlight..."
-          
+
           xcrun altool --upload-app \
             --type ios \
             --file "$IPA_PATH" \
             --apiKey "$APP_STORE_CONNECT_API_KEY_ID" \
             --apiIssuer "$APP_STORE_CONNECT_ISSUER_ID" \
             --verbose
-          
-          echo "✅ Uploaded to TestFlight!"
-      
+
+          echo "Uploaded to TestFlight successfully"
+
       - name: Clean up
         if: always()
         run: |
@@ -267,7 +277,7 @@ jobs:
           fi
           rm -f "$RUNNER_TEMP"/*.p12 2>/dev/null || true
           rm -f "$RUNNER_TEMP"/*.mobileprovision 2>/dev/null || true
-          rm -f "$RUNNER_TEMP"/AuthKey_*.p8 2>/dev/null || true
+          rm -rf ~/.private_keys 2>/dev/null || true
           rm -f ExportOptions.plist 2>/dev/null || true
           rm -f build.log 2>/dev/null || true
           echo "Cleanup done"
