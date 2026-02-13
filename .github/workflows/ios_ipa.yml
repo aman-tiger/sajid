@@ -149,6 +149,39 @@ jobs:
           cd ..
           echo "Pods installed"
 
+      - name: Signing preflight (fast fail)
+        env:
+          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+        run: |
+          PROFILE_PLIST="$RUNNER_TEMP/profile-decoded.plist"
+          security cms -D -i "$RUNNER_TEMP/profile.mobileprovision" > "$PROFILE_PLIST"
+
+          PROFILE_TEAM_ID=$(/usr/libexec/PlistBuddy -c "Print :TeamIdentifier:0" "$PROFILE_PLIST")
+          PROFILE_APP_ID=$(/usr/libexec/PlistBuddy -c "Print :Entitlements:application-identifier" "$PROFILE_PLIST")
+
+          echo "Profile team: $PROFILE_TEAM_ID"
+          echo "Profile app identifier: $PROFILE_APP_ID"
+          echo "Expected app identifier: ${IOS_TEAM_ID}.${IOS_BUNDLE_ID}"
+
+          if [ "$PROFILE_TEAM_ID" != "$IOS_TEAM_ID" ]; then
+            echo "Signing preflight failed: Team ID mismatch"
+            exit 1
+          fi
+
+          if [ "$PROFILE_APP_ID" != "${IOS_TEAM_ID}.${IOS_BUNDLE_ID}" ] && [ "$PROFILE_APP_ID" != "${IOS_TEAM_ID}.*" ]; then
+            echo "Signing preflight failed: Bundle ID is not covered by provisioning profile"
+            exit 1
+          fi
+
+          if grep -n "PROVISIONING_PROFILE_SPECIFIER = [^;]" ios/Pods/Pods.xcodeproj/project.pbxproj >/dev/null; then
+            echo "Signing preflight failed: Pods project still has provisioning profile specifiers"
+            grep -n "PROVISIONING_PROFILE_SPECIFIER = [^;]" ios/Pods/Pods.xcodeproj/project.pbxproj
+            exit 1
+          fi
+
+          echo "Signing preflight passed"
+
       - name: Flutter build iOS
         run: flutter build ios --release --no-codesign
 
@@ -171,11 +204,7 @@ jobs:
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
             -archivePath build-output/app.xcarchive \
-            PRODUCT_BUNDLE_IDENTIFIER="${IOS_BUNDLE_ID}" \
-            PROVISIONING_PROFILE_SPECIFIER="${PROFILE_NAME}" \
-            CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM="${IOS_TEAM_ID}" \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
             archive 2>&1 | tee build.log
 
@@ -209,16 +238,9 @@ jobs:
           echo '  <key>teamID</key>' >> ExportOptions.plist
           echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
           echo '  <key>signingStyle</key>' >> ExportOptions.plist
-          echo '  <string>manual</string>' >> ExportOptions.plist
-          echo '  <key>signingCertificate</key>' >> ExportOptions.plist
-          echo '  <string>Apple Distribution</string>' >> ExportOptions.plist
+          echo '  <string>automatic</string>' >> ExportOptions.plist
           echo '  <key>uploadSymbols</key>' >> ExportOptions.plist
           echo '  <true/>' >> ExportOptions.plist
-          echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
-          echo '  <dict>' >> ExportOptions.plist
-          echo "    <key>${APP_BUNDLE_ID}</key>" >> ExportOptions.plist
-          echo "    <string>${PROFILE_NAME}</string>" >> ExportOptions.plist
-          echo '  </dict>' >> ExportOptions.plist
           echo '</dict>' >> ExportOptions.plist
           echo '</plist>' >> ExportOptions.plist
 
