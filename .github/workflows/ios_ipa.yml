@@ -194,20 +194,29 @@ jobs:
         run: |
           security unlock-keychain -p "$IOS_KEYCHAIN_PASSWORD" "$KEYCHAIN_PATH"
 
+          APP_BUNDLE_ID=$(/usr/libexec/PlistBuddy -c "Print :ApplicationProperties:CFBundleIdentifier" build-output/app.xcarchive/Info.plist)
+          echo "Archive bundle ID: ${APP_BUNDLE_ID}"
+          echo "Provisioning profile: ${PROFILE_NAME}"
+
           echo '<?xml version="1.0" encoding="UTF-8"?>' > ExportOptions.plist
           echo '<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">' >> ExportOptions.plist
           echo '<plist version="1.0">' >> ExportOptions.plist
           echo '<dict>' >> ExportOptions.plist
           echo '  <key>method</key>' >> ExportOptions.plist
-          echo '  <string>app-store-connect</string>' >> ExportOptions.plist
+          echo '  <string>app-store</string>' >> ExportOptions.plist
           echo '  <key>teamID</key>' >> ExportOptions.plist
           echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
           echo '  <key>signingStyle</key>' >> ExportOptions.plist
-          echo '  <string>automatic</string>' >> ExportOptions.plist
+          echo '  <string>manual</string>' >> ExportOptions.plist
           echo '  <key>signingCertificate</key>' >> ExportOptions.plist
           echo '  <string>Apple Distribution</string>' >> ExportOptions.plist
           echo '  <key>uploadSymbols</key>' >> ExportOptions.plist
           echo '  <true/>' >> ExportOptions.plist
+          echo '  <key>provisioningProfiles</key>' >> ExportOptions.plist
+          echo '  <dict>' >> ExportOptions.plist
+          echo "    <key>${APP_BUNDLE_ID}</key>" >> ExportOptions.plist
+          echo "    <string>${PROFILE_NAME}</string>" >> ExportOptions.plist
+          echo '  </dict>' >> ExportOptions.plist
           echo '</dict>' >> ExportOptions.plist
           echo '</plist>' >> ExportOptions.plist
 
