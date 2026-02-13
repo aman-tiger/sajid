@@ -133,6 +133,8 @@ jobs:
           echo "      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'" >> ios/Podfile
           echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'" >> ios/Podfile
           echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'" >> ios/Podfile
+          echo "      config.build_settings['PROVISIONING_PROFILE_SPECIFIER'] = ''" >> ios/Podfile
+          echo "      config.build_settings['PROVISIONING_PROFILE'] = ''" >> ios/Podfile
           echo "    end" >> ios/Podfile
           echo "  end" >> ios/Podfile
           echo "end" >> ios/Podfile
@@ -203,7 +205,7 @@ jobs:
           echo '<plist version="1.0">' >> ExportOptions.plist
           echo '<dict>' >> ExportOptions.plist
           echo '  <key>method</key>' >> ExportOptions.plist
-          echo '  <string>app-store</string>' >> ExportOptions.plist
+          echo '  <string>app-store-connect</string>' >> ExportOptions.plist
           echo '  <key>teamID</key>' >> ExportOptions.plist
           echo "  <string>${IOS_TEAM_ID}</string>" >> ExportOptions.plist
           echo '  <key>signingStyle</key>' >> ExportOptions.plist
