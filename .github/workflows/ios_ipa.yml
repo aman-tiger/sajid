@@ -80,10 +80,11 @@ jobs:
           IOS_CERTIFICATE_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
           IOS_PROVISIONING_PROFILE_BASE64: ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }}
           KEYCHAIN_PASSWORD: ${{ secrets.IOS_KEYCHAIN_PASSWORD }}
+          IOS_KEYCHAIN_PATH: ${{ secrets.IOS_KEYCHAIN_PATH }}
         run: |
           CERT_PATH="$RUNNER_TEMP/ios_distribution.p12"
           PROFILE_PATH="$RUNNER_TEMP/profile.mobileprovision"
-          KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
+          KEYCHAIN_PATH="${IOS_KEYCHAIN_PATH:-$RUNNER_TEMP/app-signing.keychain-db}"
 
           echo "$IOS_CERTIFICATE_BASE64" | base64 --decode > "$CERT_PATH"
           echo "$IOS_PROVISIONING_PROFILE_BASE64" | base64 --decode > "$PROFILE_PATH"
@@ -123,8 +124,7 @@ jobs:
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
 
           # Pod frameworks do NOT support provisioning profiles, so we must
-          # disable signing on pod targets only. The main Runner app target
-          # is signed normally via xcodebuild flags in the archive step.
+          # disable signing on pod targets only.
           echo "" >> ios/Podfile
           echo "post_install do |installer|" >> ios/Podfile
           echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
@@ -153,6 +153,7 @@ jobs:
         env:
           IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+          IOS_PROFILE_NAME: ${{ secrets.IOS_PROFILE_NAME }}
         run: |
           PROFILE_PLIST="$RUNNER_TEMP/profile-decoded.plist"
           security cms -D -i "$RUNNER_TEMP/profile.mobileprovision" > "$PROFILE_PLIST"
@@ -163,6 +164,13 @@ jobs:
           echo "Profile team: $PROFILE_TEAM_ID"
           echo "Profile app identifier: $PROFILE_APP_ID"
           echo "Expected app identifier: ${IOS_TEAM_ID}.${IOS_BUNDLE_ID}"
+
+          if [ -n "$IOS_PROFILE_NAME" ] && [ "$PROFILE_NAME" != "$IOS_PROFILE_NAME" ]; then
+            echo "Signing preflight failed: Provisioning profile name mismatch"
+            echo "Decoded profile name: $PROFILE_NAME"
+            echo "Expected profile name: $IOS_PROFILE_NAME"
+            exit 1
+          fi
 
           if [ "$PROFILE_TEAM_ID" != "$IOS_TEAM_ID" ]; then
             echo "Signing preflight failed: Team ID mismatch"
@@ -188,6 +196,40 @@ jobs:
 
           echo "Signing preflight passed"
 
+      - name: Configure Runner signing (manual, target-scoped)
+        env:
+          IOS_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+        run: |
+          ruby <<'RUBY'
+          require 'xcodeproj'
+
+          project_path = 'ios/Runner.xcodeproj'
+          project = Xcodeproj::Project.open(project_path)
+          runner_target = project.targets.find { |t| t.name == 'Runner' }
+          abort('Runner target not found') unless runner_target
+
+          root_attrs = project.root_object.attributes['TargetAttributes'] ||= {}
+          runner_attrs = root_attrs[runner_target.uuid] ||= {}
+          runner_attrs['ProvisioningStyle'] = 'Manual'
+          runner_attrs['DevelopmentTeam'] = ENV.fetch('IOS_TEAM_ID')
+
+          runner_target.build_configurations.each do |config|
+            next unless ['Release', 'Profile'].include?(config.name)
+
+            settings = config.build_settings
+            settings['PRODUCT_BUNDLE_IDENTIFIER'] = ENV.fetch('IOS_BUNDLE_ID')
+            settings['DEVELOPMENT_TEAM'] = ENV.fetch('IOS_TEAM_ID')
+            settings['CODE_SIGN_STYLE'] = 'Manual'
+            settings['CODE_SIGN_IDENTITY[sdk=iphoneos*]'] = 'Apple Distribution'
+            settings['PROVISIONING_PROFILE_SPECIFIER'] = ENV.fetch('PROFILE_NAME')
+            settings.delete('PROVISIONING_PROFILE')
+          end
+
+          project.save
+          puts "Runner signing configured with profile: #{ENV.fetch('PROFILE_NAME')}"
+          RUBY
+
       - name: Flutter build iOS
         run: flutter build ios --release --no-codesign
 
@@ -210,11 +252,6 @@ jobs:
             -sdk iphoneos \
             -destination 'generic/platform=iOS' \
             -archivePath build-output/app.xcarchive \
-            PRODUCT_BUNDLE_IDENTIFIER="${IOS_BUNDLE_ID}" \
-            PROVISIONING_PROFILE_SPECIFIER="${PROFILE_NAME}" \
-            CODE_SIGN_STYLE=Manual \
-            DEVELOPMENT_TEAM="${IOS_TEAM_ID}" \
-            CODE_SIGN_IDENTITY="Apple Distribution" \
             OTHER_CODE_SIGN_FLAGS="--keychain ${KEYCHAIN_PATH}" \
             archive 2>&1 | tee build.log
 
