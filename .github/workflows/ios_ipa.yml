@@ -174,9 +174,15 @@ jobs:
             exit 1
           fi
 
-          if grep -n "PROVISIONING_PROFILE_SPECIFIER = [^;]" ios/Pods/Pods.xcodeproj/project.pbxproj >/dev/null; then
-            echo "Signing preflight failed: Pods project still has provisioning profile specifiers"
-            grep -n "PROVISIONING_PROFILE_SPECIFIER = [^;]" ios/Pods/Pods.xcodeproj/project.pbxproj
+          if grep -nE 'PROVISIONING_PROFILE_SPECIFIER = "[^"]+";' ios/Pods/Pods.xcodeproj/project.pbxproj >/dev/null; then
+            echo "Signing preflight failed: Pods project has non-empty provisioning profile specifiers"
+            grep -nE 'PROVISIONING_PROFILE_SPECIFIER = "[^"]+";' ios/Pods/Pods.xcodeproj/project.pbxproj
+            exit 1
+          fi
+
+          if grep -nE 'PROVISIONING_PROFILE = "[^"]+";' ios/Pods/Pods.xcodeproj/project.pbxproj >/dev/null; then
+            echo "Signing preflight failed: Pods project has non-empty provisioning profile UUIDs"
+            grep -nE 'PROVISIONING_PROFILE = "[^"]+";' ios/Pods/Pods.xcodeproj/project.pbxproj
             exit 1
           fi
 
