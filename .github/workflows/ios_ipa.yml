@@ -26,6 +26,31 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
 
+      - name: Validate iPad orientations (fast fail)
+        run: |
+          INFO_PLIST="ios/Runner/Info.plist"
+          REQUIRED_ORIENTATIONS=(
+            "UIInterfaceOrientationPortrait"
+            "UIInterfaceOrientationPortraitUpsideDown"
+            "UIInterfaceOrientationLandscapeLeft"
+            "UIInterfaceOrientationLandscapeRight"
+          )
+
+          MISSING=0
+          for ORIENTATION in "${REQUIRED_ORIENTATIONS[@]}"; do
+            if ! /usr/libexec/PlistBuddy -c "Print :UISupportedInterfaceOrientations~ipad" "$INFO_PLIST" | grep -q "$ORIENTATION"; then
+              echo "Missing iPad orientation: $ORIENTATION"
+              MISSING=1
+            fi
+          done
+
+          if [ "$MISSING" -ne 0 ]; then
+            echo "Fast fail: iPad orientations are incomplete. Upload to TestFlight will be rejected."
+            exit 1
+          fi
+
+          echo "iPad orientation validation passed"
+
       - name: Patch google_fonts for Flutter 3.27+ compatibility
         run: |
           echo "Patching google_fonts to fix const evaluation error..."
