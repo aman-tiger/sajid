@@ -26,6 +26,20 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
 
+      - name: Validate Firebase iOS config (fast fail)
+        run: |
+          if [ ! -f ios/Runner/GoogleService-Info.plist ]; then
+            echo "Missing ios/Runner/GoogleService-Info.plist"
+            exit 1
+          fi
+
+          if ! grep -q "GoogleService-Info.plist in Resources" ios/Runner.xcodeproj/project.pbxproj; then
+            echo "GoogleService-Info.plist is not in Copy Bundle Resources for Runner"
+            exit 1
+          fi
+
+          echo "Firebase iOS config validation passed"
+
       - name: Validate iPad orientations (fast fail)
         run: |
           INFO_PLIST="ios/Runner/Info.plist"
