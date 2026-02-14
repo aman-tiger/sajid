@@ -7,7 +7,7 @@ A fun, interactive mobile party game application built with Flutter for iOS and 
 **Never Have I Ever** is a cross-platform mobile application that brings the classic party game to your smartphone. Users can choose from various question categories, swipe through cards, and enjoy a seamless gaming experience with friends.
 
 ### Platforms
-- **iOS:** 14.0+
+- **iOS:** 15.0+
 - **Android:** 9.0+ (API 24+)
 
 ### Tech Stack

@@ -5,7 +5,7 @@ on:
 
 jobs:
   build-ipa:
-    runs-on: macos-latest
+    runs-on: macos-26
 
     steps:
       - name: Checkout repository
@@ -16,6 +16,11 @@ jobs:
         with:
           channel: stable
           cache: false
+
+      - name: Select Xcode 26
+        run: |
+          sudo xcode-select -s /Applications/Xcode_26.0.app/Contents/Developer
+          xcodebuild -version
 
       - name: Clean Flutter cache
         run: |
@@ -154,11 +159,11 @@ jobs:
 
           security find-identity -v -p codesigning "$KEYCHAIN_PATH"
 
-      - name: Update Podfile for iOS 15
+      - name: Update Podfile for iOS 16
         run: |
           cp ios/Podfile ios/Podfile.original
 
-          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '15.0'/" ios/Podfile
+          sed -i '' "s/platform :ios, '[0-9.]*'/platform :ios, '16.0'/" ios/Podfile
 
           sed -i '' '/^post_install do |installer|/,/^end$/d' ios/Podfile
 
@@ -169,7 +174,7 @@ jobs:
           echo "  installer.pods_project.targets.each do |target|" >> ios/Podfile
           echo "    flutter_additional_ios_build_settings(target)" >> ios/Podfile
           echo "    target.build_configurations.each do |config|" >> ios/Podfile
-          echo "      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'" >> ios/Podfile
+          echo "      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'" >> ios/Podfile
           echo "      config.build_settings['CODE_SIGNING_REQUIRED'] = 'NO'" >> ios/Podfile
           echo "      config.build_settings['CODE_SIGNING_ALLOWED'] = 'NO'" >> ios/Podfile
           echo "      config.build_settings.delete('PROVISIONING_PROFILE_SPECIFIER')" >> ios/Podfile
@@ -184,7 +189,7 @@ jobs:
       - name: Install CocoaPods dependencies
         run: |
           cd ios
-          pod install
+          pod install --repo-update
           cd ..
           echo "Pods installed"
 
