@@ -50,6 +50,13 @@ jobs:
       - name: Install Flutter dependencies
         run: flutter pub get
 
+      - name: Restore Firebase Android config
+        env:
+          ANDROID_GOOGLE_SERVICES_JSON_BASE64: ${{ secrets.ANDROID_GOOGLE_SERVICES_JSON_BASE64 }}
+        run: |
+          mkdir -p android/app
+          echo "$ANDROID_GOOGLE_SERVICES_JSON_BASE64" | base64 --decode > android/app/google-services.json
+
       - name: Patch google_fonts for Flutter 3.27+ compatibility
         run: |
           echo "Patching google_fonts to fix const evaluation error..."
