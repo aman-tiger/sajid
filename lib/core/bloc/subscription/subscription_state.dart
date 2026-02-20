@@ -44,6 +44,10 @@ class SubscriptionPurchaseCancelled extends SubscriptionState {
   const SubscriptionPurchaseCancelled();
 }
 
+class SubscriptionPurchasePending extends SubscriptionState {
+  const SubscriptionPurchasePending();
+}
+
 class SubscriptionRestoreSuccess extends SubscriptionState {
   final bool hadPurchases;
 

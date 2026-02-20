@@ -40,20 +40,34 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
     try {
       emit(const SubscriptionPurchasing());
 
-      final success = await subscriptionService.purchaseProduct(event.product);
+      final outcome = await subscriptionService.purchaseProduct(event.product);
 
-      if (success) {
-        emit(const SubscriptionPurchaseSuccess());
-        // Update to active state
-        emit(const SubscriptionActive(productId: 'premium'));
-      } else {
-        emit(const SubscriptionPurchaseCancelled());
-        emit(const SubscriptionInactive());
+      switch (outcome.type) {
+        case PurchaseOutcomeType.success:
+          emit(const SubscriptionPurchaseSuccess());
+          emit(const SubscriptionActive(productId: 'premium'));
+          break;
+        case PurchaseOutcomeType.cancelled:
+          emit(const SubscriptionPurchaseCancelled());
+          emit(const SubscriptionInactive());
+          break;
+        case PurchaseOutcomeType.pending:
+          emit(const SubscriptionPurchasePending());
+          emit(const SubscriptionInactive());
+          break;
+        case PurchaseOutcomeType.error:
+          emit(
+            SubscriptionError(
+              outcome.message ?? 'Purchase failed. Please try again.',
+            ),
+          );
+          emit(const SubscriptionInactive());
+          break;
       }
-    } catch (e) {
-      emit(SubscriptionError('Purchase failed: ${e.toString()}'));
+    } catch (_) {
+      emit(const SubscriptionError('Purchase failed. Please try again.'));
       emit(const SubscriptionInactive());
-    }
+    } 
   }
 
   Future<void> _onRestorePurchase(

@@ -3,10 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_links.dart';
+import '../../../../core/services/share_service.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../bloc/settings_bloc.dart';
 import '../../bloc/settings_event.dart';
@@ -306,9 +307,40 @@ class _SettingsPageContent extends StatelessWidget {
 
   Future<void> _shareApp(BuildContext context) async {
     final t = AppLocalizations.of(context)!;
-    await Share.share(
-      t.settings_share_message,
+    final packageInfo = await PackageInfo.fromPlatform();
+    final packageName = packageInfo.packageName.isNotEmpty
+        ? packageInfo.packageName
+        : AppLinks.androidPackageId;
+
+    final androidUrl =
+        'https://play.google.com/store/apps/details?id=$packageName';
+    final iosUrl = AppLinks.iosStoreUrl;
+
+    final shareMessage = StringBuffer()
+      ..writeln(t.settings_share_message)
+      ..writeln()
+      ..writeln(androidUrl);
+
+    if (iosUrl.isNotEmpty) {
+      shareMessage.writeln(iosUrl);
+    }
+
+    final shared = await ShareService.shareText(
+      context,
+      shareMessage.toString().trim(),
       subject: t.settings_share_subject,
+    );
+
+    if (!context.mounted || shared) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          t.common_error,
+          style: TextStyle(color: AppColors.textLight, fontSize: 14.sp),
+        ),
+        backgroundColor: AppColors.error,
+      ),
     );
   }
 

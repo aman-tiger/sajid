@@ -21,8 +21,10 @@ class PaywallPage extends StatefulWidget {
 
 class _PaywallPageState extends State<PaywallPage> {
   QOfferings? _offerings;
+  List<QProduct> _displayProducts = <QProduct>[];
   QProduct? _selectedProduct;
   bool _isLoading = true;
+  PaywallRemoteSettings _settings = const PaywallRemoteSettings();
 
   @override
   void initState() {
@@ -34,14 +36,22 @@ class _PaywallPageState extends State<PaywallPage> {
     try {
       final subscriptionService = SubscriptionService();
       final offerings = await subscriptionService.getOfferings();
+      final payload = await subscriptionService.getPaywallRemoteConfig();
+      final settings = PaywallRemoteSettings.fromPayload(payload);
+      final filteredProducts = _filterProducts(
+        offerings?.main?.products ?? <QProduct>[],
+        settings,
+      );
 
       setState(() {
         _offerings = offerings;
+        _settings = settings;
+        _displayProducts = filteredProducts;
         _isLoading = false;
 
         // Auto-select the first product if available
-        if (offerings?.main?.products.isNotEmpty ?? false) {
-          _selectedProduct = offerings!.main!.products.first;
+        if (filteredProducts.isNotEmpty) {
+          _selectedProduct = filteredProducts.first;
         }
       });
     } catch (e) {
@@ -61,6 +71,10 @@ class _PaywallPageState extends State<PaywallPage> {
         listener: (context, state) {
           if (state is SubscriptionPurchaseSuccess) {
             _showSuccessDialog();
+          } else if (state is SubscriptionPurchaseCancelled) {
+            _showErrorDialog(AppLocalizations.of(context)!.subscription_purchase_cancelled);
+          } else if (state is SubscriptionPurchasePending) {
+            _showErrorDialog('Purchase is pending approval. Please check again shortly.');
           } else if (state is SubscriptionError) {
             _showErrorDialog(state.message);
           } else if (state is SubscriptionRestoreSuccess) {
@@ -91,14 +105,16 @@ class _PaywallPageState extends State<PaywallPage> {
     return AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
-      leading: IconButton(
-        icon: Icon(
-          Icons.close,
-          color: AppColors.textLight,
-          size: 24.sp,
-        ),
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+      leading: _settings.showCloseButton
+          ? IconButton(
+              icon: Icon(
+                Icons.close,
+                color: AppColors.textLight,
+                size: 24.sp,
+              ),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          : null,
     );
   }
 
@@ -126,11 +142,11 @@ class _PaywallPageState extends State<PaywallPage> {
 
   Widget _buildPaywallContent() {
     final t = AppLocalizations.of(context)!;
-    if (_offerings == null || _offerings!.main == null) {
+    if (_offerings == null || _offerings!.main == null || _displayProducts.isEmpty) {
       return _buildError();
     }
 
-    final products = _offerings!.main!.products;
+    final products = _displayProducts;
 
     return SafeArea(
       child: SingleChildScrollView(
@@ -140,7 +156,7 @@ class _PaywallPageState extends State<PaywallPage> {
           children: [
             // Header
             Text(
-              t.paywall_title,
+              _settings.title ?? t.paywall_title,
               style: TextStyle(
                 fontSize: 32.sp,
                 fontWeight: FontWeight.bold,
@@ -152,7 +168,7 @@ class _PaywallPageState extends State<PaywallPage> {
             SizedBox(height: 12.h),
 
             Text(
-              t.paywall_subtitle,
+              _settings.subtitle ?? t.paywall_subtitle,
               style: TextStyle(
                 fontSize: 16.sp,
                 color: AppColors.textGreyLight,
@@ -168,19 +184,19 @@ class _PaywallPageState extends State<PaywallPage> {
             SizedBox(height: 32.h),
 
             // Subscription plans
-            Text(
-              t.paywall_choose_plan,
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLight,
+            if (products.length > 1) ...[
+              Text(
+                t.paywall_choose_plan,
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textLight,
+                ),
               ),
-            ),
-
-            SizedBox(height: 16.h),
+              SizedBox(height: 16.h),
+            ],
 
             ...products.asMap().entries.map((entry) {
-              final index = entry.key;
               final product = entry.value;
               final isYearly = product.subscriptionPeriod?.unit ==
                   QSubscriptionPeriodUnit.year;
@@ -229,7 +245,7 @@ class _PaywallPageState extends State<PaywallPage> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
                       disabledBackgroundColor:
-                          AppColors.primary.withOpacity(0.5),
+                          AppColors.primary.withValues(alpha: 0.5),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.r),
                       ),
@@ -247,8 +263,10 @@ class _PaywallPageState extends State<PaywallPage> {
                           )
                         : Text(
                             _selectedProduct?.trialPeriod != null
-                                ? t.paywall_start_trial
-                                : t.paywall_subscribe,
+                                ? (_settings.startTrialText ??
+                                    t.paywall_start_trial)
+                                : (_settings.subscribeText ??
+                                    t.paywall_subscribe),
                             style: TextStyle(
                               fontSize: 18.sp,
                               fontWeight: FontWeight.bold,
@@ -397,6 +415,7 @@ class _PaywallPageState extends State<PaywallPage> {
   }
 
   void _showSuccessDialog() {
+    if (!mounted) return;
     final t = AppLocalizations.of(context)!;
     showDialog(
       context: context,
@@ -435,6 +454,7 @@ class _PaywallPageState extends State<PaywallPage> {
         actions: [
           TextButton(
             onPressed: () {
+              if (!mounted) return;
               Navigator.of(context).pop(); // Close dialog
               Navigator.of(context).pop(); // Close paywall
             },
@@ -453,6 +473,7 @@ class _PaywallPageState extends State<PaywallPage> {
   }
 
   void _showErrorDialog(String message) {
+    if (!mounted) return;
     final t = AppLocalizations.of(context)!;
     showDialog(
       context: context,
@@ -504,6 +525,7 @@ class _PaywallPageState extends State<PaywallPage> {
   }
 
   void _showRestoreSuccessDialog() {
+    if (!mounted) return;
     final t = AppLocalizations.of(context)!;
     showDialog(
       context: context,
@@ -542,6 +564,7 @@ class _PaywallPageState extends State<PaywallPage> {
         actions: [
           TextButton(
             onPressed: () {
+              if (!mounted) return;
               Navigator.of(context).pop(); // Close dialog
               Navigator.of(context).pop(); // Close paywall
             },
@@ -560,6 +583,7 @@ class _PaywallPageState extends State<PaywallPage> {
   }
 
   void _showNoRestoreDialog() {
+    if (!mounted) return;
     final t = AppLocalizations.of(context)!;
     showDialog(
       context: context,
@@ -607,6 +631,91 @@ class _PaywallPageState extends State<PaywallPage> {
           ),
         ],
       ),
+    );
+  }
+
+  List<QProduct> _filterProducts(
+    List<QProduct> products,
+    PaywallRemoteSettings settings,
+  ) {
+    if (products.isEmpty) {
+      return <QProduct>[];
+    }
+
+    if (!settings.showOnlyWeekly) {
+      return products;
+    }
+
+    final weeklyById = products.where((product) {
+      final id = settings.weeklyProductId.toLowerCase();
+      return product.qonversionId.toLowerCase() == id ||
+          (product.storeId?.toLowerCase() == id);
+    }).toList();
+
+    if (weeklyById.isNotEmpty) {
+      return weeklyById;
+    }
+
+    final weeklyByPeriod = products.where((product) {
+      return product.subscriptionPeriod?.unit == QSubscriptionPeriodUnit.week;
+    }).toList();
+
+    if (weeklyByPeriod.isNotEmpty) {
+      return weeklyByPeriod;
+    }
+
+    return <QProduct>[products.first];
+  }
+}
+
+class PaywallRemoteSettings {
+  final bool showCloseButton;
+  final bool showOnlyWeekly;
+  final String weeklyProductId;
+  final String? title;
+  final String? subtitle;
+  final String? startTrialText;
+  final String? subscribeText;
+
+  const PaywallRemoteSettings({
+    this.showCloseButton = true,
+    this.showOnlyWeekly = true,
+    this.weeklyProductId = 'weekly_premium',
+    this.title,
+    this.subtitle,
+    this.startTrialText,
+    this.subscribeText,
+  });
+
+  factory PaywallRemoteSettings.fromPayload(Map<String, dynamic> payload) {
+    bool readBool(String key, bool defaultValue) {
+      final value = payload[key];
+      if (value is bool) return value;
+      if (value is String) {
+        return value.toLowerCase() == 'true';
+      }
+      if (value is num) {
+        return value != 0;
+      }
+      return defaultValue;
+    }
+
+    String? readString(String key) {
+      final value = payload[key];
+      if (value is String && value.trim().isNotEmpty) {
+        return value.trim();
+      }
+      return null;
+    }
+
+    return PaywallRemoteSettings(
+      showCloseButton: readBool('show_close_button', true),
+      showOnlyWeekly: readBool('show_only_weekly', true),
+      weeklyProductId: readString('weekly_product_id') ?? 'weekly_premium',
+      title: readString('title'),
+      subtitle: readString('subtitle'),
+      startTrialText: readString('start_trial_text'),
+      subscribeText: readString('subscribe_text'),
     );
   }
 }

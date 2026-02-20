@@ -30,11 +30,13 @@ class SubscriptionCard extends StatelessWidget {
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
               color: isSelected
-                  ? AppColors.primary.withOpacity(0.2)
+                  ? AppColors.primary.withValues(alpha: 0.2)
                   : AppColors.backgroundLight,
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: isSelected ? AppColors.primary : AppColors.textGrey.withOpacity(0.2),
+                color: isSelected
+                    ? AppColors.primary
+                    : AppColors.textGrey.withValues(alpha: 0.2),
                 width: isSelected ? 3 : 2,
               ),
             ),
@@ -69,7 +71,7 @@ class SubscriptionCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        product.qonversionId,
+                        _getPlanName(t),
                         style: TextStyle(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,
@@ -136,7 +138,7 @@ class SubscriptionCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(12.r),
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.secondary.withOpacity(0.3),
+                      color: AppColors.secondary.withValues(alpha: 0.3),
                       blurRadius: 8,
                       offset: const Offset(0, 2),
                     ),
@@ -176,5 +178,19 @@ class SubscriptionCard extends StatelessWidget {
           : t.price_per_years(duration.toString());
     }
     return '';
+  }
+
+  String _getPlanName(AppLocalizations t) {
+    final unit = product.subscriptionPeriod?.unit;
+    if (unit == QSubscriptionPeriodUnit.week) {
+      return t.paywall_weekly_plan;
+    }
+    if (unit == QSubscriptionPeriodUnit.month) {
+      return t.paywall_monthly_plan;
+    }
+    if (unit == QSubscriptionPeriodUnit.year) {
+      return t.paywall_yearly_plan;
+    }
+    return product.storeTitle ?? product.qonversionId;
   }
 }

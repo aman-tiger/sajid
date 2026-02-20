@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:share_plus/share_plus.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/categories.dart';
 import '../../../../core/data/repositories/question_repository.dart';
 import '../../../../core/models/category_model.dart';
+import '../../../../core/services/share_service.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../settings/bloc/settings_bloc.dart';
 import '../../../settings/bloc/settings_state.dart';
@@ -293,11 +293,24 @@ class _GamePageContentState extends State<_GamePageContent> {
     );
   }
 
-  void _shareQuestion(BuildContext context, String questionText) {
+  Future<void> _shareQuestion(BuildContext context, String questionText) async {
     final t = AppLocalizations.of(context)!;
-    Share.share(
+    final shared = await ShareService.shareText(
+      context,
       t.game_share_text(questionText),
       subject: t.main_menu_title,
+    );
+
+    if (!context.mounted || shared) return;
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          t.common_error,
+          style: TextStyle(color: AppColors.textLight, fontSize: 14.sp),
+        ),
+        backgroundColor: AppColors.error,
+      ),
     );
   }
 }

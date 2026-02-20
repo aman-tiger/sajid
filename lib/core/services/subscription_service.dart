@@ -1,6 +1,20 @@
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+enum PurchaseOutcomeType {
+  success,
+  cancelled,
+  pending,
+  error,
+}
+
+class PurchaseOutcome {
+  final PurchaseOutcomeType type;
+  final String? message;
+
+  const PurchaseOutcome(this.type, {this.message});
+}
+
 class SubscriptionService {
   static const String _subscriptionKey = 'has_subscription';
   static const String _subscriptionCheckedAtKey = 'subscription_checked_at';
@@ -40,20 +54,40 @@ class SubscriptionService {
   }
 
   /// Purchase a subscription product
-  Future<bool> purchaseProduct(QProduct product) async {
+  Future<PurchaseOutcome> purchaseProduct(QProduct product) async {
     try {
-      final result = await Qonversion.getSharedInstance().purchaseProduct(product);
+      final result = await Qonversion.getSharedInstance().purchaseWithResult(
+        product,
+      );
 
-      // Check if purchase was successful
-      final isActive = result[_premiumEntitlementId]?.isActive ?? false;
-
-      if (isActive) {
-        await _cacheSubscriptionStatus(true);
+      if (result.status == QPurchaseResultStatus.userCanceled) {
+        return const PurchaseOutcome(PurchaseOutcomeType.cancelled);
       }
 
-      return isActive;
+      if (result.status == QPurchaseResultStatus.pending) {
+        return const PurchaseOutcome(PurchaseOutcomeType.pending);
+      }
+
+      final entitlements = result.entitlements ?? <String, QEntitlement>{};
+      final isActive = entitlements[_premiumEntitlementId]?.isActive ?? false;
+
+      if (isActive && result.status == QPurchaseResultStatus.success) {
+        await _cacheSubscriptionStatus(true);
+        return const PurchaseOutcome(PurchaseOutcomeType.success);
+      }
+
+      final message = result.error?.message ?? 'Purchase was not completed.';
+      return PurchaseOutcome(PurchaseOutcomeType.error, message: message);
+    } on QPurchaseException catch (e) {
+      if (e.isUserCancelled) {
+        return const PurchaseOutcome(PurchaseOutcomeType.cancelled);
+      }
+      return PurchaseOutcome(PurchaseOutcomeType.error, message: e.message);
     } catch (e) {
-      throw Exception('Purchase failed: $e');
+      return PurchaseOutcome(
+        PurchaseOutcomeType.error,
+        message: 'Purchase failed: $e',
+      );
     }
   }
 
@@ -78,6 +112,20 @@ class SubscriptionService {
       return offerings;
     } catch (e) {
       throw Exception('Failed to load offerings: $e');
+    }
+  }
+
+  /// Returns paywall remote config payload from Qonversion.
+  Future<Map<String, dynamic>> getPaywallRemoteConfig({
+    String contextKey = 'paywall',
+  }) async {
+    try {
+      final remoteConfig = await Qonversion.getSharedInstance().remoteConfig(
+        contextKey: contextKey,
+      );
+      return remoteConfig.payload;
+    } catch (_) {
+      return <String, dynamic>{};
     }
   }
 
