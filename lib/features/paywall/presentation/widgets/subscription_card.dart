@@ -80,7 +80,7 @@ class SubscriptionCard extends StatelessWidget {
                       ),
                       SizedBox(height: 4.h),
                       Text(
-                        product.prettyPrice ?? '',
+                        _displayPrice(),
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: AppColors.textGreyLight,
@@ -89,7 +89,7 @@ class SubscriptionCard extends StatelessWidget {
                       if (product.trialPeriod != null) ...[
                         SizedBox(height: 4.h),
                         Text(
-                          t.paywall_trial_text(product.prettyPrice ?? ''),
+                          t.paywall_trial_text(_displayPrice()),
                           style: TextStyle(
                             fontSize: 12.sp,
                             color: AppColors.accent,
@@ -106,7 +106,7 @@ class SubscriptionCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      product.prettyPrice ?? '',
+                      _displayPrice(),
                       style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.bold,
@@ -192,5 +192,19 @@ class SubscriptionCard extends StatelessWidget {
       return t.paywall_yearly_plan;
     }
     return product.storeTitle ?? product.qonversionId;
+  }
+
+  String _displayPrice() {
+    if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) {
+      return product.prettyPrice!.trim();
+    }
+    if (product.price != null) {
+      final value = product.price!.toStringAsFixed(2);
+      if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
+        return '${product.currencyCode} $value';
+      }
+      return value;
+    }
+    return '';
   }
 }

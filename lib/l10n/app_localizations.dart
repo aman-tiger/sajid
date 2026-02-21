@@ -755,13 +755,13 @@ abstract class AppLocalizations {
   /// No description provided for @paywall_title.
   ///
   /// In en, this message translates to:
-  /// **'Unlock Premium'**
+  /// **'GO PREMIUM'**
   String get paywall_title;
 
   /// No description provided for @paywall_subtitle.
   ///
   /// In en, this message translates to:
-  /// **'Get unlimited access to all game packs'**
+  /// **'Non-Stop Fun Awaits'**
   String get paywall_subtitle;
 
   /// No description provided for @paywall_choose_plan.
@@ -773,25 +773,25 @@ abstract class AppLocalizations {
   /// No description provided for @paywall_feature_1.
   ///
   /// In en, this message translates to:
-  /// **'🎉 Unlock All 5 Premium Packs'**
+  /// **'Unlock exclusive 18+ content'**
   String get paywall_feature_1;
 
   /// No description provided for @paywall_feature_2.
   ///
   /// In en, this message translates to:
-  /// **'🔥 1,500 Exclusive Questions'**
+  /// **'New updates regularly'**
   String get paywall_feature_2;
 
   /// No description provided for @paywall_feature_3.
   ///
   /// In en, this message translates to:
-  /// **'🌍 5 Languages Available'**
+  /// **'Zero ads'**
   String get paywall_feature_3;
 
   /// No description provided for @paywall_feature_4.
   ///
   /// In en, this message translates to:
-  /// **'🚀 Regular Content Updates'**
+  /// **'Cancel anytime'**
   String get paywall_feature_4;
 
   /// No description provided for @paywall_weekly_plan.
@@ -821,7 +821,7 @@ abstract class AppLocalizations {
   /// No description provided for @paywall_trial_text.
   ///
   /// In en, this message translates to:
-  /// **'3 days free, then {price}/week'**
+  /// **'Try FREE for 3 days'**
   String paywall_trial_text(String price);
 
   /// No description provided for @price_per_week.
@@ -893,7 +893,7 @@ abstract class AppLocalizations {
   /// No description provided for @paywall_cancel_anytime.
   ///
   /// In en, this message translates to:
-  /// **'Cancel anytime. Terms apply.'**
+  /// **'Cancel anytime'**
   String get paywall_cancel_anytime;
 
   /// No description provided for @paywall_loading.

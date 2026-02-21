@@ -25,7 +25,6 @@ jobs:
       - name: Clean Flutter cache
         run: |
           flutter clean
-          rm -rf ~/.pub-cache/hosted/pub.dev/google_fonts-* || true
           flutter pub cache repair
 
       - name: Install Flutter dependencies
@@ -76,49 +75,6 @@ jobs:
           fi
 
           echo "iPad orientation validation passed"
-
-      - name: Patch google_fonts for Flutter 3.27+ compatibility
-        run: |
-          echo "Patching google_fonts to fix const evaluation error..."
-
-          GOOGLE_FONTS_PATH=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d | head -n 1)
-
-          if [ -z "$GOOGLE_FONTS_PATH" ]; then
-            echo "Error: google_fonts package not found"
-            exit 1
-          fi
-
-          echo "Found google_fonts at: $GOOGLE_FONTS_PATH"
-
-          VARIANT_FILE="$GOOGLE_FONTS_PATH/lib/src/google_fonts_variant.dart"
-
-          if [ ! -f "$VARIANT_FILE" ]; then
-            echo "Error: google_fonts_variant.dart not found at $VARIANT_FILE"
-            exit 1
-          fi
-
-          echo "Patching $VARIANT_FILE..."
-
-          cp "$VARIANT_FILE" "$VARIANT_FILE.backup"
-
-          sed -i '' 's/^const _fontWeightToFilenameWeightParts = {$/final _fontWeightToFilenameWeightParts = {/' "$VARIANT_FILE"
-          sed -i '' 's/^const _fontStyleToFilenameStyleParts = {$/final _fontStyleToFilenameStyleParts = {/' "$VARIANT_FILE"
-
-          if grep -q "^final _fontWeightToFilenameWeightParts = {" "$VARIANT_FILE"; then
-            echo "Successfully patched _fontWeightToFilenameWeightParts"
-          else
-            echo "Failed to patch _fontWeightToFilenameWeightParts"
-            sed -n '148,152p' "$VARIANT_FILE"
-            exit 1
-          fi
-
-          if grep -q "^final _fontStyleToFilenameStyleParts = {" "$VARIANT_FILE"; then
-            echo "Successfully patched _fontStyleToFilenameStyleParts"
-          else
-            echo "Warning: _fontStyleToFilenameStyleParts not found (may not exist in this version)"
-          fi
-
-          echo "google_fonts patching completed"
 
       - name: Verify google_fonts version
         run: |

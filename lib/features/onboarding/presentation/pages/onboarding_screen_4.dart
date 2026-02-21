@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:flutter/foundation.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/constants/app_links.dart';
 import '../widgets/onboarding_button.dart';
 import '../../../../l10n/app_localizations.dart';
 
@@ -20,9 +22,16 @@ class OnboardingScreen4 extends StatelessWidget {
 
     if (await inAppReview.isAvailable()) {
       await inAppReview.requestReview();
-    } else {
-      debugPrint('In-app review not available');
+      return;
     }
+
+    if (defaultTargetPlatform == TargetPlatform.iOS &&
+        AppLinks.iosAppStoreId.isNotEmpty) {
+      await inAppReview.openStoreListing(appStoreId: AppLinks.iosAppStoreId);
+      return;
+    }
+
+    await inAppReview.openStoreListing();
   }
 
   @override

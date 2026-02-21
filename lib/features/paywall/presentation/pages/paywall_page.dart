@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,6 +21,7 @@ class PaywallPage extends StatefulWidget {
 
 class _PaywallPageState extends State<PaywallPage> {
   QOfferings? _offerings;
+  QOffering? _activeOffering;
   List<QProduct> _displayProducts = <QProduct>[];
   QProduct? _selectedProduct;
   bool _isLoading = true;
@@ -38,13 +39,15 @@ class _PaywallPageState extends State<PaywallPage> {
       final offerings = await subscriptionService.getOfferings();
       final payload = await subscriptionService.getPaywallRemoteConfig();
       final settings = PaywallRemoteSettings.fromPayload(payload);
+      final activeOffering = _resolveActiveOffering(offerings);
       final filteredProducts = _filterProducts(
-        offerings?.main?.products ?? <QProduct>[],
+        activeOffering?.products ?? <QProduct>[],
         settings,
       );
 
       setState(() {
         _offerings = offerings;
+        _activeOffering = activeOffering;
         _settings = settings;
         _displayProducts = filteredProducts;
         _isLoading = false;
@@ -142,7 +145,7 @@ class _PaywallPageState extends State<PaywallPage> {
 
   Widget _buildPaywallContent() {
     final t = AppLocalizations.of(context)!;
-    if (_offerings == null || _offerings!.main == null || _displayProducts.isEmpty) {
+    if (_offerings == null || _activeOffering == null || _displayProducts.isEmpty) {
       return _buildError();
     }
 
@@ -219,7 +222,7 @@ class _PaywallPageState extends State<PaywallPage> {
             if (_selectedProduct?.trialPeriod != null)
               Text(
                 t.paywall_trial_text(
-                  _selectedProduct?.prettyPrice ?? '',
+                  _displayPrice(_selectedProduct!),
                 ),
                 style: TextStyle(
                   fontSize: 14.sp,
@@ -666,6 +669,38 @@ class _PaywallPageState extends State<PaywallPage> {
 
     return <QProduct>[products.first];
   }
+
+  QOffering? _resolveActiveOffering(QOfferings? offerings) {
+    if (offerings == null) {
+      return null;
+    }
+
+    if (offerings.main != null) {
+      return offerings.main;
+    }
+
+    if (offerings.availableOfferings.isNotEmpty) {
+      return offerings.availableOfferings.first;
+    }
+
+    return null;
+  }
+
+  String _displayPrice(QProduct product) {
+    if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) {
+      return product.prettyPrice!.trim();
+    }
+
+    if (product.price != null) {
+      final value = product.price!.toStringAsFixed(2);
+      if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
+        return '${product.currencyCode} $value';
+      }
+      return value;
+    }
+
+    return '';
+  }
 }
 
 class PaywallRemoteSettings {
@@ -719,3 +754,5 @@ class PaywallRemoteSettings {
     );
   }
 }
+
+

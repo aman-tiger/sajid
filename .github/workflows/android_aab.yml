@@ -57,32 +57,6 @@ jobs:
           mkdir -p android/app
           echo "$ANDROID_GOOGLE_SERVICES_JSON_BASE64" | base64 --decode > android/app/google-services.json
 
-      - name: Patch google_fonts for Flutter 3.27+ compatibility
-        run: |
-          echo "Patching google_fonts to fix const evaluation error..."
-
-          GOOGLE_FONTS_PATH=$(find ~/.pub-cache/hosted/pub.dev -name "google_fonts-*" -type d | head -n 1)
-
-          if [ -z "$GOOGLE_FONTS_PATH" ]; then
-            echo "Error: google_fonts package not found"
-            exit 1
-          fi
-
-          VARIANT_FILE="$GOOGLE_FONTS_PATH/lib/src/google_fonts_variant.dart"
-
-          if [ ! -f "$VARIANT_FILE" ]; then
-            echo "Error: google_fonts_variant.dart not found at $VARIANT_FILE"
-            exit 1
-          fi
-
-          sed -i 's/^const _fontWeightToFilenameWeightParts = {$/final _fontWeightToFilenameWeightParts = {/' "$VARIANT_FILE"
-          sed -i 's/^const _fontStyleToFilenameStyleParts = {$/final _fontStyleToFilenameStyleParts = {/' "$VARIANT_FILE"
-
-          if ! grep -q "^final _fontWeightToFilenameWeightParts = {" "$VARIANT_FILE"; then
-            echo "Failed to patch google_fonts"
-            exit 1
-          fi
-
       - name: Prepare Android signing files
         env:
           ANDROID_KEYSTORE_FILE: ${{ secrets.ANDROID_KEYSTORE_FILE }}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -307,13 +308,7 @@ class _SettingsPageContent extends StatelessWidget {
 
   Future<void> _shareApp(BuildContext context) async {
     final t = AppLocalizations.of(context)!;
-    final packageInfo = await PackageInfo.fromPlatform();
-    final packageName = packageInfo.packageName.isNotEmpty
-        ? packageInfo.packageName
-        : AppLinks.androidPackageId;
-
-    final androidUrl =
-        'https://play.google.com/store/apps/details?id=$packageName';
+    final androidUrl = AppLinks.androidStoreUrl;
     final iosUrl = AppLinks.iosStoreUrl;
 
     final shareMessage = StringBuffer()
@@ -349,7 +344,16 @@ class _SettingsPageContent extends StatelessWidget {
 
     if (await inAppReview.isAvailable()) {
       await inAppReview.requestReview();
+      return;
     }
+
+    if (defaultTargetPlatform == TargetPlatform.iOS &&
+        AppLinks.iosAppStoreId.isNotEmpty) {
+      await inAppReview.openStoreListing(appStoreId: AppLinks.iosAppStoreId);
+      return;
+    }
+
+    await inAppReview.openStoreListing();
   }
 
   void _showRestoreDialog(BuildContext context) {
