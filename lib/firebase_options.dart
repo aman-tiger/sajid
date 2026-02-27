@@ -3,7 +3,6 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
-import 'config/env_config.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -50,21 +49,20 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static FirebaseOptions get android => FirebaseOptions(
-    apiKey: EnvConfig.firebaseAndroidApiKey,
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBSwKKSdHrSmRcbR9iHbe6P8_Ys4i3-74k',
     appId: '1:420613066197:android:737510e8d30d6a9b80c15c',
     messagingSenderId: '420613066197',
     projectId: 'have-never-ever',
     storageBucket: 'have-never-ever.firebasestorage.app',
   );
 
-  static FirebaseOptions get ios => FirebaseOptions(
-    apiKey: EnvConfig.firebaseIosApiKey,
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAqd1np3ymrR2hfOg8Yt05HW389bPs4_xo',
     appId: '1:420613066197:ios:9fa57bce9af6ae7680c15c',
     messagingSenderId: '420613066197',
     projectId: 'have-never-ever',
     storageBucket: 'have-never-ever.firebasestorage.app',
     iosBundleId: 'com.hidavo.neverever',
   );
-}
 }

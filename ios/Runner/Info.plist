@@ -61,8 +61,5 @@
 	<!-- Firebase Cloud Messaging -->
 	<key>FirebaseAppDelegateProxyEnabled</key>
 	<false/>
-	<!-- Push Notifications -->
-	<key>NSUserNotificationsUsageDescription</key>
-	<string>We need permission to send you notifications about game updates, tips, and special offers.</string>
 </dict>
 </plist>

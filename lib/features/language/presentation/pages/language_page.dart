@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/constants/app_colors.dart';
-import '../../../../core/services/firebase_service.dart';
-import '../../../../core/services/amplitude_service.dart';
 import '../../../settings/bloc/settings_bloc.dart';
 import '../../../settings/bloc/settings_event.dart';
 import '../../../settings/bloc/settings_state.dart';
@@ -48,10 +46,6 @@ class LanguagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Log language screen view
-    FirebaseService().logScreenView('language_selection');
-    AmplitudeService().logScreenView('language_selection');
-    
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
@@ -136,18 +130,9 @@ class LanguagePage extends StatelessWidget {
                 isSelected: isSelected,
                 onTap: () {
                   if (!isSelected) {
-                    final oldLanguage = state.language;
                     context.read<SettingsBloc>().add(
                           ChangeLanguageEvent(language.code),
                         );
-                    
-                    // Log language change
-                    FirebaseService().logEvent('language_changed', parameters: {
-                      'old_language': oldLanguage,
-                      'new_language': language.code,
-                    });
-                    AmplitudeService().logLanguageChanged(oldLanguage, language.code);
-                    
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text(t.language_changed_title)),
                     );

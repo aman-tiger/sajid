@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,8 +8,6 @@ import '../../../../core/bloc/subscription/subscription_bloc.dart';
 import '../../../../core/bloc/subscription/subscription_event.dart';
 import '../../../../core/bloc/subscription/subscription_state.dart';
 import '../../../../core/services/subscription_service.dart';
-import '../../../../core/services/firebase_service.dart';
-import '../../../../core/services/amplitude_service.dart';
 import '../widgets/feature_list.dart';
 import '../widgets/subscription_card.dart';
 import '../../../../l10n/app_localizations.dart';
@@ -32,11 +30,6 @@ class _PaywallPageState extends State<PaywallPage> {
   @override
   void initState() {
     super.initState();
-    
-    // Log paywall view
-    FirebaseService().logScreenView('paywall');
-    AmplitudeService().logPaywallViewed('direct');
-    
     _loadOfferings();
   }
 

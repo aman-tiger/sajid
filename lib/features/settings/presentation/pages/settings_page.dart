@@ -9,8 +9,6 @@ import 'package:package_info_plus/package_info_plus.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_links.dart';
 import '../../../../core/services/share_service.dart';
-import '../../../../core/services/firebase_service.dart';
-import '../../../../core/services/amplitude_service.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../bloc/settings_bloc.dart';
 import '../../bloc/settings_event.dart';
@@ -22,10 +20,6 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Log settings screen view
-    FirebaseService().logScreenView('settings');
-    AmplitudeService().logScreenView('settings');
-    
     return const _SettingsPageContent();
   }
 }

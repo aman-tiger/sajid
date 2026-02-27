@@ -135,71 +135,11 @@ flutter run -d <device-id>
 
 ## 🔐 Environment Setup
 
-### 1. Environment Variables Setup
-
-This project uses environment variables to securely store API keys and sensitive data.
-
-#### Step 1: Create .env file
-```bash
-cp .env.example .env
-```
-
-#### Step 2: Update .env with your API keys
-Edit the `.env` file and replace placeholder values with your actual credentials:
-
-```env
-# Firebase Configuration
-FIREBASE_ANDROID_API_KEY=your-actual-android-api-key
-FIREBASE_IOS_API_KEY=your-actual-ios-api-key
-
-# Amplitude Analytics
-AMPLITUDE_API_KEY=your-actual-amplitude-api-key
-
-# Sentry Error Tracking
-SENTRY_DSN=your-actual-sentry-dsn
-
-# Qonversion Subscriptions
-QONVERSION_PROJECT_KEY=your-actual-qonversion-project-key
-```
-
-**⚠️ Important:** Never commit the `.env` file to version control. It's already in `.gitignore`.
-
-### 2. Firebase Configuration Files
-
-#### Android Setup
-1. Download `google-services.json` from Firebase Console
-2. Place it in `android/app/google-services.json`
-3. The file is gitignored for security
-
-Template available at: `android/app/google-services.json.template`
-
-#### iOS Setup
-1. Download `GoogleService-Info.plist` from Firebase Console
-2. Place it in `ios/Runner/GoogleService-Info.plist`
-3. Add to Xcode project (Runner target)
-4. The file is gitignored for security
-
-Template available at: `ios/Runner/GoogleService-Info.plist.template`
-
-### 3. Verify Setup
-
-Run the app to verify all configurations are loaded correctly:
-```bash
-flutter run
-```
-
-Check console for initialization messages:
-- ✅ Environment config loaded
-- ✅ Firebase initialized successfully
-- ✅ Amplitude initialized successfully
-- ✅ Sentry initialized successfully
-
-### Security Notes
-
-- All API keys are loaded from environment variables
-- Never hardcode sensitive data in source code
-- Firebase config files are excluded from git
-- Use separate configurations for dev/staging/production
+Configuration files and credentials are provided separately:
+- Firebase configuration
+- Amplitude API keys
+- Superwall credentials
+- Store credentials (App Store Connect, Google Play Console)
 
 ## 📱 App Store Release
 
