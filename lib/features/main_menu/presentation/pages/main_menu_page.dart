@@ -10,6 +10,8 @@ import '../../../../core/bloc/subscription/subscription_bloc.dart';
 import '../../../../core/bloc/subscription/subscription_event.dart';
 import '../../../../core/bloc/subscription/subscription_state.dart';
 import '../../../../core/services/subscription_service.dart';
+import '../../../../core/services/firebase_service.dart';
+import '../../../../core/services/amplitude_service.dart';
 import '../widgets/category_card.dart';
 import '../../../../l10n/app_localizations.dart';
 
@@ -18,6 +20,10 @@ class MainMenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Log screen view when page loads
+    FirebaseService().logScreenView('main_menu');
+    AmplitudeService().logScreenView('main_menu');
+    
     return BlocProvider(
       create: (context) => SubscriptionBloc(
         subscriptionService: SubscriptionService(),
@@ -38,10 +44,25 @@ class _MainMenuPageContentState extends State<_MainMenuPageContent> {
   int _currentIndex = 0;
 
   void _onCategoryTap(BuildContext context, String categoryId, bool isFree, bool isSubscribed) {
+    // Log category selection event
+    FirebaseService().logEvent('category_selected', parameters: {
+      'category_id': categoryId,
+      'is_free': isFree,
+      'is_subscribed': isSubscribed,
+    });
+    AmplitudeService().logCategorySelected(categoryId, !isFree);
+    
     if (isFree || isSubscribed) {
       // Navigate to game screen
       context.push('/game/$categoryId');
     } else {
+      // Log paywall view
+      FirebaseService().logEvent('paywall_viewed', parameters: {
+        'source': 'category_selection',
+        'category_id': categoryId,
+      });
+      AmplitudeService().logPaywallViewed('category_selection');
+      
       // Navigate to paywall
       context.push('/paywall');
     }

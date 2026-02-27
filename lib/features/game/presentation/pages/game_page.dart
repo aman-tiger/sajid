@@ -7,6 +7,8 @@ import '../../../../core/constants/categories.dart';
 import '../../../../core/data/repositories/question_repository.dart';
 import '../../../../core/models/category_model.dart';
 import '../../../../core/services/share_service.dart';
+import '../../../../core/services/firebase_service.dart';
+import '../../../../core/services/amplitude_service.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../settings/bloc/settings_bloc.dart';
 import '../../../settings/bloc/settings_state.dart';
@@ -26,6 +28,10 @@ class GamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Log game screen view
+    FirebaseService().logScreenView('game_screen');
+    AmplitudeService().logScreenView('game_screen');
+    
     final languageCode = context.select<SettingsBloc, String>((bloc) {
       final state = bloc.state;
       return state is SettingsLoaded ? state.language : 'en';
@@ -211,12 +217,38 @@ class _GamePageContentState extends State<_GamePageContent> {
             hasPrevious: state.hasPrevious,
             hasNext: state.hasNext,
             onPrevious: state.hasPrevious
-                ? () => context.read<GameBloc>().add(const PreviousQuestionEvent())
+                ? () {
+                    context.read<GameBloc>().add(const PreviousQuestionEvent());
+                    // Log question navigation
+                    AmplitudeService().logEvent('question_navigation', properties: {
+                      'direction': 'previous',
+                      'category_id': widget.categoryId,
+                      'question_index': state.currentIndex - 1,
+                    });
+                  }
                 : null,
             onNext: state.hasNext
-                ? () => context.read<GameBloc>().add(const NextQuestionEvent())
+                ? () {
+                    context.read<GameBloc>().add(const NextQuestionEvent());
+                    // Log question navigation and viewing
+                    final nextIndex = state.currentIndex + 1;
+                    AmplitudeService().logQuestionViewed(widget.categoryId, nextIndex);
+                    FirebaseService().logEvent('question_viewed', parameters: {
+                      'category_id': widget.categoryId,
+                      'question_index': nextIndex,
+                    });
+                  }
                 : null,
-            onShuffle: () => context.read<GameBloc>().add(const ShuffleQuestionsEvent()),
+            onShuffle: () {
+              context.read<GameBloc>().add(const ShuffleQuestionsEvent());
+              // Log shuffle action
+              FirebaseService().logEvent('questions_shuffled', parameters: {
+                'category_id': widget.categoryId,
+              });
+              AmplitudeService().logEvent('questions_shuffled', properties: {
+                'category_id': widget.categoryId,
+              });
+            },
             onShare: () => _shareQuestion(context, state.currentQuestion.text),
           ),
         ),
