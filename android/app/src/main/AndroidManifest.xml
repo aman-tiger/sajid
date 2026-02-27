@@ -1,4 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Internet permission for network requests -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <!-- Push notification permission for Android 13+ (API 33+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    
     <application
         android:label="never_have_ever"
         android:name="${applicationName}"

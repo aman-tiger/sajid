@@ -61,6 +61,9 @@ dependencies:
 
   # Local Storage
   shared_preferences: ^2.3.3
+  
+  # Environment Variables
+  flutter_dotenv: ^5.1.0
 
   # Phase 2: Share & Localization
   share_plus: ^10.1.2
@@ -112,6 +115,7 @@ flutter:
 
   # Assets
   assets:
+    - .env
     - assets/images/
     - assets/images/onboarding/
     - assets/images/categories/

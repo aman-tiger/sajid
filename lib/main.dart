@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import 'firebase_options.dart';
+import 'core/config/env_config.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_router.dart';
 import 'core/services/firebase_service.dart';
@@ -19,6 +20,12 @@ void main() async {
   // Initialize Sentry and wrap the app
   await SentryService.initialize(() async {
     WidgetsFlutterBinding.ensureInitialized();
+
+    // Load environment variables
+    await EnvConfig.initialize();
+    
+    // Validate environment configuration
+    EnvConfig.validateConfig();
 
     // Set preferred orientations
     await SystemChrome.setPreferredOrientations([
@@ -39,7 +46,7 @@ void main() async {
 
     // Initialize Qonversion SDK
     final config = QonversionConfigBuilder(
-      'snoMes6puPWAIqD73d05Ki1V4D8HUKVd',
+      EnvConfig.qonversionProjectKey,
       QLaunchMode.subscriptionManagement,
     ).build();
     Qonversion.initialize(config);

@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
+import '../config/env_config.dart';
 
 /// Service class for managing Sentry error tracking
 /// Captures errors, exceptions, and performance metrics
@@ -8,14 +9,11 @@ class SentryService {
   factory SentryService() => _instance;
   SentryService._internal();
 
-  static const String _dsn =
-      'https://5909324f6ca05e7f7aa1ea6e153985a8@o4510181406867456.ingest.de.sentry.io/4510790965592144';
-
   /// Initialize Sentry (call this from main.dart before runApp)
   static Future<void> initialize(Function() appRunner) async {
     await SentryFlutter.init(
       (options) {
-        options.dsn = _dsn;
+        options.dsn = EnvConfig.sentryDsn;
         options.environment = kDebugMode ? 'development' : 'production';
         options.tracesSampleRate = 1.0; // Capture 100% of transactions
         options.debug = kDebugMode; // Print debug info in debug mode
