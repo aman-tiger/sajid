@@ -9,302 +9,325 @@ class AppLocalizationsKo extends AppLocalizations {
   AppLocalizationsKo([String locale = 'ko']) : super(locale);
 
   @override
-  String get onboarding_1_title => '멋진 밤을 준비하셨나요?';
+  String get onboarding_1_title => 'ë©‹ì§„ ë°¤ì„ ì¤€ë¹„í•˜ì…¨ë‚˜ìš”?';
 
   @override
-  String get onboarding_1_subtitle => '궁극의 게임 경험에 빠져보세요!';
+  String get onboarding_1_subtitle =>
+      'ê¶ê·¹ì˜ ê²Œìž„ ê²½í—˜ì— ë¹ ì ¸ë³´ì„¸ìš”!';
 
   @override
-  String get onboarding_2_title => '6개의 멋진 게임 팩';
+  String get onboarding_2_title => '6ê°œì˜ ë©‹ì§„ ê²Œìž„ íŒ©';
 
   @override
-  String get onboarding_2_subtitle => '클래식부터 핫한 것까지 - 완벽한 분위기를 찾으세요!';
+  String get onboarding_2_subtitle =>
+      'í´ëž˜ì‹ë¶€í„° í•«í•œ ê²ƒê¹Œì§€ - ì™„ë²½í•œ ë¶„ìœ„ê¸°ë¥¼ ì°¾ìœ¼ì„¸ìš”!';
 
   @override
-  String get onboarding_3_title => '1,500개의 질문';
+  String get onboarding_3_title => '1,500ê°œì˜ ì§ˆë¬¸';
 
   @override
-  String get onboarding_3_subtitle => '친구들과 끝없는 즐거움이 기다립니다!';
+  String get onboarding_3_subtitle =>
+      'ì¹œêµ¬ë“¤ê³¼ ëì—†ëŠ” ì¦ê±°ì›€ì´ ê¸°ë‹¤ë¦½ë‹ˆë‹¤!';
 
   @override
-  String get onboarding_4_title => '경험을 평가해주세요';
+  String get onboarding_4_title => 'ê²½í—˜ì„ í‰ê°€í•´ì£¼ì„¸ìš”';
 
   @override
-  String get onboarding_4_subtitle => '게임을 더 좋게 만드는 데 도움을 주세요!';
+  String get onboarding_4_subtitle =>
+      'ê²Œìž„ì„ ë” ì¢‹ê²Œ ë§Œë“œëŠ” ë° ë„ì›€ì„ ì£¼ì„¸ìš”!';
 
   @override
-  String get button_continue => '계속하기';
+  String get button_continue => 'ê³„ì†í•˜ê¸°';
 
   @override
-  String get button_start_game => '게임 시작';
+  String get button_start_game => 'ê²Œìž„ ì‹œìž‘';
 
   @override
-  String get button_skip => '건너뛰기';
+  String get button_skip => 'ê±´ë„ˆë›°ê¸°';
 
   @override
-  String get button_get_started => '시작하기';
+  String get button_get_started => 'ì‹œìž‘í•˜ê¸°';
 
   @override
-  String get button_back => '뒤로';
+  String get button_back => 'ë’¤ë¡œ';
 
   @override
-  String get button_next => '다음';
+  String get button_next => 'ë‹¤ìŒ';
 
   @override
-  String get button_save => '저장';
+  String get button_save => 'ì €ìž¥';
 
   @override
-  String get button_cancel => '취소';
+  String get button_cancel => 'ì·¨ì†Œ';
 
   @override
-  String get button_ok => '확인';
+  String get button_ok => 'í™•ì¸';
 
   @override
-  String get button_close => '닫기';
+  String get button_close => 'ë‹«ê¸°';
 
   @override
-  String get button_share => '공유';
+  String get button_share => 'ê³µìœ ';
 
   @override
-  String get button_rate_now => '지금 평가하기';
+  String get button_rate_now => 'ì§€ê¸ˆ í‰ê°€í•˜ê¸°';
 
   @override
-  String get button_maybe_later => '나중에';
+  String get button_maybe_later => 'ë‚˜ì¤‘ì—';
 
   @override
   String get common_and => '?';
 
   @override
-  String get main_menu_title => '네버 해브 아이 에버';
+  String get main_menu_title => 'ë„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„';
 
   @override
-  String get main_menu_subtitle => '팩을 선택하세요';
+  String get main_menu_subtitle => 'íŒ©ì„ ì„ íƒí•˜ì„¸ìš”';
 
   @override
-  String get main_menu_buy_subscription => '모든 팩 잠금 해제';
+  String get main_menu_buy_subscription => 'ëª¨ë“  íŒ© ìž ê¸ˆ í•´ì œ';
 
   @override
-  String get main_menu_settings => '설정';
+  String get main_menu_settings => 'ì„¤ì •';
 
   @override
-  String get main_menu_free => '무료';
+  String get main_menu_free => 'ë¬´ë£Œ';
 
   @override
-  String get main_menu_premium => '프리미엄';
+  String get main_menu_premium => 'í”„ë¦¬ë¯¸ì—„';
 
   @override
-  String get category_classic_name => '클래식 팩';
+  String get category_classic_name => 'í´ëž˜ì‹ íŒ©';
 
   @override
-  String get category_classic_desc => '모든 모임을 시작하기에 완벽합니다!';
+  String get category_classic_desc =>
+      'ëª¨ë“  ëª¨ìž„ì„ ì‹œìž‘í•˜ê¸°ì— ì™„ë²½í•©ë‹ˆë‹¤!';
 
   @override
-  String get category_party_name => '파티 팩';
+  String get category_party_name => 'íŒŒí‹° íŒ©';
 
   @override
-  String get category_party_desc => '흥미진진한 도전으로 파티에 활력을 불어넣으세요!';
+  String get category_party_desc =>
+      'í¥ë¯¸ì§„ì§„í•œ ë„ì „ìœ¼ë¡œ íŒŒí‹°ì— í™œë ¥ì„ ë¶ˆì–´ë„£ìœ¼ì„¸ìš”!';
 
   @override
-  String get category_girls_name => '여성용 18+';
+  String get category_girls_name => 'ì—¬ì„±ìš© 18+';
 
   @override
-  String get category_girls_desc => '대담하고 과감한 여자들의 밤을 위한 질문들!';
+  String get category_girls_desc =>
+      'ëŒ€ë‹´í•˜ê³  ê³¼ê°í•œ ì—¬ìžë“¤ì˜ ë°¤ì„ ìœ„í•œ ì§ˆë¬¸ë“¤!';
 
   @override
-  String get category_couples_name => '커플 팩';
+  String get category_couples_name => 'ì»¤í”Œ íŒ©';
 
   @override
-  String get category_couples_desc => '파트너와 이전과는 다르게 연결되세요!';
+  String get category_couples_desc =>
+      'íŒŒíŠ¸ë„ˆì™€ ì´ì „ê³¼ëŠ” ë‹¤ë¥´ê²Œ ì—°ê²°ë˜ì„¸ìš”!';
 
   @override
-  String get category_hot_name => '핫한 질문 18+';
+  String get category_hot_name => 'í•«í•œ ì§ˆë¬¸ 18+';
 
   @override
-  String get category_hot_desc => '뜨거운 질문으로 분위기를 달구세요!';
+  String get category_hot_desc =>
+      'ëœ¨ê±°ìš´ ì§ˆë¬¸ìœ¼ë¡œ ë¶„ìœ„ê¸°ë¥¼ ë‹¬êµ¬ì„¸ìš”!';
 
   @override
-  String get category_guys_name => '남성용 팩';
+  String get category_guys_name => 'ë‚¨ì„±ìš© íŒ©';
 
   @override
-  String get category_guys_desc => '남자들을 위해 설계된 멋진 도전들!';
+  String get category_guys_desc =>
+      'ë‚¨ìžë“¤ì„ ìœ„í•´ ì„¤ê³„ëœ ë©‹ì§„ ë„ì „ë“¤!';
 
   @override
-  String get game_never_have_i_ever => '나는 한 번도...';
+  String get game_never_have_i_ever => 'ë‚˜ëŠ” í•œ ë²ˆë„...';
 
   @override
-  String get game_swipe_hint => '스와이프하여 이동';
+  String get game_swipe_hint => 'ìŠ¤ì™€ì´í”„í•˜ì—¬ ì´ë™';
 
   @override
-  String get game_loading => '질문을 불러오는 중...';
+  String get game_loading => 'ì§ˆë¬¸ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘...';
 
   @override
-  String get game_error_title => '앗!';
+  String get game_error_title => 'ì•—!';
 
   @override
-  String get game_error_no_questions => '이 카테고리에 사용 가능한 질문이 없습니다';
+  String get game_error_no_questions =>
+      'ì´ ì¹´í…Œê³ ë¦¬ì— ì‚¬ìš© ê°€ëŠ¥í•œ ì§ˆë¬¸ì´ ì—†ìŠµë‹ˆë‹¤';
 
   @override
-  String get game_error_failed_load => '질문을 불러오지 못했습니다';
+  String get game_error_failed_load => 'ì§ˆë¬¸ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤';
 
   @override
-  String get game_button_previous => '이전';
+  String get game_button_previous => 'ì´ì „';
 
   @override
-  String get game_button_next => '다음';
+  String get game_button_next => 'ë‹¤ìŒ';
 
   @override
-  String get game_button_shuffle => '섞기';
+  String get game_button_shuffle => 'ì„žê¸°';
 
   @override
-  String get game_button_share => '공유';
+  String get game_button_share => 'ê³µìœ ';
 
   @override
   String game_share_text(String question) {
-    return '나는 한 번도... $question\n\n네버 해브 아이 에버 앱을 다운로드하고 친구들과 플레이하세요!';
+    return 'ë‚˜ëŠ” í•œ ë²ˆë„... $question\n\në„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„ ì•±ì„ ë‹¤ìš´ë¡œë“œí•˜ê³  ì¹œêµ¬ë“¤ê³¼ í”Œë ˆì´í•˜ì„¸ìš”!';
   }
 
   @override
-  String get settings_title => '설정';
+  String get settings_title => 'ì„¤ì •';
 
   @override
-  String get settings_section_account => '계정';
+  String get settings_section_account => 'ê³„ì •';
 
   @override
-  String get settings_section_app => '앱 설정';
+  String get settings_section_app => 'ì•± ì„¤ì •';
 
   @override
-  String get settings_section_support => '지원 및 피드백';
+  String get settings_section_support => 'ì§€ì› ë° í”¼ë“œë°±';
 
   @override
-  String get settings_section_about => '정보';
+  String get settings_section_about => 'ì •ë³´';
 
   @override
-  String get settings_premium_member => '프리미엄 회원';
+  String get settings_premium_member => 'í”„ë¦¬ë¯¸ì—„ íšŒì›';
 
   @override
-  String get settings_free_plan => '무료 플랜';
+  String get settings_free_plan => 'ë¬´ë£Œ í”Œëžœ';
 
   @override
-  String get settings_premium_desc => '모든 팩에 대한 무제한 액세스를 즐기세요!';
+  String get settings_premium_desc =>
+      'ëª¨ë“  íŒ©ì— ëŒ€í•œ ë¬´ì œí•œ ì•¡ì„¸ìŠ¤ë¥¼ ì¦ê¸°ì„¸ìš”!';
 
   @override
-  String get settings_free_desc => '모든 프리미엄 콘텐츠를 잠금 해제하려면 업그레이드하세요';
+  String get settings_free_desc =>
+      'ëª¨ë“  í”„ë¦¬ë¯¸ì—„ ì½˜í…ì¸ ë¥¼ ìž ê¸ˆ í•´ì œí•˜ë ¤ë©´ ì—…ê·¸ë ˆì´ë“œí•˜ì„¸ìš”';
 
   @override
-  String get settings_restore_purchases => '구매 복원';
+  String get settings_restore_purchases => 'êµ¬ë§¤ ë³µì›';
 
   @override
-  String get settings_restore_purchases_desc => '이전 구매를 복원합니다';
+  String get settings_restore_purchases_desc =>
+      'ì´ì „ êµ¬ë§¤ë¥¼ ë³µì›í•©ë‹ˆë‹¤';
 
   @override
-  String get settings_language => '언어';
+  String get settings_language => 'ì–¸ì–´';
 
   @override
-  String get settings_language_desc => '앱 언어 변경';
+  String get settings_language_desc => 'ì•± ì–¸ì–´ ë³€ê²½';
 
   @override
-  String get settings_dark_mode => '다크 모드';
+  String get settings_dark_mode => 'ë‹¤í¬ ëª¨ë“œ';
 
   @override
-  String get settings_how_to_play => '게임 방법';
+  String get settings_how_to_play => 'ê²Œìž„ ë°©ë²•';
 
   @override
-  String get settings_how_to_play_desc => '게임 플레이 방법 배우기';
+  String get settings_how_to_play_desc => 'ê²Œìž„ í”Œë ˆì´ ë°©ë²• ë°°ìš°ê¸°';
 
   @override
-  String get settings_share_app => '앱 공유';
+  String get settings_share_app => 'ì•± ê³µìœ ';
 
   @override
-  String get settings_share_app_desc => '친구와 공유';
+  String get settings_share_app_desc => 'ì¹œêµ¬ì™€ ê³µìœ ';
 
   @override
-  String get settings_rate_us => '평가하기';
+  String get settings_rate_us => 'í‰ê°€í•˜ê¸°';
 
   @override
-  String get settings_rate_us_desc => '스토어에서 평가하기';
+  String get settings_rate_us_desc => 'ìŠ¤í† ì–´ì—ì„œ í‰ê°€í•˜ê¸°';
 
   @override
-  String get settings_app_version => '앱 버전';
+  String get settings_app_version => 'ì•± ë²„ì „';
 
   @override
-  String get settings_terms => '이용 약관';
+  String get settings_terms => 'ì´ìš© ì•½ê´€';
 
   @override
-  String get settings_privacy => '개인정보 보호정책';
+  String get settings_privacy => 'ê°œì¸ì •ë³´ ë³´í˜¸ì •ì±…';
 
   @override
-  String get settings_restore_dialog_title => '구매 복원';
+  String get settings_restore_dialog_title => 'êµ¬ë§¤ ë³µì›';
 
   @override
-  String get settings_restore_dialog_message => '3단계가 구현되면 구매가 복원됩니다.';
+  String get settings_restore_dialog_message =>
+      '3ë‹¨ê³„ê°€ êµ¬í˜„ë˜ë©´ êµ¬ë§¤ê°€ ë³µì›ë©ë‹ˆë‹¤.';
 
   @override
   String get settings_share_message =>
-      '네버 해브 아이 에버를 확인해보세요! 최고의 파티 게임 앱. 지금 다운로드하세요!';
+      'ë„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„ë¥¼ í™•ì¸í•´ë³´ì„¸ìš”! ìµœê³ ì˜ íŒŒí‹° ê²Œìž„ ì•±. ì§€ê¸ˆ ë‹¤ìš´ë¡œë“œí•˜ì„¸ìš”!';
 
   @override
-  String get settings_share_subject => '네버 해브 아이 에버 - 재미있는 파티 게임';
+  String get settings_share_subject =>
+      'ë„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„ - ìž¬ë¯¸ìžˆëŠ” íŒŒí‹° ê²Œìž„';
 
   @override
-  String get how_to_play_title => '게임 방법';
+  String get how_to_play_title => 'ê²Œìž„ ë°©ë²•';
 
   @override
-  String get how_to_play_header_title => '네버 해브 아이 에버';
+  String get how_to_play_header_title => 'ë„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„';
 
   @override
-  String get how_to_play_header_subtitle => '궁극의 파티 게임';
+  String get how_to_play_header_subtitle => 'ê¶ê·¹ì˜ íŒŒí‹° ê²Œìž„';
 
   @override
-  String get how_to_play_step_1_title => '팩 선택';
+  String get how_to_play_step_1_title => 'íŒ© ì„ íƒ';
 
   @override
-  String get how_to_play_step_1_desc => '파티 분위기에 맞는 6개의 흥미진진한 카테고리 중에서 선택하세요.';
+  String get how_to_play_step_1_desc =>
+      'íŒŒí‹° ë¶„ìœ„ê¸°ì— ë§žëŠ” 6ê°œì˜ í¥ë¯¸ì§„ì§„í•œ ì¹´í…Œê³ ë¦¬ ì¤‘ì—ì„œ ì„ íƒí•˜ì„¸ìš”.';
 
   @override
-  String get how_to_play_step_2_title => '질문 읽기';
+  String get how_to_play_step_2_title => 'ì§ˆë¬¸ ì½ê¸°';
 
   @override
   String get how_to_play_step_2_desc =>
-      '각 플레이어는 차례로 \"나는 한 번도...\" 질문을 소리 내어 읽습니다.';
+      'ê° í”Œë ˆì´ì–´ëŠ” ì°¨ë¡€ë¡œ \"ë‚˜ëŠ” í•œ ë²ˆë„...\" ì§ˆë¬¸ì„ ì†Œë¦¬ ë‚´ì–´ ì½ìŠµë‹ˆë‹¤.';
 
   @override
-  String get how_to_play_step_3_title => '진실 또는 행동';
+  String get how_to_play_step_3_title => 'ì§„ì‹¤ ë˜ëŠ” í–‰ë™';
 
   @override
   String get how_to_play_step_3_desc =>
-      '해본 적이 있는 플레이어는 인정하거나 재미있는 도전을 완수해야 합니다!';
+      'í•´ë³¸ ì ì´ ìžˆëŠ” í”Œë ˆì´ì–´ëŠ” ì¸ì •í•˜ê±°ë‚˜ ìž¬ë¯¸ìžˆëŠ” ë„ì „ì„ ì™„ìˆ˜í•´ì•¼ í•©ë‹ˆë‹¤!';
 
   @override
-  String get how_to_play_step_4_title => '다음 질문';
+  String get how_to_play_step_4_title => 'ë‹¤ìŒ ì§ˆë¬¸';
 
   @override
-  String get how_to_play_step_4_desc => '스와이프하거나 탭하여 다음 질문으로 이동하고 즐거움을 계속하세요!';
+  String get how_to_play_step_4_desc =>
+      'ìŠ¤ì™€ì´í”„í•˜ê±°ë‚˜ íƒ­í•˜ì—¬ ë‹¤ìŒ ì§ˆë¬¸ìœ¼ë¡œ ì´ë™í•˜ê³  ì¦ê±°ì›€ì„ ê³„ì†í•˜ì„¸ìš”!';
 
   @override
-  String get how_to_play_step_5_title => '즐기세요!';
+  String get how_to_play_step_5_title => 'ì¦ê¸°ì„¸ìš”!';
 
   @override
-  String get how_to_play_step_5_desc => '재미있는 순간을 즐기고 친구들을 더 잘 알아가세요!';
+  String get how_to_play_step_5_desc =>
+      'ìž¬ë¯¸ìžˆëŠ” ìˆœê°„ì„ ì¦ê¸°ê³  ì¹œêµ¬ë“¤ì„ ë” ìž˜ ì•Œì•„ê°€ì„¸ìš”!';
 
   @override
   String how_to_play_step_label(String number) {
-    return '단계 $number';
+    return 'ë‹¨ê³„ $number';
   }
 
   @override
-  String get how_to_play_pro_tips => '프로 팁';
+  String get how_to_play_pro_tips => 'í”„ë¡œ íŒ';
 
   @override
-  String get how_to_play_tip_1 => '섞기 버튼을 사용하여 질문을 무작위로 만드세요';
+  String get how_to_play_tip_1 =>
+      'ì„žê¸° ë²„íŠ¼ì„ ì‚¬ìš©í•˜ì—¬ ì§ˆë¬¸ì„ ë¬´ìž‘ìœ„ë¡œ ë§Œë“œì„¸ìš”';
 
   @override
-  String get how_to_play_tip_2 => '좋아하는 질문을 친구들과 공유하세요';
+  String get how_to_play_tip_2 =>
+      'ì¢‹ì•„í•˜ëŠ” ì§ˆë¬¸ì„ ì¹œêµ¬ë“¤ê³¼ ê³µìœ í•˜ì„¸ìš”';
 
   @override
-  String get how_to_play_tip_3 => '프리미엄 팩은 1,500개 이상의 독점 질문을 잠금 해제합니다';
+  String get how_to_play_tip_3 =>
+      'í”„ë¦¬ë¯¸ì—„ íŒ©ì€ 1,500ê°œ ì´ìƒì˜ ë…ì  ì§ˆë¬¸ì„ ìž ê¸ˆ í•´ì œí•©ë‹ˆë‹¤';
 
   @override
-  String get how_to_play_tip_4 => '최대한의 재미를 위해 3명 이상의 플레이어와 플레이하세요!';
+  String get how_to_play_tip_4 =>
+      'ìµœëŒ€í•œì˜ ìž¬ë¯¸ë¥¼ ìœ„í•´ 3ëª… ì´ìƒì˜ í”Œë ˆì´ì–´ì™€ í”Œë ˆì´í•˜ì„¸ìš”!';
 
   @override
   String get onboarding_terms_prefix => '???? ??? ?????: ';
@@ -313,70 +336,91 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboarding_terms_of_use => '????';
 
   @override
-  String get language_title => '언어';
+  String get language_title => 'ì–¸ì–´';
 
   @override
-  String get language_subtitle => '선호하는 언어를 선택하세요';
+  String get language_subtitle => 'ì„ í˜¸í•˜ëŠ” ì–¸ì–´ë¥¼ ì„ íƒí•˜ì„¸ìš”';
 
   @override
   String get language_english => 'English';
 
   @override
-  String get language_spanish => 'Español';
+  String get language_spanish => 'EspaÃ±ol';
 
   @override
   String get language_german => 'Deutsch';
 
   @override
-  String get language_french => 'Français';
+  String get language_french => 'FranÃ§ais';
 
   @override
-  String get language_korean => '한국어';
+  String get language_korean => 'í•œêµ­ì–´';
 
   @override
-  String get language_changed_title => '언어 변경됨';
+  String get language_dutch => 'Dutch';
+
+  @override
+  String get language_swedish => 'Swedish';
+
+  @override
+  String get language_norwegian => 'Norwegian';
+
+  @override
+  String get language_russian => 'Russian';
+
+  @override
+  String get language_portuguese_brazil => 'Portuguese (Brazil)';
+
+  @override
+  String get language_japanese => 'Japanese';
+
+  @override
+  String get language_italian => 'Italian';
+
+  @override
+  String get language_changed_title => 'ì–¸ì–´ ë³€ê²½ë¨';
 
   @override
   String language_changed_message(String language) {
-    return '언어가 $language(으)로 변경되었습니다. 최종 버전에서 앱이 완전히 번역됩니다.';
+    return 'ì–¸ì–´ê°€ $language(ìœ¼)ë¡œ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤. ìµœì¢… ë²„ì „ì—ì„œ ì•±ì´ ì™„ì „ížˆ ë²ˆì—­ë©ë‹ˆë‹¤.';
   }
 
   @override
-  String get paywall_title => '프리미엄으로 업그레이드';
+  String get paywall_title => 'í”„ë¦¬ë¯¸ì—„ìœ¼ë¡œ ì—…ê·¸ë ˆì´ë“œ';
 
   @override
-  String get paywall_subtitle => '끊임없는 즐거움이 기다립니다';
+  String get paywall_subtitle => 'ëŠìž„ì—†ëŠ” ì¦ê±°ì›€ì´ ê¸°ë‹¤ë¦½ë‹ˆë‹¤';
 
   @override
-  String get paywall_choose_plan => '플랜 선택';
+  String get paywall_choose_plan => 'í”Œëžœ ì„ íƒ';
 
   @override
-  String get paywall_feature_1 => '18+ 전용 콘텐츠 잠금 해제';
+  String get paywall_feature_1 => '18+ ì „ìš© ì½˜í…ì¸  ìž ê¸ˆ í•´ì œ';
 
   @override
-  String get paywall_feature_2 => '정기적으로 새 업데이트';
+  String get paywall_feature_2 => 'ì •ê¸°ì ìœ¼ë¡œ ìƒˆ ì—…ë°ì´íŠ¸';
 
   @override
-  String get paywall_feature_3 => '광고 없음';
+  String get paywall_feature_3 => 'ê´‘ê³  ì—†ìŒ';
 
   @override
-  String get paywall_feature_4 => '언제든지 취소 가능';
+  String get paywall_feature_4 => 'ì–¸ì œë“ ì§€ ì·¨ì†Œ ê°€ëŠ¥';
 
   @override
-  String get paywall_weekly_plan => '주간';
+  String get paywall_weekly_plan => 'ì£¼ê°„';
 
   @override
-  String get paywall_monthly_plan => '월간';
+  String get paywall_monthly_plan => 'ì›”ê°„';
 
   @override
-  String get paywall_yearly_plan => '연간';
+  String get paywall_yearly_plan => 'ì—°ê°„';
 
   @override
-  String get paywall_best_value => '최고 가치';
+  String get paywall_best_value => 'ìµœê³  ê°€ì¹˜';
 
   @override
   String paywall_trial_text(String price) {
-    return '3일 무료 체험';
+    return '3ì¼ ë¬´ë£Œ ì²´í—˜';
   }
 
   @override
@@ -404,89 +448,97 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get paywall_start_trial => '무료 체험 시작';
+  String get paywall_start_trial => 'ë¬´ë£Œ ì²´í—˜ ì‹œìž‘';
 
   @override
-  String get paywall_subscribe => '지금 구독';
+  String get paywall_subscribe => 'ì§€ê¸ˆ êµ¬ë…';
 
   @override
-  String get paywall_restore => '구매 복원';
+  String get paywall_restore => 'êµ¬ë§¤ ë³µì›';
 
   @override
-  String get paywall_terms => '이용 약관';
+  String get paywall_terms => 'ì´ìš© ì•½ê´€';
 
   @override
-  String get paywall_privacy => '개인정보 보호정책';
+  String get paywall_privacy => 'ê°œì¸ì •ë³´ ë³´í˜¸ì •ì±…';
 
   @override
-  String get paywall_cancel_anytime => '언제든지 취소 가능';
+  String get paywall_cancel_anytime => 'ì–¸ì œë“ ì§€ ì·¨ì†Œ ê°€ëŠ¥';
 
   @override
-  String get paywall_loading => '구독 플랜을 불러오는 중...';
+  String get paywall_loading => 'êµ¬ë… í”Œëžœì„ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘...';
 
   @override
-  String get paywall_error => '구독 플랜을 불러오지 못했습니다. 다시 시도해주세요.';
+  String get paywall_error =>
+      'êµ¬ë… í”Œëžœì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.';
 
   @override
-  String get subscription_active => '활성 구독이 있습니다';
+  String get subscription_active => 'í™œì„± êµ¬ë…ì´ ìžˆìŠµë‹ˆë‹¤';
 
   @override
-  String get subscription_expired => '구독이 만료되었습니다';
+  String get subscription_expired => 'êµ¬ë…ì´ ë§Œë£Œë˜ì—ˆìŠµë‹ˆë‹¤';
 
   @override
-  String get subscription_purchase_success => '구매 성공! 프리미엄 콘텐츠를 즐기세요.';
+  String get subscription_purchase_success =>
+      'êµ¬ë§¤ ì„±ê³µ! í”„ë¦¬ë¯¸ì—„ ì½˜í…ì¸ ë¥¼ ì¦ê¸°ì„¸ìš”.';
 
   @override
-  String get subscription_purchase_cancelled => '구매가 취소되었습니다';
+  String get subscription_purchase_cancelled =>
+      'êµ¬ë§¤ê°€ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤';
 
   @override
-  String get subscription_purchase_error => '구매에 실패했습니다. 다시 시도해주세요.';
+  String get subscription_purchase_error =>
+      'êµ¬ë§¤ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.';
 
   @override
-  String get subscription_restore_success => '구매가 성공적으로 복원되었습니다!';
+  String get subscription_restore_success =>
+      'êµ¬ë§¤ê°€ ì„±ê³µì ìœ¼ë¡œ ë³µì›ë˜ì—ˆìŠµë‹ˆë‹¤!';
 
   @override
-  String get subscription_restore_error => '복원할 구매를 찾을 수 없습니다.';
+  String get subscription_restore_error =>
+      'ë³µì›í•  êµ¬ë§¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.';
 
   @override
-  String get subscription_checking => '구독 상태를 확인하는 중...';
+  String get subscription_checking => 'êµ¬ë… ìƒíƒœë¥¼ í™•ì¸í•˜ëŠ” ì¤‘...';
 
   @override
-  String get error_generic => '문제가 발생했습니다. 다시 시도해주세요.';
+  String get error_generic =>
+      'ë¬¸ì œê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.';
 
   @override
-  String get error_network => '네트워크 오류. 연결을 확인해주세요.';
+  String get error_network =>
+      'ë„¤íŠ¸ì›Œí¬ ì˜¤ë¥˜. ì—°ê²°ì„ í™•ì¸í•´ì£¼ì„¸ìš”.';
 
   @override
   String error_loading_questions(String error) {
-    return '질문을 불러오지 못했습니다: $error';
+    return 'ì§ˆë¬¸ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤: $error';
   }
 
   @override
   String error_loading_settings(String error) {
-    return '설정을 불러오지 못했습니다: $error';
+    return 'ì„¤ì •ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤: $error';
   }
 
   @override
-  String get common_loading => '로딩 중...';
+  String get common_loading => 'ë¡œë”© ì¤‘...';
 
   @override
-  String get common_retry => '다시 시도';
+  String get common_retry => 'ë‹¤ì‹œ ì‹œë„';
 
   @override
-  String get common_done => '완료';
+  String get common_done => 'ì™„ë£Œ';
 
   @override
-  String get common_error => '오류';
+  String get common_error => 'ì˜¤ë¥˜';
 
   @override
-  String get common_success => '성공';
+  String get common_success => 'ì„±ê³µ';
 
   @override
-  String get common_warning => '경고';
+  String get common_warning => 'ê²½ê³ ';
 
   @override
-  String get common_info => '정보';
+  String get common_info => 'ì •ë³´';
 
   @override
   String error_page_not_found(String path) {

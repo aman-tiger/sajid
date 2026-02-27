@@ -6,6 +6,7 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/categories.dart';
 import '../../../../core/data/repositories/question_repository.dart';
 import '../../../../core/models/category_model.dart';
+import '../../../../core/services/analytics_service.dart';
 import '../../../../core/services/share_service.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../settings/bloc/settings_bloc.dart';
@@ -301,7 +302,12 @@ class _GamePageContentState extends State<_GamePageContent> {
       subject: t.main_menu_title,
     );
 
-    if (!context.mounted || shared) return;
+    if (shared) {
+      await AnalyticsService().logShareAction('question');
+      return;
+    }
+
+    if (!context.mounted) return;
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

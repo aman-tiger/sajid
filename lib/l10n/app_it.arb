@@ -1,0 +1,234 @@
+{
+  "@@locale": "it",
+  "onboarding_1_title": "Pronto per una notte epica?",
+  "onboarding_1_subtitle": "Tuffati nell’esperienza di gioco definitiva!",
+  "onboarding_2_title": "6 pacchetti epici",
+  "onboarding_2_subtitle": "Dal classico allo spicy — trova il vibe perfetto!",
+  "onboarding_3_title": "1.500 domande",
+  "onboarding_3_subtitle": "Divertimento infinito con gli amici ti aspetta!",
+  "onboarding_4_title": "Valuta la tua esperienza",
+  "onboarding_4_subtitle": "Aiutaci a rendere il gioco ancora migliore!",
+  "button_continue": "Continua",
+  "button_start_game": "Inizia a giocare",
+  "button_skip": "Salta",
+  "button_get_started": "Inizia",
+  "button_back": "Indietro",
+  "button_next": "Avanti",
+  "button_save": "Salva",
+  "button_cancel": "Annulla",
+  "button_ok": "OK",
+  "button_close": "Chiudi",
+  "button_share": "Condividi",
+  "button_rate_now": "Valuta ora",
+  "button_maybe_later": "Forse dopo",
+  "common_and": "e",
+  "main_menu_title": "Non ho mai...",
+  "main_menu_subtitle": "Scegli il tuo pacchetto",
+  "main_menu_buy_subscription": "Sblocca tutti i pacchetti",
+  "main_menu_settings": "Impostazioni",
+  "main_menu_free": "Gratis",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Pacchetto Classico",
+  "category_classic_desc": "L’inizio perfetto per qualsiasi serata!",
+  "category_party_name": "Pacchetto Party",
+  "category_party_desc": "Dai energia alla festa con sfide entusiasmanti!",
+  "category_girls_name": "Ragazze 18+",
+  "category_girls_desc": "Domande audaci per una serata tra ragazze!",
+  "category_couples_name": "Pacchetto Coppie",
+  "category_couples_desc": "Connettiti con il partner come mai prima!",
+  "category_hot_name": "Domande Hot 18+",
+  "category_hot_desc": "Alza la temperatura con domande piccanti!",
+  "category_guys_name": "Pacchetto Ragazzi",
+  "category_guys_desc": "Sfide epiche pensate per i bro!",
+  "game_never_have_i_ever": "Non ho mai...",
+  "game_swipe_hint": "Scorri per navigare",
+  "game_loading": "Caricamento domande...",
+  "game_error_title": "Ops!",
+  "game_error_no_questions": "Nessuna domanda disponibile per questa categoria",
+  "game_error_failed_load": "Impossibile caricare le domande",
+  "game_button_previous": "Indietro",
+  "game_button_next": "Avanti",
+  "game_button_shuffle": "Mescola",
+  "game_button_share": "Condividi",
+  "game_share_text": "Non ho mai... {question}\n\nScarica l’app Non ho mai... e gioca con gli amici!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Impostazioni",
+  "settings_section_account": "Account",
+  "settings_section_app": "Impostazioni app",
+  "settings_section_support": "Supporto e feedback",
+  "settings_section_about": "Info",
+  "settings_premium_member": "Membro Premium",
+  "settings_free_plan": "Piano gratuito",
+  "settings_premium_desc": "Goditi accesso illimitato a tutti i pacchetti!",
+  "settings_free_desc": "Fai l’upgrade per sbloccare tutti i contenuti premium",
+  "settings_restore_purchases": "Ripristina acquisti",
+  "settings_restore_purchases_desc": "Ripristina i tuoi acquisti precedenti",
+  "settings_language": "Lingua",
+  "settings_language_desc": "Cambia la lingua dell’app",
+  "settings_dark_mode": "Modalità scura",
+  "settings_how_to_play": "Come si gioca",
+  "settings_how_to_play_desc": "Impara le regole",
+  "settings_share_app": "Condividi app",
+  "settings_share_app_desc": "Condividi con gli amici",
+  "settings_rate_us": "Valutaci",
+  "settings_rate_us_desc": "Valutaci sullo store",
+  "settings_app_version": "Versione app",
+  "settings_terms": "Termini e condizioni",
+  "settings_privacy": "Privacy Policy",
+  "settings_restore_dialog_title": "Ripristina acquisti",
+  "settings_restore_dialog_message": "I tuoi acquisti verranno ripristinati quando verrà implementata la Fase 3.",
+  "settings_share_message": "Dai un’occhiata a Non ho mai...! L’app definitiva per i party. Scarica ora!",
+  "settings_share_subject": "Non ho mai... - Party game divertente",
+  "how_to_play_title": "Come si gioca",
+  "how_to_play_header_title": "Non ho mai...",
+  "how_to_play_header_subtitle": "Il party game definitivo",
+  "how_to_play_step_1_title": "Scegli il tuo pacchetto",
+  "how_to_play_step_1_desc": "Scegli tra 6 categorie entusiasmanti che matchano il mood della serata.",
+  "how_to_play_step_2_title": "Leggi la domanda",
+  "how_to_play_step_2_desc": "Ogni giocatore a turno legge ad alta voce le domande \"Non ho mai...\".",
+  "how_to_play_step_3_title": "Verità o sfida",
+  "how_to_play_step_3_desc": "Chi L’HA fatto deve ammetterlo o fare una sfida divertente!",
+  "how_to_play_step_4_title": "Prossima domanda",
+  "how_to_play_step_4_desc": "Scorri o tocca per passare alla prossima e continuare il divertimento!",
+  "how_to_play_step_5_title": "Divertiti!",
+  "how_to_play_step_5_desc": "Goditi momenti esilaranti e conosci meglio i tuoi amici!",
+  "how_to_play_step_label": "Passo {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Consigli",
+  "how_to_play_tip_1": "Usa il tasto mescola per randomizzare le domande",
+  "how_to_play_tip_2": "Condividi le tue domande preferite con gli amici",
+  "how_to_play_tip_3": "I pacchetti premium sbloccano 1.500+ domande esclusive",
+  "how_to_play_tip_4": "Meglio in 3+ giocatori per il massimo divertimento!",
+  "onboarding_terms_prefix": "Continuando, accetti i nostri ",
+  "onboarding_terms_of_use": "Termini di utilizzo",
+  "language_title": "Lingua",
+  "language_subtitle": "Seleziona la lingua preferita",
+  "language_english": "Inglese",
+  "language_spanish": "Spagnolo",
+  "language_german": "Tedesco",
+  "language_french": "Francese",
+  "language_korean": "Coreano",
+  "language_changed_title": "Lingua cambiata",
+  "language_changed_message": "La lingua è stata cambiata in {language}. L’app sarà completamente tradotta nella versione finale.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "PASSA A PREMIUM",
+  "paywall_subtitle": "Divertimento non-stop",
+  "paywall_choose_plan": "Scegli il tuo piano",
+  "paywall_feature_1": "Sblocca contenuti esclusivi 18+",
+  "paywall_feature_2": "Nuovi aggiornamenti regolarmente",
+  "paywall_feature_3": "Zero pubblicità",
+  "paywall_feature_4": "Annulla quando vuoi",
+  "paywall_weekly_plan": "Settimanale",
+  "paywall_monthly_plan": "Mensile",
+  "paywall_yearly_plan": "Annuale",
+  "paywall_best_value": "Miglior valore",
+  "paywall_trial_text": "Prova GRATIS per 3 giorni",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "a settimana",
+  "price_per_weeks": "ogni {count} settimane",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "al mese",
+  "price_per_months": "ogni {count} mesi",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "all’anno",
+  "price_per_years": "ogni {count} anni",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Inizia prova gratuita",
+  "paywall_subscribe": "Abbonati ora",
+  "paywall_restore": "Ripristina acquisti",
+  "paywall_terms": "Termini e condizioni",
+  "paywall_privacy": "Privacy Policy",
+  "paywall_cancel_anytime": "Annulla quando vuoi",
+  "paywall_loading": "Caricamento piani di abbonamento...",
+  "paywall_error": "Impossibile caricare i piani. Riprova.",
+  "subscription_active": "Hai un abbonamento attivo",
+  "subscription_expired": "Il tuo abbonamento è scaduto",
+  "subscription_purchase_success": "Acquisto riuscito! Goditi i contenuti premium.",
+  "subscription_purchase_cancelled": "Acquisto annullato",
+  "subscription_purchase_error": "Acquisto non riuscito. Riprova.",
+  "subscription_restore_success": "Acquisti ripristinati con successo!",
+  "subscription_restore_error": "Nessun acquisto da ripristinare.",
+  "subscription_checking": "Verifica stato abbonamento...",
+  "error_generic": "Qualcosa è andato storto. Riprova.",
+  "error_network": "Errore di rete. Controlla la connessione.",
+  "error_loading_questions": "Impossibile caricare le domande: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Impossibile caricare le impostazioni: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Caricamento...",
+  "common_retry": "Riprova",
+  "common_done": "Fatto",
+  "common_error": "Errore",
+  "common_success": "Successo",
+  "common_warning": "Avviso",
+  "common_info": "Info",
+  "error_page_not_found": "Pagina non trovata: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "language_dutch": "Olandese",
+  "language_swedish": "Svedese",
+  "language_norwegian": "Norvegese",
+  "language_russian": "Russo",
+  "language_portuguese_brazil": "Portoghese (Brasile)",
+  "language_japanese": "Giapponese",
+  "language_italian": "Italiano"
+}

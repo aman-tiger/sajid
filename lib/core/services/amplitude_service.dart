@@ -4,6 +4,7 @@ import 'package:amplitude_flutter/events/base_event.dart';
 import 'package:amplitude_flutter/events/identify.dart';
 import 'package:amplitude_flutter/events/revenue.dart';
 import 'package:flutter/foundation.dart';
+import '../config/app_secrets.dart';
 
 /// Service class for managing Amplitude Analytics
 /// Tracks user events, properties, and behavioral data
@@ -13,15 +14,18 @@ class AmplitudeService {
   AmplitudeService._internal();
 
   Amplitude? _amplitude;
-  static const String _apiKey = '3ab27ae7cdd809a01ed470aa66b86b64';
-
   /// Initialize Amplitude
   Future<void> initialize() async {
     try {
+      if (AppSecrets.amplitudeApiKey.isEmpty) {
+        debugPrint('Amplitude key missing. Set AMPLITUDE_API_KEY.');
+        return;
+      }
+
       // Create Amplitude instance with configuration
       _amplitude = Amplitude(
         Configuration(
-          apiKey: _apiKey,
+          apiKey: AppSecrets.amplitudeApiKey,
           flushQueueSize: 30,
           flushIntervalMillis: 30000,
         ),

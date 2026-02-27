@@ -82,7 +82,16 @@ jobs:
           fi
 
       - name: Build signed AAB
-        run: flutter build appbundle --release --build-number=${{ github.run_number }}
+        env:
+          AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
+          SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
+          QONVERSION_PROJECT_KEY: ${{ secrets.QONVERSION_PROJECT_KEY }}
+        run: |
+          flutter build appbundle --release \
+            --build-number=${{ github.run_number }} \
+            --dart-define=AMPLITUDE_API_KEY="$AMPLITUDE_API_KEY" \
+            --dart-define=SENTRY_DSN="$SENTRY_DSN" \
+            --dart-define=QONVERSION_PROJECT_KEY="$QONVERSION_PROJECT_KEY"
 
       - name: Locate AAB
         id: locate_aab

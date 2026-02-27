@@ -1,0 +1,4 @@
+submit_for_review(false)
+automatic_release(false)
+force(true)
+skip_binary_upload(true)

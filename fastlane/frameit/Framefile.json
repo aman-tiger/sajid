@@ -1,0 +1,15 @@
+{
+  "default": {
+    "keyword": {
+      "fonts": [{"font": "fonts/SFProDisplay-Bold.ttf", "size": 88}],
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "fonts": [{"font": "fonts/SFProDisplay-Regular.ttf", "size": 60}],
+      "color": "#FFFFFF"
+    },
+    "background": "./backgrounds/default.png",
+    "padding": 50,
+    "show_complete_frame": false
+  }
+}

@@ -1,0 +1,101 @@
+name: Release Pipeline (ASO)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Release version folder (e.g. 1.0.0)
+        required: true
+        default: "1.0.0"
+      mode:
+        description: listing / all
+        required: true
+        type: choice
+        default: listing
+        options:
+          - listing
+          - all
+      variant:
+        description: Screenshot variant
+        required: true
+        type: choice
+        default: A
+        options:
+          - A
+          - B
+          - both
+      cpp_page:
+        description: Reserved for n8n
+        required: true
+        type: choice
+        default: all
+        options:
+          - all
+          - asa_page
+          - tiktok_page
+      event_key:
+        description: Reserved for n8n
+        required: true
+        type: choice
+        default: all
+        options:
+          - all
+          - spring_2026
+
+jobs:
+  release:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Validate release folder
+        run: python3 scripts/validate_release.py --version "${{ inputs.version }}" --mode "${{ inputs.mode }}"
+
+      - name: Install fastlane deps
+        run: bundle install --jobs 4 --retry 3
+
+      - name: Run listing automation
+        if: ${{ inputs.mode == 'listing' || inputs.mode == 'all' }}
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+          APP_IDENTIFIER: com.hidavo.neverever
+          APP_STORE_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
+        run: |
+          if [ "${{ inputs.variant }}" = "both" ]; then
+            bundle exec fastlane ios full_listing version:${{ inputs.version }} variant:A
+            bundle exec fastlane ios full_listing version:${{ inputs.version }} variant:B
+          else
+            bundle exec fastlane ios full_listing version:${{ inputs.version }} variant:${{ inputs.variant }}
+          fi
+
+      - name: Notify n8n webhook
+        if: always() && env.N8N_WEBHOOK_URL != '' && env.N8N_WEBHOOK_SECRET != ''
+        env:
+          N8N_WEBHOOK_URL: ${{ secrets.N8N_WEBHOOK_URL }}
+          N8N_WEBHOOK_SECRET: ${{ secrets.N8N_WEBHOOK_SECRET }}
+        run: |
+          payload=$(cat <<JSON
+          {
+            "version": "${{ inputs.version }}",
+            "mode": "${{ inputs.mode }}",
+            "variant": "${{ inputs.variant }}",
+            "cpp_page": "${{ inputs.cpp_page }}",
+            "event_key": "${{ inputs.event_key }}",
+            "commit": "${{ github.sha }}",
+            "run_id": "${{ github.run_id }}"
+          }
+          JSON
+          )
+          curl -sS -X POST "$N8N_WEBHOOK_URL/webhook/release" \
+            -H "Content-Type: application/json" \
+            -H "X-Webhook-Secret: $N8N_WEBHOOK_SECRET" \
+            -d "$payload"

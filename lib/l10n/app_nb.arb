@@ -1,0 +1,234 @@
+{
+  "@@locale": "nb",
+  "onboarding_1_title": "Klar for en episk kveld?",
+  "onboarding_1_subtitle": "Dykk inn i den ultimate spillopplevelsen!",
+  "onboarding_2_title": "6 episke spillpakker",
+  "onboarding_2_subtitle": "Fra klassisk til spicy – finn din perfekte vibe!",
+  "onboarding_3_title": "1 500 spørsmål",
+  "onboarding_3_subtitle": "Uendelig moro med venner venter!",
+  "onboarding_4_title": "Vurder opplevelsen din",
+  "onboarding_4_subtitle": "Hjelp oss å gjøre spillet enda bedre!",
+  "button_continue": "Fortsett",
+  "button_start_game": "Start spillet",
+  "button_skip": "Hopp over",
+  "button_get_started": "Kom i gang",
+  "button_back": "Tilbake",
+  "button_next": "Neste",
+  "button_save": "Lagre",
+  "button_cancel": "Avbryt",
+  "button_ok": "OK",
+  "button_close": "Lukk",
+  "button_share": "Del",
+  "button_rate_now": "Gi vurdering nå",
+  "button_maybe_later": "Kanskje senere",
+  "common_and": "og",
+  "main_menu_title": "Never Have I Ever",
+  "main_menu_subtitle": "Velg pakken din",
+  "main_menu_buy_subscription": "Lås opp alle pakker",
+  "main_menu_settings": "Innstillinger",
+  "main_menu_free": "Gratis",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Klassisk pakke",
+  "category_classic_desc": "Den perfekte starten på enhver samling!",
+  "category_party_name": "Festpakke",
+  "category_party_desc": "Skru opp stemningen med spennende utfordringer!",
+  "category_girls_name": "Jenter 18+",
+  "category_girls_desc": "Frekke og dristige spørsmål for jentekveld!",
+  "category_couples_name": "Parpakke",
+  "category_couples_desc": "Kom nærmere partneren din enn noen gang!",
+  "category_hot_name": "Hete spørsmål 18+",
+  "category_hot_desc": "Skru opp varmen med spicy spørsmål!",
+  "category_guys_name": "Guttepakke",
+  "category_guys_desc": "Episke utfordringer for gutta!",
+  "game_never_have_i_ever": "Never Have I Ever...",
+  "game_swipe_hint": "Sveip for å navigere",
+  "game_loading": "Laster spørsmål...",
+  "game_error_title": "Oops!",
+  "game_error_no_questions": "Ingen spørsmål tilgjengelig for denne kategorien",
+  "game_error_failed_load": "Kunne ikke laste spørsmål",
+  "game_button_previous": "Forrige",
+  "game_button_next": "Neste",
+  "game_button_shuffle": "Bland",
+  "game_button_share": "Del",
+  "game_share_text": "Never Have I Ever... {question}\n\nLast ned Never Have I Ever-appen og spill med venner!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Innstillinger",
+  "settings_section_account": "Konto",
+  "settings_section_app": "Appinnstillinger",
+  "settings_section_support": "Support og tilbakemelding",
+  "settings_section_about": "Om",
+  "settings_premium_member": "Premium-medlem",
+  "settings_free_plan": "Gratisplan",
+  "settings_premium_desc": "Nyt ubegrenset tilgang til alle pakker!",
+  "settings_free_desc": "Oppgrader for å låse opp alt premiuminnhold",
+  "settings_restore_purchases": "Gjenopprett kjøp",
+  "settings_restore_purchases_desc": "Gjenopprett tidligere kjøp",
+  "settings_language": "Språk",
+  "settings_language_desc": "Endre app-språk",
+  "settings_dark_mode": "Mørk modus",
+  "settings_how_to_play": "Slik spiller du",
+  "settings_how_to_play_desc": "Lær hvordan du spiller",
+  "settings_share_app": "Del appen",
+  "settings_share_app_desc": "Del med venner",
+  "settings_rate_us": "Vurder oss",
+  "settings_rate_us_desc": "Vurder oss i butikken",
+  "settings_app_version": "Appversjon",
+  "settings_terms": "Vilkår",
+  "settings_privacy": "Personvern",
+  "settings_restore_dialog_title": "Gjenopprett kjøp",
+  "settings_restore_dialog_message": "Kjøpene dine blir gjenopprettet når fase 3 er implementert.",
+  "settings_share_message": "Sjekk ut Never Have I Ever! Den ultimate partyspill-appen. Last ned nå!",
+  "settings_share_subject": "Never Have I Ever - Moro partyspill",
+  "how_to_play_title": "Slik spiller du",
+  "how_to_play_header_title": "Never Have I Ever",
+  "how_to_play_header_subtitle": "Det ultimate partyspillet",
+  "how_to_play_step_1_title": "Velg pakken din",
+  "how_to_play_step_1_desc": "Velg blant 6 spennende kategorier som matcher partyviben din.",
+  "how_to_play_step_2_title": "Les spørsmålet",
+  "how_to_play_step_2_desc": "Hver spiller bytter på å lese \"Never Have I Ever...\"-spørsmål høyt.",
+  "how_to_play_step_3_title": "Sannhet eller utfordring",
+  "how_to_play_step_3_desc": "Spillere som HAR gjort det må innrømme det eller ta en morsom utfordring!",
+  "how_to_play_step_4_title": "Neste spørsmål",
+  "how_to_play_step_4_desc": "Sveip eller trykk for å gå videre og holde moroa i gang!",
+  "how_to_play_step_5_title": "Ha det gøy!",
+  "how_to_play_step_5_desc": "Nyt morsomme øyeblikk og bli bedre kjent med vennene dine!",
+  "how_to_play_step_label": "Steg {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Pro-tips",
+  "how_to_play_tip_1": "Bruk blandeknappen for å randomisere spørsmål",
+  "how_to_play_tip_2": "Del favorittspørsmålene dine med venner",
+  "how_to_play_tip_3": "Premium-pakker låser opp 1 500+ eksklusive spørsmål",
+  "how_to_play_tip_4": "Best med 3+ spillere for maksimal moro!",
+  "onboarding_terms_prefix": "Ved å fortsette godtar du våre ",
+  "onboarding_terms_of_use": "Bruksvilkår",
+  "language_title": "Språk",
+  "language_subtitle": "Velg ønsket språk",
+  "language_english": "Engelsk",
+  "language_spanish": "Spansk",
+  "language_german": "Tysk",
+  "language_french": "Fransk",
+  "language_korean": "Koreansk",
+  "language_changed_title": "Språk endret",
+  "language_changed_message": "Språket er endret til {language}. Appen vil bli fullt oversatt i den endelige versjonen.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "BLI PREMIUM",
+  "paywall_subtitle": "Non-stop moro venter",
+  "paywall_choose_plan": "Velg plan",
+  "paywall_feature_1": "Lås opp eksklusivt 18+ innhold",
+  "paywall_feature_2": "Nye oppdateringer jevnlig",
+  "paywall_feature_3": "Ingen annonser",
+  "paywall_feature_4": "Avslutt når som helst",
+  "paywall_weekly_plan": "Ukentlig",
+  "paywall_monthly_plan": "Månedlig",
+  "paywall_yearly_plan": "Årlig",
+  "paywall_best_value": "Best verdi",
+  "paywall_trial_text": "Prøv GRATIS i 3 dager",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "per uke",
+  "price_per_weeks": "per {count} uker",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "per måned",
+  "price_per_months": "per {count} måneder",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "per år",
+  "price_per_years": "per {count} år",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Start gratis prøveperiode",
+  "paywall_subscribe": "Abonner nå",
+  "paywall_restore": "Gjenopprett kjøp",
+  "paywall_terms": "Vilkår",
+  "paywall_privacy": "Personvern",
+  "paywall_cancel_anytime": "Avslutt når som helst",
+  "paywall_loading": "Laster abonnementsplaner...",
+  "paywall_error": "Kunne ikke laste planene. Prøv igjen.",
+  "subscription_active": "Du har et aktivt abonnement",
+  "subscription_expired": "Abonnementet ditt har utløpt",
+  "subscription_purchase_success": "Kjøp fullført! Nyt premiuminnhold.",
+  "subscription_purchase_cancelled": "Kjøpet ble avbrutt",
+  "subscription_purchase_error": "Kjøpet mislyktes. Prøv igjen.",
+  "subscription_restore_success": "Kjøp gjenopprettet!",
+  "subscription_restore_error": "Ingen kjøp funnet å gjenopprette.",
+  "subscription_checking": "Sjekker abonnementsstatus...",
+  "error_generic": "Noe gikk galt. Prøv igjen.",
+  "error_network": "Nettverksfeil. Sjekk tilkoblingen.",
+  "error_loading_questions": "Kunne ikke laste spørsmål: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Kunne ikke laste innstillinger: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Laster...",
+  "common_retry": "Prøv igjen",
+  "common_done": "Ferdig",
+  "common_error": "Feil",
+  "common_success": "Suksess",
+  "common_warning": "Advarsel",
+  "common_info": "Info",
+  "error_page_not_found": "Side ikke funnet: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "language_dutch": "Nederlandsk",
+  "language_swedish": "Svensk",
+  "language_norwegian": "Norsk",
+  "language_russian": "Russisk",
+  "language_portuguese_brazil": "Portugisisk (Brasil)",
+  "language_japanese": "Japansk",
+  "language_italian": "Italiensk"
+}

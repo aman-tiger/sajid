@@ -348,6 +348,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get language_korean => '한국어';
 
   @override
+  String get language_dutch => 'Dutch';
+
+  @override
+  String get language_swedish => 'Swedish';
+
+  @override
+  String get language_norwegian => 'Norwegian';
+
+  @override
+  String get language_russian => 'Russian';
+
+  @override
+  String get language_portuguese_brazil => 'Portuguese (Brazil)';
+
+  @override
+  String get language_japanese => 'Japanese';
+
+  @override
+  String get language_italian => 'Italian';
+
+  @override
   String get language_changed_title => 'Language Changed';
 
   @override

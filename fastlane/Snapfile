@@ -1,0 +1,15 @@
+devices([
+  "iPhone 16 Pro Max",
+  "iPhone 15 Plus",
+  "iPad Pro (12.9-inch) (6th generation)"
+])
+
+languages([
+  "en-US", "ru", "es-ES", "de-DE", "ja",
+  "zh-Hans", "fr-FR", "it-IT", "pt-BR", "ko", "ar-SA"
+])
+
+output_directory("./releases/OUTPUT_VERSION/listing/screenshots/raw")
+
+clear_previous_screenshots(true)
+concurrent_simulators(true)

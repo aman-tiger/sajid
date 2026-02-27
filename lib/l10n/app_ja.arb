@@ -1,0 +1,234 @@
+{
+  "@@locale": "ja",
+  "onboarding_1_title": "最高の夜の準備はOK？",
+  "onboarding_1_subtitle": "究極のゲーム体験に飛び込もう！",
+  "onboarding_2_title": "6つのエピックパック",
+  "onboarding_2_subtitle": "定番からスパイシーまで—自分のノリにぴったりを！",
+  "onboarding_3_title": "1,500の質問",
+  "onboarding_3_subtitle": "友だちとずっと盛り上がれる！",
+  "onboarding_4_title": "体験を評価しよう",
+  "onboarding_4_subtitle": "もっと良くするために、ぜひ教えてね！",
+  "button_continue": "続ける",
+  "button_start_game": "ゲーム開始",
+  "button_skip": "スキップ",
+  "button_get_started": "はじめる",
+  "button_back": "戻る",
+  "button_next": "次へ",
+  "button_save": "保存",
+  "button_cancel": "キャンセル",
+  "button_ok": "OK",
+  "button_close": "閉じる",
+  "button_share": "共有",
+  "button_rate_now": "今すぐ評価",
+  "button_maybe_later": "あとで",
+  "common_and": "と",
+  "main_menu_title": "Never Have I Ever",
+  "main_menu_subtitle": "パックを選択",
+  "main_menu_buy_subscription": "すべてのパックを解放",
+  "main_menu_settings": "設定",
+  "main_menu_free": "無料",
+  "main_menu_premium": "プレミアム",
+  "category_classic_name": "クラシック",
+  "category_classic_desc": "どんな集まりにもぴったりの定番！",
+  "category_party_name": "パーティー",
+  "category_party_desc": "ワクワクするお題で盛り上げよう！",
+  "category_girls_name": "ガールズ 18+",
+  "category_girls_desc": "女子会向けの大胆な質問！",
+  "category_couples_name": "カップル",
+  "category_couples_desc": "パートナーともっと仲良く！",
+  "category_hot_name": "ホット 18+",
+  "category_hot_desc": "刺激的な質問で熱くなろう！",
+  "category_guys_name": "ガイズ",
+  "category_guys_desc": "男同士向けのエピックなお題！",
+  "game_never_have_i_ever": "Never Have I Ever...",
+  "game_swipe_hint": "スワイプして移動",
+  "game_loading": "質問を読み込み中...",
+  "game_error_title": "おっと！",
+  "game_error_no_questions": "このカテゴリの質問がありません",
+  "game_error_failed_load": "質問の読み込みに失敗しました",
+  "game_button_previous": "前へ",
+  "game_button_next": "次へ",
+  "game_button_shuffle": "シャッフル",
+  "game_button_share": "共有",
+  "game_share_text": "Never Have I Ever... {question}\n\n「Never Have I Ever」をダウンロードして友だちと遊ぼう！",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "設定",
+  "settings_section_account": "アカウント",
+  "settings_section_app": "アプリ設定",
+  "settings_section_support": "サポート・フィードバック",
+  "settings_section_about": "このアプリについて",
+  "settings_premium_member": "プレミアム会員",
+  "settings_free_plan": "無料プラン",
+  "settings_premium_desc": "すべてのパックを無制限で楽しめます！",
+  "settings_free_desc": "アップグレードしてプレミアムを解放",
+  "settings_restore_purchases": "購入を復元",
+  "settings_restore_purchases_desc": "以前の購入を復元します",
+  "settings_language": "言語",
+  "settings_language_desc": "アプリの言語を変更",
+  "settings_dark_mode": "ダークモード",
+  "settings_how_to_play": "遊び方",
+  "settings_how_to_play_desc": "ルールを確認しよう",
+  "settings_share_app": "アプリを共有",
+  "settings_share_app_desc": "友だちにシェア",
+  "settings_rate_us": "評価する",
+  "settings_rate_us_desc": "ストアで評価してください",
+  "settings_app_version": "アプリのバージョン",
+  "settings_terms": "利用規約",
+  "settings_privacy": "プライバシーポリシー",
+  "settings_restore_dialog_title": "購入を復元",
+  "settings_restore_dialog_message": "フェーズ3の実装後に購入を復元できます。",
+  "settings_share_message": "Never Have I Ever をチェック！究極のパーティーゲーム。今すぐダウンロード！",
+  "settings_share_subject": "Never Have I Ever - 楽しいパーティーゲーム",
+  "how_to_play_title": "遊び方",
+  "how_to_play_header_title": "Never Have I Ever",
+  "how_to_play_header_subtitle": "究極のパーティーゲーム",
+  "how_to_play_step_1_title": "パックを選ぶ",
+  "how_to_play_step_1_desc": "雰囲気に合う6つのカテゴリから選べます。",
+  "how_to_play_step_2_title": "質問を読む",
+  "how_to_play_step_2_desc": "順番に「Never Have I Ever...」の質問を声に出して読みます。",
+  "how_to_play_step_3_title": "告白 or チャレンジ",
+  "how_to_play_step_3_desc": "やったことがある人は認めるか、楽しいチャレンジを！",
+  "how_to_play_step_4_title": "次の質問へ",
+  "how_to_play_step_4_desc": "スワイプ/タップで次に進んで盛り上がろう！",
+  "how_to_play_step_5_title": "楽しもう！",
+  "how_to_play_step_5_desc": "笑える時間を楽しんで、友だちをもっと知ろう！",
+  "how_to_play_step_label": "ステップ {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "コツ",
+  "how_to_play_tip_1": "シャッフルボタンで質問をランダムにできます",
+  "how_to_play_tip_2": "お気に入りの質問を友だちにシェアしよう",
+  "how_to_play_tip_3": "プレミアムで1,500+の限定質問が解放されます",
+  "how_to_play_tip_4": "3人以上だともっと楽しい！",
+  "onboarding_terms_prefix": "続行すると、",
+  "onboarding_terms_of_use": "利用規約",
+  "language_title": "言語",
+  "language_subtitle": "言語を選択",
+  "language_english": "英語",
+  "language_spanish": "スペイン語",
+  "language_german": "ドイツ語",
+  "language_french": "フランス語",
+  "language_korean": "韓国語",
+  "language_changed_title": "言語を変更しました",
+  "language_changed_message": "言語を {language} に変更しました。最終版では完全翻訳されます。",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "プレミアムにする",
+  "paywall_subtitle": "ノンストップで楽しもう",
+  "paywall_choose_plan": "プランを選択",
+  "paywall_feature_1": "18+の限定コンテンツを解放",
+  "paywall_feature_2": "定期的にアップデート",
+  "paywall_feature_3": "広告なし",
+  "paywall_feature_4": "いつでもキャンセル可能",
+  "paywall_weekly_plan": "週",
+  "paywall_monthly_plan": "月",
+  "paywall_yearly_plan": "年",
+  "paywall_best_value": "お得",
+  "paywall_trial_text": "3日間無料で試す",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "毎週",
+  "price_per_weeks": "{count} 週間あたり",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "毎月",
+  "price_per_months": "{count} か月あたり",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "毎年",
+  "price_per_years": "{count} 年あたり",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "無料トライアルを開始",
+  "paywall_subscribe": "今すぐ購読",
+  "paywall_restore": "購入を復元",
+  "paywall_terms": "利用規約",
+  "paywall_privacy": "プライバシー",
+  "paywall_cancel_anytime": "いつでもキャンセル",
+  "paywall_loading": "プランを読み込み中...",
+  "paywall_error": "プランの読み込みに失敗しました。もう一度お試しください。",
+  "subscription_active": "有効なサブスクリプションがあります",
+  "subscription_expired": "サブスクリプションの有効期限が切れています",
+  "subscription_purchase_success": "購入が完了しました！プレミアムをお楽しみください。",
+  "subscription_purchase_cancelled": "購入をキャンセルしました",
+  "subscription_purchase_error": "購入に失敗しました。もう一度お試しください。",
+  "subscription_restore_success": "購入を復元しました！",
+  "subscription_restore_error": "復元できる購入が見つかりませんでした。",
+  "subscription_checking": "サブスクリプション状況を確認中...",
+  "error_generic": "問題が発生しました。もう一度お試しください。",
+  "error_network": "ネットワークエラーです。接続を確認してください。",
+  "error_loading_questions": "質問の読み込みに失敗しました: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "設定の読み込みに失敗しました: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "読み込み中...",
+  "common_retry": "再試行",
+  "common_done": "完了",
+  "common_error": "エラー",
+  "common_success": "成功",
+  "common_warning": "警告",
+  "common_info": "情報",
+  "error_page_not_found": "ページが見つかりません: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "language_dutch": "オランダ語",
+  "language_swedish": "スウェーデン語",
+  "language_norwegian": "ノルウェー語",
+  "language_russian": "ロシア語",
+  "language_portuguese_brazil": "ポルトガル語（ブラジル）",
+  "language_japanese": "日本語",
+  "language_italian": "イタリア語"
+}

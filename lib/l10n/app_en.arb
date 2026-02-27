@@ -120,6 +120,13 @@
   "language_german": "Deutsch",
   "language_french": "Français",
   "language_korean": "한국어",
+  "language_dutch": "Dutch",
+  "language_swedish": "Swedish",
+  "language_norwegian": "Norwegian",
+  "language_russian": "Russian",
+  "language_portuguese_brazil": "Portuguese (Brazil)",
+  "language_japanese": "Japanese",
+  "language_italian": "Italian",
   "language_changed_title": "Language Changed",
   "language_changed_message": "Language has been changed to {language}. The app will be fully translated in the final version.",
   "@language_changed_message": {

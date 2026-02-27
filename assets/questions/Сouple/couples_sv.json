@@ -1,0 +1,1204 @@
+{
+  "couples_deep_pack": [
+    {
+      "id": 1,
+      "text": "kissed on the first date"
+    },
+    {
+      "id": 2,
+      "text": "held hands in public"
+    },
+    {
+      "id": 3,
+      "text": "cuddled while watching a movie"
+    },
+    {
+      "id": 4,
+      "text": "cooked together"
+    },
+    {
+      "id": 5,
+      "text": "taken a bath or shower together"
+    },
+    {
+      "id": 6,
+      "text": "fallen asleep on the phone with someone"
+    },
+    {
+      "id": 7,
+      "text": "woken up next to someone you love"
+    },
+    {
+      "id": 8,
+      "text": "made breakfast in bed for someone"
+    },
+    {
+      "id": 9,
+      "text": "received breakfast in bed"
+    },
+    {
+      "id": 10,
+      "text": "danced in the kitchen with someone"
+    },
+    {
+      "id": 11,
+      "text": "sang karaoke together"
+    },
+    {
+      "id": 12,
+      "text": "had a couples massage"
+    },
+    {
+      "id": 13,
+      "text": "gone to couples yoga"
+    },
+    {
+      "id": 14,
+      "text": "worked out together"
+    },
+    {
+      "id": 15,
+      "text": "been each other's gym motivation"
+    },
+    {
+      "id": 16,
+      "text": "gone on a road trip together"
+    },
+    {
+      "id": 17,
+      "text": "traveled abroad together"
+    },
+    {
+      "id": 18,
+      "text": "gotten lost together"
+    },
+    {
+      "id": 19,
+      "text": "argued about directions"
+    },
+    {
+      "id": 20,
+      "text": "missed a flight together"
+    },
+    {
+      "id": 21,
+      "text": "camping together"
+    },
+    {
+      "id": 22,
+      "text": "stayed in a cabin together"
+    },
+    {
+      "id": 23,
+      "text": "gone hiking together"
+    },
+    {
+      "id": 24,
+      "text": "watched a meteor shower together"
+    },
+    {
+      "id": 25,
+      "text": "built something together"
+    },
+    {
+      "id": 26,
+      "text": "painted or decorated together"
+    },
+    {
+      "id": 27,
+      "text": "moved in together"
+    },
+    {
+      "id": 28,
+      "text": "furniture shopped together"
+    },
+    {
+      "id": 29,
+      "text": "argued about decorating choices"
+    },
+    {
+      "id": 30,
+      "text": "compromised on apartment/house decisions"
+    },
+    {
+      "id": 31,
+      "text": "shared closet space"
+    },
+    {
+      "id": 32,
+      "text": "combined your stuff"
+    },
+    {
+      "id": 33,
+      "text": "gotten rid of things for a partner"
+    },
+    {
+      "id": 34,
+      "text": "kept something your partner hated"
+    },
+    {
+      "id": 35,
+      "text": "decorated for holidays together"
+    },
+    {
+      "id": 36,
+      "text": "hosted a party together"
+    },
+    {
+      "id": 37,
+      "text": "met each other's friends"
+    },
+    {
+      "id": 38,
+      "text": "become friends with your partner's friends"
+    },
+    {
+      "id": 39,
+      "text": "introduced your partner to your friend group"
+    },
+    {
+      "id": 40,
+      "text": "had your friends become couple friends"
+    },
+    {
+      "id": 41,
+      "text": "double dated regularly"
+    },
+    {
+      "id": 42,
+      "text": "vacationed with another couple"
+    },
+    {
+      "id": 43,
+      "text": "been the third wheel couple"
+    },
+    {
+      "id": 44,
+      "text": "celebrated a birthday together"
+    },
+    {
+      "id": 45,
+      "text": "thrown a surprise party for your partner"
+    },
+    {
+      "id": 46,
+      "text": "planned a special birthday"
+    },
+    {
+      "id": 47,
+      "text": "celebrated Valentine's Day"
+    },
+    {
+      "id": 48,
+      "text": "done something special for no reason"
+    },
+    {
+      "id": 49,
+      "text": "celebrated 'just because' days"
+    },
+    {
+      "id": 50,
+      "text": "created your own traditions"
+    },
+    {
+      "id": 51,
+      "text": "had a favorite restaurant together"
+    },
+    {
+      "id": 52,
+      "text": "had a regular date night"
+    },
+    {
+      "id": 53,
+      "text": "tried new restaurants together"
+    },
+    {
+      "id": 54,
+      "text": "taken a cooking class together"
+    },
+    {
+      "id": 55,
+      "text": "meal prepped together"
+    },
+    {
+      "id": 56,
+      "text": "grocery shopped together"
+    },
+    {
+      "id": 57,
+      "text": "argued in a grocery store"
+    },
+    {
+      "id": 58,
+      "text": "had different food preferences"
+    },
+    {
+      "id": 59,
+      "text": "tried to change your partner's eating habits"
+    },
+    {
+      "id": 60,
+      "text": "cooked your partner's favorite meal"
+    },
+    {
+      "id": 61,
+      "text": "baked together"
+    },
+    {
+      "id": 62,
+      "text": "made a mess in the kitchen together"
+    },
+    {
+      "id": 63,
+      "text": "ordered takeout instead of cooking"
+    },
+    {
+      "id": 64,
+      "text": "had pizza in bed"
+    },
+    {
+      "id": 65,
+      "text": "shared food off each other's plates"
+    },
+    {
+      "id": 66,
+      "text": "fed each other"
+    },
+    {
+      "id": 67,
+      "text": "stolen food from your partner's plate"
+    },
+    {
+      "id": 68,
+      "text": "argued over the last piece of something"
+    },
+    {
+      "id": 69,
+      "text": "shared an ice cream cone"
+    },
+    {
+      "id": 70,
+      "text": "shared a milkshake with two straws"
+    },
+    {
+      "id": 71,
+      "text": "gone to a drive-in movie"
+    },
+    {
+      "id": 72,
+      "text": "binged a TV series together"
+    },
+    {
+      "id": 73,
+      "text": "had a show that's 'your show'"
+    },
+    {
+      "id": 74,
+      "text": "watched ahead without your partner"
+    },
+    {
+      "id": 75,
+      "text": "been mad your partner watched ahead"
+    },
+    {
+      "id": 76,
+      "text": "fallen asleep during a movie"
+    },
+    {
+      "id": 77,
+      "text": "argued over what to watch"
+    },
+    {
+      "id": 78,
+      "text": "compromised on entertainment choices"
+    },
+    {
+      "id": 79,
+      "text": "pretended to like something your partner loves"
+    },
+    {
+      "id": 80,
+      "text": "watched something you hate for your partner"
+    },
+    {
+      "id": 81,
+      "text": "gone to a concert together"
+    },
+    {
+      "id": 82,
+      "text": "been to a music festival together"
+    },
+    {
+      "id": 83,
+      "text": "discovered new music together"
+    },
+    {
+      "id": 84,
+      "text": "made a playlist together"
+    },
+    {
+      "id": 85,
+      "text": "had 'your song'"
+    },
+    {
+      "id": 86,
+      "text": "slow danced at home"
+    },
+    {
+      "id": 87,
+      "text": "danced in the rain together"
+    },
+    {
+      "id": 88,
+      "text": "kissed in the rain"
+    },
+    {
+      "id": 89,
+      "text": "walked in the rain together"
+    },
+    {
+      "id": 90,
+      "text": "shared an umbrella"
+    },
+    {
+      "id": 91,
+      "text": "built a snowman together"
+    },
+    {
+      "id": 92,
+      "text": "had a snowball fight"
+    },
+    {
+      "id": 93,
+      "text": "gone ice skating together"
+    },
+    {
+      "id": 94,
+      "text": "visited a Christmas market together"
+    },
+    {
+      "id": 95,
+      "text": "decorated a Christmas tree together"
+    },
+    {
+      "id": 96,
+      "text": "exchanged gifts"
+    },
+    {
+      "id": 97,
+      "text": "struggled with what to gift your partner"
+    },
+    {
+      "id": 98,
+      "text": "kept a gift receipt just in case"
+    },
+    {
+      "id": 99,
+      "text": "returned a gift from your partner"
+    },
+    {
+      "id": 100,
+      "text": "pretended to love a gift you didn't"
+    },
+    {
+      "id": 101,
+      "text": "re-gifted something from your partner"
+    },
+    {
+      "id": 102,
+      "text": "given a thoughtful handmade gift"
+    },
+    {
+      "id": 103,
+      "text": "received a handmade gift"
+    },
+    {
+      "id": 104,
+      "text": "written a love poem"
+    },
+    {
+      "id": 105,
+      "text": "received a love poem"
+    },
+    {
+      "id": 106,
+      "text": "made a scrapbook together"
+    },
+    {
+      "id": 107,
+      "text": "taken couple photos"
+    },
+    {
+      "id": 108,
+      "text": "done a professional photo shoot"
+    },
+    {
+      "id": 109,
+      "text": "been camera shy together"
+    },
+    {
+      "id": 110,
+      "text": "taken too many selfies together"
+    },
+    {
+      "id": 111,
+      "text": "argued over which photo to post"
+    },
+    {
+      "id": 112,
+      "text": "been tagged in an unflattering couple photo"
+    },
+    {
+      "id": 113,
+      "text": "untagged yourself from a photo"
+    },
+    {
+      "id": 114,
+      "text": "asked your partner to delete a photo"
+    },
+    {
+      "id": 115,
+      "text": "deleted photos together"
+    },
+    {
+      "id": 116,
+      "text": "had a couple's phone wallpaper"
+    },
+    {
+      "id": 117,
+      "text": "been in each other's phone contacts with emojis"
+    },
+    {
+      "id": 118,
+      "text": "saved each other under cute names"
+    },
+    {
+      "id": 119,
+      "text": "had special ringtones for each other"
+    },
+    {
+      "id": 120,
+      "text": "texted all day every day"
+    },
+    {
+      "id": 121,
+      "text": "sent voice messages"
+    },
+    {
+      "id": 122,
+      "text": "FaceTimed for hours"
+    },
+    {
+      "id": 123,
+      "text": "fallen asleep on FaceTime"
+    },
+    {
+      "id": 124,
+      "text": "sent random photos throughout the day"
+    },
+    {
+      "id": 125,
+      "text": "sent memes to each other"
+    },
+    {
+      "id": 126,
+      "text": "had inside jokes"
+    },
+    {
+      "id": 127,
+      "text": "spoken in a made-up language"
+    },
+    {
+      "id": 128,
+      "text": "had pet names for each other"
+    },
+    {
+      "id": 129,
+      "text": "called each other baby"
+    },
+    {
+      "id": 130,
+      "text": "used embarrassing pet names"
+    },
+    {
+      "id": 131,
+      "text": "been called a cringe couple"
+    },
+    {
+      "id": 132,
+      "text": "been too lovey-dovey in public"
+    },
+    {
+      "id": 133,
+      "text": "grossed out your friends"
+    },
+    {
+      "id": 134,
+      "text": "been told to get a room"
+    },
+    {
+      "id": 135,
+      "text": "kissed in front of friends"
+    },
+    {
+      "id": 136,
+      "text": "held hands constantly"
+    },
+    {
+      "id": 137,
+      "text": "couldn't keep your hands off each other"
+    },
+    {
+      "id": 138,
+      "text": "been in the honeymoon phase"
+    },
+    {
+      "id": 139,
+      "text": "thought the honeymoon phase would last forever"
+    },
+    {
+      "id": 140,
+      "text": "noticed when the honeymoon phase ended"
+    },
+    {
+      "id": 141,
+      "text": "gotten too comfortable"
+    },
+    {
+      "id": 142,
+      "text": "stopped trying as hard"
+    },
+    {
+      "id": 143,
+      "text": "taken your partner for granted"
+    },
+    {
+      "id": 144,
+      "text": "realized you were taking them for granted"
+    },
+    {
+      "id": 145,
+      "text": "made an effort to be more romantic"
+    },
+    {
+      "id": 146,
+      "text": "planned date nights again"
+    },
+    {
+      "id": 147,
+      "text": "worked on your relationship"
+    },
+    {
+      "id": 148,
+      "text": "read relationship books together"
+    },
+    {
+      "id": 149,
+      "text": "listened to relationship podcasts"
+    },
+    {
+      "id": 150,
+      "text": "taken relationship advice from friends"
+    },
+    {
+      "id": 151,
+      "text": "asked the internet for relationship advice"
+    },
+    {
+      "id": 152,
+      "text": "Googled relationship questions"
+    },
+    {
+      "id": 153,
+      "text": "compared your relationship to others"
+    },
+    {
+      "id": 154,
+      "text": "been jealous of another couple"
+    },
+    {
+      "id": 155,
+      "text": "wondered if you're good together"
+    },
+    {
+      "id": 156,
+      "text": "questioned your compatibility"
+    },
+    {
+      "id": 157,
+      "text": "had doubts about the relationship"
+    },
+    {
+      "id": 158,
+      "text": "ignored red flags"
+    },
+    {
+      "id": 159,
+      "text": "convinced yourself it would get better"
+    },
+    {
+      "id": 160,
+      "text": "stayed longer than you should have"
+    },
+    {
+      "id": 161,
+      "text": "known it wasn't right but stayed"
+    },
+    {
+      "id": 162,
+      "text": "been afraid to be alone"
+    },
+    {
+      "id": 163,
+      "text": "stayed for convenience"
+    },
+    {
+      "id": 164,
+      "text": "stayed because of shared lease"
+    },
+    {
+      "id": 165,
+      "text": "stayed because of financial reasons"
+    },
+    {
+      "id": 166,
+      "text": "stayed because of a pet"
+    },
+    {
+      "id": 167,
+      "text": "stayed because of friend groups"
+    },
+    {
+      "id": 168,
+      "text": "stayed to avoid awkwardness"
+    },
+    {
+      "id": 169,
+      "text": "wanted to leave but didn't know how"
+    },
+    {
+      "id": 170,
+      "text": "drafted a breakup speech"
+    },
+    {
+      "id": 171,
+      "text": "practiced breaking up"
+    },
+    {
+      "id": 172,
+      "text": "chickened out of breaking up"
+    },
+    {
+      "id": 173,
+      "text": "waited for them to break up with you"
+    },
+    {
+      "id": 174,
+      "text": "wanted them to end it"
+    },
+    {
+      "id": 175,
+      "text": "made them break up with you"
+    },
+    {
+      "id": 176,
+      "text": "been passive aggressive to push them away"
+    },
+    {
+      "id": 177,
+      "text": "picked fights hoping they'd leave"
+    },
+    {
+      "id": 178,
+      "text": "stopped putting in effort on purpose"
+    },
+    {
+      "id": 179,
+      "text": "emotionally checked out"
+    },
+    {
+      "id": 180,
+      "text": "gone through the motions"
+    },
+    {
+      "id": 181,
+      "text": "faked happiness"
+    },
+    {
+      "id": 182,
+      "text": "pretended everything was fine"
+    },
+    {
+      "id": 183,
+      "text": "hidden problems from friends"
+    },
+    {
+      "id": 184,
+      "text": "defended your relationship to others"
+    },
+    {
+      "id": 185,
+      "text": "denied there were problems"
+    },
+    {
+      "id": 186,
+      "text": "been in denial"
+    },
+    {
+      "id": 187,
+      "text": "refused to see the truth"
+    },
+    {
+      "id": 188,
+      "text": "made excuses for your partner"
+    },
+    {
+      "id": 189,
+      "text": "justified bad behavior"
+    },
+    {
+      "id": 190,
+      "text": "normalized toxic behavior"
+    },
+    {
+      "id": 191,
+      "text": "thought love meant sacrifice"
+    },
+    {
+      "id": 192,
+      "text": "lost yourself in a relationship"
+    },
+    {
+      "id": 193,
+      "text": "changed who you are"
+    },
+    {
+      "id": 194,
+      "text": "given up hobbies for a partner"
+    },
+    {
+      "id": 195,
+      "text": "given up friends for a partner"
+    },
+    {
+      "id": 196,
+      "text": "isolated yourself"
+    },
+    {
+      "id": 197,
+      "text": "been isolated by a partner"
+    },
+    {
+      "id": 198,
+      "text": "been controlled"
+    },
+    {
+      "id": 199,
+      "text": "been manipulated"
+    },
+    {
+      "id": 200,
+      "text": "been gaslit"
+    },
+    {
+      "id": 201,
+      "text": "questioned your own reality"
+    },
+    {
+      "id": 202,
+      "text": "been made to feel crazy"
+    },
+    {
+      "id": 203,
+      "text": "apologized for things that weren't your fault"
+    },
+    {
+      "id": 204,
+      "text": "walked on eggshells"
+    },
+    {
+      "id": 205,
+      "text": "been afraid to upset your partner"
+    },
+    {
+      "id": 206,
+      "text": "hidden things to avoid conflict"
+    },
+    {
+      "id": 207,
+      "text": "lied to keep the peace"
+    },
+    {
+      "id": 208,
+      "text": "avoided difficult conversations"
+    },
+    {
+      "id": 209,
+      "text": "swept problems under the rug"
+    },
+    {
+      "id": 210,
+      "text": "hoped things would fix themselves"
+    },
+    {
+      "id": 211,
+      "text": "waited too long to address issues"
+    },
+    {
+      "id": 212,
+      "text": "let small things become big things"
+    },
+    {
+      "id": 213,
+      "text": "exploded over something small"
+    },
+    {
+      "id": 214,
+      "text": "had a fight about nothing"
+    },
+    {
+      "id": 215,
+      "text": "fought about something stupid"
+    },
+    {
+      "id": 216,
+      "text": "couldn't remember what you were fighting about"
+    },
+    {
+      "id": 217,
+      "text": "realized the fight was really about something else"
+    },
+    {
+      "id": 218,
+      "text": "projected your issues onto your partner"
+    },
+    {
+      "id": 219,
+      "text": "blamed your partner for your bad mood"
+    },
+    {
+      "id": 220,
+      "text": "taken out your stress on your partner"
+    },
+    {
+      "id": 221,
+      "text": "been short with your partner"
+    },
+    {
+      "id": 222,
+      "text": "snapped at your partner"
+    },
+    {
+      "id": 223,
+      "text": "said something mean"
+    },
+    {
+      "id": 224,
+      "text": "called your partner a name"
+    },
+    {
+      "id": 225,
+      "text": "cursed at your partner"
+    },
+    {
+      "id": 226,
+      "text": "raised your voice"
+    },
+    {
+      "id": 227,
+      "text": "slammed a door"
+    },
+    {
+      "id": 228,
+      "text": "thrown something (not at them)"
+    },
+    {
+      "id": 229,
+      "text": "punched a wall"
+    },
+    {
+      "id": 230,
+      "text": "broken something in anger"
+    },
+    {
+      "id": 231,
+      "text": "regretted your temper"
+    },
+    {
+      "id": 232,
+      "text": "scared your partner"
+    },
+    {
+      "id": 233,
+      "text": "been scared of your partner"
+    },
+    {
+      "id": 234,
+      "text": "felt unsafe"
+    },
+    {
+      "id": 235,
+      "text": "made your partner feel unsafe"
+    },
+    {
+      "id": 236,
+      "text": "crossed a line"
+    },
+    {
+      "id": 237,
+      "text": "done something unforgivable"
+    },
+    {
+      "id": 238,
+      "text": "known you went too far"
+    },
+    {
+      "id": 239,
+      "text": "wanted to take something back"
+    },
+    {
+      "id": 240,
+      "text": "wished you could undo something"
+    },
+    {
+      "id": 241,
+      "text": "had a point of no return"
+    },
+    {
+      "id": 242,
+      "text": "known the relationship was over"
+    },
+    {
+      "id": 243,
+      "text": "stayed after it was over"
+    },
+    {
+      "id": 244,
+      "text": "dragged out a breakup"
+    },
+    {
+      "id": 245,
+      "text": "broke up multiple times"
+    },
+    {
+      "id": 246,
+      "text": "gotten back together multiple times"
+    },
+    {
+      "id": 247,
+      "text": "had an on-and-off relationship"
+    },
+    {
+      "id": 248,
+      "text": "confused everyone with your relationship status"
+    },
+    {
+      "id": 249,
+      "text": "didn't know if you were together"
+    },
+    {
+      "id": 250,
+      "text": "been in a situationship"
+    },
+    {
+      "id": 251,
+      "text": "avoided labels"
+    },
+    {
+      "id": 252,
+      "text": "been afraid of commitment"
+    },
+    {
+      "id": 253,
+      "text": "commitment-phobic"
+    },
+    {
+      "id": 254,
+      "text": "had commitment issues"
+    },
+    {
+      "id": 255,
+      "text": "pushed someone away"
+    },
+    {
+      "id": 256,
+      "text": "self-sabotaged"
+    },
+    {
+      "id": 257,
+      "text": "ruined something good"
+    },
+    {
+      "id": 258,
+      "text": "been your own worst enemy"
+    },
+    {
+      "id": 259,
+      "text": "not believed you deserved love"
+    },
+    {
+      "id": 260,
+      "text": "struggled with self-worth"
+    },
+    {
+      "id": 261,
+      "text": "needed validation from your partner"
+    },
+    {
+      "id": 262,
+      "text": "been codependent"
+    },
+    {
+      "id": 263,
+      "text": "couldn't function without your partner"
+    },
+    {
+      "id": 264,
+      "text": "made your partner your whole world"
+    },
+    {
+      "id": 265,
+      "text": "lost your identity"
+    },
+    {
+      "id": 266,
+      "text": "forgotten who you were before them"
+    },
+    {
+      "id": 267,
+      "text": "had to rediscover yourself"
+    },
+    {
+      "id": 268,
+      "text": "worked on yourself"
+    },
+    {
+      "id": 269,
+      "text": "grown as a person"
+    },
+    {
+      "id": 270,
+      "text": "become a better person"
+    },
+    {
+      "id": 271,
+      "text": "learned from a relationship"
+    },
+    {
+      "id": 272,
+      "text": "known what you want"
+    },
+    {
+      "id": 273,
+      "text": "known what you don't want"
+    },
+    {
+      "id": 274,
+      "text": "set better boundaries"
+    },
+    {
+      "id": 275,
+      "text": "learned to communicate"
+    },
+    {
+      "id": 276,
+      "text": "learned to compromise"
+    },
+    {
+      "id": 277,
+      "text": "learned patience"
+    },
+    {
+      "id": 278,
+      "text": "learned forgiveness"
+    },
+    {
+      "id": 279,
+      "text": "learned to trust again"
+    },
+    {
+      "id": 280,
+      "text": "learned to love again"
+    },
+    {
+      "id": 281,
+      "text": "believed in love"
+    },
+    {
+      "id": 282,
+      "text": "stopped believing in love"
+    },
+    {
+      "id": 283,
+      "text": "become cynical"
+    },
+    {
+      "id": 284,
+      "text": "sworn off relationships"
+    },
+    {
+      "id": 285,
+      "text": "needed a break from dating"
+    },
+    {
+      "id": 286,
+      "text": "focused on yourself"
+    },
+    {
+      "id": 287,
+      "text": "been happily single"
+    },
+    {
+      "id": 288,
+      "text": "enjoyed being alone"
+    },
+    {
+      "id": 289,
+      "text": "not needed a relationship"
+    },
+    {
+      "id": 290,
+      "text": "been complete on your own"
+    },
+    {
+      "id": 291,
+      "text": "known your worth"
+    },
+    {
+      "id": 292,
+      "text": "refused to settle"
+    },
+    {
+      "id": 293,
+      "text": "had standards"
+    },
+    {
+      "id": 294,
+      "text": "known what you deserve"
+    },
+    {
+      "id": 295,
+      "text": "waited for the right person"
+    },
+    {
+      "id": 296,
+      "text": "believed in soulmates"
+    },
+    {
+      "id": 297,
+      "text": "found your person"
+    },
+    {
+      "id": 298,
+      "text": "known they were the one"
+    },
+    {
+      "id": 299,
+      "text": "been truly happy"
+    },
+    {
+      "id": 300,
+      "text": "been loved the way you deserve"
+    }
+  ]
+}

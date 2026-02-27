@@ -1,0 +1,234 @@
+{
+  "@@locale": "ru",
+  "onboarding_1_title": "Готов к эпичной ночи?",
+  "onboarding_1_subtitle": "Погрузись в лучшую игру для компании!",
+  "onboarding_2_title": "6 эпичных наборов",
+  "onboarding_2_subtitle": "От классики до острых — найди свой вайб!",
+  "onboarding_3_title": "1 500 вопросов",
+  "onboarding_3_subtitle": "Бесконечное веселье с друзьями ждёт тебя!",
+  "onboarding_4_title": "Оцени впечатления",
+  "onboarding_4_subtitle": "Помоги нам сделать игру ещё лучше!",
+  "button_continue": "Продолжить",
+  "button_start_game": "Начать игру",
+  "button_skip": "Пропустить",
+  "button_get_started": "Начать",
+  "button_back": "Назад",
+  "button_next": "Далее",
+  "button_save": "Сохранить",
+  "button_cancel": "Отмена",
+  "button_ok": "ОК",
+  "button_close": "Закрыть",
+  "button_share": "Поделиться",
+  "button_rate_now": "Оценить сейчас",
+  "button_maybe_later": "Может позже",
+  "common_and": "и",
+  "main_menu_title": "Я никогда не...",
+  "main_menu_subtitle": "Выбери набор",
+  "main_menu_buy_subscription": "Открыть все наборы",
+  "main_menu_settings": "Настройки",
+  "main_menu_free": "Бесплатно",
+  "main_menu_premium": "Премиум",
+  "category_classic_name": "Классический набор",
+  "category_classic_desc": "Идеальный старт для любой компании!",
+  "category_party_name": "Набор «Вечеринка»",
+  "category_party_desc": "Добавь драйва празднику с крутыми заданиями!",
+  "category_girls_name": "Девочки 18+",
+  "category_girls_desc": "Смелые вопросы для девичника!",
+  "category_couples_name": "Набор для пар",
+  "category_couples_desc": "Сблизьтесь с партнёром как никогда!",
+  "category_hot_name": "Горячие вопросы 18+",
+  "category_hot_desc": "Добавь перчинки с острыми вопросами!",
+  "category_guys_name": "Набор для парней",
+  "category_guys_desc": "Эпичные задания для бро!",
+  "game_never_have_i_ever": "Я никогда не...",
+  "game_swipe_hint": "Свайпни для навигации",
+  "game_loading": "Загружаем вопросы...",
+  "game_error_title": "Упс!",
+  "game_error_no_questions": "Для этой категории нет вопросов",
+  "game_error_failed_load": "Не удалось загрузить вопросы",
+  "game_button_previous": "Назад",
+  "game_button_next": "Далее",
+  "game_button_shuffle": "Перемешать",
+  "game_button_share": "Поделиться",
+  "game_share_text": "Я никогда не... {question}\n\nСкачай «Я никогда не...» и играй с друзьями!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Настройки",
+  "settings_section_account": "Аккаунт",
+  "settings_section_app": "Настройки приложения",
+  "settings_section_support": "Поддержка и отзывы",
+  "settings_section_about": "О приложении",
+  "settings_premium_member": "Премиум",
+  "settings_free_plan": "Бесплатный план",
+  "settings_premium_desc": "Безлимитный доступ ко всем наборам!",
+  "settings_free_desc": "Обновись, чтобы открыть весь премиум-контент",
+  "settings_restore_purchases": "Восстановить покупки",
+  "settings_restore_purchases_desc": "Восстановить предыдущие покупки",
+  "settings_language": "Язык",
+  "settings_language_desc": "Изменить язык приложения",
+  "settings_dark_mode": "Тёмная тема",
+  "settings_how_to_play": "Как играть",
+  "settings_how_to_play_desc": "Узнай, как играть",
+  "settings_share_app": "Поделиться приложением",
+  "settings_share_app_desc": "Поделись с друзьями",
+  "settings_rate_us": "Оценить нас",
+  "settings_rate_us_desc": "Оцени нас в магазине",
+  "settings_app_version": "Версия приложения",
+  "settings_terms": "Условия использования",
+  "settings_privacy": "Политика конфиденциальности",
+  "settings_restore_dialog_title": "Восстановление покупок",
+  "settings_restore_dialog_message": "Покупки будут восстановлены, когда будет реализована Фаза 3.",
+  "settings_share_message": "Попробуй «Я никогда не...» — лучшая игра для вечеринок. Скачай сейчас!",
+  "settings_share_subject": "Я никогда не... — игра для вечеринок",
+  "how_to_play_title": "Как играть",
+  "how_to_play_header_title": "Я никогда не...",
+  "how_to_play_header_subtitle": "Лучшая игра для вечеринок",
+  "how_to_play_step_1_title": "Выбери набор",
+  "how_to_play_step_1_desc": "Выбирай из 6 категорий под настроение вашей компании.",
+  "how_to_play_step_2_title": "Прочитай вопрос",
+  "how_to_play_step_2_desc": "Игроки по очереди читают вопросы «Я никогда не...» вслух.",
+  "how_to_play_step_3_title": "Правда или действие",
+  "how_to_play_step_3_desc": "Те, кто ДЕЛАЛ это, признаются или выполняют весёлое задание!",
+  "how_to_play_step_4_title": "Следующий вопрос",
+  "how_to_play_step_4_desc": "Свайпай или нажимай, чтобы перейти дальше и продолжать веселье!",
+  "how_to_play_step_5_title": "Веселитесь!",
+  "how_to_play_step_5_desc": "Лови смешные моменты и узнавай друзей лучше!",
+  "how_to_play_step_label": "Шаг {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Советы",
+  "how_to_play_tip_1": "Используй кнопку «Перемешать», чтобы менять порядок вопросов",
+  "how_to_play_tip_2": "Делись любимыми вопросами с друзьями",
+  "how_to_play_tip_3": "Премиум-наборы открывают 1 500+ эксклюзивных вопросов",
+  "how_to_play_tip_4": "Лучше всего играть компанией 3+ человек!",
+  "onboarding_terms_prefix": "Продолжая, вы соглашаетесь с ",
+  "onboarding_terms_of_use": "Условиями использования",
+  "language_title": "Язык",
+  "language_subtitle": "Выберите язык",
+  "language_english": "Английский",
+  "language_spanish": "Испанский",
+  "language_german": "Немецкий",
+  "language_french": "Французский",
+  "language_korean": "Корейский",
+  "language_changed_title": "Язык изменён",
+  "language_changed_message": "Язык изменён на {language}. В финальной версии приложение будет полностью переведено.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "ПРЕМИУМ",
+  "paywall_subtitle": "Веселье без остановки",
+  "paywall_choose_plan": "Выберите план",
+  "paywall_feature_1": "Открой эксклюзивный контент 18+",
+  "paywall_feature_2": "Регулярные обновления",
+  "paywall_feature_3": "Без рекламы",
+  "paywall_feature_4": "Отменяй в любой момент",
+  "paywall_weekly_plan": "Неделя",
+  "paywall_monthly_plan": "Месяц",
+  "paywall_yearly_plan": "Год",
+  "paywall_best_value": "Лучшая цена",
+  "paywall_trial_text": "3 дня БЕСПЛАТНО",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "в неделю",
+  "price_per_weeks": "за {count} нед.",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "в месяц",
+  "price_per_months": "за {count} мес.",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "в год",
+  "price_per_years": "за {count} г.",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Начать пробный период",
+  "paywall_subscribe": "Оформить подписку",
+  "paywall_restore": "Восстановить покупки",
+  "paywall_terms": "Условия",
+  "paywall_privacy": "Конфиденциальность",
+  "paywall_cancel_anytime": "Отмена в любой момент",
+  "paywall_loading": "Загружаем планы подписки...",
+  "paywall_error": "Не удалось загрузить планы. Попробуйте снова.",
+  "subscription_active": "У вас активная подписка",
+  "subscription_expired": "Срок подписки истёк",
+  "subscription_purchase_success": "Покупка успешна! Приятной игры с премиум-контентом.",
+  "subscription_purchase_cancelled": "Покупка отменена",
+  "subscription_purchase_error": "Покупка не удалась. Попробуйте снова.",
+  "subscription_restore_success": "Покупки успешно восстановлены!",
+  "subscription_restore_error": "Покупки для восстановления не найдены.",
+  "subscription_checking": "Проверяем статус подписки...",
+  "error_generic": "Что-то пошло не так. Попробуйте снова.",
+  "error_network": "Ошибка сети. Проверьте подключение.",
+  "error_loading_questions": "Не удалось загрузить вопросы: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Не удалось загрузить настройки: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Загрузка...",
+  "common_retry": "Повторить",
+  "common_done": "Готово",
+  "common_error": "Ошибка",
+  "common_success": "Успешно",
+  "common_warning": "Предупреждение",
+  "common_info": "Инфо",
+  "error_page_not_found": "Страница не найдена: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "language_dutch": "Нидерландский",
+  "language_swedish": "Шведский",
+  "language_norwegian": "Норвежский",
+  "language_russian": "Русский",
+  "language_portuguese_brazil": "Португальский (Бразилия)",
+  "language_japanese": "Японский",
+  "language_italian": "Итальянский"
+}

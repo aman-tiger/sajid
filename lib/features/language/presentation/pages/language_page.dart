@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+﻿import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,26 +22,18 @@ class LanguagePage extends StatelessWidget {
   const LanguagePage({super.key});
 
   static const List<LanguageModel> _languages = [
-    LanguageModel(
-      code: 'en',
-      flag: '🇺🇸',
-    ),
-    LanguageModel(
-      code: 'es',
-      flag: '🇪🇸',
-    ),
-    LanguageModel(
-      code: 'de',
-      flag: '🇩🇪',
-    ),
-    LanguageModel(
-      code: 'fr',
-      flag: '🇫🇷',
-    ),
-    LanguageModel(
-      code: 'ko',
-      flag: '🇰🇷',
-    ),
+    LanguageModel(code: 'en', flag: 'US'),
+    LanguageModel(code: 'es', flag: 'ES'),
+    LanguageModel(code: 'de', flag: 'DE'),
+    LanguageModel(code: 'fr', flag: 'FR'),
+    LanguageModel(code: 'it', flag: 'IT'),
+    LanguageModel(code: 'ja', flag: 'JP'),
+    LanguageModel(code: 'ko', flag: 'KR'),
+    LanguageModel(code: 'nb', flag: 'NO'),
+    LanguageModel(code: 'nl', flag: 'NL'),
+    LanguageModel(code: 'pt_BR', flag: 'BR'),
+    LanguageModel(code: 'ru', flag: 'RU'),
+    LanguageModel(code: 'sv', flag: 'SE'),
   ];
 
   @override
@@ -97,8 +89,6 @@ class LanguagePage extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 16.h),
-
-        // Description
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.w),
           child: Text(
@@ -110,10 +100,7 @@ class LanguagePage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-
         SizedBox(height: 24.h),
-
-        // Language list
         Expanded(
           child: ListView.separated(
             padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -142,7 +129,6 @@ class LanguagePage extends StatelessWidget {
             },
           ),
         ),
-
         SizedBox(height: 24.h),
       ],
     );
@@ -158,8 +144,22 @@ class LanguagePage extends StatelessWidget {
         return t.language_german;
       case 'fr':
         return t.language_french;
+      case 'it':
+        return t.language_italian;
+      case 'ja':
+        return t.language_japanese;
       case 'ko':
         return t.language_korean;
+      case 'nb':
+        return t.language_norwegian;
+      case 'nl':
+        return t.language_dutch;
+      case 'pt_BR':
+        return t.language_portuguese_brazil;
+      case 'ru':
+        return t.language_russian;
+      case 'sv':
+        return t.language_swedish;
       default:
         return t.language_english;
     }
@@ -190,19 +190,18 @@ class _LanguageItem extends StatelessWidget {
           padding: EdgeInsets.all(16.w),
           decoration: BoxDecoration(
             color: isSelected
-                ? AppColors.primary.withOpacity(0.2)
+                ? AppColors.primary.withValues(alpha: 0.2)
                 : AppColors.backgroundLight,
             borderRadius: BorderRadius.circular(16.r),
             border: Border.all(
               color: isSelected
                   ? AppColors.primary
-                  : AppColors.textGrey.withOpacity(0.2),
+                  : AppColors.textGrey.withValues(alpha: 0.2),
               width: 2,
             ),
           ),
           child: Row(
             children: [
-              // Flag
               Container(
                 width: 48.w,
                 height: 48.w,
@@ -213,14 +212,11 @@ class _LanguageItem extends StatelessWidget {
                 child: Center(
                   child: Text(
                     language.flag,
-                    style: TextStyle(fontSize: 28.sp),
+                    style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w700),
                   ),
                 ),
               ),
-
               SizedBox(width: 16.w),
-
-              // Language names
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -245,8 +241,6 @@ class _LanguageItem extends StatelessWidget {
                   ],
                 ),
               ),
-
-              // Selection indicator
               if (isSelected)
                 Icon(
                   Icons.check_circle,

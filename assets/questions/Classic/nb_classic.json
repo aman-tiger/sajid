@@ -1,0 +1,1204 @@
+{
+  "classic_mode": [
+    {
+      "id": 1,
+      "text": "Jeg har aldri kissed a stranger"
+    },
+    {
+      "id": 2,
+      "text": "Jeg har aldri lied to get out of work"
+    },
+    {
+      "id": 3,
+      "text": "Jeg har aldri read someone's private messages"
+    },
+    {
+      "id": 4,
+      "text": "Jeg har aldri snuck into a movie theater"
+    },
+    {
+      "id": 5,
+      "text": "Jeg har aldri pretended to be sick to skip school"
+    },
+    {
+      "id": 6,
+      "text": "Jeg har aldri stolen a hotel towel"
+    },
+    {
+      "id": 7,
+      "text": "Jeg har aldri flirted with a barista"
+    },
+    {
+      "id": 8,
+      "text": "Jeg har aldri cried during a commercial"
+    },
+    {
+      "id": 9,
+      "text": "Jeg har aldri lied about your age"
+    },
+    {
+      "id": 10,
+      "text": "Jeg har aldri tried on clothes and left tags on"
+    },
+    {
+      "id": 11,
+      "text": "Jeg har aldri eaten food from the floor"
+    },
+    {
+      "id": 12,
+      "text": "Jeg har aldri faked a accent to get a discount"
+    },
+    {
+      "id": 13,
+      "text": "Jeg har aldri used someone else's toothbrush"
+    },
+    {
+      "id": 14,
+      "text": "Jeg har aldri lied about reading a famous book"
+    },
+    {
+      "id": 15,
+      "text": "Jeg har aldri taken a photo of a sleeping person"
+    },
+    {
+      "id": 16,
+      "text": "Jeg har aldri worn the same outfit two days in a row"
+    },
+    {
+      "id": 17,
+      "text": "Jeg har aldri lied about having a pet"
+    },
+    {
+      "id": 18,
+      "text": "Jeg har aldri pretended not to see someone you know"
+    },
+    {
+      "id": 19,
+      "text": "Jeg har aldri eaten dessert before dinner"
+    },
+    {
+      "id": 20,
+      "text": "Jeg har aldri googled your own name"
+    },
+    {
+      "id": 21,
+      "text": "Jeg har aldri lied about knowing a celebrity"
+    },
+    {
+      "id": 22,
+      "text": "Jeg har aldri kept extra change by mistake"
+    },
+    {
+      "id": 23,
+      "text": "Jeg har aldri faked being busy to avoid plans"
+    },
+    {
+      "id": 24,
+      "text": "Jeg har aldri tried to look busy when boss walked by"
+    },
+    {
+      "id": 25,
+      "text": "Jeg har aldri lied about watching a popular show"
+    },
+    {
+      "id": 26,
+      "text": "Jeg har aldri eaten someone else's leftovers"
+    },
+    {
+      "id": 27,
+      "text": "Jeg har aldri pretended to understand a foreign language"
+    },
+    {
+      "id": 28,
+      "text": "Jeg har aldri lied about your height"
+    },
+    {
+      "id": 29,
+      "text": "Jeg har aldri faked a phone call to escape conversation"
+    },
+    {
+      "id": 30,
+      "text": "Jeg har aldri worn shoes without socks"
+    },
+    {
+      "id": 31,
+      "text": "Jeg har aldri lied about cooking skills"
+    },
+    {
+      "id": 32,
+      "text": "Jeg har aldri taken credit for someone else's idea"
+    },
+    {
+      "id": 33,
+      "text": "Jeg har aldri pretended to like a gift"
+    },
+    {
+      "id": 34,
+      "text": "Jeg har aldri lied about being a morning person"
+    },
+    {
+      "id": 35,
+      "text": "Jeg har aldri eaten ice cream directly from the tub"
+    },
+    {
+      "id": 36,
+      "text": "Jeg har aldri faked enthusiasm for a boring story"
+    },
+    {
+      "id": 37,
+      "text": "Jeg har aldri lied about your salary"
+    },
+    {
+      "id": 38,
+      "text": "Jeg har aldri pretended to remember someone's name"
+    },
+    {
+      "id": 39,
+      "text": "Jeg har aldri lied about being good at directions"
+    },
+    {
+      "id": 40,
+      "text": "Jeg har aldri eaten fast food in your car alone"
+    },
+    {
+      "id": 41,
+      "text": "Jeg har aldri faked being sick to get attention"
+    },
+    {
+      "id": 42,
+      "text": "Jeg har aldri lied about your favorite movie"
+    },
+    {
+      "id": 43,
+      "text": "Jeg har aldri pretended to be interested in someone's hobby"
+    },
+    {
+      "id": 44,
+      "text": "Jeg har aldri lied about how many siblings you have"
+    },
+    {
+      "id": 45,
+      "text": "Jeg har aldri eaten a whole family-sized snack alone"
+    },
+    {
+      "id": 46,
+      "text": "Jeg har aldri faked being tech-savvy"
+    },
+    {
+      "id": 47,
+      "text": "Jeg har aldri lied about your shoe size"
+    },
+    {
+      "id": 48,
+      "text": "Jeg har aldri pretended to be asleep on public transport"
+    },
+    {
+      "id": 49,
+      "text": "Jeg har aldri lied about how long you've had your phone"
+    },
+    {
+      "id": 50,
+      "text": "Jeg har aldri eaten condiments straight from the packet"
+    },
+    {
+      "id": 51,
+      "text": "Jeg har aldri played a musical instrument"
+    },
+    {
+      "id": 52,
+      "text": "Jeg har aldri eaten a bug"
+    },
+    {
+      "id": 53,
+      "text": "Jeg har aldri lied in a job interview"
+    },
+    {
+      "id": 54,
+      "text": "Jeg har aldri gone bungee jumping"
+    },
+    {
+      "id": 55,
+      "text": "Jeg har aldri sent a text to the wrong person"
+    },
+    {
+      "id": 56,
+      "text": "Jeg har aldri visited another country"
+    },
+    {
+      "id": 57,
+      "text": "Jeg har aldri gotten lost in a new city"
+    },
+    {
+      "id": 58,
+      "text": "Jeg har aldri tried sushi for the first time"
+    },
+    {
+      "id": 59,
+      "text": "Jeg har aldri skipped school"
+    },
+    {
+      "id": 60,
+      "text": "Jeg har aldri danced in public"
+    },
+    {
+      "id": 61,
+      "text": "Jeg har aldri sung karaoke"
+    },
+    {
+      "id": 62,
+      "text": "Jeg har aldri painted a picture"
+    },
+    {
+      "id": 63,
+      "text": "Jeg har aldri built a model"
+    },
+    {
+      "id": 64,
+      "text": "Jeg har aldri accidentally sent an email"
+    },
+    {
+      "id": 65,
+      "text": "Jeg har aldri deleted an important file"
+    },
+    {
+      "id": 66,
+      "text": "Jeg har aldri played soccer"
+    },
+    {
+      "id": 67,
+      "text": "Jeg har aldri gone swimming"
+    },
+    {
+      "id": 68,
+      "text": "Jeg har aldri cried at a movie"
+    },
+    {
+      "id": 69,
+      "text": "Jeg har aldri forgotten a birthday"
+    },
+    {
+      "id": 70,
+      "text": "Jeg har aldri worn mismatched socks"
+    },
+    {
+      "id": 71,
+      "text": "Jeg har aldri taken a selfie with a stranger"
+    },
+    {
+      "id": 72,
+      "text": "Jeg har aldri tried a new cocktail"
+    },
+    {
+      "id": 73,
+      "text": "Jeg har aldri lost a game of chess"
+    },
+    {
+      "id": 74,
+      "text": "Jeg har aldri read a book in one day"
+    },
+    {
+      "id": 75,
+      "text": "Jeg har aldri baked a cake"
+    },
+    {
+      "id": 76,
+      "text": "Jeg har aldri spoken in front of a crowd"
+    },
+    {
+      "id": 77,
+      "text": "Jeg har aldri ridden a horse"
+    },
+    {
+      "id": 78,
+      "text": "Jeg har aldri written a poem"
+    },
+    {
+      "id": 79,
+      "text": "Jeg har aldri watched a sunrise"
+    },
+    {
+      "id": 80,
+      "text": "Jeg har aldri gotten a tattoo"
+    },
+    {
+      "id": 81,
+      "text": "Jeg har aldri traveled by train"
+    },
+    {
+      "id": 82,
+      "text": "Jeg har aldri eaten pizza for breakfast"
+    },
+    {
+      "id": 83,
+      "text": "Jeg har aldri slept in a tent"
+    },
+    {
+      "id": 84,
+      "text": "Jeg har aldri visited a museum"
+    },
+    {
+      "id": 85,
+      "text": "Jeg har aldri won a board game"
+    },
+    {
+      "id": 86,
+      "text": "Jeg har aldri tried skydiving"
+    },
+    {
+      "id": 87,
+      "text": "Jeg har aldri gotten a speeding ticket"
+    },
+    {
+      "id": 88,
+      "text": "Jeg har aldri worn pajamas to school"
+    },
+    {
+      "id": 89,
+      "text": "Jeg har aldri gotten a haircut you didn't like"
+    },
+    {
+      "id": 90,
+      "text": "Jeg har aldri eaten at a food truck"
+    },
+    {
+      "id": 91,
+      "text": "Jeg har aldri sung in the shower"
+    },
+    {
+      "id": 92,
+      "text": "Jeg har aldri written a letter to a friend"
+    },
+    {
+      "id": 93,
+      "text": "Jeg har aldri visited a zoo"
+    },
+    {
+      "id": 94,
+      "text": "Jeg har aldri played video games all night"
+    },
+    {
+      "id": 95,
+      "text": "Jeg har aldri gotten a compliment you didn't deserve"
+    },
+    {
+      "id": 96,
+      "text": "Jeg har aldri lost your phone"
+    },
+    {
+      "id": 97,
+      "text": "Jeg har aldri gotten a hug from a stranger"
+    },
+    {
+      "id": 98,
+      "text": "Jeg har aldri tried ice skating"
+    },
+    {
+      "id": 99,
+      "text": "Jeg har aldri eaten a whole pizza alone"
+    },
+    {
+      "id": 100,
+      "text": "Jeg har aldri gotten a standing ovation"
+    },
+    {
+      "id": 101,
+      "text": "Jeg har aldri traveled by plane"
+    },
+    {
+      "id": 102,
+      "text": "Jeg har aldri tried a new sport"
+    },
+    {
+      "id": 103,
+      "text": "Jeg har aldri gotten a flu shot"
+    },
+    {
+      "id": 104,
+      "text": "Jeg har aldri worn sunglasses indoors"
+    },
+    {
+      "id": 105,
+      "text": "Jeg har aldri sung in a choir"
+    },
+    {
+      "id": 106,
+      "text": "Jeg har aldri visited a library"
+    },
+    {
+      "id": 107,
+      "text": "Jeg har aldri gotten a good grade"
+    },
+    {
+      "id": 108,
+      "text": "Jeg har aldri tried roller skating"
+    },
+    {
+      "id": 109,
+      "text": "Jeg har aldri eaten ice cream in winter"
+    },
+    {
+      "id": 110,
+      "text": "Jeg har aldri gotten a gift you didn't like"
+    },
+    {
+      "id": 111,
+      "text": "Jeg har aldri worn a costume"
+    },
+    {
+      "id": 112,
+      "text": "Jeg har aldri traveled by bus"
+    },
+    {
+      "id": 113,
+      "text": "Jeg har aldri tried a new recipe"
+    },
+    {
+      "id": 114,
+      "text": "Jeg har aldri gotten a haircut at home"
+    },
+    {
+      "id": 115,
+      "text": "Jeg har aldri worn mismatched shoes"
+    },
+    {
+      "id": 116,
+      "text": "Jeg har aldri sung in a talent show"
+    },
+    {
+      "id": 117,
+      "text": "Jeg har aldri visited a park"
+    },
+    {
+      "id": 118,
+      "text": "Jeg har aldri gotten a scholarship"
+    },
+    {
+      "id": 119,
+      "text": "Jeg har aldri tried snowboarding"
+    },
+    {
+      "id": 120,
+      "text": "Jeg har aldri eaten a whole cake"
+    },
+    {
+      "id": 121,
+      "text": "Jeg har aldri gotten a surprise party"
+    },
+    {
+      "id": 122,
+      "text": "Jeg har aldri worn a hat indoors"
+    },
+    {
+      "id": 123,
+      "text": "Jeg har aldri traveled by car"
+    },
+    {
+      "id": 124,
+      "text": "Jeg har aldri tried a new hobby"
+    },
+    {
+      "id": 125,
+      "text": "Jeg har aldri gotten a cold"
+    },
+    {
+      "id": 126,
+      "text": "Jeg har aldri worn socks with sandals"
+    },
+    {
+      "id": 127,
+      "text": "Jeg har aldri sung in a school play"
+    },
+    {
+      "id": 128,
+      "text": "Jeg har aldri visited a beach"
+    },
+    {
+      "id": 129,
+      "text": "Jeg har aldri gotten a promotion"
+    },
+    {
+      "id": 130,
+      "text": "Jeg har aldri tried surfing"
+    },
+    {
+      "id": 131,
+      "text": "Jeg har aldri eaten a whole bag of chips"
+    },
+    {
+      "id": 132,
+      "text": "Jeg har aldri gotten a thank you card"
+    },
+    {
+      "id": 133,
+      "text": "Jeg har aldri worn pajamas in public"
+    },
+    {
+      "id": 134,
+      "text": "Jeg har aldri traveled by ship"
+    },
+    {
+      "id": 135,
+      "text": "Jeg har aldri tried a new language"
+    },
+    {
+      "id": 136,
+      "text": "Jeg har aldri worn gloves in summer"
+    },
+    {
+      "id": 137,
+      "text": "Jeg har aldri sung in a church"
+    },
+    {
+      "id": 138,
+      "text": "Jeg har aldri visited a forest"
+    },
+    {
+      "id": 139,
+      "text": "Jeg har aldri gotten a raise"
+    },
+    {
+      "id": 140,
+      "text": "Jeg har aldri tried skateboarding"
+    },
+    {
+      "id": 141,
+      "text": "Jeg har aldri eaten a whole box of chocolates"
+    },
+    {
+      "id": 142,
+      "text": "Jeg har aldri gotten a welcome gift"
+    },
+    {
+      "id": 143,
+      "text": "Jeg har aldri worn a tie to school"
+    },
+    {
+      "id": 144,
+      "text": "Jeg har aldri traveled by bike"
+    },
+    {
+      "id": 145,
+      "text": "Jeg har aldri tried a new dessert"
+    },
+    {
+      "id": 146,
+      "text": "Jeg har aldri gotten a flu vaccine"
+    },
+    {
+      "id": 147,
+      "text": "Jeg har aldri worn a scarf in summer"
+    },
+    {
+      "id": 148,
+      "text": "Jeg har aldri sung in a community event"
+    },
+    {
+      "id": 149,
+      "text": "Jeg har aldri visited a mountain"
+    },
+    {
+      "id": 150,
+      "text": "Jeg har aldri gotten a bonus"
+    },
+    {
+      "id": 151,
+      "text": "Jeg har aldri tried rollerblading"
+    },
+    {
+      "id": 152,
+      "text": "Jeg har aldri eaten a whole sandwich"
+    },
+    {
+      "id": 153,
+      "text": "Jeg har aldri gotten a get well card"
+    },
+    {
+      "id": 154,
+      "text": "Jeg har aldri worn a hat to bed"
+    },
+    {
+      "id": 155,
+      "text": "Jeg har aldri traveled by foot"
+    },
+    {
+      "id": 156,
+      "text": "Jeg har aldri tried a new drink"
+    },
+    {
+      "id": 157,
+      "text": "Jeg har aldri worn a jacket in summer"
+    },
+    {
+      "id": 158,
+      "text": "Jeg har aldri sung in a competition"
+    },
+    {
+      "id": 159,
+      "text": "Jeg har aldri visited a lake"
+    },
+    {
+      "id": 160,
+      "text": "Jeg har aldri gotten a medal"
+    },
+    {
+      "id": 161,
+      "text": "Jeg har aldri tried snowshoeing"
+    },
+    {
+      "id": 162,
+      "text": "Jeg har aldri eaten a whole bowl of cereal"
+    },
+    {
+      "id": 163,
+      "text": "Jeg har aldri gotten a birthday card"
+    },
+    {
+      "id": 164,
+      "text": "Jeg har aldri worn a dress to school"
+    },
+    {
+      "id": 165,
+      "text": "Jeg har aldri traveled by subway"
+    },
+    {
+      "id": 166,
+      "text": "Jeg har aldri tried a new fruit"
+    },
+    {
+      "id": 167,
+      "text": "Jeg har aldri worn a coat in summer"
+    },
+    {
+      "id": 168,
+      "text": "Jeg har aldri sung in a wedding"
+    },
+    {
+      "id": 169,
+      "text": "Jeg har aldri visited a river"
+    },
+    {
+      "id": 170,
+      "text": "Jeg har aldri gotten a trophy"
+    },
+    {
+      "id": 171,
+      "text": "Jeg har aldri tried rock climbing"
+    },
+    {
+      "id": 172,
+      "text": "Jeg har aldri eaten a whole bowl of soup"
+    },
+    {
+      "id": 173,
+      "text": "Jeg har aldri gotten a thank you note"
+    },
+    {
+      "id": 174,
+      "text": "Jeg har aldri worn a suit to school"
+    },
+    {
+      "id": 175,
+      "text": "Jeg har aldri traveled by taxi"
+    },
+    {
+      "id": 176,
+      "text": "Jeg har aldri tried a new vegetable"
+    },
+    {
+      "id": 177,
+      "text": "Jeg har aldri worn a sweater in summer"
+    },
+    {
+      "id": 178,
+      "text": "Jeg har aldri sung in a funeral"
+    },
+    {
+      "id": 179,
+      "text": "Jeg har aldri visited a waterfall"
+    },
+    {
+      "id": 180,
+      "text": "Jeg har aldri gotten a certificate"
+    },
+    {
+      "id": 181,
+      "text": "Jeg har aldri tried hiking"
+    },
+    {
+      "id": 182,
+      "text": "Jeg har aldri eaten a whole bag of popcorn"
+    },
+    {
+      "id": 183,
+      "text": "Jeg har aldri gotten a get well soon card"
+    },
+    {
+      "id": 184,
+      "text": "Jeg har aldri worn a scarf to bed"
+    },
+    {
+      "id": 185,
+      "text": "Jeg har aldri traveled by motorcycle"
+    },
+    {
+      "id": 186,
+      "text": "Jeg har aldri tried a new snack"
+    },
+    {
+      "id": 187,
+      "text": "Jeg har aldri worn a hat to a party"
+    },
+    {
+      "id": 188,
+      "text": "Jeg har aldri sung in a graduation"
+    },
+    {
+      "id": 189,
+      "text": "Jeg har aldri visited a desert"
+    },
+    {
+      "id": 190,
+      "text": "Jeg har aldri gotten a diploma"
+    },
+    {
+      "id": 191,
+      "text": "Jeg har aldri tried canoeing"
+    },
+    {
+      "id": 192,
+      "text": "Jeg har aldri eaten a whole bowl of pasta"
+    },
+    {
+      "id": 193,
+      "text": "Jeg har aldri gotten a welcome card"
+    },
+    {
+      "id": 194,
+      "text": "Jeg har aldri worn a tie to a party"
+    },
+    {
+      "id": 195,
+      "text": "Jeg har aldri traveled by helicopter"
+    },
+    {
+      "id": 196,
+      "text": "Jeg har aldri tried a new bread"
+    },
+    {
+      "id": 197,
+      "text": "Jeg har aldri worn a jacket to a party"
+    },
+    {
+      "id": 198,
+      "text": "Jeg har aldri sung in a birthday party"
+    },
+    {
+      "id": 199,
+      "text": "Jeg har aldri visited a canyon"
+    },
+    {
+      "id": 200,
+      "text": "Jeg har aldri gotten a scholarship certificate"
+    },
+    {
+      "id": 201,
+      "text": "Jeg har aldri tried rafting"
+    },
+    {
+      "id": 202,
+      "text": "Jeg har aldri eaten a whole plate of cookies"
+    },
+    {
+      "id": 203,
+      "text": "Jeg har aldri gotten a get well card from a friend"
+    },
+    {
+      "id": 204,
+      "text": "Jeg har aldri worn a dress to a party"
+    },
+    {
+      "id": 205,
+      "text": "Jeg har aldri traveled by hot air balloon"
+    },
+    {
+      "id": 206,
+      "text": "Jeg har aldri tried a new cake"
+    },
+    {
+      "id": 207,
+      "text": "Jeg har aldri worn a coat to a party"
+    },
+    {
+      "id": 208,
+      "text": "Jeg har aldri sung in a school concert"
+    },
+    {
+      "id": 209,
+      "text": "Jeg har aldri visited a glacier"
+    },
+    {
+      "id": 210,
+      "text": "Jeg har aldri gotten a promotion certificate"
+    },
+    {
+      "id": 211,
+      "text": "Jeg har aldri tried paragliding"
+    },
+    {
+      "id": 212,
+      "text": "Jeg har aldri eaten a whole bowl of ice cream"
+    },
+    {
+      "id": 213,
+      "text": "Jeg har aldri gotten a thank you card from a teacher"
+    },
+    {
+      "id": 214,
+      "text": "Jeg har aldri worn a suit to a party"
+    },
+    {
+      "id": 215,
+      "text": "Jeg har aldri traveled by train across the country"
+    },
+    {
+      "id": 216,
+      "text": "Jeg har aldri tried a new pasta"
+    },
+    {
+      "id": 217,
+      "text": "Jeg har aldri worn a sweater to a party"
+    },
+    {
+      "id": 218,
+      "text": "Jeg har aldri sung in a community concert"
+    },
+    {
+      "id": 219,
+      "text": "Jeg har aldri visited a volcano"
+    },
+    {
+      "id": 220,
+      "text": "Jeg har aldri gotten a raise certificate"
+    },
+    {
+      "id": 221,
+      "text": "Jeg har aldri tried hang gliding"
+    },
+    {
+      "id": 222,
+      "text": "Jeg har aldri eaten a whole plate of pizza"
+    },
+    {
+      "id": 223,
+      "text": "Jeg har aldri gotten a get well card from a family member"
+    },
+    {
+      "id": 224,
+      "text": "Jeg har aldri worn a scarf to a party"
+    },
+    {
+      "id": 225,
+      "text": "Jeg har aldri traveled by bus across the city"
+    },
+    {
+      "id": 226,
+      "text": "Jeg har aldri tried a new soup"
+    },
+    {
+      "id": 227,
+      "text": "Jeg har aldri worn a hat to a wedding"
+    },
+    {
+      "id": 228,
+      "text": "Jeg har aldri sung in a wedding ceremony"
+    },
+    {
+      "id": 229,
+      "text": "Jeg har aldri visited a cave"
+    },
+    {
+      "id": 230,
+      "text": "Jeg har aldri gotten a bonus certificate"
+    },
+    {
+      "id": 231,
+      "text": "Jeg har aldri tried zip lining"
+    },
+    {
+      "id": 232,
+      "text": "Jeg har aldri eaten a whole bowl of salad"
+    },
+    {
+      "id": 233,
+      "text": "Jeg har aldri gotten a thank you card from a colleague"
+    },
+    {
+      "id": 234,
+      "text": "Jeg har aldri worn a tie to a wedding"
+    },
+    {
+      "id": 235,
+      "text": "Jeg har aldri traveled by car across the state"
+    },
+    {
+      "id": 236,
+      "text": "Jeg har aldri tried a new rice dish"
+    },
+    {
+      "id": 237,
+      "text": "Jeg har aldri worn a jacket to a wedding"
+    },
+    {
+      "id": 238,
+      "text": "Jeg har aldri sung in a graduation ceremony"
+    },
+    {
+      "id": 239,
+      "text": "Jeg har aldri visited a jungle"
+    },
+    {
+      "id": 240,
+      "text": "Jeg har aldri gotten a medal certificate"
+    },
+    {
+      "id": 241,
+      "text": "Jeg har aldri tried scuba diving"
+    },
+    {
+      "id": 242,
+      "text": "Jeg har aldri eaten a whole bowl of noodles"
+    },
+    {
+      "id": 243,
+      "text": "Jeg har aldri gotten a get well card from a neighbor"
+    },
+    {
+      "id": 244,
+      "text": "Jeg har aldri worn a dress to a wedding"
+    },
+    {
+      "id": 245,
+      "text": "Jeg har aldri traveled by foot across the park"
+    },
+    {
+      "id": 246,
+      "text": "Jeg har aldri tried a new pasta dish"
+    },
+    {
+      "id": 247,
+      "text": "Jeg har aldri worn a coat to a wedding"
+    },
+    {
+      "id": 248,
+      "text": "Jeg har aldri sung in a birthday party ceremony"
+    },
+    {
+      "id": 249,
+      "text": "Jeg har aldri visited a rainforest"
+    },
+    {
+      "id": 250,
+      "text": "Jeg har aldri gotten a scholarship award"
+    },
+    {
+      "id": 251,
+      "text": "Jeg har aldri tried snorkeling"
+    },
+    {
+      "id": 252,
+      "text": "Jeg har aldri eaten a whole bowl of fruit"
+    },
+    {
+      "id": 253,
+      "text": "Jeg har aldri gotten a thank you card from a friend's parent"
+    },
+    {
+      "id": 254,
+      "text": "Jeg har aldri worn a suit to a wedding"
+    },
+    {
+      "id": 255,
+      "text": "Jeg har aldri traveled by subway across the city"
+    },
+    {
+      "id": 256,
+      "text": "Jeg har aldri tried a new salad"
+    },
+    {
+      "id": 257,
+      "text": "Jeg har aldri worn a sweater to a wedding"
+    },
+    {
+      "id": 258,
+      "text": "Jeg har aldri sung in a school graduation"
+    },
+    {
+      "id": 259,
+      "text": "Jeg har aldri visited a coral reef"
+    },
+    {
+      "id": 260,
+      "text": "Jeg har aldri gotten a promotion award"
+    },
+    {
+      "id": 261,
+      "text": "Jeg har aldri tried kite surfing"
+    },
+    {
+      "id": 262,
+      "text": "Jeg har aldri eaten a whole bowl of cereal with milk"
+    },
+    {
+      "id": 263,
+      "text": "Jeg har aldri gotten a get well card from a classmate"
+    },
+    {
+      "id": 264,
+      "text": "Jeg har aldri worn a scarf to a wedding"
+    },
+    {
+      "id": 265,
+      "text": "Jeg har aldri traveled by taxi across the city"
+    },
+    {
+      "id": 266,
+      "text": "Jeg har aldri tried a new smoothie"
+    },
+    {
+      "id": 267,
+      "text": "Jeg har aldri worn a hat to a graduation"
+    },
+    {
+      "id": 268,
+      "text": "Jeg har aldri sung in a community graduation"
+    },
+    {
+      "id": 269,
+      "text": "Jeg har aldri visited a savanna"
+    },
+    {
+      "id": 270,
+      "text": "Jeg har aldri gotten a raise award"
+    },
+    {
+      "id": 271,
+      "text": "Jeg har aldri tried windsurfing"
+    },
+    {
+      "id": 272,
+      "text": "Jeg har aldri eaten a whole bowl of rice"
+    },
+    {
+      "id": 273,
+      "text": "Jeg har aldri gotten a thank you card from a teacher's assistant"
+    },
+    {
+      "id": 274,
+      "text": "Jeg har aldri worn a tie to a graduation"
+    },
+    {
+      "id": 275,
+      "text": "Jeg har aldri traveled by motorcycle across the state"
+    },
+    {
+      "id": 276,
+      "text": "Jeg har aldri tried a new juice"
+    },
+    {
+      "id": 277,
+      "text": "Jeg har aldri worn a jacket to a graduation"
+    },
+    {
+      "id": 278,
+      "text": "Jeg har aldri sung in a school graduation ceremony"
+    },
+    {
+      "id": 279,
+      "text": "Jeg har aldri visited a tundra"
+    },
+    {
+      "id": 280,
+      "text": "Jeg har aldri gotten a bonus award"
+    },
+    {
+      "id": 281,
+      "text": "Jeg har aldri tried wakeboarding"
+    },
+    {
+      "id": 282,
+      "text": "Jeg har aldri eaten a whole bowl of soup with bread"
+    },
+    {
+      "id": 283,
+      "text": "Jeg har aldri gotten a get well card from a neighbor's child"
+    },
+    {
+      "id": 284,
+      "text": "Jeg har aldri worn a dress to a graduation"
+    },
+    {
+      "id": 285,
+      "text": "Jeg har aldri traveled by helicopter across the city"
+    },
+    {
+      "id": 286,
+      "text": "Jeg har aldri tried a new tea"
+    },
+    {
+      "id": 287,
+      "text": "Jeg har aldri worn a coat to a graduation"
+    },
+    {
+      "id": 288,
+      "text": "Jeg har aldri sung in a birthday party ceremony"
+    },
+    {
+      "id": 289,
+      "text": "Jeg har aldri visited a grassland"
+    },
+    {
+      "id": 290,
+      "text": "Jeg har aldri gotten a medal award"
+    },
+    {
+      "id": 291,
+      "text": "Jeg har aldri tried kayaking"
+    },
+    {
+      "id": 292,
+      "text": "Jeg har aldri eaten a whole bowl of pasta with sauce"
+    },
+    {
+      "id": 293,
+      "text": "Jeg har aldri gotten a thank you card from a friend's sibling"
+    },
+    {
+      "id": 294,
+      "text": "Jeg har aldri worn a suit to a graduation"
+    },
+    {
+      "id": 295,
+      "text": "Jeg har aldri traveled by hot air balloon across the landscape"
+    },
+    {
+      "id": 296,
+      "text": "Jeg har aldri tried a new coffee"
+    },
+    {
+      "id": 297,
+      "text": "Jeg har aldri worn a sweater to a graduation"
+    },
+    {
+      "id": 298,
+      "text": "Jeg har aldri sung in a community graduation ceremony"
+    },
+    {
+      "id": 299,
+      "text": "Jeg har aldri visited a wetland"
+    },
+    {
+      "id": 300,
+      "text": "Jeg har aldri gotten a scholarship award certificate"
+    }
+  ]
+}

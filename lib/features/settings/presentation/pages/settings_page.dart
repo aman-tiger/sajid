@@ -8,6 +8,7 @@ import 'package:in_app_review/in_app_review.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_links.dart';
+import '../../../../core/services/analytics_service.dart';
 import '../../../../core/services/share_service.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../bloc/settings_bloc.dart';
@@ -299,8 +300,22 @@ class _SettingsPageContent extends StatelessWidget {
         return t.language_german;
       case 'fr':
         return t.language_french;
+      case 'it':
+        return t.language_italian;
+      case 'ja':
+        return t.language_japanese;
       case 'ko':
         return t.language_korean;
+      case 'nb':
+        return t.language_norwegian;
+      case 'nl':
+        return t.language_dutch;
+      case 'pt_BR':
+        return t.language_portuguese_brazil;
+      case 'ru':
+        return t.language_russian;
+      case 'sv':
+        return t.language_swedish;
       default:
         return t.language_english;
     }
@@ -326,7 +341,12 @@ class _SettingsPageContent extends StatelessWidget {
       subject: t.settings_share_subject,
     );
 
-    if (!context.mounted || shared) return;
+    if (shared) {
+      await AnalyticsService().logShareAction('app');
+      return;
+    }
+
+    if (!context.mounted) return;
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -341,6 +361,7 @@ class _SettingsPageContent extends StatelessWidget {
 
   Future<void> _requestReview() async {
     final InAppReview inAppReview = InAppReview.instance;
+    await AnalyticsService().logReviewRequested('settings');
 
     if (await inAppReview.isAvailable()) {
       await inAppReview.requestReview();

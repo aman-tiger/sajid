@@ -9,7 +9,14 @@ import 'app_localizations_de.dart';
 import 'app_localizations_en.dart';
 import 'app_localizations_es.dart';
 import 'app_localizations_fr.dart';
+import 'app_localizations_it.dart';
+import 'app_localizations_ja.dart';
 import 'app_localizations_ko.dart';
+import 'app_localizations_nb.dart';
+import 'app_localizations_nl.dart';
+import 'app_localizations_pt.dart';
+import 'app_localizations_ru.dart';
+import 'app_localizations_sv.dart';
 
 // ignore_for_file: type=lint
 
@@ -101,7 +108,15 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('es'),
     Locale('fr'),
+    Locale('it'),
+    Locale('ja'),
     Locale('ko'),
+    Locale('nb'),
+    Locale('nl'),
+    Locale('pt'),
+    Locale('pt', 'BR'),
+    Locale('ru'),
+    Locale('sv'),
   ];
 
   /// No description provided for @onboarding_1_title.
@@ -740,6 +755,48 @@ abstract class AppLocalizations {
   /// **'한국어'**
   String get language_korean;
 
+  /// No description provided for @language_dutch.
+  ///
+  /// In en, this message translates to:
+  /// **'Dutch'**
+  String get language_dutch;
+
+  /// No description provided for @language_swedish.
+  ///
+  /// In en, this message translates to:
+  /// **'Swedish'**
+  String get language_swedish;
+
+  /// No description provided for @language_norwegian.
+  ///
+  /// In en, this message translates to:
+  /// **'Norwegian'**
+  String get language_norwegian;
+
+  /// No description provided for @language_russian.
+  ///
+  /// In en, this message translates to:
+  /// **'Russian'**
+  String get language_russian;
+
+  /// No description provided for @language_portuguese_brazil.
+  ///
+  /// In en, this message translates to:
+  /// **'Portuguese (Brazil)'**
+  String get language_portuguese_brazil;
+
+  /// No description provided for @language_japanese.
+  ///
+  /// In en, this message translates to:
+  /// **'Japanese'**
+  String get language_japanese;
+
+  /// No description provided for @language_italian.
+  ///
+  /// In en, this message translates to:
+  /// **'Italian'**
+  String get language_italian;
+
   /// No description provided for @language_changed_title.
   ///
   /// In en, this message translates to:
@@ -1039,14 +1096,38 @@ class _AppLocalizationsDelegate
   }
 
   @override
-  bool isSupported(Locale locale) =>
-      <String>['de', 'en', 'es', 'fr', 'ko'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>[
+    'de',
+    'en',
+    'es',
+    'fr',
+    'it',
+    'ja',
+    'ko',
+    'nb',
+    'nl',
+    'pt',
+    'ru',
+    'sv',
+  ].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
+  // Lookup logic when language+country codes are specified.
+  switch (locale.languageCode) {
+    case 'pt':
+      {
+        switch (locale.countryCode) {
+          case 'BR':
+            return AppLocalizationsPtBr();
+        }
+        break;
+      }
+  }
+
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'de':
@@ -1057,8 +1138,22 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
       return AppLocalizationsEs();
     case 'fr':
       return AppLocalizationsFr();
+    case 'it':
+      return AppLocalizationsIt();
+    case 'ja':
+      return AppLocalizationsJa();
     case 'ko':
       return AppLocalizationsKo();
+    case 'nb':
+      return AppLocalizationsNb();
+    case 'nl':
+      return AppLocalizationsNl();
+    case 'pt':
+      return AppLocalizationsPt();
+    case 'ru':
+      return AppLocalizationsRu();
+    case 'sv':
+      return AppLocalizationsSv();
   }
 
   throw FlutterError(

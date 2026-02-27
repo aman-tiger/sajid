@@ -1,0 +1,234 @@
+{
+  "@@locale": "sv",
+  "onboarding_1_title": "Redo för en episk kväll?",
+  "onboarding_1_subtitle": "Dyk in i den ultimata spelupplevelsen!",
+  "onboarding_2_title": "6 episka spelpaket",
+  "onboarding_2_subtitle": "Från klassiskt till spicy — hitta din perfekta vibe!",
+  "onboarding_3_title": "1 500 frågor",
+  "onboarding_3_subtitle": "Oändligt kul med vänner väntar!",
+  "onboarding_4_title": "Betygsätt din upplevelse",
+  "onboarding_4_subtitle": "Hjälp oss göra spelet ännu bättre!",
+  "button_continue": "Fortsätt",
+  "button_start_game": "Starta spelet",
+  "button_skip": "Hoppa över",
+  "button_get_started": "Kom igång",
+  "button_back": "Tillbaka",
+  "button_next": "Nästa",
+  "button_save": "Spara",
+  "button_cancel": "Avbryt",
+  "button_ok": "OK",
+  "button_close": "Stäng",
+  "button_share": "Dela",
+  "button_rate_now": "Betygsätt nu",
+  "button_maybe_later": "Kanske senare",
+  "common_and": "och",
+  "main_menu_title": "Never Have I Ever",
+  "main_menu_subtitle": "Välj ditt paket",
+  "main_menu_buy_subscription": "Lås upp alla paket",
+  "main_menu_settings": "Inställningar",
+  "main_menu_free": "Gratis",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Klassiskt paket",
+  "category_classic_desc": "Den perfekta starten för varje tillställning!",
+  "category_party_name": "Festar-paket",
+  "category_party_desc": "Höj stämningen med spännande utmaningar!",
+  "category_girls_name": "Tjejer 18+",
+  "category_girls_desc": "Modiga frågor för en tjejkväll!",
+  "category_couples_name": "Par-paket",
+  "category_couples_desc": "Kom närmare din partner som aldrig förr!",
+  "category_hot_name": "Heta frågor 18+",
+  "category_hot_desc": "Höj temperaturen med spicy frågor!",
+  "category_guys_name": "Killpaket",
+  "category_guys_desc": "Episka utmaningar för grabbarna!",
+  "game_never_have_i_ever": "Never Have I Ever...",
+  "game_swipe_hint": "Svep för att navigera",
+  "game_loading": "Laddar frågor...",
+  "game_error_title": "Hoppsan!",
+  "game_error_no_questions": "Inga frågor tillgängliga för denna kategori",
+  "game_error_failed_load": "Misslyckades att ladda frågor",
+  "game_button_previous": "Föregående",
+  "game_button_next": "Nästa",
+  "game_button_shuffle": "Blanda",
+  "game_button_share": "Dela",
+  "game_share_text": "Never Have I Ever... {question}\n\nLadda ner Never Have I Ever-appen och spela med vänner!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Inställningar",
+  "settings_section_account": "Konto",
+  "settings_section_app": "Appinställningar",
+  "settings_section_support": "Support & feedback",
+  "settings_section_about": "Om",
+  "settings_premium_member": "Premium-medlem",
+  "settings_free_plan": "Gratisplan",
+  "settings_premium_desc": "Njut av obegränsad tillgång till alla paket!",
+  "settings_free_desc": "Uppgradera för att låsa upp allt premiuminnehåll",
+  "settings_restore_purchases": "Återställ köp",
+  "settings_restore_purchases_desc": "Återställ dina tidigare köp",
+  "settings_language": "Språk",
+  "settings_language_desc": "Byt appens språk",
+  "settings_dark_mode": "Mörkt läge",
+  "settings_how_to_play": "Så spelar du",
+  "settings_how_to_play_desc": "Lär dig hur spelet fungerar",
+  "settings_share_app": "Dela appen",
+  "settings_share_app_desc": "Dela med vänner",
+  "settings_rate_us": "Betygsätt oss",
+  "settings_rate_us_desc": "Betygsätt oss i butiken",
+  "settings_app_version": "Appversion",
+  "settings_terms": "Villkor",
+  "settings_privacy": "Integritetspolicy",
+  "settings_restore_dialog_title": "Återställ köp",
+  "settings_restore_dialog_message": "Dina köp återställs när fas 3 är implementerad.",
+  "settings_share_message": "Kolla in Never Have I Ever! Den ultimata partyspel-appen. Ladda ner nu!",
+  "settings_share_subject": "Never Have I Ever - Kul partyspel",
+  "how_to_play_title": "Så spelar du",
+  "how_to_play_header_title": "Never Have I Ever",
+  "how_to_play_header_subtitle": "Det ultimata partyspelet",
+  "how_to_play_step_1_title": "Välj ditt paket",
+  "how_to_play_step_1_desc": "Välj bland 6 spännande kategorier som passar din partyvibe.",
+  "how_to_play_step_2_title": "Läs frågan",
+  "how_to_play_step_2_desc": "Varje spelare turas om att läsa \"Never Have I Ever...\"-frågor högt.",
+  "how_to_play_step_3_title": "Sanning eller utmaning",
+  "how_to_play_step_3_desc": "Spelare som HAR gjort det måste erkänna eller göra en rolig utmaning!",
+  "how_to_play_step_4_title": "Nästa fråga",
+  "how_to_play_step_4_desc": "Svep eller tryck för att gå vidare och hålla igång skratten!",
+  "how_to_play_step_5_title": "Ha kul!",
+  "how_to_play_step_5_desc": "Njut av roliga stunder och lär känna dina vänner bättre!",
+  "how_to_play_step_label": "Steg {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Proffstips",
+  "how_to_play_tip_1": "Använd blandningsknappen för att slumpa frågor",
+  "how_to_play_tip_2": "Dela dina favoritfrågor med vänner",
+  "how_to_play_tip_3": "Premium-paket låser upp 1 500+ exklusiva frågor",
+  "how_to_play_tip_4": "Bäst med 3+ spelare för maximal underhållning!",
+  "onboarding_terms_prefix": "Genom att fortsätta godkänner du våra ",
+  "onboarding_terms_of_use": "Användarvillkor",
+  "language_title": "Språk",
+  "language_subtitle": "Välj ditt språk",
+  "language_english": "Engelska",
+  "language_spanish": "Spanska",
+  "language_german": "Tyska",
+  "language_french": "Franska",
+  "language_korean": "Koreanska",
+  "language_changed_title": "Språk ändrat",
+  "language_changed_message": "Språket har ändrats till {language}. Appen blir helt översatt i den slutliga versionen.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "BLI PREMIUM",
+  "paywall_subtitle": "Non-stop kul väntar",
+  "paywall_choose_plan": "Välj din plan",
+  "paywall_feature_1": "Lås upp exklusivt 18+ innehåll",
+  "paywall_feature_2": "Nya uppdateringar regelbundet",
+  "paywall_feature_3": "Inga annonser",
+  "paywall_feature_4": "Avsluta när som helst",
+  "paywall_weekly_plan": "Veckovis",
+  "paywall_monthly_plan": "Månadsvis",
+  "paywall_yearly_plan": "Årsvis",
+  "paywall_best_value": "Bästa värde",
+  "paywall_trial_text": "Prova GRATIS i 3 dagar",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "per vecka",
+  "price_per_weeks": "per {count} veckor",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "per månad",
+  "price_per_months": "per {count} månader",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "per år",
+  "price_per_years": "per {count} år",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Starta gratis provperiod",
+  "paywall_subscribe": "Prenumerera nu",
+  "paywall_restore": "Återställ köp",
+  "paywall_terms": "Villkor",
+  "paywall_privacy": "Integritetspolicy",
+  "paywall_cancel_anytime": "Avsluta när som helst",
+  "paywall_loading": "Laddar prenumerationsplaner...",
+  "paywall_error": "Misslyckades att ladda planer. Försök igen.",
+  "subscription_active": "Du har en aktiv prenumeration",
+  "subscription_expired": "Din prenumeration har gått ut",
+  "subscription_purchase_success": "Köpet lyckades! Njut av premiuminnehåll.",
+  "subscription_purchase_cancelled": "Köp avbrutet",
+  "subscription_purchase_error": "Köp misslyckades. Försök igen.",
+  "subscription_restore_success": "Köp återställda!",
+  "subscription_restore_error": "Inga köp hittades att återställa.",
+  "subscription_checking": "Kontrollerar prenumerationsstatus...",
+  "error_generic": "Något gick fel. Försök igen.",
+  "error_network": "Nätverksfel. Kontrollera din anslutning.",
+  "error_loading_questions": "Misslyckades att ladda frågor: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Misslyckades att ladda inställningar: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Laddar...",
+  "common_retry": "Försök igen",
+  "common_done": "Klart",
+  "common_error": "Fel",
+  "common_success": "Klart",
+  "common_warning": "Varning",
+  "common_info": "Info",
+  "error_page_not_found": "Sidan hittades inte: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "language_dutch": "Nederländska",
+  "language_swedish": "Svenska",
+  "language_norwegian": "Norska",
+  "language_russian": "Ryska",
+  "language_portuguese_brazil": "Portugisiska (Brasilien)",
+  "language_japanese": "Japanska",
+  "language_italian": "Italienska"
+}

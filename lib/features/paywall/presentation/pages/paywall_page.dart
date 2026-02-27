@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/services/analytics_service.dart';
 import '../../../../core/bloc/subscription/subscription_bloc.dart';
 import '../../../../core/bloc/subscription/subscription_event.dart';
 import '../../../../core/bloc/subscription/subscription_state.dart';
@@ -30,6 +31,7 @@ class _PaywallPageState extends State<PaywallPage> {
   @override
   void initState() {
     super.initState();
+    AnalyticsService().logPaywallViewed('app');
     _loadOfferings();
   }
 

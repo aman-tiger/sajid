@@ -1,0 +1,234 @@
+{
+  "@@locale": "nl",
+  "onboarding_1_title": "Klaar voor een epische avond?",
+  "onboarding_1_subtitle": "Duik in de ultieme game-ervaring!",
+  "onboarding_2_title": "6 epische spelpakketten",
+  "onboarding_2_subtitle": "Van klassiek tot spicy — vind jouw perfecte vibe!",
+  "onboarding_3_title": "1.500 vragen",
+  "onboarding_3_subtitle": "Eindeloos plezier met vrienden wacht op je!",
+  "onboarding_4_title": "Beoordeel je ervaring",
+  "onboarding_4_subtitle": "Help ons het spel nóg beter te maken!",
+  "button_continue": "Doorgaan",
+  "button_start_game": "Spel starten",
+  "button_skip": "Overslaan",
+  "button_get_started": "Aan de slag",
+  "button_back": "Terug",
+  "button_next": "Volgende",
+  "button_save": "Opslaan",
+  "button_cancel": "Annuleren",
+  "button_ok": "OK",
+  "button_close": "Sluiten",
+  "button_share": "Delen",
+  "button_rate_now": "Nu beoordelen",
+  "button_maybe_later": "Misschien later",
+  "common_and": "en",
+  "main_menu_title": "Never Have I Ever",
+  "main_menu_subtitle": "Kies je pakket",
+  "main_menu_buy_subscription": "Ontgrendel alle pakketten",
+  "main_menu_settings": "Instellingen",
+  "main_menu_free": "Gratis",
+  "main_menu_premium": "Premium",
+  "category_classic_name": "Klassiek pakket",
+  "category_classic_desc": "De perfecte starter voor elke bijeenkomst!",
+  "category_party_name": "Feestpakket",
+  "category_party_desc": "Geef je feestje energie met spannende uitdagingen!",
+  "category_girls_name": "Meiden 18+",
+  "category_girls_desc": "Gedurfde vragen voor een meidenavond!",
+  "category_couples_name": "Koppels pakket",
+  "category_couples_desc": "Maak contact met je partner als nooit tevoren!",
+  "category_hot_name": "Pittige vragen 18+",
+  "category_hot_desc": "Zet de temperatuur hoger met spicy vragen!",
+  "category_guys_name": "Mannenpakket",
+  "category_guys_desc": "Epische uitdagingen voor de boys!",
+  "game_never_have_i_ever": "Never Have I Ever...",
+  "game_swipe_hint": "Swipe om te navigeren",
+  "game_loading": "Vragen laden...",
+  "game_error_title": "Oeps!",
+  "game_error_no_questions": "Geen vragen beschikbaar voor deze categorie",
+  "game_error_failed_load": "Laden van vragen mislukt",
+  "game_button_previous": "Vorige",
+  "game_button_next": "Volgende",
+  "game_button_shuffle": "Shuffle",
+  "game_button_share": "Delen",
+  "game_share_text": "Never Have I Ever... {question}\n\nDownload de Never Have I Ever-app en speel met vrienden!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "Instellingen",
+  "settings_section_account": "Account",
+  "settings_section_app": "App-instellingen",
+  "settings_section_support": "Support & feedback",
+  "settings_section_about": "Over",
+  "settings_premium_member": "Premium-lid",
+  "settings_free_plan": "Gratis plan",
+  "settings_premium_desc": "Geniet van onbeperkte toegang tot alle pakketten!",
+  "settings_free_desc": "Upgrade om alle premiumcontent te ontgrendelen",
+  "settings_restore_purchases": "Aankopen herstellen",
+  "settings_restore_purchases_desc": "Herstel je eerdere aankopen",
+  "settings_language": "Taal",
+  "settings_language_desc": "Wijzig de app-taal",
+  "settings_dark_mode": "Donkere modus",
+  "settings_how_to_play": "Hoe te spelen",
+  "settings_how_to_play_desc": "Leer hoe je het spel speelt",
+  "settings_share_app": "App delen",
+  "settings_share_app_desc": "Deel met vrienden",
+  "settings_rate_us": "Beoordeel ons",
+  "settings_rate_us_desc": "Beoordeel ons in de store",
+  "settings_app_version": "App-versie",
+  "settings_terms": "Algemene voorwaarden",
+  "settings_privacy": "Privacybeleid",
+  "settings_restore_dialog_title": "Aankopen herstellen",
+  "settings_restore_dialog_message": "Je aankopen worden hersteld wanneer fase 3 is geïmplementeerd.",
+  "settings_share_message": "Bekijk Never Have I Ever! De ultieme partygame-app. Download nu!",
+  "settings_share_subject": "Never Have I Ever - Leuke partygame",
+  "how_to_play_title": "Hoe te spelen",
+  "how_to_play_header_title": "Never Have I Ever",
+  "how_to_play_header_subtitle": "De ultieme partygame",
+  "how_to_play_step_1_title": "Kies je pakket",
+  "how_to_play_step_1_desc": "Kies uit 6 spannende categorieën die bij jouw partyvibe passen.",
+  "how_to_play_step_2_title": "Lees de vraag",
+  "how_to_play_step_2_desc": "Elke speler leest om de beurt \"Never Have I Ever...\"-vragen hardop.",
+  "how_to_play_step_3_title": "Waarheid of actie",
+  "how_to_play_step_3_desc": "Spelers die het WEL hebben gedaan, moeten het toegeven of een leuke uitdaging doen!",
+  "how_to_play_step_4_title": "Volgende vraag",
+  "how_to_play_step_4_desc": "Swipe of tik om naar de volgende vraag te gaan en blijf spelen!",
+  "how_to_play_step_5_title": "Veel plezier!",
+  "how_to_play_step_5_desc": "Beleef hilarische momenten en leer je vrienden beter kennen!",
+  "how_to_play_step_label": "Stap {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "Pro-tips",
+  "how_to_play_tip_1": "Gebruik de shuffle-knop om vragen te randomiseren",
+  "how_to_play_tip_2": "Deel je favoriete vragen met vrienden",
+  "how_to_play_tip_3": "Premium pakketten ontgrendelen 1.500+ exclusieve vragen",
+  "how_to_play_tip_4": "Het leukst met 3+ spelers voor maximaal plezier!",
+  "onboarding_terms_prefix": "Door verder te gaan, ga je akkoord met onze ",
+  "onboarding_terms_of_use": "Gebruiksvoorwaarden",
+  "language_title": "Taal",
+  "language_subtitle": "Selecteer je voorkeurstaal",
+  "language_english": "Engels",
+  "language_spanish": "Spaans",
+  "language_german": "Duits",
+  "language_french": "Frans",
+  "language_korean": "Koreaans",
+  "language_changed_title": "Taal gewijzigd",
+  "language_changed_message": "De taal is gewijzigd naar {language}. De app wordt in de definitieve versie volledig vertaald.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "GA PREMIUM",
+  "paywall_subtitle": "Non-stop plezier wacht op je",
+  "paywall_choose_plan": "Kies je abonnement",
+  "paywall_feature_1": "Ontgrendel exclusieve 18+ content",
+  "paywall_feature_2": "Regelmatig nieuwe updates",
+  "paywall_feature_3": "Geen advertenties",
+  "paywall_feature_4": "Altijd opzegbaar",
+  "paywall_weekly_plan": "Wekelijks",
+  "paywall_monthly_plan": "Maandelijks",
+  "paywall_yearly_plan": "Jaarlijks",
+  "paywall_best_value": "Beste keuze",
+  "paywall_trial_text": "Probeer GRATIS 3 dagen",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_week": "per week",
+  "price_per_weeks": "per {count} weken",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "per maand",
+  "price_per_months": "per {count} maanden",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "per jaar",
+  "price_per_years": "per {count} jaar",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "Start gratis proefperiode",
+  "paywall_subscribe": "Nu abonneren",
+  "paywall_restore": "Aankopen herstellen",
+  "paywall_terms": "Algemene voorwaarden",
+  "paywall_privacy": "Privacybeleid",
+  "paywall_cancel_anytime": "Altijd opzegbaar",
+  "paywall_loading": "Abonnementen laden...",
+  "paywall_error": "Abonnementen laden mislukt. Probeer het opnieuw.",
+  "subscription_active": "Je hebt een actief abonnement",
+  "subscription_expired": "Je abonnement is verlopen",
+  "subscription_purchase_success": "Aankoop gelukt! Geniet van premiumcontent.",
+  "subscription_purchase_cancelled": "Aankoop geannuleerd",
+  "subscription_purchase_error": "Aankoop mislukt. Probeer het opnieuw.",
+  "subscription_restore_success": "Aankopen succesvol hersteld!",
+  "subscription_restore_error": "Geen aankopen gevonden om te herstellen.",
+  "subscription_checking": "Abonnementsstatus controleren...",
+  "error_generic": "Er ging iets mis. Probeer het opnieuw.",
+  "error_network": "Netwerkfout. Controleer je verbinding.",
+  "error_loading_questions": "Vragen laden mislukt: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "Instellingen laden mislukt: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "Laden...",
+  "common_retry": "Opnieuw",
+  "common_done": "Klaar",
+  "common_error": "Fout",
+  "common_success": "Gelukt",
+  "common_warning": "Waarschuwing",
+  "common_info": "Info",
+  "error_page_not_found": "Pagina niet gevonden: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "language_dutch": "Nederlands",
+  "language_swedish": "Zweeds",
+  "language_norwegian": "Noors",
+  "language_russian": "Russisch",
+  "language_portuguese_brazil": "Portugees (Brazilië)",
+  "language_japanese": "Japans",
+  "language_italian": "Italiaans"
+}

@@ -1,0 +1,1204 @@
+{
+  "classic_mode": [
+    {
+      "id": 1,
+      "text": "Eu nunca kissed a stranger"
+    },
+    {
+      "id": 2,
+      "text": "Eu nunca lied to get out of work"
+    },
+    {
+      "id": 3,
+      "text": "Eu nunca read someone's private messages"
+    },
+    {
+      "id": 4,
+      "text": "Eu nunca snuck into a movie theater"
+    },
+    {
+      "id": 5,
+      "text": "Eu nunca pretended to be sick to skip school"
+    },
+    {
+      "id": 6,
+      "text": "Eu nunca stolen a hotel towel"
+    },
+    {
+      "id": 7,
+      "text": "Eu nunca flirted with a barista"
+    },
+    {
+      "id": 8,
+      "text": "Eu nunca cried during a commercial"
+    },
+    {
+      "id": 9,
+      "text": "Eu nunca lied about your age"
+    },
+    {
+      "id": 10,
+      "text": "Eu nunca tried on clothes and left tags on"
+    },
+    {
+      "id": 11,
+      "text": "Eu nunca eaten food from the floor"
+    },
+    {
+      "id": 12,
+      "text": "Eu nunca faked a accent to get a discount"
+    },
+    {
+      "id": 13,
+      "text": "Eu nunca used someone else's toothbrush"
+    },
+    {
+      "id": 14,
+      "text": "Eu nunca lied about reading a famous book"
+    },
+    {
+      "id": 15,
+      "text": "Eu nunca taken a photo of a sleeping person"
+    },
+    {
+      "id": 16,
+      "text": "Eu nunca worn the same outfit two days in a row"
+    },
+    {
+      "id": 17,
+      "text": "Eu nunca lied about having a pet"
+    },
+    {
+      "id": 18,
+      "text": "Eu nunca pretended not to see someone you know"
+    },
+    {
+      "id": 19,
+      "text": "Eu nunca eaten dessert before dinner"
+    },
+    {
+      "id": 20,
+      "text": "Eu nunca googled your own name"
+    },
+    {
+      "id": 21,
+      "text": "Eu nunca lied about knowing a celebrity"
+    },
+    {
+      "id": 22,
+      "text": "Eu nunca kept extra change by mistake"
+    },
+    {
+      "id": 23,
+      "text": "Eu nunca faked being busy to avoid plans"
+    },
+    {
+      "id": 24,
+      "text": "Eu nunca tried to look busy when boss walked by"
+    },
+    {
+      "id": 25,
+      "text": "Eu nunca lied about watching a popular show"
+    },
+    {
+      "id": 26,
+      "text": "Eu nunca eaten someone else's leftovers"
+    },
+    {
+      "id": 27,
+      "text": "Eu nunca pretended to understand a foreign language"
+    },
+    {
+      "id": 28,
+      "text": "Eu nunca lied about your height"
+    },
+    {
+      "id": 29,
+      "text": "Eu nunca faked a phone call to escape conversation"
+    },
+    {
+      "id": 30,
+      "text": "Eu nunca worn shoes without socks"
+    },
+    {
+      "id": 31,
+      "text": "Eu nunca lied about cooking skills"
+    },
+    {
+      "id": 32,
+      "text": "Eu nunca taken credit for someone else's idea"
+    },
+    {
+      "id": 33,
+      "text": "Eu nunca pretended to like a gift"
+    },
+    {
+      "id": 34,
+      "text": "Eu nunca lied about being a morning person"
+    },
+    {
+      "id": 35,
+      "text": "Eu nunca eaten ice cream directly from the tub"
+    },
+    {
+      "id": 36,
+      "text": "Eu nunca faked enthusiasm for a boring story"
+    },
+    {
+      "id": 37,
+      "text": "Eu nunca lied about your salary"
+    },
+    {
+      "id": 38,
+      "text": "Eu nunca pretended to remember someone's name"
+    },
+    {
+      "id": 39,
+      "text": "Eu nunca lied about being good at directions"
+    },
+    {
+      "id": 40,
+      "text": "Eu nunca eaten fast food in your car alone"
+    },
+    {
+      "id": 41,
+      "text": "Eu nunca faked being sick to get attention"
+    },
+    {
+      "id": 42,
+      "text": "Eu nunca lied about your favorite movie"
+    },
+    {
+      "id": 43,
+      "text": "Eu nunca pretended to be interested in someone's hobby"
+    },
+    {
+      "id": 44,
+      "text": "Eu nunca lied about how many siblings you have"
+    },
+    {
+      "id": 45,
+      "text": "Eu nunca eaten a whole family-sized snack alone"
+    },
+    {
+      "id": 46,
+      "text": "Eu nunca faked being tech-savvy"
+    },
+    {
+      "id": 47,
+      "text": "Eu nunca lied about your shoe size"
+    },
+    {
+      "id": 48,
+      "text": "Eu nunca pretended to be asleep on public transport"
+    },
+    {
+      "id": 49,
+      "text": "Eu nunca lied about how long you've had your phone"
+    },
+    {
+      "id": 50,
+      "text": "Eu nunca eaten condiments straight from the packet"
+    },
+    {
+      "id": 51,
+      "text": "Eu nunca played a musical instrument"
+    },
+    {
+      "id": 52,
+      "text": "Eu nunca eaten a bug"
+    },
+    {
+      "id": 53,
+      "text": "Eu nunca lied in a job interview"
+    },
+    {
+      "id": 54,
+      "text": "Eu nunca gone bungee jumping"
+    },
+    {
+      "id": 55,
+      "text": "Eu nunca sent a text to the wrong person"
+    },
+    {
+      "id": 56,
+      "text": "Eu nunca visited another country"
+    },
+    {
+      "id": 57,
+      "text": "Eu nunca gotten lost in a new city"
+    },
+    {
+      "id": 58,
+      "text": "Eu nunca tried sushi for the first time"
+    },
+    {
+      "id": 59,
+      "text": "Eu nunca skipped school"
+    },
+    {
+      "id": 60,
+      "text": "Eu nunca danced in public"
+    },
+    {
+      "id": 61,
+      "text": "Eu nunca sung karaoke"
+    },
+    {
+      "id": 62,
+      "text": "Eu nunca painted a picture"
+    },
+    {
+      "id": 63,
+      "text": "Eu nunca built a model"
+    },
+    {
+      "id": 64,
+      "text": "Eu nunca accidentally sent an email"
+    },
+    {
+      "id": 65,
+      "text": "Eu nunca deleted an important file"
+    },
+    {
+      "id": 66,
+      "text": "Eu nunca played soccer"
+    },
+    {
+      "id": 67,
+      "text": "Eu nunca gone swimming"
+    },
+    {
+      "id": 68,
+      "text": "Eu nunca cried at a movie"
+    },
+    {
+      "id": 69,
+      "text": "Eu nunca forgotten a birthday"
+    },
+    {
+      "id": 70,
+      "text": "Eu nunca worn mismatched socks"
+    },
+    {
+      "id": 71,
+      "text": "Eu nunca taken a selfie with a stranger"
+    },
+    {
+      "id": 72,
+      "text": "Eu nunca tried a new cocktail"
+    },
+    {
+      "id": 73,
+      "text": "Eu nunca lost a game of chess"
+    },
+    {
+      "id": 74,
+      "text": "Eu nunca read a book in one day"
+    },
+    {
+      "id": 75,
+      "text": "Eu nunca baked a cake"
+    },
+    {
+      "id": 76,
+      "text": "Eu nunca spoken in front of a crowd"
+    },
+    {
+      "id": 77,
+      "text": "Eu nunca ridden a horse"
+    },
+    {
+      "id": 78,
+      "text": "Eu nunca written a poem"
+    },
+    {
+      "id": 79,
+      "text": "Eu nunca watched a sunrise"
+    },
+    {
+      "id": 80,
+      "text": "Eu nunca gotten a tattoo"
+    },
+    {
+      "id": 81,
+      "text": "Eu nunca traveled by train"
+    },
+    {
+      "id": 82,
+      "text": "Eu nunca eaten pizza for breakfast"
+    },
+    {
+      "id": 83,
+      "text": "Eu nunca slept in a tent"
+    },
+    {
+      "id": 84,
+      "text": "Eu nunca visited a museum"
+    },
+    {
+      "id": 85,
+      "text": "Eu nunca won a board game"
+    },
+    {
+      "id": 86,
+      "text": "Eu nunca tried skydiving"
+    },
+    {
+      "id": 87,
+      "text": "Eu nunca gotten a speeding ticket"
+    },
+    {
+      "id": 88,
+      "text": "Eu nunca worn pajamas to school"
+    },
+    {
+      "id": 89,
+      "text": "Eu nunca gotten a haircut you didn't like"
+    },
+    {
+      "id": 90,
+      "text": "Eu nunca eaten at a food truck"
+    },
+    {
+      "id": 91,
+      "text": "Eu nunca sung in the shower"
+    },
+    {
+      "id": 92,
+      "text": "Eu nunca written a letter to a friend"
+    },
+    {
+      "id": 93,
+      "text": "Eu nunca visited a zoo"
+    },
+    {
+      "id": 94,
+      "text": "Eu nunca played video games all night"
+    },
+    {
+      "id": 95,
+      "text": "Eu nunca gotten a compliment you didn't deserve"
+    },
+    {
+      "id": 96,
+      "text": "Eu nunca lost your phone"
+    },
+    {
+      "id": 97,
+      "text": "Eu nunca gotten a hug from a stranger"
+    },
+    {
+      "id": 98,
+      "text": "Eu nunca tried ice skating"
+    },
+    {
+      "id": 99,
+      "text": "Eu nunca eaten a whole pizza alone"
+    },
+    {
+      "id": 100,
+      "text": "Eu nunca gotten a standing ovation"
+    },
+    {
+      "id": 101,
+      "text": "Eu nunca traveled by plane"
+    },
+    {
+      "id": 102,
+      "text": "Eu nunca tried a new sport"
+    },
+    {
+      "id": 103,
+      "text": "Eu nunca gotten a flu shot"
+    },
+    {
+      "id": 104,
+      "text": "Eu nunca worn sunglasses indoors"
+    },
+    {
+      "id": 105,
+      "text": "Eu nunca sung in a choir"
+    },
+    {
+      "id": 106,
+      "text": "Eu nunca visited a library"
+    },
+    {
+      "id": 107,
+      "text": "Eu nunca gotten a good grade"
+    },
+    {
+      "id": 108,
+      "text": "Eu nunca tried roller skating"
+    },
+    {
+      "id": 109,
+      "text": "Eu nunca eaten ice cream in winter"
+    },
+    {
+      "id": 110,
+      "text": "Eu nunca gotten a gift you didn't like"
+    },
+    {
+      "id": 111,
+      "text": "Eu nunca worn a costume"
+    },
+    {
+      "id": 112,
+      "text": "Eu nunca traveled by bus"
+    },
+    {
+      "id": 113,
+      "text": "Eu nunca tried a new recipe"
+    },
+    {
+      "id": 114,
+      "text": "Eu nunca gotten a haircut at home"
+    },
+    {
+      "id": 115,
+      "text": "Eu nunca worn mismatched shoes"
+    },
+    {
+      "id": 116,
+      "text": "Eu nunca sung in a talent show"
+    },
+    {
+      "id": 117,
+      "text": "Eu nunca visited a park"
+    },
+    {
+      "id": 118,
+      "text": "Eu nunca gotten a scholarship"
+    },
+    {
+      "id": 119,
+      "text": "Eu nunca tried snowboarding"
+    },
+    {
+      "id": 120,
+      "text": "Eu nunca eaten a whole cake"
+    },
+    {
+      "id": 121,
+      "text": "Eu nunca gotten a surprise party"
+    },
+    {
+      "id": 122,
+      "text": "Eu nunca worn a hat indoors"
+    },
+    {
+      "id": 123,
+      "text": "Eu nunca traveled by car"
+    },
+    {
+      "id": 124,
+      "text": "Eu nunca tried a new hobby"
+    },
+    {
+      "id": 125,
+      "text": "Eu nunca gotten a cold"
+    },
+    {
+      "id": 126,
+      "text": "Eu nunca worn socks with sandals"
+    },
+    {
+      "id": 127,
+      "text": "Eu nunca sung in a school play"
+    },
+    {
+      "id": 128,
+      "text": "Eu nunca visited a beach"
+    },
+    {
+      "id": 129,
+      "text": "Eu nunca gotten a promotion"
+    },
+    {
+      "id": 130,
+      "text": "Eu nunca tried surfing"
+    },
+    {
+      "id": 131,
+      "text": "Eu nunca eaten a whole bag of chips"
+    },
+    {
+      "id": 132,
+      "text": "Eu nunca gotten a thank you card"
+    },
+    {
+      "id": 133,
+      "text": "Eu nunca worn pajamas in public"
+    },
+    {
+      "id": 134,
+      "text": "Eu nunca traveled by ship"
+    },
+    {
+      "id": 135,
+      "text": "Eu nunca tried a new language"
+    },
+    {
+      "id": 136,
+      "text": "Eu nunca worn gloves in summer"
+    },
+    {
+      "id": 137,
+      "text": "Eu nunca sung in a church"
+    },
+    {
+      "id": 138,
+      "text": "Eu nunca visited a forest"
+    },
+    {
+      "id": 139,
+      "text": "Eu nunca gotten a raise"
+    },
+    {
+      "id": 140,
+      "text": "Eu nunca tried skateboarding"
+    },
+    {
+      "id": 141,
+      "text": "Eu nunca eaten a whole box of chocolates"
+    },
+    {
+      "id": 142,
+      "text": "Eu nunca gotten a welcome gift"
+    },
+    {
+      "id": 143,
+      "text": "Eu nunca worn a tie to school"
+    },
+    {
+      "id": 144,
+      "text": "Eu nunca traveled by bike"
+    },
+    {
+      "id": 145,
+      "text": "Eu nunca tried a new dessert"
+    },
+    {
+      "id": 146,
+      "text": "Eu nunca gotten a flu vaccine"
+    },
+    {
+      "id": 147,
+      "text": "Eu nunca worn a scarf in summer"
+    },
+    {
+      "id": 148,
+      "text": "Eu nunca sung in a community event"
+    },
+    {
+      "id": 149,
+      "text": "Eu nunca visited a mountain"
+    },
+    {
+      "id": 150,
+      "text": "Eu nunca gotten a bonus"
+    },
+    {
+      "id": 151,
+      "text": "Eu nunca tried rollerblading"
+    },
+    {
+      "id": 152,
+      "text": "Eu nunca eaten a whole sandwich"
+    },
+    {
+      "id": 153,
+      "text": "Eu nunca gotten a get well card"
+    },
+    {
+      "id": 154,
+      "text": "Eu nunca worn a hat to bed"
+    },
+    {
+      "id": 155,
+      "text": "Eu nunca traveled by foot"
+    },
+    {
+      "id": 156,
+      "text": "Eu nunca tried a new drink"
+    },
+    {
+      "id": 157,
+      "text": "Eu nunca worn a jacket in summer"
+    },
+    {
+      "id": 158,
+      "text": "Eu nunca sung in a competition"
+    },
+    {
+      "id": 159,
+      "text": "Eu nunca visited a lake"
+    },
+    {
+      "id": 160,
+      "text": "Eu nunca gotten a medal"
+    },
+    {
+      "id": 161,
+      "text": "Eu nunca tried snowshoeing"
+    },
+    {
+      "id": 162,
+      "text": "Eu nunca eaten a whole bowl of cereal"
+    },
+    {
+      "id": 163,
+      "text": "Eu nunca gotten a birthday card"
+    },
+    {
+      "id": 164,
+      "text": "Eu nunca worn a dress to school"
+    },
+    {
+      "id": 165,
+      "text": "Eu nunca traveled by subway"
+    },
+    {
+      "id": 166,
+      "text": "Eu nunca tried a new fruit"
+    },
+    {
+      "id": 167,
+      "text": "Eu nunca worn a coat in summer"
+    },
+    {
+      "id": 168,
+      "text": "Eu nunca sung in a wedding"
+    },
+    {
+      "id": 169,
+      "text": "Eu nunca visited a river"
+    },
+    {
+      "id": 170,
+      "text": "Eu nunca gotten a trophy"
+    },
+    {
+      "id": 171,
+      "text": "Eu nunca tried rock climbing"
+    },
+    {
+      "id": 172,
+      "text": "Eu nunca eaten a whole bowl of soup"
+    },
+    {
+      "id": 173,
+      "text": "Eu nunca gotten a thank you note"
+    },
+    {
+      "id": 174,
+      "text": "Eu nunca worn a suit to school"
+    },
+    {
+      "id": 175,
+      "text": "Eu nunca traveled by taxi"
+    },
+    {
+      "id": 176,
+      "text": "Eu nunca tried a new vegetable"
+    },
+    {
+      "id": 177,
+      "text": "Eu nunca worn a sweater in summer"
+    },
+    {
+      "id": 178,
+      "text": "Eu nunca sung in a funeral"
+    },
+    {
+      "id": 179,
+      "text": "Eu nunca visited a waterfall"
+    },
+    {
+      "id": 180,
+      "text": "Eu nunca gotten a certificate"
+    },
+    {
+      "id": 181,
+      "text": "Eu nunca tried hiking"
+    },
+    {
+      "id": 182,
+      "text": "Eu nunca eaten a whole bag of popcorn"
+    },
+    {
+      "id": 183,
+      "text": "Eu nunca gotten a get well soon card"
+    },
+    {
+      "id": 184,
+      "text": "Eu nunca worn a scarf to bed"
+    },
+    {
+      "id": 185,
+      "text": "Eu nunca traveled by motorcycle"
+    },
+    {
+      "id": 186,
+      "text": "Eu nunca tried a new snack"
+    },
+    {
+      "id": 187,
+      "text": "Eu nunca worn a hat to a party"
+    },
+    {
+      "id": 188,
+      "text": "Eu nunca sung in a graduation"
+    },
+    {
+      "id": 189,
+      "text": "Eu nunca visited a desert"
+    },
+    {
+      "id": 190,
+      "text": "Eu nunca gotten a diploma"
+    },
+    {
+      "id": 191,
+      "text": "Eu nunca tried canoeing"
+    },
+    {
+      "id": 192,
+      "text": "Eu nunca eaten a whole bowl of pasta"
+    },
+    {
+      "id": 193,
+      "text": "Eu nunca gotten a welcome card"
+    },
+    {
+      "id": 194,
+      "text": "Eu nunca worn a tie to a party"
+    },
+    {
+      "id": 195,
+      "text": "Eu nunca traveled by helicopter"
+    },
+    {
+      "id": 196,
+      "text": "Eu nunca tried a new bread"
+    },
+    {
+      "id": 197,
+      "text": "Eu nunca worn a jacket to a party"
+    },
+    {
+      "id": 198,
+      "text": "Eu nunca sung in a birthday party"
+    },
+    {
+      "id": 199,
+      "text": "Eu nunca visited a canyon"
+    },
+    {
+      "id": 200,
+      "text": "Eu nunca gotten a scholarship certificate"
+    },
+    {
+      "id": 201,
+      "text": "Eu nunca tried rafting"
+    },
+    {
+      "id": 202,
+      "text": "Eu nunca eaten a whole plate of cookies"
+    },
+    {
+      "id": 203,
+      "text": "Eu nunca gotten a get well card from a friend"
+    },
+    {
+      "id": 204,
+      "text": "Eu nunca worn a dress to a party"
+    },
+    {
+      "id": 205,
+      "text": "Eu nunca traveled by hot air balloon"
+    },
+    {
+      "id": 206,
+      "text": "Eu nunca tried a new cake"
+    },
+    {
+      "id": 207,
+      "text": "Eu nunca worn a coat to a party"
+    },
+    {
+      "id": 208,
+      "text": "Eu nunca sung in a school concert"
+    },
+    {
+      "id": 209,
+      "text": "Eu nunca visited a glacier"
+    },
+    {
+      "id": 210,
+      "text": "Eu nunca gotten a promotion certificate"
+    },
+    {
+      "id": 211,
+      "text": "Eu nunca tried paragliding"
+    },
+    {
+      "id": 212,
+      "text": "Eu nunca eaten a whole bowl of ice cream"
+    },
+    {
+      "id": 213,
+      "text": "Eu nunca gotten a thank you card from a teacher"
+    },
+    {
+      "id": 214,
+      "text": "Eu nunca worn a suit to a party"
+    },
+    {
+      "id": 215,
+      "text": "Eu nunca traveled by train across the country"
+    },
+    {
+      "id": 216,
+      "text": "Eu nunca tried a new pasta"
+    },
+    {
+      "id": 217,
+      "text": "Eu nunca worn a sweater to a party"
+    },
+    {
+      "id": 218,
+      "text": "Eu nunca sung in a community concert"
+    },
+    {
+      "id": 219,
+      "text": "Eu nunca visited a volcano"
+    },
+    {
+      "id": 220,
+      "text": "Eu nunca gotten a raise certificate"
+    },
+    {
+      "id": 221,
+      "text": "Eu nunca tried hang gliding"
+    },
+    {
+      "id": 222,
+      "text": "Eu nunca eaten a whole plate of pizza"
+    },
+    {
+      "id": 223,
+      "text": "Eu nunca gotten a get well card from a family member"
+    },
+    {
+      "id": 224,
+      "text": "Eu nunca worn a scarf to a party"
+    },
+    {
+      "id": 225,
+      "text": "Eu nunca traveled by bus across the city"
+    },
+    {
+      "id": 226,
+      "text": "Eu nunca tried a new soup"
+    },
+    {
+      "id": 227,
+      "text": "Eu nunca worn a hat to a wedding"
+    },
+    {
+      "id": 228,
+      "text": "Eu nunca sung in a wedding ceremony"
+    },
+    {
+      "id": 229,
+      "text": "Eu nunca visited a cave"
+    },
+    {
+      "id": 230,
+      "text": "Eu nunca gotten a bonus certificate"
+    },
+    {
+      "id": 231,
+      "text": "Eu nunca tried zip lining"
+    },
+    {
+      "id": 232,
+      "text": "Eu nunca eaten a whole bowl of salad"
+    },
+    {
+      "id": 233,
+      "text": "Eu nunca gotten a thank you card from a colleague"
+    },
+    {
+      "id": 234,
+      "text": "Eu nunca worn a tie to a wedding"
+    },
+    {
+      "id": 235,
+      "text": "Eu nunca traveled by car across the state"
+    },
+    {
+      "id": 236,
+      "text": "Eu nunca tried a new rice dish"
+    },
+    {
+      "id": 237,
+      "text": "Eu nunca worn a jacket to a wedding"
+    },
+    {
+      "id": 238,
+      "text": "Eu nunca sung in a graduation ceremony"
+    },
+    {
+      "id": 239,
+      "text": "Eu nunca visited a jungle"
+    },
+    {
+      "id": 240,
+      "text": "Eu nunca gotten a medal certificate"
+    },
+    {
+      "id": 241,
+      "text": "Eu nunca tried scuba diving"
+    },
+    {
+      "id": 242,
+      "text": "Eu nunca eaten a whole bowl of noodles"
+    },
+    {
+      "id": 243,
+      "text": "Eu nunca gotten a get well card from a neighbor"
+    },
+    {
+      "id": 244,
+      "text": "Eu nunca worn a dress to a wedding"
+    },
+    {
+      "id": 245,
+      "text": "Eu nunca traveled by foot across the park"
+    },
+    {
+      "id": 246,
+      "text": "Eu nunca tried a new pasta dish"
+    },
+    {
+      "id": 247,
+      "text": "Eu nunca worn a coat to a wedding"
+    },
+    {
+      "id": 248,
+      "text": "Eu nunca sung in a birthday party ceremony"
+    },
+    {
+      "id": 249,
+      "text": "Eu nunca visited a rainforest"
+    },
+    {
+      "id": 250,
+      "text": "Eu nunca gotten a scholarship award"
+    },
+    {
+      "id": 251,
+      "text": "Eu nunca tried snorkeling"
+    },
+    {
+      "id": 252,
+      "text": "Eu nunca eaten a whole bowl of fruit"
+    },
+    {
+      "id": 253,
+      "text": "Eu nunca gotten a thank you card from a friend's parent"
+    },
+    {
+      "id": 254,
+      "text": "Eu nunca worn a suit to a wedding"
+    },
+    {
+      "id": 255,
+      "text": "Eu nunca traveled by subway across the city"
+    },
+    {
+      "id": 256,
+      "text": "Eu nunca tried a new salad"
+    },
+    {
+      "id": 257,
+      "text": "Eu nunca worn a sweater to a wedding"
+    },
+    {
+      "id": 258,
+      "text": "Eu nunca sung in a school graduation"
+    },
+    {
+      "id": 259,
+      "text": "Eu nunca visited a coral reef"
+    },
+    {
+      "id": 260,
+      "text": "Eu nunca gotten a promotion award"
+    },
+    {
+      "id": 261,
+      "text": "Eu nunca tried kite surfing"
+    },
+    {
+      "id": 262,
+      "text": "Eu nunca eaten a whole bowl of cereal with milk"
+    },
+    {
+      "id": 263,
+      "text": "Eu nunca gotten a get well card from a classmate"
+    },
+    {
+      "id": 264,
+      "text": "Eu nunca worn a scarf to a wedding"
+    },
+    {
+      "id": 265,
+      "text": "Eu nunca traveled by taxi across the city"
+    },
+    {
+      "id": 266,
+      "text": "Eu nunca tried a new smoothie"
+    },
+    {
+      "id": 267,
+      "text": "Eu nunca worn a hat to a graduation"
+    },
+    {
+      "id": 268,
+      "text": "Eu nunca sung in a community graduation"
+    },
+    {
+      "id": 269,
+      "text": "Eu nunca visited a savanna"
+    },
+    {
+      "id": 270,
+      "text": "Eu nunca gotten a raise award"
+    },
+    {
+      "id": 271,
+      "text": "Eu nunca tried windsurfing"
+    },
+    {
+      "id": 272,
+      "text": "Eu nunca eaten a whole bowl of rice"
+    },
+    {
+      "id": 273,
+      "text": "Eu nunca gotten a thank you card from a teacher's assistant"
+    },
+    {
+      "id": 274,
+      "text": "Eu nunca worn a tie to a graduation"
+    },
+    {
+      "id": 275,
+      "text": "Eu nunca traveled by motorcycle across the state"
+    },
+    {
+      "id": 276,
+      "text": "Eu nunca tried a new juice"
+    },
+    {
+      "id": 277,
+      "text": "Eu nunca worn a jacket to a graduation"
+    },
+    {
+      "id": 278,
+      "text": "Eu nunca sung in a school graduation ceremony"
+    },
+    {
+      "id": 279,
+      "text": "Eu nunca visited a tundra"
+    },
+    {
+      "id": 280,
+      "text": "Eu nunca gotten a bonus award"
+    },
+    {
+      "id": 281,
+      "text": "Eu nunca tried wakeboarding"
+    },
+    {
+      "id": 282,
+      "text": "Eu nunca eaten a whole bowl of soup with bread"
+    },
+    {
+      "id": 283,
+      "text": "Eu nunca gotten a get well card from a neighbor's child"
+    },
+    {
+      "id": 284,
+      "text": "Eu nunca worn a dress to a graduation"
+    },
+    {
+      "id": 285,
+      "text": "Eu nunca traveled by helicopter across the city"
+    },
+    {
+      "id": 286,
+      "text": "Eu nunca tried a new tea"
+    },
+    {
+      "id": 287,
+      "text": "Eu nunca worn a coat to a graduation"
+    },
+    {
+      "id": 288,
+      "text": "Eu nunca sung in a birthday party ceremony"
+    },
+    {
+      "id": 289,
+      "text": "Eu nunca visited a grassland"
+    },
+    {
+      "id": 290,
+      "text": "Eu nunca gotten a medal award"
+    },
+    {
+      "id": 291,
+      "text": "Eu nunca tried kayaking"
+    },
+    {
+      "id": 292,
+      "text": "Eu nunca eaten a whole bowl of pasta with sauce"
+    },
+    {
+      "id": 293,
+      "text": "Eu nunca gotten a thank you card from a friend's sibling"
+    },
+    {
+      "id": 294,
+      "text": "Eu nunca worn a suit to a graduation"
+    },
+    {
+      "id": 295,
+      "text": "Eu nunca traveled by hot air balloon across the landscape"
+    },
+    {
+      "id": 296,
+      "text": "Eu nunca tried a new coffee"
+    },
+    {
+      "id": 297,
+      "text": "Eu nunca worn a sweater to a graduation"
+    },
+    {
+      "id": 298,
+      "text": "Eu nunca sung in a community graduation ceremony"
+    },
+    {
+      "id": 299,
+      "text": "Eu nunca visited a wetland"
+    },
+    {
+      "id": 300,
+      "text": "Eu nunca gotten a scholarship award certificate"
+    }
+  ]
+}

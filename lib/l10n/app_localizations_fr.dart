@@ -9,18 +9,18 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get onboarding_1_title => 'Prêt pour une Soirée Épique?';
+  String get onboarding_1_title => 'PrÃªt pour une SoirÃ©e Ã‰pique?';
 
   @override
   String get onboarding_1_subtitle =>
-      'Plongez dans l\'expérience de jeu ultime!';
+      'Plongez dans l\'expÃ©rience de jeu ultime!';
 
   @override
-  String get onboarding_2_title => '6 Packs de Jeu Épiques';
+  String get onboarding_2_title => '6 Packs de Jeu Ã‰piques';
 
   @override
   String get onboarding_2_subtitle =>
-      'Du classique au pimenté - trouvez votre ambiance parfaite!';
+      'Du classique au pimentÃ© - trouvez votre ambiance parfaite!';
 
   @override
   String get onboarding_3_title => '1 500 Questions';
@@ -30,17 +30,17 @@ class AppLocalizationsFr extends AppLocalizations {
       'Un plaisir infini avec des amis vous attend!';
 
   @override
-  String get onboarding_4_title => 'Évaluez Votre Expérience';
+  String get onboarding_4_title => 'Ã‰valuez Votre ExpÃ©rience';
 
   @override
   String get onboarding_4_subtitle =>
-      'Aidez-nous à améliorer le jeu encore plus!';
+      'Aidez-nous Ã  amÃ©liorer le jeu encore plus!';
 
   @override
   String get button_continue => 'Continuer';
 
   @override
-  String get button_start_game => 'Démarrer le Jeu';
+  String get button_start_game => 'DÃ©marrer le Jeu';
 
   @override
   String get button_skip => 'Passer';
@@ -70,10 +70,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get button_share => 'Partager';
 
   @override
-  String get button_rate_now => 'Évaluer Maintenant';
+  String get button_rate_now => 'Ã‰valuer Maintenant';
 
   @override
-  String get button_maybe_later => 'Peut-être Plus Tard';
+  String get button_maybe_later => 'Peut-Ãªtre Plus Tard';
 
   @override
   String get common_and => 'et';
@@ -85,10 +85,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get main_menu_subtitle => 'Choisissez Votre Pack';
 
   @override
-  String get main_menu_buy_subscription => 'Déverrouiller Tous les Packs';
+  String get main_menu_buy_subscription => 'DÃ©verrouiller Tous les Packs';
 
   @override
-  String get main_menu_settings => 'Paramètres';
+  String get main_menu_settings => 'ParamÃ¨tres';
 
   @override
   String get main_menu_free => 'Gratuit';
@@ -101,21 +101,21 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get category_classic_desc =>
-      'Le démarreur parfait pour toute réunion!';
+      'Le dÃ©marreur parfait pour toute rÃ©union!';
 
   @override
-  String get category_party_name => 'Pack Fête';
+  String get category_party_name => 'Pack FÃªte';
 
   @override
   String get category_party_desc =>
-      'Dynamisez votre célébration avec des défis passionnants!';
+      'Dynamisez votre cÃ©lÃ©bration avec des dÃ©fis passionnants!';
 
   @override
   String get category_girls_name => 'Filles 18+';
 
   @override
   String get category_girls_desc =>
-      'Questions audacieuses et osées pour une soirée entre filles!';
+      'Questions audacieuses et osÃ©es pour une soirÃ©e entre filles!';
 
   @override
   String get category_couples_name => 'Pack Couples';
@@ -125,17 +125,17 @@ class AppLocalizationsFr extends AppLocalizations {
       'Connectez-vous avec votre partenaire comme jamais auparavant!';
 
   @override
-  String get category_hot_name => 'Questions Épicées 18+';
+  String get category_hot_name => 'Questions Ã‰picÃ©es 18+';
 
   @override
   String get category_hot_desc =>
-      'Augmentez la température avec des questions torrides!';
+      'Augmentez la tempÃ©rature avec des questions torrides!';
 
   @override
-  String get category_guys_name => 'Pack Garçons';
+  String get category_guys_name => 'Pack GarÃ§ons';
 
   @override
-  String get category_guys_desc => 'Défis épiques conçus pour les gars!';
+  String get category_guys_desc => 'DÃ©fis Ã©piques conÃ§us pour les gars!';
 
   @override
   String get game_never_have_i_ever => 'Je N\'ai Jamais...';
@@ -151,42 +151,42 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get game_error_no_questions =>
-      'Aucune question disponible pour cette catégorie';
+      'Aucune question disponible pour cette catÃ©gorie';
 
   @override
-  String get game_error_failed_load => 'Échec du chargement des questions';
+  String get game_error_failed_load => 'Ã‰chec du chargement des questions';
 
   @override
-  String get game_button_previous => 'Précédent';
+  String get game_button_previous => 'PrÃ©cÃ©dent';
 
   @override
   String get game_button_next => 'Suivant';
 
   @override
-  String get game_button_shuffle => 'Mélanger';
+  String get game_button_shuffle => 'MÃ©langer';
 
   @override
   String get game_button_share => 'Partager';
 
   @override
   String game_share_text(String question) {
-    return 'Je N\'ai Jamais... $question\n\nTéléchargez l\'application Je N\'ai Jamais et jouez avec des amis!';
+    return 'Je N\'ai Jamais... $question\n\nTÃ©lÃ©chargez l\'application Je N\'ai Jamais et jouez avec des amis!';
   }
 
   @override
-  String get settings_title => 'Paramètres';
+  String get settings_title => 'ParamÃ¨tres';
 
   @override
   String get settings_section_account => 'Compte';
 
   @override
-  String get settings_section_app => 'Paramètres de l\'Application';
+  String get settings_section_app => 'ParamÃ¨tres de l\'Application';
 
   @override
   String get settings_section_support => 'Assistance & Commentaires';
 
   @override
-  String get settings_section_about => 'À Propos';
+  String get settings_section_about => 'Ã€ Propos';
 
   @override
   String get settings_premium_member => 'Membre Premium';
@@ -196,18 +196,18 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settings_premium_desc =>
-      'Profitez d\'un accès illimité à tous les packs!';
+      'Profitez d\'un accÃ¨s illimitÃ© Ã  tous les packs!';
 
   @override
   String get settings_free_desc =>
-      'Passez au premium pour débloquer tout le contenu';
+      'Passez au premium pour dÃ©bloquer tout le contenu';
 
   @override
   String get settings_restore_purchases => 'Restaurer les Achats';
 
   @override
   String get settings_restore_purchases_desc =>
-      'Restaurez vos achats précédents';
+      'Restaurez vos achats prÃ©cÃ©dents';
 
   @override
   String get settings_language => 'Langue';
@@ -222,7 +222,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settings_how_to_play => 'Comment Jouer';
 
   @override
-  String get settings_how_to_play_desc => 'Apprenez à jouer au jeu';
+  String get settings_how_to_play_desc => 'Apprenez Ã  jouer au jeu';
 
   @override
   String get settings_share_app => 'Partager l\'Application';
@@ -231,34 +231,34 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settings_share_app_desc => 'Partager avec des amis';
 
   @override
-  String get settings_rate_us => 'Évaluez-Nous';
+  String get settings_rate_us => 'Ã‰valuez-Nous';
 
   @override
-  String get settings_rate_us_desc => 'Évaluez-nous sur le store';
+  String get settings_rate_us_desc => 'Ã‰valuez-nous sur le store';
 
   @override
   String get settings_app_version => 'Version de l\'Application';
 
   @override
-  String get settings_terms => 'Conditions Générales';
+  String get settings_terms => 'Conditions GÃ©nÃ©rales';
 
   @override
-  String get settings_privacy => 'Politique de Confidentialité';
+  String get settings_privacy => 'Politique de ConfidentialitÃ©';
 
   @override
   String get settings_restore_dialog_title => 'Restaurer les Achats';
 
   @override
   String get settings_restore_dialog_message =>
-      'Vos achats seront restaurés lorsque la Phase 3 sera implémentée.';
+      'Vos achats seront restaurÃ©s lorsque la Phase 3 sera implÃ©mentÃ©e.';
 
   @override
   String get settings_share_message =>
-      'Découvrez Je N\'ai Jamais! L\'application de jeu de soirée ultime. Téléchargez maintenant!';
+      'DÃ©couvrez Je N\'ai Jamais! L\'application de jeu de soirÃ©e ultime. TÃ©lÃ©chargez maintenant!';
 
   @override
   String get settings_share_subject =>
-      'Je N\'ai Jamais - Jeu de Soirée Amusant';
+      'Je N\'ai Jamais - Jeu de SoirÃ©e Amusant';
 
   @override
   String get how_to_play_title => 'Comment Jouer';
@@ -267,46 +267,46 @@ class AppLocalizationsFr extends AppLocalizations {
   String get how_to_play_header_title => 'Je N\'ai Jamais';
 
   @override
-  String get how_to_play_header_subtitle => 'Le Jeu de Soirée Ultime';
+  String get how_to_play_header_subtitle => 'Le Jeu de SoirÃ©e Ultime';
 
   @override
   String get how_to_play_step_1_title => 'Choisissez Votre Pack';
 
   @override
   String get how_to_play_step_1_desc =>
-      'Sélectionnez parmi 6 catégories passionnantes qui correspondent à l\'ambiance de votre soirée.';
+      'SÃ©lectionnez parmi 6 catÃ©gories passionnantes qui correspondent Ã  l\'ambiance de votre soirÃ©e.';
 
   @override
   String get how_to_play_step_2_title => 'Lisez la Question';
 
   @override
   String get how_to_play_step_2_desc =>
-      'Chaque joueur lit à tour de rôle des questions \"Je N\'ai Jamais...\" à voix haute.';
+      'Chaque joueur lit Ã  tour de rÃ´le des questions \"Je N\'ai Jamais...\" Ã  voix haute.';
 
   @override
-  String get how_to_play_step_3_title => 'Vérité ou Action';
+  String get how_to_play_step_3_title => 'VÃ©ritÃ© ou Action';
 
   @override
   String get how_to_play_step_3_desc =>
-      'Les joueurs qui l\'ONT fait doivent l\'admettre ou relever un défi amusant!';
+      'Les joueurs qui l\'ONT fait doivent l\'admettre ou relever un dÃ©fi amusant!';
 
   @override
   String get how_to_play_step_4_title => 'Question Suivante';
 
   @override
   String get how_to_play_step_4_desc =>
-      'Glissez ou touchez pour passer à la question suivante et continuer le plaisir!';
+      'Glissez ou touchez pour passer Ã  la question suivante et continuer le plaisir!';
 
   @override
   String get how_to_play_step_5_title => 'Amusez-Vous!';
 
   @override
   String get how_to_play_step_5_desc =>
-      'Profitez de moments hilarants et apprenez à mieux connaître vos amis!';
+      'Profitez de moments hilarants et apprenez Ã  mieux connaÃ®tre vos amis!';
 
   @override
   String how_to_play_step_label(String number) {
-    return 'Étape $number';
+    return 'Ã‰tape $number';
   }
 
   @override
@@ -314,15 +314,15 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get how_to_play_tip_1 =>
-      'Utilisez le bouton mélanger pour randomiser les questions';
+      'Utilisez le bouton mÃ©langer pour randomiser les questions';
 
   @override
   String get how_to_play_tip_2 =>
-      'Partagez vos questions préférées avec des amis';
+      'Partagez vos questions prÃ©fÃ©rÃ©es avec des amis';
 
   @override
   String get how_to_play_tip_3 =>
-      'Les packs premium débloquent plus de 1 500 questions exclusives';
+      'Les packs premium dÃ©bloquent plus de 1 500 questions exclusives';
 
   @override
   String get how_to_play_tip_4 =>
@@ -338,29 +338,50 @@ class AppLocalizationsFr extends AppLocalizations {
   String get language_title => 'Langue';
 
   @override
-  String get language_subtitle => 'Sélectionnez votre langue préférée';
+  String get language_subtitle => 'SÃ©lectionnez votre langue prÃ©fÃ©rÃ©e';
 
   @override
   String get language_english => 'English';
 
   @override
-  String get language_spanish => 'Español';
+  String get language_spanish => 'EspaÃ±ol';
 
   @override
   String get language_german => 'Deutsch';
 
   @override
-  String get language_french => 'Français';
+  String get language_french => 'FranÃ§ais';
 
   @override
-  String get language_korean => '한국어';
+  String get language_korean => 'í•œêµ­ì–´';
 
   @override
-  String get language_changed_title => 'Langue Modifiée';
+  String get language_dutch => 'Dutch';
+
+  @override
+  String get language_swedish => 'Swedish';
+
+  @override
+  String get language_norwegian => 'Norwegian';
+
+  @override
+  String get language_russian => 'Russian';
+
+  @override
+  String get language_portuguese_brazil => 'Portuguese (Brazil)';
+
+  @override
+  String get language_japanese => 'Japanese';
+
+  @override
+  String get language_italian => 'Italian';
+
+  @override
+  String get language_changed_title => 'Langue ModifiÃ©e';
 
   @override
   String language_changed_message(String language) {
-    return 'La langue a été changée en $language. L\'application sera entièrement traduite dans la version finale.';
+    return 'La langue a Ã©tÃ© changÃ©e en $language. L\'application sera entiÃ¨rement traduite dans la version finale.';
   }
 
   @override
@@ -373,16 +394,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywall_choose_plan => 'Choisissez votre plan';
 
   @override
-  String get paywall_feature_1 => 'Débloquez du contenu exclusif 18+';
+  String get paywall_feature_1 => 'DÃ©bloquez du contenu exclusif 18+';
 
   @override
-  String get paywall_feature_2 => 'Nouvelles mises à jour régulières';
+  String get paywall_feature_2 => 'Nouvelles mises Ã  jour rÃ©guliÃ¨res';
 
   @override
-  String get paywall_feature_3 => 'Zéro publicité';
+  String get paywall_feature_3 => 'ZÃ©ro publicitÃ©';
 
   @override
-  String get paywall_feature_4 => 'Annulez à tout moment';
+  String get paywall_feature_4 => 'Annulez Ã  tout moment';
 
   @override
   String get paywall_weekly_plan => 'Hebdomadaire';
@@ -435,79 +456,80 @@ class AppLocalizationsFr extends AppLocalizations {
   String get paywall_restore => 'Restaurer les Achats';
 
   @override
-  String get paywall_terms => 'Conditions Générales';
+  String get paywall_terms => 'Conditions GÃ©nÃ©rales';
 
   @override
-  String get paywall_privacy => 'Politique de Confidentialité';
+  String get paywall_privacy => 'Politique de ConfidentialitÃ©';
 
   @override
-  String get paywall_cancel_anytime => 'Annulez à tout moment';
+  String get paywall_cancel_anytime => 'Annulez Ã  tout moment';
 
   @override
   String get paywall_loading => 'Chargement des plans d\'abonnement...';
 
   @override
   String get paywall_error =>
-      'Échec du chargement des plans d\'abonnement. Veuillez réessayer.';
+      'Ã‰chec du chargement des plans d\'abonnement. Veuillez rÃ©essayer.';
 
   @override
   String get subscription_active => 'Vous avez un abonnement actif';
 
   @override
-  String get subscription_expired => 'Votre abonnement a expiré';
+  String get subscription_expired => 'Votre abonnement a expirÃ©';
 
   @override
   String get subscription_purchase_success =>
-      'Achat réussi! Profitez du contenu premium.';
+      'Achat rÃ©ussi! Profitez du contenu premium.';
 
   @override
-  String get subscription_purchase_cancelled => 'Achat annulé';
+  String get subscription_purchase_cancelled => 'Achat annulÃ©';
 
   @override
   String get subscription_purchase_error =>
-      'Échec de l\'achat. Veuillez réessayer.';
+      'Ã‰chec de l\'achat. Veuillez rÃ©essayer.';
 
   @override
-  String get subscription_restore_success => 'Achats restaurés avec succès!';
+  String get subscription_restore_success => 'Achats restaurÃ©s avec succÃ¨s!';
 
   @override
-  String get subscription_restore_error => 'Aucun achat à restaurer trouvé.';
+  String get subscription_restore_error => 'Aucun achat Ã  restaurer trouvÃ©.';
 
   @override
-  String get subscription_checking => 'Vérification du statut d\'abonnement...';
+  String get subscription_checking =>
+      'VÃ©rification du statut d\'abonnement...';
 
   @override
   String get error_generic =>
-      'Quelque chose s\'est mal passé. Veuillez réessayer.';
+      'Quelque chose s\'est mal passÃ©. Veuillez rÃ©essayer.';
 
   @override
   String get error_network =>
-      'Erreur réseau. Veuillez vérifier votre connexion.';
+      'Erreur rÃ©seau. Veuillez vÃ©rifier votre connexion.';
 
   @override
   String error_loading_questions(String error) {
-    return 'Échec du chargement des questions: $error';
+    return 'Ã‰chec du chargement des questions: $error';
   }
 
   @override
   String error_loading_settings(String error) {
-    return 'Échec du chargement des paramètres: $error';
+    return 'Ã‰chec du chargement des paramÃ¨tres: $error';
   }
 
   @override
   String get common_loading => 'Chargement...';
 
   @override
-  String get common_retry => 'Réessayer';
+  String get common_retry => 'RÃ©essayer';
 
   @override
-  String get common_done => 'Terminé';
+  String get common_done => 'TerminÃ©';
 
   @override
   String get common_error => 'Erreur';
 
   @override
-  String get common_success => 'Succès';
+  String get common_success => 'SuccÃ¨s';
 
   @override
   String get common_warning => 'Avertissement';

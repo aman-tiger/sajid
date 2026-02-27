@@ -1,0 +1,1204 @@
+{
+  "classic_mode": [
+    {
+      "id": 1,
+      "text": "Я никогда не kissed a stranger"
+    },
+    {
+      "id": 2,
+      "text": "Я никогда не lied to get out of work"
+    },
+    {
+      "id": 3,
+      "text": "Я никогда не read someone's private messages"
+    },
+    {
+      "id": 4,
+      "text": "Я никогда не snuck into a movie theater"
+    },
+    {
+      "id": 5,
+      "text": "Я никогда не pretended to be sick to skip school"
+    },
+    {
+      "id": 6,
+      "text": "Я никогда не stolen a hotel towel"
+    },
+    {
+      "id": 7,
+      "text": "Я никогда не flirted with a barista"
+    },
+    {
+      "id": 8,
+      "text": "Я никогда не cried during a commercial"
+    },
+    {
+      "id": 9,
+      "text": "Я никогда не lied about your age"
+    },
+    {
+      "id": 10,
+      "text": "Я никогда не tried on clothes and left tags on"
+    },
+    {
+      "id": 11,
+      "text": "Я никогда не eaten food from the floor"
+    },
+    {
+      "id": 12,
+      "text": "Я никогда не faked a accent to get a discount"
+    },
+    {
+      "id": 13,
+      "text": "Я никогда не used someone else's toothbrush"
+    },
+    {
+      "id": 14,
+      "text": "Я никогда не lied about reading a famous book"
+    },
+    {
+      "id": 15,
+      "text": "Я никогда не taken a photo of a sleeping person"
+    },
+    {
+      "id": 16,
+      "text": "Я никогда не worn the same outfit two days in a row"
+    },
+    {
+      "id": 17,
+      "text": "Я никогда не lied about having a pet"
+    },
+    {
+      "id": 18,
+      "text": "Я никогда не pretended not to see someone you know"
+    },
+    {
+      "id": 19,
+      "text": "Я никогда не eaten dessert before dinner"
+    },
+    {
+      "id": 20,
+      "text": "Я никогда не googled your own name"
+    },
+    {
+      "id": 21,
+      "text": "Я никогда не lied about knowing a celebrity"
+    },
+    {
+      "id": 22,
+      "text": "Я никогда не kept extra change by mistake"
+    },
+    {
+      "id": 23,
+      "text": "Я никогда не faked being busy to avoid plans"
+    },
+    {
+      "id": 24,
+      "text": "Я никогда не tried to look busy when boss walked by"
+    },
+    {
+      "id": 25,
+      "text": "Я никогда не lied about watching a popular show"
+    },
+    {
+      "id": 26,
+      "text": "Я никогда не eaten someone else's leftovers"
+    },
+    {
+      "id": 27,
+      "text": "Я никогда не pretended to understand a foreign language"
+    },
+    {
+      "id": 28,
+      "text": "Я никогда не lied about your height"
+    },
+    {
+      "id": 29,
+      "text": "Я никогда не faked a phone call to escape conversation"
+    },
+    {
+      "id": 30,
+      "text": "Я никогда не worn shoes without socks"
+    },
+    {
+      "id": 31,
+      "text": "Я никогда не lied about cooking skills"
+    },
+    {
+      "id": 32,
+      "text": "Я никогда не taken credit for someone else's idea"
+    },
+    {
+      "id": 33,
+      "text": "Я никогда не pretended to like a gift"
+    },
+    {
+      "id": 34,
+      "text": "Я никогда не lied about being a morning person"
+    },
+    {
+      "id": 35,
+      "text": "Я никогда не eaten ice cream directly from the tub"
+    },
+    {
+      "id": 36,
+      "text": "Я никогда не faked enthusiasm for a boring story"
+    },
+    {
+      "id": 37,
+      "text": "Я никогда не lied about your salary"
+    },
+    {
+      "id": 38,
+      "text": "Я никогда не pretended to remember someone's name"
+    },
+    {
+      "id": 39,
+      "text": "Я никогда не lied about being good at directions"
+    },
+    {
+      "id": 40,
+      "text": "Я никогда не eaten fast food in your car alone"
+    },
+    {
+      "id": 41,
+      "text": "Я никогда не faked being sick to get attention"
+    },
+    {
+      "id": 42,
+      "text": "Я никогда не lied about your favorite movie"
+    },
+    {
+      "id": 43,
+      "text": "Я никогда не pretended to be interested in someone's hobby"
+    },
+    {
+      "id": 44,
+      "text": "Я никогда не lied about how many siblings you have"
+    },
+    {
+      "id": 45,
+      "text": "Я никогда не eaten a whole family-sized snack alone"
+    },
+    {
+      "id": 46,
+      "text": "Я никогда не faked being tech-savvy"
+    },
+    {
+      "id": 47,
+      "text": "Я никогда не lied about your shoe size"
+    },
+    {
+      "id": 48,
+      "text": "Я никогда не pretended to be asleep on public transport"
+    },
+    {
+      "id": 49,
+      "text": "Я никогда не lied about how long you've had your phone"
+    },
+    {
+      "id": 50,
+      "text": "Я никогда не eaten condiments straight from the packet"
+    },
+    {
+      "id": 51,
+      "text": "Я никогда не played a musical instrument"
+    },
+    {
+      "id": 52,
+      "text": "Я никогда не eaten a bug"
+    },
+    {
+      "id": 53,
+      "text": "Я никогда не lied in a job interview"
+    },
+    {
+      "id": 54,
+      "text": "Я никогда не gone bungee jumping"
+    },
+    {
+      "id": 55,
+      "text": "Я никогда не sent a text to the wrong person"
+    },
+    {
+      "id": 56,
+      "text": "Я никогда не visited another country"
+    },
+    {
+      "id": 57,
+      "text": "Я никогда не gotten lost in a new city"
+    },
+    {
+      "id": 58,
+      "text": "Я никогда не tried sushi for the first time"
+    },
+    {
+      "id": 59,
+      "text": "Я никогда не skipped school"
+    },
+    {
+      "id": 60,
+      "text": "Я никогда не danced in public"
+    },
+    {
+      "id": 61,
+      "text": "Я никогда не sung karaoke"
+    },
+    {
+      "id": 62,
+      "text": "Я никогда не painted a picture"
+    },
+    {
+      "id": 63,
+      "text": "Я никогда не built a model"
+    },
+    {
+      "id": 64,
+      "text": "Я никогда не accidentally sent an email"
+    },
+    {
+      "id": 65,
+      "text": "Я никогда не deleted an important file"
+    },
+    {
+      "id": 66,
+      "text": "Я никогда не played soccer"
+    },
+    {
+      "id": 67,
+      "text": "Я никогда не gone swimming"
+    },
+    {
+      "id": 68,
+      "text": "Я никогда не cried at a movie"
+    },
+    {
+      "id": 69,
+      "text": "Я никогда не forgotten a birthday"
+    },
+    {
+      "id": 70,
+      "text": "Я никогда не worn mismatched socks"
+    },
+    {
+      "id": 71,
+      "text": "Я никогда не taken a selfie with a stranger"
+    },
+    {
+      "id": 72,
+      "text": "Я никогда не tried a new cocktail"
+    },
+    {
+      "id": 73,
+      "text": "Я никогда не lost a game of chess"
+    },
+    {
+      "id": 74,
+      "text": "Я никогда не read a book in one day"
+    },
+    {
+      "id": 75,
+      "text": "Я никогда не baked a cake"
+    },
+    {
+      "id": 76,
+      "text": "Я никогда не spoken in front of a crowd"
+    },
+    {
+      "id": 77,
+      "text": "Я никогда не ridden a horse"
+    },
+    {
+      "id": 78,
+      "text": "Я никогда не written a poem"
+    },
+    {
+      "id": 79,
+      "text": "Я никогда не watched a sunrise"
+    },
+    {
+      "id": 80,
+      "text": "Я никогда не gotten a tattoo"
+    },
+    {
+      "id": 81,
+      "text": "Я никогда не traveled by train"
+    },
+    {
+      "id": 82,
+      "text": "Я никогда не eaten pizza for breakfast"
+    },
+    {
+      "id": 83,
+      "text": "Я никогда не slept in a tent"
+    },
+    {
+      "id": 84,
+      "text": "Я никогда не visited a museum"
+    },
+    {
+      "id": 85,
+      "text": "Я никогда не won a board game"
+    },
+    {
+      "id": 86,
+      "text": "Я никогда не tried skydiving"
+    },
+    {
+      "id": 87,
+      "text": "Я никогда не gotten a speeding ticket"
+    },
+    {
+      "id": 88,
+      "text": "Я никогда не worn pajamas to school"
+    },
+    {
+      "id": 89,
+      "text": "Я никогда не gotten a haircut you didn't like"
+    },
+    {
+      "id": 90,
+      "text": "Я никогда не eaten at a food truck"
+    },
+    {
+      "id": 91,
+      "text": "Я никогда не sung in the shower"
+    },
+    {
+      "id": 92,
+      "text": "Я никогда не written a letter to a friend"
+    },
+    {
+      "id": 93,
+      "text": "Я никогда не visited a zoo"
+    },
+    {
+      "id": 94,
+      "text": "Я никогда не played video games all night"
+    },
+    {
+      "id": 95,
+      "text": "Я никогда не gotten a compliment you didn't deserve"
+    },
+    {
+      "id": 96,
+      "text": "Я никогда не lost your phone"
+    },
+    {
+      "id": 97,
+      "text": "Я никогда не gotten a hug from a stranger"
+    },
+    {
+      "id": 98,
+      "text": "Я никогда не tried ice skating"
+    },
+    {
+      "id": 99,
+      "text": "Я никогда не eaten a whole pizza alone"
+    },
+    {
+      "id": 100,
+      "text": "Я никогда не gotten a standing ovation"
+    },
+    {
+      "id": 101,
+      "text": "Я никогда не traveled by plane"
+    },
+    {
+      "id": 102,
+      "text": "Я никогда не tried a new sport"
+    },
+    {
+      "id": 103,
+      "text": "Я никогда не gotten a flu shot"
+    },
+    {
+      "id": 104,
+      "text": "Я никогда не worn sunglasses indoors"
+    },
+    {
+      "id": 105,
+      "text": "Я никогда не sung in a choir"
+    },
+    {
+      "id": 106,
+      "text": "Я никогда не visited a library"
+    },
+    {
+      "id": 107,
+      "text": "Я никогда не gotten a good grade"
+    },
+    {
+      "id": 108,
+      "text": "Я никогда не tried roller skating"
+    },
+    {
+      "id": 109,
+      "text": "Я никогда не eaten ice cream in winter"
+    },
+    {
+      "id": 110,
+      "text": "Я никогда не gotten a gift you didn't like"
+    },
+    {
+      "id": 111,
+      "text": "Я никогда не worn a costume"
+    },
+    {
+      "id": 112,
+      "text": "Я никогда не traveled by bus"
+    },
+    {
+      "id": 113,
+      "text": "Я никогда не tried a new recipe"
+    },
+    {
+      "id": 114,
+      "text": "Я никогда не gotten a haircut at home"
+    },
+    {
+      "id": 115,
+      "text": "Я никогда не worn mismatched shoes"
+    },
+    {
+      "id": 116,
+      "text": "Я никогда не sung in a talent show"
+    },
+    {
+      "id": 117,
+      "text": "Я никогда не visited a park"
+    },
+    {
+      "id": 118,
+      "text": "Я никогда не gotten a scholarship"
+    },
+    {
+      "id": 119,
+      "text": "Я никогда не tried snowboarding"
+    },
+    {
+      "id": 120,
+      "text": "Я никогда не eaten a whole cake"
+    },
+    {
+      "id": 121,
+      "text": "Я никогда не gotten a surprise party"
+    },
+    {
+      "id": 122,
+      "text": "Я никогда не worn a hat indoors"
+    },
+    {
+      "id": 123,
+      "text": "Я никогда не traveled by car"
+    },
+    {
+      "id": 124,
+      "text": "Я никогда не tried a new hobby"
+    },
+    {
+      "id": 125,
+      "text": "Я никогда не gotten a cold"
+    },
+    {
+      "id": 126,
+      "text": "Я никогда не worn socks with sandals"
+    },
+    {
+      "id": 127,
+      "text": "Я никогда не sung in a school play"
+    },
+    {
+      "id": 128,
+      "text": "Я никогда не visited a beach"
+    },
+    {
+      "id": 129,
+      "text": "Я никогда не gotten a promotion"
+    },
+    {
+      "id": 130,
+      "text": "Я никогда не tried surfing"
+    },
+    {
+      "id": 131,
+      "text": "Я никогда не eaten a whole bag of chips"
+    },
+    {
+      "id": 132,
+      "text": "Я никогда не gotten a thank you card"
+    },
+    {
+      "id": 133,
+      "text": "Я никогда не worn pajamas in public"
+    },
+    {
+      "id": 134,
+      "text": "Я никогда не traveled by ship"
+    },
+    {
+      "id": 135,
+      "text": "Я никогда не tried a new language"
+    },
+    {
+      "id": 136,
+      "text": "Я никогда не worn gloves in summer"
+    },
+    {
+      "id": 137,
+      "text": "Я никогда не sung in a church"
+    },
+    {
+      "id": 138,
+      "text": "Я никогда не visited a forest"
+    },
+    {
+      "id": 139,
+      "text": "Я никогда не gotten a raise"
+    },
+    {
+      "id": 140,
+      "text": "Я никогда не tried skateboarding"
+    },
+    {
+      "id": 141,
+      "text": "Я никогда не eaten a whole box of chocolates"
+    },
+    {
+      "id": 142,
+      "text": "Я никогда не gotten a welcome gift"
+    },
+    {
+      "id": 143,
+      "text": "Я никогда не worn a tie to school"
+    },
+    {
+      "id": 144,
+      "text": "Я никогда не traveled by bike"
+    },
+    {
+      "id": 145,
+      "text": "Я никогда не tried a new dessert"
+    },
+    {
+      "id": 146,
+      "text": "Я никогда не gotten a flu vaccine"
+    },
+    {
+      "id": 147,
+      "text": "Я никогда не worn a scarf in summer"
+    },
+    {
+      "id": 148,
+      "text": "Я никогда не sung in a community event"
+    },
+    {
+      "id": 149,
+      "text": "Я никогда не visited a mountain"
+    },
+    {
+      "id": 150,
+      "text": "Я никогда не gotten a bonus"
+    },
+    {
+      "id": 151,
+      "text": "Я никогда не tried rollerblading"
+    },
+    {
+      "id": 152,
+      "text": "Я никогда не eaten a whole sandwich"
+    },
+    {
+      "id": 153,
+      "text": "Я никогда не gotten a get well card"
+    },
+    {
+      "id": 154,
+      "text": "Я никогда не worn a hat to bed"
+    },
+    {
+      "id": 155,
+      "text": "Я никогда не traveled by foot"
+    },
+    {
+      "id": 156,
+      "text": "Я никогда не tried a new drink"
+    },
+    {
+      "id": 157,
+      "text": "Я никогда не worn a jacket in summer"
+    },
+    {
+      "id": 158,
+      "text": "Я никогда не sung in a competition"
+    },
+    {
+      "id": 159,
+      "text": "Я никогда не visited a lake"
+    },
+    {
+      "id": 160,
+      "text": "Я никогда не gotten a medal"
+    },
+    {
+      "id": 161,
+      "text": "Я никогда не tried snowshoeing"
+    },
+    {
+      "id": 162,
+      "text": "Я никогда не eaten a whole bowl of cereal"
+    },
+    {
+      "id": 163,
+      "text": "Я никогда не gotten a birthday card"
+    },
+    {
+      "id": 164,
+      "text": "Я никогда не worn a dress to school"
+    },
+    {
+      "id": 165,
+      "text": "Я никогда не traveled by subway"
+    },
+    {
+      "id": 166,
+      "text": "Я никогда не tried a new fruit"
+    },
+    {
+      "id": 167,
+      "text": "Я никогда не worn a coat in summer"
+    },
+    {
+      "id": 168,
+      "text": "Я никогда не sung in a wedding"
+    },
+    {
+      "id": 169,
+      "text": "Я никогда не visited a river"
+    },
+    {
+      "id": 170,
+      "text": "Я никогда не gotten a trophy"
+    },
+    {
+      "id": 171,
+      "text": "Я никогда не tried rock climbing"
+    },
+    {
+      "id": 172,
+      "text": "Я никогда не eaten a whole bowl of soup"
+    },
+    {
+      "id": 173,
+      "text": "Я никогда не gotten a thank you note"
+    },
+    {
+      "id": 174,
+      "text": "Я никогда не worn a suit to school"
+    },
+    {
+      "id": 175,
+      "text": "Я никогда не traveled by taxi"
+    },
+    {
+      "id": 176,
+      "text": "Я никогда не tried a new vegetable"
+    },
+    {
+      "id": 177,
+      "text": "Я никогда не worn a sweater in summer"
+    },
+    {
+      "id": 178,
+      "text": "Я никогда не sung in a funeral"
+    },
+    {
+      "id": 179,
+      "text": "Я никогда не visited a waterfall"
+    },
+    {
+      "id": 180,
+      "text": "Я никогда не gotten a certificate"
+    },
+    {
+      "id": 181,
+      "text": "Я никогда не tried hiking"
+    },
+    {
+      "id": 182,
+      "text": "Я никогда не eaten a whole bag of popcorn"
+    },
+    {
+      "id": 183,
+      "text": "Я никогда не gotten a get well soon card"
+    },
+    {
+      "id": 184,
+      "text": "Я никогда не worn a scarf to bed"
+    },
+    {
+      "id": 185,
+      "text": "Я никогда не traveled by motorcycle"
+    },
+    {
+      "id": 186,
+      "text": "Я никогда не tried a new snack"
+    },
+    {
+      "id": 187,
+      "text": "Я никогда не worn a hat to a party"
+    },
+    {
+      "id": 188,
+      "text": "Я никогда не sung in a graduation"
+    },
+    {
+      "id": 189,
+      "text": "Я никогда не visited a desert"
+    },
+    {
+      "id": 190,
+      "text": "Я никогда не gotten a diploma"
+    },
+    {
+      "id": 191,
+      "text": "Я никогда не tried canoeing"
+    },
+    {
+      "id": 192,
+      "text": "Я никогда не eaten a whole bowl of pasta"
+    },
+    {
+      "id": 193,
+      "text": "Я никогда не gotten a welcome card"
+    },
+    {
+      "id": 194,
+      "text": "Я никогда не worn a tie to a party"
+    },
+    {
+      "id": 195,
+      "text": "Я никогда не traveled by helicopter"
+    },
+    {
+      "id": 196,
+      "text": "Я никогда не tried a new bread"
+    },
+    {
+      "id": 197,
+      "text": "Я никогда не worn a jacket to a party"
+    },
+    {
+      "id": 198,
+      "text": "Я никогда не sung in a birthday party"
+    },
+    {
+      "id": 199,
+      "text": "Я никогда не visited a canyon"
+    },
+    {
+      "id": 200,
+      "text": "Я никогда не gotten a scholarship certificate"
+    },
+    {
+      "id": 201,
+      "text": "Я никогда не tried rafting"
+    },
+    {
+      "id": 202,
+      "text": "Я никогда не eaten a whole plate of cookies"
+    },
+    {
+      "id": 203,
+      "text": "Я никогда не gotten a get well card from a friend"
+    },
+    {
+      "id": 204,
+      "text": "Я никогда не worn a dress to a party"
+    },
+    {
+      "id": 205,
+      "text": "Я никогда не traveled by hot air balloon"
+    },
+    {
+      "id": 206,
+      "text": "Я никогда не tried a new cake"
+    },
+    {
+      "id": 207,
+      "text": "Я никогда не worn a coat to a party"
+    },
+    {
+      "id": 208,
+      "text": "Я никогда не sung in a school concert"
+    },
+    {
+      "id": 209,
+      "text": "Я никогда не visited a glacier"
+    },
+    {
+      "id": 210,
+      "text": "Я никогда не gotten a promotion certificate"
+    },
+    {
+      "id": 211,
+      "text": "Я никогда не tried paragliding"
+    },
+    {
+      "id": 212,
+      "text": "Я никогда не eaten a whole bowl of ice cream"
+    },
+    {
+      "id": 213,
+      "text": "Я никогда не gotten a thank you card from a teacher"
+    },
+    {
+      "id": 214,
+      "text": "Я никогда не worn a suit to a party"
+    },
+    {
+      "id": 215,
+      "text": "Я никогда не traveled by train across the country"
+    },
+    {
+      "id": 216,
+      "text": "Я никогда не tried a new pasta"
+    },
+    {
+      "id": 217,
+      "text": "Я никогда не worn a sweater to a party"
+    },
+    {
+      "id": 218,
+      "text": "Я никогда не sung in a community concert"
+    },
+    {
+      "id": 219,
+      "text": "Я никогда не visited a volcano"
+    },
+    {
+      "id": 220,
+      "text": "Я никогда не gotten a raise certificate"
+    },
+    {
+      "id": 221,
+      "text": "Я никогда не tried hang gliding"
+    },
+    {
+      "id": 222,
+      "text": "Я никогда не eaten a whole plate of pizza"
+    },
+    {
+      "id": 223,
+      "text": "Я никогда не gotten a get well card from a family member"
+    },
+    {
+      "id": 224,
+      "text": "Я никогда не worn a scarf to a party"
+    },
+    {
+      "id": 225,
+      "text": "Я никогда не traveled by bus across the city"
+    },
+    {
+      "id": 226,
+      "text": "Я никогда не tried a new soup"
+    },
+    {
+      "id": 227,
+      "text": "Я никогда не worn a hat to a wedding"
+    },
+    {
+      "id": 228,
+      "text": "Я никогда не sung in a wedding ceremony"
+    },
+    {
+      "id": 229,
+      "text": "Я никогда не visited a cave"
+    },
+    {
+      "id": 230,
+      "text": "Я никогда не gotten a bonus certificate"
+    },
+    {
+      "id": 231,
+      "text": "Я никогда не tried zip lining"
+    },
+    {
+      "id": 232,
+      "text": "Я никогда не eaten a whole bowl of salad"
+    },
+    {
+      "id": 233,
+      "text": "Я никогда не gotten a thank you card from a colleague"
+    },
+    {
+      "id": 234,
+      "text": "Я никогда не worn a tie to a wedding"
+    },
+    {
+      "id": 235,
+      "text": "Я никогда не traveled by car across the state"
+    },
+    {
+      "id": 236,
+      "text": "Я никогда не tried a new rice dish"
+    },
+    {
+      "id": 237,
+      "text": "Я никогда не worn a jacket to a wedding"
+    },
+    {
+      "id": 238,
+      "text": "Я никогда не sung in a graduation ceremony"
+    },
+    {
+      "id": 239,
+      "text": "Я никогда не visited a jungle"
+    },
+    {
+      "id": 240,
+      "text": "Я никогда не gotten a medal certificate"
+    },
+    {
+      "id": 241,
+      "text": "Я никогда не tried scuba diving"
+    },
+    {
+      "id": 242,
+      "text": "Я никогда не eaten a whole bowl of noodles"
+    },
+    {
+      "id": 243,
+      "text": "Я никогда не gotten a get well card from a neighbor"
+    },
+    {
+      "id": 244,
+      "text": "Я никогда не worn a dress to a wedding"
+    },
+    {
+      "id": 245,
+      "text": "Я никогда не traveled by foot across the park"
+    },
+    {
+      "id": 246,
+      "text": "Я никогда не tried a new pasta dish"
+    },
+    {
+      "id": 247,
+      "text": "Я никогда не worn a coat to a wedding"
+    },
+    {
+      "id": 248,
+      "text": "Я никогда не sung in a birthday party ceremony"
+    },
+    {
+      "id": 249,
+      "text": "Я никогда не visited a rainforest"
+    },
+    {
+      "id": 250,
+      "text": "Я никогда не gotten a scholarship award"
+    },
+    {
+      "id": 251,
+      "text": "Я никогда не tried snorkeling"
+    },
+    {
+      "id": 252,
+      "text": "Я никогда не eaten a whole bowl of fruit"
+    },
+    {
+      "id": 253,
+      "text": "Я никогда не gotten a thank you card from a friend's parent"
+    },
+    {
+      "id": 254,
+      "text": "Я никогда не worn a suit to a wedding"
+    },
+    {
+      "id": 255,
+      "text": "Я никогда не traveled by subway across the city"
+    },
+    {
+      "id": 256,
+      "text": "Я никогда не tried a new salad"
+    },
+    {
+      "id": 257,
+      "text": "Я никогда не worn a sweater to a wedding"
+    },
+    {
+      "id": 258,
+      "text": "Я никогда не sung in a school graduation"
+    },
+    {
+      "id": 259,
+      "text": "Я никогда не visited a coral reef"
+    },
+    {
+      "id": 260,
+      "text": "Я никогда не gotten a promotion award"
+    },
+    {
+      "id": 261,
+      "text": "Я никогда не tried kite surfing"
+    },
+    {
+      "id": 262,
+      "text": "Я никогда не eaten a whole bowl of cereal with milk"
+    },
+    {
+      "id": 263,
+      "text": "Я никогда не gotten a get well card from a classmate"
+    },
+    {
+      "id": 264,
+      "text": "Я никогда не worn a scarf to a wedding"
+    },
+    {
+      "id": 265,
+      "text": "Я никогда не traveled by taxi across the city"
+    },
+    {
+      "id": 266,
+      "text": "Я никогда не tried a new smoothie"
+    },
+    {
+      "id": 267,
+      "text": "Я никогда не worn a hat to a graduation"
+    },
+    {
+      "id": 268,
+      "text": "Я никогда не sung in a community graduation"
+    },
+    {
+      "id": 269,
+      "text": "Я никогда не visited a savanna"
+    },
+    {
+      "id": 270,
+      "text": "Я никогда не gotten a raise award"
+    },
+    {
+      "id": 271,
+      "text": "Я никогда не tried windsurfing"
+    },
+    {
+      "id": 272,
+      "text": "Я никогда не eaten a whole bowl of rice"
+    },
+    {
+      "id": 273,
+      "text": "Я никогда не gotten a thank you card from a teacher's assistant"
+    },
+    {
+      "id": 274,
+      "text": "Я никогда не worn a tie to a graduation"
+    },
+    {
+      "id": 275,
+      "text": "Я никогда не traveled by motorcycle across the state"
+    },
+    {
+      "id": 276,
+      "text": "Я никогда не tried a new juice"
+    },
+    {
+      "id": 277,
+      "text": "Я никогда не worn a jacket to a graduation"
+    },
+    {
+      "id": 278,
+      "text": "Я никогда не sung in a school graduation ceremony"
+    },
+    {
+      "id": 279,
+      "text": "Я никогда не visited a tundra"
+    },
+    {
+      "id": 280,
+      "text": "Я никогда не gotten a bonus award"
+    },
+    {
+      "id": 281,
+      "text": "Я никогда не tried wakeboarding"
+    },
+    {
+      "id": 282,
+      "text": "Я никогда не eaten a whole bowl of soup with bread"
+    },
+    {
+      "id": 283,
+      "text": "Я никогда не gotten a get well card from a neighbor's child"
+    },
+    {
+      "id": 284,
+      "text": "Я никогда не worn a dress to a graduation"
+    },
+    {
+      "id": 285,
+      "text": "Я никогда не traveled by helicopter across the city"
+    },
+    {
+      "id": 286,
+      "text": "Я никогда не tried a new tea"
+    },
+    {
+      "id": 287,
+      "text": "Я никогда не worn a coat to a graduation"
+    },
+    {
+      "id": 288,
+      "text": "Я никогда не sung in a birthday party ceremony"
+    },
+    {
+      "id": 289,
+      "text": "Я никогда не visited a grassland"
+    },
+    {
+      "id": 290,
+      "text": "Я никогда не gotten a medal award"
+    },
+    {
+      "id": 291,
+      "text": "Я никогда не tried kayaking"
+    },
+    {
+      "id": 292,
+      "text": "Я никогда не eaten a whole bowl of pasta with sauce"
+    },
+    {
+      "id": 293,
+      "text": "Я никогда не gotten a thank you card from a friend's sibling"
+    },
+    {
+      "id": 294,
+      "text": "Я никогда не worn a suit to a graduation"
+    },
+    {
+      "id": 295,
+      "text": "Я никогда не traveled by hot air balloon across the landscape"
+    },
+    {
+      "id": 296,
+      "text": "Я никогда не tried a new coffee"
+    },
+    {
+      "id": 297,
+      "text": "Я никогда не worn a sweater to a graduation"
+    },
+    {
+      "id": 298,
+      "text": "Я никогда не sung in a community graduation ceremony"
+    },
+    {
+      "id": 299,
+      "text": "Я никогда не visited a wetland"
+    },
+    {
+      "id": 300,
+      "text": "Я никогда не gotten a scholarship award certificate"
+    }
+  ]
+}

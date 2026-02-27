@@ -4,12 +4,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
-import 'firebase_options.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_router.dart';
 import 'core/services/firebase_service.dart';
 import 'core/services/amplitude_service.dart';
+import 'core/services/analytics_service.dart';
 import 'core/services/sentry_service.dart';
+import 'core/config/app_secrets.dart';
 import 'features/settings/bloc/settings_bloc.dart';
 import 'features/settings/bloc/settings_event.dart';
 import 'features/settings/bloc/settings_state.dart';
@@ -26,10 +27,12 @@ void main() async {
       DeviceOrientation.portraitDown,
     ]);
 
-    // Initialize Firebase
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+    // Initialize Firebase (expects google-services files provided by CI/local setup).
+    try {
+      await Firebase.initializeApp();
+    } catch (e) {
+      debugPrint('Firebase initialize failed: $e');
+    }
 
     // Initialize Firebase services (Analytics, Crashlytics, FCM)
     await FirebaseService().initialize();
@@ -38,11 +41,17 @@ void main() async {
     await AmplitudeService().initialize();
 
     // Initialize Qonversion SDK
-    final config = QonversionConfigBuilder(
-      'snoMes6puPWAIqD73d05Ki1V4D8HUKVd',
-      QLaunchMode.subscriptionManagement,
-    ).build();
-    Qonversion.initialize(config);
+    if (AppSecrets.qonversionProjectKey.isNotEmpty) {
+      final config = QonversionConfigBuilder(
+        AppSecrets.qonversionProjectKey,
+        QLaunchMode.subscriptionManagement,
+      ).build();
+      Qonversion.initialize(config);
+    } else {
+      debugPrint('Qonversion key missing. Set QONVERSION_PROJECT_KEY.');
+    }
+
+    await AnalyticsService().logAppOpened();
 
     runApp(const MyApp());
   });
@@ -74,7 +83,7 @@ class MyApp extends StatelessWidget {
 
                 // Localization
                 locale: state is SettingsLoaded
-                    ? Locale(state.language)
+                    ? _localeFromCode(state.language)
                     : null,
                 localizationsDelegates:
                     AppLocalizations.localizationsDelegates,
@@ -88,5 +97,12 @@ class MyApp extends StatelessWidget {
         );
       },
     );
+  }
+
+  Locale _localeFromCode(String code) {
+    if (code == 'pt_BR') {
+      return const Locale('pt', 'BR');
+    }
+    return Locale(code);
   }
 }
