@@ -35,7 +35,7 @@ platform :ios do
       key_id: ENV.fetch("ASC_KEY_ID"),
       issuer_id: ENV.fetch("ASC_ISSUER_ID"),
       key_content: ENV.fetch("ASC_PRIVATE_KEY"),
-      is_key_content_base64: false
+      is_key_content_base64: true
     )
 
     deliver(

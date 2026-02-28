@@ -64,9 +64,9 @@ jobs:
       - name: Run listing automation
         if: ${{ inputs.mode == 'listing' || inputs.mode == 'all' }}
         env:
-          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
-          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
-          ASC_PRIVATE_KEY: ${{ secrets.ASC_PRIVATE_KEY }}
+          ASC_KEY_ID: ${{ secrets.IOS_APP_STORE_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.IOS_APP_STORE_ISSUER_ID }}
+          ASC_PRIVATE_KEY: ${{ secrets.IOS_APP_STORE_KEY_BASE64 }}
           APP_IDENTIFIER: com.hidavo.neverever
           APP_STORE_TEAM_ID: ${{ secrets.IOS_TEAM_ID }}
         run: |
