@@ -48,11 +48,11 @@ class AnalyticsService {
   // Common app events
 
   Future<void> logAppOpened() async {
-    await _amplitude.logAppOpened();
+    await logEvent('App_Open');
   }
 
   Future<void> logOnboardingCompleted() async {
-    await logEvent('onboarding_completed');
+    await logEvent('Onboarding_Complete');
   }
 
   Future<void> logCategorySelected(String categoryId, bool isPremium) async {
@@ -74,8 +74,7 @@ class AnalyticsService {
   // Monetization events
 
   Future<void> logPaywallViewed(String source) async {
-    await logEvent('paywall_viewed', parameters: {'source': source});
-    await _amplitude.logPaywallViewed(source);
+    await logEvent('Paywall_View', parameters: {'source': source});
   }
 
   Future<void> logSubscriptionStarted(String productId, double price) async {
@@ -130,7 +129,7 @@ class AnalyticsService {
   }
 
   Future<void> logSettingsOpened() async {
-    await logEvent('settings_opened');
+    await logEvent('Settings_Open');
   }
 
   Future<void> logHowToPlayViewed() async {
@@ -162,6 +161,28 @@ class AnalyticsService {
     await logEvent('question_shared', parameters: {
       'category_id': categoryId,
       'question_index': questionIndex,
+    });
+  }
+
+  Future<void> logHomeScreenView() async {
+    await logEvent('Home_Screen_View');
+  }
+
+  Future<void> logFeatureUsed(String featureName) async {
+    await logEvent('Feature_Used', parameters: {
+      'feature': featureName,
+    });
+  }
+
+  Future<void> logNotificationReceived({String? title}) async {
+    await logEvent('Notification_Received', parameters: {
+      if (title != null && title.isNotEmpty) 'title': title,
+    });
+  }
+
+  Future<void> logNotificationTapped({String? title}) async {
+    await logEvent('Notification_Tapped', parameters: {
+      if (title != null && title.isNotEmpty) 'title': title,
     });
   }
 }

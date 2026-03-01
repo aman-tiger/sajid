@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:appsflyer_sdk/appsflyer_sdk.dart';
+import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_router.dart';
@@ -16,11 +18,15 @@ import 'features/settings/bloc/settings_event.dart';
 import 'features/settings/bloc/settings_state.dart';
 import 'l10n/app_localizations.dart';
 
+AppsflyerSdk? appsflyerSdk;
+
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await _initializeAppsflyer();
+
   // Initialize Sentry and wrap the app
   await SentryService.initialize(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-
     // Set preferred orientations
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -47,6 +53,7 @@ void main() async {
         QLaunchMode.subscriptionManagement,
       ).build();
       Qonversion.initialize(config);
+      await _stitchQonversionAndAppsflyer();
     } else {
       debugPrint('Qonversion key missing. Set QONVERSION_PROJECT_KEY.');
     }
@@ -104,5 +111,52 @@ class MyApp extends StatelessWidget {
       return const Locale('pt', 'BR');
     }
     return Locale(code);
+  }
+}
+
+Future<void> _initializeAppsflyer() async {
+  if (AppSecrets.appsflyerDevKey.isEmpty || AppSecrets.appsflyerAppId.isEmpty) {
+    debugPrint('AppsFlyer keys missing. Set APPSFLYER_DEV_KEY and APPSFLYER_APP_ID.');
+    return;
+  }
+
+  try {
+    await AppTrackingTransparency.requestTrackingAuthorization();
+
+    final options = AppsFlyerOptions(
+      afDevKey: AppSecrets.appsflyerDevKey,
+      appId: AppSecrets.appsflyerAppId,
+      showDebug: false,
+      timeToWaitForATTUserAuthorization: 60,
+    );
+
+    appsflyerSdk = AppsflyerSdk(options);
+    await appsflyerSdk!.initSdk(
+      registerConversionDataCallback: true,
+      registerOnAppOpenAttributionCallback: true,
+      registerOnDeepLinkingCallback: true,
+    );
+  } catch (e) {
+    debugPrint('AppsFlyer init failed: $e');
+  }
+}
+
+Future<void> _stitchQonversionAndAppsflyer() async {
+  final sdk = appsflyerSdk;
+  if (sdk == null) {
+    return;
+  }
+
+  try {
+    final afId = await sdk.getAppsFlyerUID();
+    Qonversion.getSharedInstance().setUserProperty(
+      QUserPropertyKey.appsFlyerUserId,
+      afId ?? '',
+    );
+
+    final qonversionUser = await Qonversion.getSharedInstance().userInfo();
+    sdk.setCustomerUserId(qonversionUser.qonversionId);
+  } catch (e) {
+    debugPrint('AppsFlyer/Qonversion stitch failed: $e');
   }
 }

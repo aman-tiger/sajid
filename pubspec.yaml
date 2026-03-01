@@ -82,6 +82,10 @@ dependencies:
   # Amplitude Analytics - using latest
   amplitude_flutter: ^4.3.10
 
+  # Attribution
+  appsflyer_sdk: ^6.14.1
+  app_tracking_transparency: ^2.0.6+1
+
   # Sentry Error Monitoring - using latest
   sentry_flutter: ^9.11.0
 

@@ -2,6 +2,7 @@ import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
+import 'analytics_service.dart';
 
 /// Service class for managing Firebase integrations
 /// Handles Analytics, Crashlytics, and Cloud Messaging
@@ -31,9 +32,6 @@ class FirebaseService {
         return true;
       };
 
-      // Request FCM permissions
-      await _requestNotificationPermissions();
-
       // Setup FCM message handlers
       _setupMessageHandlers();
 
@@ -44,38 +42,35 @@ class FirebaseService {
     }
   }
 
-  /// Request notification permissions for iOS
-  Future<void> _requestNotificationPermissions() async {
-    try {
-      final settings = await _messaging.requestPermission(
-        alert: true,
-        badge: true,
-        sound: true,
-        provisional: false,
-      );
-
-      debugPrint('FCM Permission status: ${settings.authorizationStatus}');
-
-      // Get FCM token
-      final token = await _messaging.getToken();
-      debugPrint('FCM Token: $token');
-    } catch (e) {
-      debugPrint('Error requesting FCM permissions: $e');
-    }
-  }
-
   /// Setup FCM message handlers
   void _setupMessageHandlers() {
     // Handle foreground messages
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       debugPrint('Foreground message received: ${message.notification?.title}');
-      // Handle foreground notification here
+      AnalyticsService().logNotificationReceived(
+        title: message.notification?.title,
+      );
     });
 
     // Handle background messages
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       debugPrint('Background message opened: ${message.notification?.title}');
-      // Handle notification tap here
+      AnalyticsService().logNotificationTapped(
+        title: message.notification?.title,
+      );
+    });
+
+    _messaging.getInitialMessage().then((message) {
+      if (message == null) {
+        return;
+      }
+      AnalyticsService().logNotificationTapped(
+        title: message.notification?.title,
+      );
+    });
+
+    _messaging.getToken().then((token) {
+      debugPrint('FCM Token: $token');
     });
   }
 

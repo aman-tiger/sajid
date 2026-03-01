@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:permission_handler/permission_handler.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
@@ -14,18 +13,6 @@ class OnboardingScreen1 extends StatelessWidget {
     super.key,
     required this.onNext,
   });
-
-  Future<void> _requestNotificationPermission() async {
-    final status = await Permission.notification.request();
-    if (status.isGranted) {
-      debugPrint('Notification permission granted');
-    } else if (status.isDenied) {
-      debugPrint('Notification permission denied');
-    } else if (status.isPermanentlyDenied) {
-      debugPrint('Notification permission permanently denied');
-      await openAppSettings();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +67,7 @@ class OnboardingScreen1 extends StatelessWidget {
               // Continue Button
               OnboardingButton(
                 text: t.button_continue,
-                onPressed: () async {
-                  await _requestNotificationPermission();
-                  onNext();
-                },
+                onPressed: onNext,
               ),
 
               const SizedBox(height: AppDimensions.spaceMd),

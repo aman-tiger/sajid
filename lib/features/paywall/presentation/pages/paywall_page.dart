@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
+import 'package:never_have_ever/main.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/services/analytics_service.dart';
 import '../../../../core/bloc/subscription/subscription_bloc.dart';
@@ -117,7 +118,10 @@ class _PaywallPageState extends State<PaywallPage> {
                 color: AppColors.textLight,
                 size: 24.sp,
               ),
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () {
+                appsflyerSdk?.logEvent('Paywall_Close', {});
+                Navigator.of(context).pop();
+              },
             )
           : null,
     );
@@ -409,6 +413,12 @@ class _PaywallPageState extends State<PaywallPage> {
 
   void _handlePurchase(BuildContext context) {
     if (_selectedProduct != null) {
+      AnalyticsService().logEvent(
+        'Paywall_Tap_Subscribe',
+        parameters: {
+          'product_id': _selectedProduct!.qonversionId,
+        },
+      );
       context.read<SubscriptionBloc>().add(
             PurchaseSubscriptionEvent(_selectedProduct!),
           );
@@ -416,6 +426,7 @@ class _PaywallPageState extends State<PaywallPage> {
   }
 
   void _handleRestore(BuildContext context) {
+    appsflyerSdk?.logEvent('Paywall_Restore_Tapped', {});
     context.read<SubscriptionBloc>().add(const RestorePurchaseEvent());
   }
 

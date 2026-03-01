@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../../../core/services/analytics_service.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../widgets/page_indicator.dart';
 import 'onboarding_screen_1.dart';
@@ -18,6 +19,13 @@ class OnboardingPage extends StatefulWidget {
 class _OnboardingPageState extends State<OnboardingPage> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    AnalyticsService().logEvent('Onboarding_Start');
+    AnalyticsService().logEvent('Onboarding_Step_1');
+  }
 
   Future<void> _completeOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
@@ -57,6 +65,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 setState(() {
                   _currentPage = index;
                 });
+                if (index == 0) {
+                  AnalyticsService().logEvent('Onboarding_Step_1');
+                } else if (index == 1) {
+                  AnalyticsService().logEvent('Onboarding_Step_2');
+                } else if (index == 2) {
+                  AnalyticsService().logEvent('Onboarding_Step_3');
+                }
               },
               children: [
                 OnboardingScreen1(onNext: _nextPage),

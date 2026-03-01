@@ -247,11 +247,15 @@ jobs:
           AMPLITUDE_API_KEY: ${{ secrets.AMPLITUDE_API_KEY }}
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
           QONVERSION_PROJECT_KEY: ${{ secrets.QONVERSION_PROJECT_KEY }}
+          APPSFLYER_DEV_KEY: ${{ secrets.APPSFLYER_DEV_KEY }}
+          APPSFLYER_APP_ID: ${{ secrets.APPSFLYER_APP_ID }}
         run: |
           flutter build ios --release --no-codesign \
             --dart-define=AMPLITUDE_API_KEY="$AMPLITUDE_API_KEY" \
             --dart-define=SENTRY_DSN="$SENTRY_DSN" \
-            --dart-define=QONVERSION_PROJECT_KEY="$QONVERSION_PROJECT_KEY"
+            --dart-define=QONVERSION_PROJECT_KEY="$QONVERSION_PROJECT_KEY" \
+            --dart-define=APPSFLYER_DEV_KEY="$APPSFLYER_DEV_KEY" \
+            --dart-define=APPSFLYER_APP_ID="$APPSFLYER_APP_ID"
 
       - name: Archive with Xcode (manual signing)
         env:

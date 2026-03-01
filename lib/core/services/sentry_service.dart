@@ -25,7 +25,6 @@ class SentryService {
         options.debug = kDebugMode; // Print debug info in debug mode
         options.enableAutoSessionTracking = true;
         options.attachScreenshot = true;
-        options.attachViewHierarchy = true;
 
         // Configure what to send
         options.beforeSend = (event, hint) {

@@ -25,8 +25,19 @@ class SettingsPage extends StatelessWidget {
   }
 }
 
-class _SettingsPageContent extends StatelessWidget {
+class _SettingsPageContent extends StatefulWidget {
   const _SettingsPageContent();
+
+  @override
+  State<_SettingsPageContent> createState() => _SettingsPageContentState();
+}
+
+class _SettingsPageContentState extends State<_SettingsPageContent> {
+  @override
+  void initState() {
+    super.initState();
+    AnalyticsService().logSettingsOpened();
+  }
 
   @override
   Widget build(BuildContext context) {

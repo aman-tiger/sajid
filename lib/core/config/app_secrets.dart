@@ -15,4 +15,14 @@ class AppSecrets {
     'QONVERSION_PROJECT_KEY',
     defaultValue: '',
   );
+
+  static const String appsflyerDevKey = String.fromEnvironment(
+    'APPSFLYER_DEV_KEY',
+    defaultValue: '',
+  );
+
+  static const String appsflyerAppId = String.fromEnvironment(
+    'APPSFLYER_APP_ID',
+    defaultValue: '',
+  );
 }

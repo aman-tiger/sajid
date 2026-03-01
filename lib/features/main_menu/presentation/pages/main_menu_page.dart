@@ -10,6 +10,7 @@ import '../../../../core/bloc/subscription/subscription_bloc.dart';
 import '../../../../core/bloc/subscription/subscription_event.dart';
 import '../../../../core/bloc/subscription/subscription_state.dart';
 import '../../../../core/services/subscription_service.dart';
+import '../../../../core/services/analytics_service.dart';
 import '../widgets/category_card.dart';
 import '../../../../l10n/app_localizations.dart';
 
@@ -37,7 +38,14 @@ class _MainMenuPageContent extends StatefulWidget {
 class _MainMenuPageContentState extends State<_MainMenuPageContent> {
   int _currentIndex = 0;
 
+  @override
+  void initState() {
+    super.initState();
+    AnalyticsService().logHomeScreenView();
+  }
+
   void _onCategoryTap(BuildContext context, String categoryId, bool isFree, bool isSubscribed) {
+    AnalyticsService().logFeatureUsed('category_$categoryId');
     if (isFree || isSubscribed) {
       // Navigate to game screen
       context.push('/game/$categoryId');
@@ -167,7 +175,10 @@ class _MainMenuPageContentState extends State<_MainMenuPageContent> {
                   width: double.infinity,
                   height: AppDimensions.buttonHeightLarge,
                   child: ElevatedButton.icon(
-                    onPressed: () => context.push('/paywall'),
+                    onPressed: () {
+                      AnalyticsService().logFeatureUsed('buy_subscription_cta');
+                      context.push('/paywall');
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.secondary,
                       foregroundColor: AppColors.textLight,
