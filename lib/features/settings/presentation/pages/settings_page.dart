@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_links.dart';
 import '../../../../core/services/analytics_service.dart';
@@ -120,7 +121,9 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
         _buildSubscriptionStatus(
           context,
           state.hasSubscription,
-          onTap: state.hasSubscription ? null : () => context.push('/paywall'),
+          onTap: state.hasSubscription
+              ? null
+              : () => context.push('/paywall?context=paywall&source=settings'),
         ),
         if (!state.hasSubscription)
           SettingsItem(
@@ -158,6 +161,13 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
           onTap: () => context.push('/how-to-play'),
         ),
         SettingsItem(
+          icon: Icons.support_agent,
+          title: 'Contact Support',
+          subtitle: 'support@flyprox.com',
+          iconColor: AppColors.primary,
+          onTap: _contactSupport,
+        ),
+        SettingsItem(
           icon: Icons.share,
           title: t.settings_share_app,
           subtitle: t.settings_share_app_desc,
@@ -192,17 +202,13 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
           icon: Icons.description,
           title: t.settings_terms,
           iconColor: AppColors.textGrey,
-          onTap: () {
-            // TODO: Open Terms & Conditions URL
-          },
+          onTap: () => _openExternalLink(AppLinks.termsOfUseUrl),
         ),
         SettingsItem(
           icon: Icons.privacy_tip,
           title: t.settings_privacy,
           iconColor: AppColors.textGrey,
-          onTap: () {
-            // TODO: Open Privacy Policy URL
-          },
+          onTap: () => _openExternalLink(AppLinks.privacyPolicyUrl),
         ),
 
         SizedBox(height: 32.h),
@@ -386,6 +392,19 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
     }
 
     await inAppReview.openStoreListing();
+  }
+
+  Future<void> _openExternalLink(String url) async {
+    final uri = Uri.parse(url);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+
+  Future<void> _contactSupport() async {
+    final subject = Uri.encodeComponent(
+      'Support Request - Never Have I Ever: Adult IHNE',
+    );
+    final uri = Uri.parse('mailto:support@flyprox.com?subject=$subject');
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
   }
 
   void _showRestoreDialog(BuildContext context) {

@@ -27,10 +27,20 @@ class GamePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final languageCode = context.select<SettingsBloc, String>((bloc) {
-      final state = bloc.state;
-      return state is SettingsLoaded ? state.language : 'en';
-    });
+    String languageCode = 'en';
+    try {
+      final settingsState = context.read<SettingsBloc>().state;
+      if (settingsState is SettingsLoaded) {
+        languageCode = settingsState.language;
+      }
+    } catch (_) {
+      final locale = Localizations.maybeLocaleOf(context);
+      if (locale != null) {
+        languageCode = locale.countryCode == null
+            ? locale.languageCode
+            : '${locale.languageCode}_${locale.countryCode}';
+      }
+    }
     return BlocProvider(
       create: (context) => GameBloc(
         questionRepository: QuestionRepository(),

@@ -74,7 +74,14 @@ class AppRouter {
       GoRoute(
         path: '/paywall',
         name: 'paywall',
-        builder: (context, state) => const PaywallPage(),
+        builder: (context, state) {
+          final contextKey = state.uri.queryParameters['context'] ?? 'paywall';
+          final source = state.uri.queryParameters['source'] ?? 'app';
+          return PaywallPage(
+            contextKey: contextKey,
+            source: source,
+          );
+        },
       ),
     ],
     errorBuilder: (context, state) {

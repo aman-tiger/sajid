@@ -80,7 +80,8 @@ class MyApp extends StatelessWidget {
             builder: (context, state) {
               return MaterialApp.router(
                 onGenerateTitle: (context) =>
-                    AppLocalizations.of(context)!.main_menu_title,
+                    AppLocalizations.of(context)?.main_menu_title ??
+                    'Never Have I Ever: Adult IHNE',
                 debugShowCheckedModeBanner: false,
 
                 // Theme

@@ -51,7 +51,7 @@ class _MainMenuPageContentState extends State<_MainMenuPageContent> {
       context.push('/game/$categoryId');
     } else {
       // Navigate to paywall
-      context.push('/paywall');
+      context.push('/paywall?context=paywall&source=locked_category');
     }
   }
 
@@ -177,7 +177,7 @@ class _MainMenuPageContentState extends State<_MainMenuPageContent> {
                   child: ElevatedButton.icon(
                     onPressed: () {
                       AnalyticsService().logFeatureUsed('buy_subscription_cta');
-                      context.push('/paywall');
+                      context.push('/paywall?context=paywall&source=main_cta');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.secondary,

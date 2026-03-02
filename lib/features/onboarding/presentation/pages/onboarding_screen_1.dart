@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
+import '../../../../core/constants/app_links.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../widgets/onboarding_button.dart';
 import '../../../../l10n/app_localizations.dart';
@@ -81,9 +83,7 @@ class OnboardingScreen1 extends StatelessWidget {
                     style: AppTextStyles.caption(),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      // TODO: Navigate to Terms of Use
-                    },
+                    onTap: () => _openExternalLink(AppLinks.termsOfUseUrl),
                     child: Text(
                       t.onboarding_terms_of_use,
                       style: AppTextStyles.caption(color: AppColors.primary),
@@ -94,9 +94,7 @@ class OnboardingScreen1 extends StatelessWidget {
                     style: AppTextStyles.caption(),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      // TODO: Navigate to Privacy Policy
-                    },
+                    onTap: () => _openExternalLink(AppLinks.privacyPolicyUrl),
                     child: Text(
                       t.settings_privacy,
                       style: AppTextStyles.caption(color: AppColors.primary),
@@ -111,5 +109,10 @@ class OnboardingScreen1 extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _openExternalLink(String url) async {
+    final uri = Uri.parse(url);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
   }
 }

@@ -2,7 +2,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
-        android:label="never_have_ever"
+        android:label="Never Have I Ever: Adult IHNE"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

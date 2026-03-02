@@ -3,8 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:never_have_ever/main.dart';
 import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_links.dart';
 import '../../../../core/services/analytics_service.dart';
 import '../../../../core/bloc/subscription/subscription_bloc.dart';
 import '../../../../core/bloc/subscription/subscription_event.dart';
@@ -15,7 +17,14 @@ import '../widgets/subscription_card.dart';
 import '../../../../l10n/app_localizations.dart';
 
 class PaywallPage extends StatefulWidget {
-  const PaywallPage({super.key});
+  final String contextKey;
+  final String source;
+
+  const PaywallPage({
+    super.key,
+    this.contextKey = 'paywall',
+    this.source = 'app',
+  });
 
   @override
   State<PaywallPage> createState() => _PaywallPageState();
@@ -32,7 +41,7 @@ class _PaywallPageState extends State<PaywallPage> {
   @override
   void initState() {
     super.initState();
-    AnalyticsService().logPaywallViewed('app');
+    AnalyticsService().logPaywallViewed(widget.source);
     _loadOfferings();
   }
 
@@ -40,9 +49,11 @@ class _PaywallPageState extends State<PaywallPage> {
     try {
       final subscriptionService = SubscriptionService();
       final offerings = await subscriptionService.getOfferings();
-      final payload = await subscriptionService.getPaywallRemoteConfig();
+      final payload = await subscriptionService.getPaywallRemoteConfig(
+        contextKey: widget.contextKey,
+      );
       final settings = PaywallRemoteSettings.fromPayload(payload);
-      final activeOffering = _resolveActiveOffering(offerings);
+      final activeOffering = _resolveActiveOffering(offerings, settings);
       final filteredProducts = _filterProducts(
         activeOffering?.products ?? <QProduct>[],
         settings,
@@ -320,9 +331,7 @@ class _PaywallPageState extends State<PaywallPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  onPressed: () {
-                    // TODO: Open Terms & Conditions
-                  },
+                  onPressed: () => _openExternalLink(AppLinks.termsOfUseUrl),
                   child: Text(
                     t.paywall_terms,
                     style: TextStyle(
@@ -340,9 +349,7 @@ class _PaywallPageState extends State<PaywallPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    // TODO: Open Privacy Policy
-                  },
+                  onPressed: () => _openExternalLink(AppLinks.privacyPolicyUrl),
                   child: Text(
                     t.paywall_privacy,
                     style: TextStyle(
@@ -650,6 +657,11 @@ class _PaywallPageState extends State<PaywallPage> {
     );
   }
 
+  Future<void> _openExternalLink(String url) async {
+    final uri = Uri.parse(url);
+    await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+
   List<QProduct> _filterProducts(
     List<QProduct> products,
     PaywallRemoteSettings settings,
@@ -683,9 +695,19 @@ class _PaywallPageState extends State<PaywallPage> {
     return <QProduct>[products.first];
   }
 
-  QOffering? _resolveActiveOffering(QOfferings? offerings) {
+  QOffering? _resolveActiveOffering(
+    QOfferings? offerings,
+    PaywallRemoteSettings settings,
+  ) {
     if (offerings == null) {
       return null;
+    }
+
+    if (settings.offeringId != null && settings.offeringId!.isNotEmpty) {
+      final match = offerings.offeringForIdentifier(settings.offeringId!);
+      if (match != null) {
+        return match;
+      }
     }
 
     if (offerings.main != null) {
@@ -720,6 +742,7 @@ class PaywallRemoteSettings {
   final bool showCloseButton;
   final bool showOnlyWeekly;
   final String weeklyProductId;
+  final String? offeringId;
   final String? title;
   final String? subtitle;
   final String? startTrialText;
@@ -729,6 +752,7 @@ class PaywallRemoteSettings {
     this.showCloseButton = true,
     this.showOnlyWeekly = true,
     this.weeklyProductId = 'weekly_premium',
+    this.offeringId,
     this.title,
     this.subtitle,
     this.startTrialText,
@@ -760,6 +784,7 @@ class PaywallRemoteSettings {
       showCloseButton: readBool('show_close_button', true),
       showOnlyWeekly: readBool('show_only_weekly', true),
       weeklyProductId: readString('weekly_product_id') ?? 'weekly_premium',
+      offeringId: readString('offering_id'),
       title: readString('title'),
       subtitle: readString('subtitle'),
       startTrialText: readString('start_trial_text'),

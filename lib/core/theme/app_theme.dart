@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_dimensions.dart';
 
 class AppTheme {
   AppTheme._();
+
+  static const String _fontFamily = 'Outfit';
 
   static ThemeData lightTheme() {
     return ThemeData(
@@ -36,7 +37,8 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         foregroundColor: AppColors.textDark,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        titleTextStyle: GoogleFonts.outfit(
+        titleTextStyle: const TextStyle(
+          fontFamily: _fontFamily,
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.textDark,
@@ -44,7 +46,9 @@ class AppTheme {
       ),
 
       // Text Theme
-      textTheme: GoogleFonts.outfitTextTheme(),
+      textTheme: ThemeData.light().textTheme.apply(
+            fontFamily: _fontFamily,
+          ),
 
       // Button Themes
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -63,7 +67,8 @@ class AppTheme {
             double.infinity,
             AppDimensions.buttonHeightLarge,
           ),
-          textStyle: GoogleFonts.outfit(
+          textStyle: const TextStyle(
+            fontFamily: _fontFamily,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
@@ -86,7 +91,8 @@ class AppTheme {
             double.infinity,
             AppDimensions.buttonHeightLarge,
           ),
-          textStyle: GoogleFonts.outfit(
+          textStyle: const TextStyle(
+            fontFamily: _fontFamily,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
@@ -97,7 +103,8 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
-          textStyle: GoogleFonts.outfit(
+          textStyle: const TextStyle(
+            fontFamily: _fontFamily,
             fontSize: 14,
             fontWeight: FontWeight.w600,
           ),
@@ -177,7 +184,8 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         foregroundColor: AppColors.textLight,
         systemOverlayStyle: SystemUiOverlayStyle.light,
-        titleTextStyle: GoogleFonts.outfit(
+        titleTextStyle: const TextStyle(
+          fontFamily: _fontFamily,
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.textLight,
@@ -185,7 +193,9 @@ class AppTheme {
       ),
 
       // Text Theme
-      textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme),
+      textTheme: ThemeData.dark().textTheme.apply(
+            fontFamily: _fontFamily,
+          ),
 
       // Button Themes
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -204,7 +214,8 @@ class AppTheme {
             double.infinity,
             AppDimensions.buttonHeightLarge,
           ),
-          textStyle: GoogleFonts.outfit(
+          textStyle: const TextStyle(
+            fontFamily: _fontFamily,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
