@@ -337,6 +337,11 @@ jobs:
             exit 1
           fi
 
+          SAFE_IPA_PATH="build-output/ios/never_have_i_ever_adult_ihne.ipa"
+          mv "$IPA_PATH" "$SAFE_IPA_PATH"
+          IPA_PATH="$SAFE_IPA_PATH"
+          echo "IPA_PATH=$IPA_PATH" >> "$GITHUB_ENV"
+
           echo "Signed IPA exported: $IPA_PATH"
           ls -lh "$IPA_PATH"
 
@@ -350,7 +355,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ios-release-ipa
-          path: build-output/ios/*.ipa
+          path: ${{ env.IPA_PATH }}
           retention-days: 30
 
       - name: Upload to TestFlight
@@ -362,7 +367,10 @@ jobs:
           mkdir -p ~/.private_keys
           echo "$APP_STORE_CONNECT_API_KEY_BASE64" | base64 --decode > ~/.private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8
 
-          IPA_PATH=$(find build-output/ios -name "*.ipa" | head -n 1)
+          if [ -z "$IPA_PATH" ]; then
+            echo "IPA_PATH env is missing"
+            exit 1
+          fi
 
           echo "Uploading to TestFlight..."
 
