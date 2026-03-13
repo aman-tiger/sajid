@@ -66,6 +66,8 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
           } else {
             await AnalyticsService().logSubscriptionStarted(productId, price);
           }
+          await AnalyticsService().setPushAudienceSegment('active_subscription');
+          await AnalyticsService().markSubscriptionActivatedForPush();
 
           appsflyerSdk?.logEvent(
             hasTrial ? 'af_start_trial' : 'af_subscribe',
@@ -78,15 +80,12 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
           );
 
           emit(const SubscriptionPurchaseSuccess());
-          emit(const SubscriptionActive(productId: 'premium'));
           break;
         case PurchaseOutcomeType.cancelled:
           emit(const SubscriptionPurchaseCancelled());
-          emit(const SubscriptionInactive());
           break;
         case PurchaseOutcomeType.pending:
           emit(const SubscriptionPurchasePending());
-          emit(const SubscriptionInactive());
           break;
         case PurchaseOutcomeType.error:
           await AnalyticsService().logEvent(
@@ -109,7 +108,6 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
               outcome.message ?? 'Purchase failed. Please try again.',
             ),
           );
-          emit(const SubscriptionInactive());
           break;
       }
     } catch (_) {
@@ -118,7 +116,6 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
         parameters: const {'error': 'exception'},
       );
       emit(const SubscriptionError('Purchase failed. Please try again.'));
-      emit(const SubscriptionInactive());
     } 
   }
 
@@ -137,15 +134,18 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
           const {'af_success': true},
         );
         await AnalyticsService().logPurchaseRestored();
+        await AnalyticsService().setPushAudienceSegment('active_subscription');
         emit(const SubscriptionRestoreSuccess(hadPurchases: true));
-        emit(const SubscriptionActive(productId: 'premium'));
       } else {
+        final segment = await subscriptionService.resolvePushSegment();
+        await AnalyticsService().setPushAudienceSegment(segment);
+        if (segment == 'churned') {
+          await AnalyticsService().markSubscriptionExpiredForPush();
+        }
         emit(const SubscriptionRestoreSuccess(hadPurchases: false));
-        emit(const SubscriptionInactive());
       }
     } catch (e) {
       emit(SubscriptionError('Restore failed: ${e.toString()}'));
-      emit(const SubscriptionInactive());
     }
   }
 

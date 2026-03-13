@@ -1,264 +1,1204 @@
 {
   "girls_only_pack": [
-    {"id": 1, "text": "stalkerato un ex sui social media"},
-    {"id": 2, "text": "pianto per un film romantico"},
-    {"id": 3, "text": "fatto una serata tra ragazze"},
-    {"id": 4, "text": "fatto shopping come terapia"},
-    {"id": 5, "text": "condiviso vestiti con le amiche"},
-    {"id": 6, "text": "fatto una giornata spa"},
-    {"id": 7, "text": "fatto manicure o pedicure"},
-    {"id": 8, "text": "tinto i capelli di un colore pazzo"},
-    {"id": 9, "text": "fatto un pigiama party"},
-    {"id": 10, "text": "truccato a vicenda"},
-    {"id": 11, "text": "fatto un servizio fotografico con le amiche"},
-    {"id": 12, "text": "indossato tacchi che mi hanno fatto male ai piedi"},
-    {"id": 13, "text": "comprato qualcosa solo perché era in saldo"},
-    {"id": 14, "text": "avuto una cotta per un insegnante"},
-    {"id": 15, "text": "finto di essere interessata alla storia di qualcuno"},
-    {"id": 16, "text": "controllato il mio oroscopo"},
-    {"id": 17, "text": "avuto uno spavento per una gravidanza"},
-    {"id": 18, "text": "partecipato a un addio al nubilato"},
-    {"id": 19, "text": "provato una dieta folle"},
-    {"id": 20, "text": "posseduto più di 20 paia di scarpe"},
-    {"id": 21, "text": "avuto un ammiratore segreto"},
-    {"id": 22, "text": "inviato screenshot di messaggi alle amiche"},
-    {"id": 23, "text": "stalkerato l'intero Instagram della mia cotta"},
-    {"id": 24, "text": "finto di essere al telefono per evitare qualcuno"},
-    {"id": 25, "text": "avuto un problema di guardaroba"},
-    {"id": 26, "text": "indossato trucco in palestra"},
-    {"id": 27, "text": "avuto una situazione di amici con benefici"},
-    {"id": 28, "text": "andato senza reggiseno in pubblico"},
-    {"id": 29, "text": "finto sicurezza che non provavo"},
-    {"id": 30, "text": "avuto un'amicizia tossica"},
-    {"id": 31, "text": "paragonato me stessa ad altre ragazze"},
-    {"id": 32, "text": "ghostato qualcuno"},
-    {"id": 33, "text": "stata ghostata"},
-    {"id": 34, "text": "avuto una storia estiva"},
-    {"id": 35, "text": "baciato qualcuno al primo appuntamento"},
-    {"id": 36, "text": "controllato il partner di qualcuno"},
-    {"id": 37, "text": "avuto una cotta per il fratello della mia migliore amica"},
-    {"id": 38, "text": "mentito sulla mia età"},
-    {"id": 39, "text": "finto di avere piani quando non li avevo"},
-    {"id": 40, "text": "smesso di seguire qualcuno dopo una rottura"},
-    {"id": 41, "text": "avuto una relazione di rimbalzo"},
-    {"id": 42, "text": "inviato un messaggio rischioso"},
-    {"id": 43, "text": "rimpianto un'avventura"},
-    {"id": 44, "text": "avuto una avventura di una notte"},
-    {"id": 45, "text": "uscito con qualcuno che non piaceva alle mie amiche"},
-    {"id": 46, "text": "tenuto segreta una relazione"},
-    {"id": 47, "text": "controllato il telefono del mio partner"},
-    {"id": 48, "text": "finto un orgasmo"},
-    {"id": 49, "text": "avuto un'amica che mi ha rubato la cotta"},
-    {"id": 50, "text": "stata innamorata di due persone contemporaneamente"},
-    {"id": 51, "text": "fatto brunch con mimose"},
-    {"id": 52, "text": "fatto una serata vino con le amiche"},
-    {"id": 53, "text": "fatto un bagno con le bolle"},
-    {"id": 54, "text": "fatto una maschera per il viso"},
-    {"id": 55, "text": "fatto le unghie professionalmente"},
-    {"id": 56, "text": "sistemato le sopracciglia"},
-    {"id": 57, "text": "provato il contouring"},
-    {"id": 58, "text": "posseduto un vestitino nero"},
-    {"id": 59, "text": "indossato intimo modellante"},
-    {"id": 60, "text": "avuto extension o una parrucca"},
-    {"id": 61, "text": "fatto extension alle ciglia"},
-    {"id": 62, "text": "provato ciglia finte"},
-    {"id": 63, "text": "avuto unghie acriliche"},
-    {"id": 64, "text": "fatto una ceretta"},
-    {"id": 65, "text": "avuto una routine di skincare con più di 5 passaggi"},
-    {"id": 66, "text": "provato una sheet mask"},
-    {"id": 67, "text": "usato un rullo di giada"},
-    {"id": 68, "text": "posseduto più di 10 rossetti"},
-    {"id": 69, "text": "provato un colore di labbra audace"},
-    {"id": 70, "text": "impiegato più di un'ora per prepararmi"},
-    {"id": 71, "text": "cambiato il mio outfit più volte prima di uscire"},
-    {"id": 72, "text": "chiesto alle amiche quale outfit sta meglio"},
-    {"id": 73, "text": "comprato un outfit per un evento specifico"},
-    {"id": 74, "text": "indossato qualcosa di scomodo perché stava bene"},
-    {"id": 75, "text": "camminato con i tacchi per ore"},
-    {"id": 76, "text": "portato scarpe basse nella borsa per dopo"},
-    {"id": 77, "text": "avuto un armadio pieno di vestiti ma niente da mettere"},
-    {"id": 78, "text": "comprato articoli duplicati in colori diversi"},
-    {"id": 79, "text": "avuto una borsa preferita"},
-    {"id": 80, "text": "collezionato profumi"},
-    {"id": 81, "text": "avuto una fragranza caratteristica"},
-    {"id": 82, "text": "provato pilates o yoga"},
-    {"id": 83, "text": "fatto un corso di barre"},
-    {"id": 84, "text": "provato hot yoga"},
-    {"id": 85, "text": "fatto un corso di spinning"},
-    {"id": 86, "text": "fatto Zumba"},
-    {"id": 87, "text": "provato aerial yoga"},
-    {"id": 88, "text": "fatto un corso di dance fitness"},
-    {"id": 89, "text": "provato kickboxing"},
-    {"id": 90, "text": "frequentato uno studio fitness boutique"},
-    {"id": 91, "text": "avuto un abbonamento in palestra che ho usato a malapena"},
-    {"id": 92, "text": "provato una pulizia con succhi"},
-    {"id": 93, "text": "fatto un detox"},
-    {"id": 94, "text": "provato il digiuno intermittente"},
-    {"id": 95, "text": "contato le calorie"},
-    {"id": 96, "text": "provato la dieta keto"},
-    {"id": 97, "text": "mangiato senza glutine"},
-    {"id": 98, "text": "provato a essere vegana"},
-    {"id": 99, "text": "fatto foto dei progressi"},
-    {"id": 100, "text": "indossato athleisure come vestiti normali"},
-    {"id": 101, "text": "avuto una cotta per una ragazza"},
-    {"id": 102, "text": "complimentato l'outfit di una sconosciuta"},
-    {"id": 103, "text": "fatto amicizia in bagno"},
-    {"id": 104, "text": "aiutato una sconosciuta con un problema di guardaroba"},
-    {"id": 105, "text": "condiviso assorbenti con qualcuno"},
-    {"id": 106, "text": "sincronizzato i cicli con amiche strette"},
-    {"id": 107, "text": "avuto crampi mestruali che mi hanno rovinato la giornata"},
-    {"id": 108, "text": "chiamato in malattia a causa del ciclo"},
-    {"id": 109, "text": "indossato mutandine mestruali"},
-    {"id": 110, "text": "provato la coppetta mestruale"},
-    {"id": 111, "text": "tracciato il mio ciclo"},
-    {"id": 112, "text": "avuto sbalzi d'umore da sindrome premestruale"},
-    {"id": 113, "text": "desiderato cioccolato durante il ciclo"},
-    {"id": 114, "text": "preso la pillola anticoncezionale"},
-    {"id": 115, "text": "fatto un test di gravidanza solo per essere sicura"},
-    {"id": 116, "text": "stata da un ginecologo"},
-    {"id": 117, "text": "fatto un pap test"},
-    {"id": 118, "text": "avuto una cistite"},
-    {"id": 119, "text": "avuto un'infezione da lievito"},
-    {"id": 120, "text": "depilato prima di un appuntamento"},
-    {"id": 121, "text": "pianificato il mio outfit in base alla biancheria intima"},
-    {"id": 122, "text": "posseduto set di lingerie abbinati"},
-    {"id": 123, "text": "comprato lingerie perché qualcun altro la vedesse"},
-    {"id": 124, "text": "indossato un reggiseno push-up"},
-    {"id": 125, "text": "indossato un reggiseno senza spalline"},
-    {"id": 126, "text": "aggiustato il reggiseno in pubblico"},
-    {"id": 127, "text": "indossato un vestito senza schiena con biancheria speciale"},
-    {"id": 128, "text": "usato fashion tape"},
-    {"id": 129, "text": "indossato copricapezzoli"},
-    {"id": 130, "text": "avuto un problema di guardaroba legato al seno"},
-    {"id": 131, "text": "lamentato dei prezzi dei reggiseni"},
-    {"id": 132, "text": "stata misurata per la taglia corretta di reggiseno"},
-    {"id": 133, "text": "scoperto che indossavo la taglia sbagliata di reggiseno"},
-    {"id": 134, "text": "tolto immediatamente il reggiseno arrivata a casa"},
-    {"id": 135, "text": "dormito con il reggiseno"},
-    {"id": 136, "text": "indossato lo stesso reggiseno per più giorni di fila"},
-    {"id": 137, "text": "lavato a mano articoli delicati"},
-    {"id": 138, "text": "rovinato qualcosa lavandolo male"},
-    {"id": 139, "text": "avuto un capo che si lavava solo a secco"},
-    {"id": 140, "text": "stirato o vaporizzato un outfit appena prima di indossarlo"},
-    {"id": 141, "text": "usato shampoo secco invece di lavare i capelli"},
-    {"id": 142, "text": "passato giorni senza lavare i capelli"},
-    {"id": 143, "text": "provato una maschera per capelli"},
-    {"id": 144, "text": "fatto una piega professionale"},
-    {"id": 145, "text": "provato il trattamento alla cheratina"},
-    {"id": 146, "text": "fatto colpi di sole o balayage"},
-    {"id": 147, "text": "tagliato la frangia da sola"},
-    {"id": 148, "text": "rimpianto un taglio di capelli"},
-    {"id": 149, "text": "pianto per un brutto taglio di capelli"},
-    {"id": 150, "text": "danneggiato i capelli con la decolorazione"},
-    {"id": 151, "text": "usato spray termoprotettore"},
-    {"id": 152, "text": "stirato capelli naturalmente ricci"},
-    {"id": 153, "text": "arricciato capelli naturalmente lisci"},
-    {"id": 154, "text": "dormito con le trecce per le onde"},
-    {"id": 155, "text": "usato un arricciacapelli o una piastra"},
-    {"id": 156, "text": "bruciato con uno strumento di styling"},
-    {"id": 157, "text": "posseduto più strumenti per capelli"},
-    {"id": 158, "text": "avuto un cassetto pieno di elastici per capelli"},
-    {"id": 159, "text": "indossato un elastico al polso"},
-    {"id": 160, "text": "perso innumerevoli forcine"},
-    {"id": 161, "text": "usato forcine per tenere su l'outfit"},
-    {"id": 162, "text": "indossato uno chignon disordinato come stile preferito"},
-    {"id": 163, "text": "perfezionato la coda di cavallo perfetta"},
-    {"id": 164, "text": "provato a fare un'acconciatura complicata da Pinterest"},
-    {"id": 165, "text": "guardato tutorial YouTube per trucco o capelli"},
-    {"id": 166, "text": "seguito influencer di bellezza"},
-    {"id": 167, "text": "provato un look di trucco di tendenza"},
-    {"id": 168, "text": "comprato trucco perché un influencer lo ha consigliato"},
-    {"id": 169, "text": "posseduto una palette di trucco che non uso mai"},
-    {"id": 170, "text": "organizzato la mia collezione di trucco"},
-    {"id": 171, "text": "buttato via trucco scaduto"},
-    {"id": 172, "text": "usato trucco oltre la data di scadenza"},
-    {"id": 173, "text": "condiviso trucco con le amiche"},
-    {"id": 174, "text": "preso in prestito trucco senza chiedere"},
-    {"id": 175, "text": "prestato trucco e non l'ho mai riavuto"},
-    {"id": 176, "text": "truccato in macchina"},
-    {"id": 177, "text": "truccato senza specchio"},
-    {"id": 178, "text": "sistemato il trucco in pubblico"},
-    {"id": 179, "text": "portato tutta la mia borsa del trucco ovunque"},
-    {"id": 180, "text": "fatto un trucco completo senza motivo"},
-    {"id": 181, "text": "praticato look di trucco per divertimento"},
-    {"id": 182, "text": "guardato video di trasformazione con il trucco"},
-    {"id": 183, "text": "provato un look occhi drammatico"},
-    {"id": 184, "text": "fatto l'eyeliner alato perfettamente"},
-    {"id": 185, "text": "lottato con l'eyeliner alato"},
-    {"id": 186, "text": "usato nastro adesivo per aiutare con l'eyeliner"},
-    {"id": 187, "text": "punta nell'occhio con il mascara"},
-    {"id": 188, "text": "starnutito subito dopo aver applicato il mascara"},
-    {"id": 189, "text": "sporcato la palpebra con il mascara"},
-    {"id": 190, "text": "provato ciglia magnetiche"},
-    {"id": 191, "text": "lottato per applicare ciglia finte"},
-    {"id": 192, "text": "avuto una ciglia finta che è caduta"},
-    {"id": 193, "text": "depilato troppo le sopracciglia"},
-    {"id": 194, "text": "disegnato le sopracciglia"},
-    {"id": 195, "text": "fatto il microblading alle sopracciglia"},
-    {"id": 196, "text": "provato la laminazione delle sopracciglia"},
-    {"id": 197, "text": "usato una matita o polvere per sopracciglia"},
-    {"id": 198, "text": "fatto le sopracciglia con il filo"},
-    {"id": 199, "text": "modellato le sopracciglia da sola"},
-    {"id": 200, "text": "seguito la tendenza delle sopracciglia del momento"},
-    {"id": 201, "text": "avuto sopracciglia sottili e me ne sono pentita"},
-    {"id": 202, "text": "provato a far crescere le sopracciglia"},
-    {"id": 203, "text": "usato olio di ricino per la crescita dei capelli"},
-    {"id": 204, "text": "provato vitamine per la crescita dei capelli"},
-    {"id": 205, "text": "preso integratori di collagene"},
-    {"id": 206, "text": "provato biotina per capelli e unghie"},
-    {"id": 207, "text": "preso vitamine quotidiane"},
-    {"id": 208, "text": "bevuto smoothie verdi"},
-    {"id": 209, "text": "provato un frullato proteico"},
-    {"id": 210, "text": "preparato i pasti per la settimana"},
-    {"id": 211, "text": "cucinato un pasto sano da Pinterest"},
-    {"id": 212, "text": "provato una ricetta virale"},
-    {"id": 213, "text": "cotto qualcosa da zero"},
-    {"id": 214, "text": "decorato cupcake o biscotti"},
-    {"id": 215, "text": "organizzato un brunch"},
-    {"id": 216, "text": "fatto un tagliere di salumi"},
-    {"id": 217, "text": "comprato articoli da cucina estetici"},
-    {"id": 218, "text": "organizzato la mia dispensa in modo bello"},
-    {"id": 219, "text": "usato contenitori trasparenti per organizzare"},
-    {"id": 220, "text": "etichettato tutto in casa"},
-    {"id": 221, "text": "ridecorare la mia stanza"},
-    {"id": 222, "text": "comprato cuscini decorativi"},
-    {"id": 223, "text": "appeso luci fatate"},
-    {"id": 224, "text": "creato una parete galleria"},
-    {"id": 225, "text": "comprato piante per il mio spazio"},
-    {"id": 226, "text": "ucciso una pianta"},
-    {"id": 227, "text": "dato un nome alle mie piante"},
-    {"id": 228, "text": "fatto foto estetiche del mio spazio"},
-    {"id": 229, "text": "riorganizzato i mobili più volte"},
-    {"id": 230, "text": "avuto una toeletta o postazione trucco"},
-    {"id": 231, "text": "organizzato i miei gioielli"},
-    {"id": 232, "text": "avuto un portagioie"},
-    {"id": 233, "text": "indossato orecchini vistosi"},
-    {"id": 234, "text": "stratificato collane"},
-    {"id": 235, "text": "impilato anelli"},
-    {"id": 236, "text": "indossato una cavigliera"},
-    {"id": 237, "text": "fatto un piercing alla cartilagine"},
-    {"id": 238, "text": "fatto più piercing alle orecchie"},
-    {"id": 239, "text": "fatto un piercing al naso"},
-    {"id": 240, "text": "fatto un piercing all'ombelico"},
-    {"id": 241, "text": "rimpianto un piercing"},
-    {"id": 242, "text": "avuto un'infezione da un piercing"},
-    {"id": 243, "text": "fatto un tatuaggio"},
-    {"id": 244, "text": "fatto un tatuaggio abbinato con le amiche"},
-    {"id": 245, "text": "fatto un tatuaggio significativo"},
-    {"id": 246, "text": "fatto un tatuaggio d'impulso"},
-    {"id": 247, "text": "rimpianto un tatuaggio"},
-    {"id": 248, "text": "pianificato un tatuaggio per anni"},
-    {"id": 249, "text": "ricercato tatuatori in modo approfondito"},
-    {"id": 250, "text": "disegnato il mio stesso tatuaggio"},
-    {"id": 251, "text": "fatto un tatuaggio piccolo e delicato"},
-    {"id": 252, "text": "tatuato una citazione"},
-    {"id": 253, "text": "fatto un tatuaggio floreale"},
-    {"id": 254, "text": "fatto un tatuaggio di farfalla"},
-    {"id": 255, "text": "fatto un tatuaggio di luna o stella"},
-    {"id": 256, "text": "fatto un tatuaggio minimalista"},
-    {"id": 257, "text": "mostrato il mio tatuaggio sui social media"},
-    {"id": 258, "text": "nascosto un tatuaggio ai miei genitori"},
-    {"id": 259, "text": "fatto un tatuaggio in un punto nascosto"},
-    {"id": 260, "text": "stata chiesta del significato del mio tatuaggio"}
+    {
+      "id": 1,
+      "text": "preso i vestiti di un'amica senza chiedere"
+    },
+    {
+      "id": 2,
+      "text": "pianto per un ragazzo"
+    },
+    {
+      "id": 3,
+      "text": "spiato l'ex del tuo crush sui social"
+    },
+    {
+      "id": 4,
+      "text": "condiviso il trucco con un'amica"
+    },
+    {
+      "id": 5,
+      "text": "fatto una serata tra ragazze andata fuori controllo"
+    },
+    {
+      "id": 6,
+      "text": "indossato lo shapewear a un appuntamento"
+    },
+    {
+      "id": 7,
+      "text": "finto di essere al telefono per evitare qualcuno"
+    },
+    {
+      "id": 8,
+      "text": "comprato qualcosa che non potevi permetterti"
+    },
+    {
+      "id": 9,
+      "text": "mentito sul tuo peso"
+    },
+    {
+      "id": 10,
+      "text": "avuto una bacheca segreta di matrimoni su Pinterest"
+    },
+    {
+      "id": 11,
+      "text": "giudicato l'outfit di un'altra ragazza"
+    },
+    {
+      "id": 12,
+      "text": "finto una sicurezza che non avevi"
+    },
+    {
+      "id": 13,
+      "text": "cambiato completamente look per qualcuno"
+    },
+    {
+      "id": 14,
+      "text": "fatto screenshot dei messaggi per mostrarli alle amiche"
+    },
+    {
+      "id": 15,
+      "text": "finto di gradire un regalo che odiavi"
+    },
+    {
+      "id": 16,
+      "text": "fatto una conversazione intera in bagno"
+    },
+    {
+      "id": 17,
+      "text": "analizzato un messaggio per ore"
+    },
+    {
+      "id": 18,
+      "text": "indossato scarpe scomode per stare in stile"
+    },
+    {
+      "id": 19,
+      "text": "avuto una rottura con un'amica"
+    },
+    {
+      "id": 20,
+      "text": "sparito dalla chat di gruppo"
+    },
+    {
+      "id": 21,
+      "text": "usato lo shampoo secco invece di lavarti i capelli"
+    },
+    {
+      "id": 22,
+      "text": "finto di non avere fame"
+    },
+    {
+      "id": 23,
+      "text": "avuto un armadio pieno di vestiti ma niente da mettere"
+    },
+    {
+      "id": 24,
+      "text": "comprato trucchi che non hai mai usato"
+    },
+    {
+      "id": 25,
+      "text": "mentito sulla tua età"
+    },
+    {
+      "id": 26,
+      "text": "avuto una lite drammatica con un'amica"
+    },
+    {
+      "id": 27,
+      "text": "finto di capire qualcosa che non capivi"
+    },
+    {
+      "id": 28,
+      "text": "indossato il trucco in palestra"
+    },
+    {
+      "id": 29,
+      "text": "avuto un crollo totale per un outfit"
+    },
+    {
+      "id": 30,
+      "text": "cancellato una foto perché eri venuta male"
+    },
+    {
+      "id": 31,
+      "text": "fatto parte di un triangolo amoroso"
+    },
+    {
+      "id": 32,
+      "text": "finto di essere occupata per evitare piani"
+    },
+    {
+      "id": 33,
+      "text": "avuto un fallimento Pinterest"
+    },
+    {
+      "id": 34,
+      "text": "comprato un outfit per un evento specifico"
+    },
+    {
+      "id": 35,
+      "text": "mentito di essere naturale"
+    },
+    {
+      "id": 36,
+      "text": "avuto troppi cuscini decorativi sul letto"
+    },
+    {
+      "id": 37,
+      "text": "finto di non importartene quando invece ti importava"
+    },
+    {
+      "id": 38,
+      "text": "guardato una rom-com e pianto"
+    },
+    {
+      "id": 39,
+      "text": "avuto un diario con il lucchetto"
+    },
+    {
+      "id": 40,
+      "text": "passato ore ad apronti"
+    },
+    {
+      "id": 41,
+      "text": "provato gelosia per un'altra ragazza"
+    },
+    {
+      "id": 42,
+      "text": "finto di essere andata avanti quando non era così"
+    },
+    {
+      "id": 43,
+      "text": "avuto una routine skincare con 10+ step"
+    },
+    {
+      "id": 44,
+      "text": "comprato qualcosa perché era in saldo"
+    },
+    {
+      "id": 45,
+      "text": "mentito sulla tua taglia"
+    },
+    {
+      "id": 46,
+      "text": "avuto una vision board"
+    },
+    {
+      "id": 47,
+      "text": "finto di non aver visto le storie di qualcuno"
+    },
+    {
+      "id": 48,
+      "text": "pianto durante un tutorial di trucco"
+    },
+    {
+      "id": 49,
+      "text": "avuto una collezione di scarpe di cui sei fiera"
+    },
+    {
+      "id": 50,
+      "text": "creato una playlist per i tuoi sentimenti"
+    },
+    {
+      "id": 51,
+      "text": "fatto parte di una chat di gruppo diventata tossica"
+    },
+    {
+      "id": 52,
+      "text": "finto di esserti svegliata così"
+    },
+    {
+      "id": 53,
+      "text": "guardato The Notebook e singhiozzato"
+    },
+    {
+      "id": 54,
+      "text": "avuto una collezione di borse"
+    },
+    {
+      "id": 55,
+      "text": "analizzato i like di qualcuno su Instagram"
+    },
+    {
+      "id": 56,
+      "text": "essere stata ignorata da un'amica"
+    },
+    {
+      "id": 57,
+      "text": "finto di non aver passato ore a truccarti"
+    },
+    {
+      "id": 58,
+      "text": "avuto un cimitero di beauty blender"
+    },
+    {
+      "id": 59,
+      "text": "comprato candele che non hai mai acceso"
+    },
+    {
+      "id": 60,
+      "text": "mentito sulla tua altezza"
+    },
+    {
+      "id": 61,
+      "text": "avuto troppe tazze"
+    },
+    {
+      "id": 62,
+      "text": "finto di non rimuginare su tutto"
+    },
+    {
+      "id": 63,
+      "text": "pianto per il mascara colato"
+    },
+    {
+      "id": 64,
+      "text": "avuto una scorta segreta di snack"
+    },
+    {
+      "id": 65,
+      "text": "inventato scuse per comprare vestiti nuovi"
+    },
+    {
+      "id": 66,
+      "text": "fatto parte di un'amicizia unilaterale"
+    },
+    {
+      "id": 67,
+      "text": "finto di non aver pianificato l'outfit giorni prima"
+    },
+    {
+      "id": 68,
+      "text": "guardato un film triste solo per piangere"
+    },
+    {
+      "id": 69,
+      "text": "avuto più skincare di quanta riuscissi a usare"
+    },
+    {
+      "id": 70,
+      "text": "analizzato ogni parola di un messaggio"
+    },
+    {
+      "id": 71,
+      "text": "sparlato di un'altra ragazza"
+    },
+    {
+      "id": 72,
+      "text": "finto di non importarti dei like"
+    },
+    {
+      "id": 73,
+      "text": "avuto una collezione di rossetti"
+    },
+    {
+      "id": 74,
+      "text": "comprato un vestito per Instagram"
+    },
+    {
+      "id": 75,
+      "text": "mentito che i tuoi capelli sono naturali"
+    },
+    {
+      "id": 76,
+      "text": "avuto una collezione di smalti che non usi"
+    },
+    {
+      "id": 77,
+      "text": "finto di non capire cosa intendesse"
+    },
+    {
+      "id": 78,
+      "text": "pianto in un camerino"
+    },
+    {
+      "id": 79,
+      "text": "avuto una cotta segreta per il fidanzato di un'amica"
+    },
+    {
+      "id": 80,
+      "text": "fatto un'uscita drammatica"
+    },
+    {
+      "id": 81,
+      "text": "essere dipendente dallo shopping online"
+    },
+    {
+      "id": 82,
+      "text": "finto di non aver visto il suo messaggio"
+    },
+    {
+      "id": 83,
+      "text": "avuto una collezione di maschere viso"
+    },
+    {
+      "id": 84,
+      "text": "comprato qualcosa perché ce l'aveva una influencer"
+    },
+    {
+      "id": 85,
+      "text": "mentito sul tuo stato sentimentale"
+    },
+    {
+      "id": 86,
+      "text": "avuto troppi prodotti per capelli"
+    },
+    {
+      "id": 87,
+      "text": "finto di non aver controllato se lui aveva visto le tue storie"
+    },
+    {
+      "id": 88,
+      "text": "guardato un video musicale di Taylor Swift e sentirlo"
+    },
+    {
+      "id": 89,
+      "text": "avuto una collezione di gioielli che dimentichi"
+    },
+    {
+      "id": 90,
+      "text": "analizzato ogni mossa di un ragazzo"
+    },
+    {
+      "id": 91,
+      "text": "fatto parte di drama tra ragazze"
+    },
+    {
+      "id": 92,
+      "text": "finto di non aver speso soldi che non avevi"
+    },
+    {
+      "id": 93,
+      "text": "avuto una collezione di sciarpe"
+    },
+    {
+      "id": 94,
+      "text": "comprato pigiami uguali con le amiche"
+    },
+    {
+      "id": 95,
+      "text": "mentito di stare bene"
+    },
+    {
+      "id": 96,
+      "text": "avuto una dipendenza dalle candele profumate"
+    },
+    {
+      "id": 97,
+      "text": "finto di non aver fatto screenshot alla sua storia"
+    },
+    {
+      "id": 98,
+      "text": "pianto mentre ti truccavi"
+    },
+    {
+      "id": 99,
+      "text": "avuto una collezione di occhiali da sole"
+    },
+    {
+      "id": 100,
+      "text": "creato un look della vendetta"
+    },
+    {
+      "id": 101,
+      "text": "fatto parte di un'amicizia finita male"
+    },
+    {
+      "id": 102,
+      "text": "finto di non aver visto il subtweet"
+    },
+    {
+      "id": 103,
+      "text": "avuto una scorta di bombe da bagno"
+    },
+    {
+      "id": 104,
+      "text": "comprato qualcosa per farti sentire meglio"
+    },
+    {
+      "id": 105,
+      "text": "mentito sulla tua routine mattutina"
+    },
+    {
+      "id": 106,
+      "text": "avuto troppe coperte"
+    },
+    {
+      "id": 107,
+      "text": "finto di non analizzare il suo comportamento"
+    },
+    {
+      "id": 108,
+      "text": "guardato Gilmore Girls per conforto"
+    },
+    {
+      "id": 109,
+      "text": "avuto una collezione di cappelli che indossi appena"
+    },
+    {
+      "id": 110,
+      "text": "analizzato la playlist di un ragazzo"
+    },
+    {
+      "id": 111,
+      "text": "provato gelosia per il successo di un'amica"
+    },
+    {
+      "id": 112,
+      "text": "finto di non importarti con chi stava"
+    },
+    {
+      "id": 113,
+      "text": "avuto una collezione di profumi"
+    },
+    {
+      "id": 114,
+      "text": "comprato qualcosa perché era carino e non pratico"
+    },
+    {
+      "id": 115,
+      "text": "mentito sulla tua routine di bellezza"
+    },
+    {
+      "id": 116,
+      "text": "avuto troppe shopper bags"
+    },
+    {
+      "id": 117,
+      "text": "finto di non pensare a lui"
+    },
+    {
+      "id": 118,
+      "text": "pianto durante uno spot pubblicitario"
+    },
+    {
+      "id": 119,
+      "text": "avuto una collezione di cinture che non usi mai"
+    },
+    {
+      "id": 120,
+      "text": "creato una playlist della rottura"
+    },
+    {
+      "id": 121,
+      "text": "fatto parte di un'amicizia tossica"
+    },
+    {
+      "id": 122,
+      "text": "finto di non aver controllato la sua posizione"
+    },
+    {
+      "id": 123,
+      "text": "avuto una collezione di body spray"
+    },
+    {
+      "id": 124,
+      "text": "comprato un prodotto skincare costoso sperando che cambiasse la tua vita"
+    },
+    {
+      "id": 125,
+      "text": "mentito sul numero di scarpe"
+    },
+    {
+      "id": 126,
+      "text": "avuto troppi elastici per capelli ovunque"
+    },
+    {
+      "id": 127,
+      "text": "finto di non importarti dell'appuntamento"
+    },
+    {
+      "id": 128,
+      "text": "guardato Sex and the City religiosamente"
+    },
+    {
+      "id": 129,
+      "text": "avuto una collezione di orologi che non indossi"
+    },
+    {
+      "id": 130,
+      "text": "analizzato cosa significasse la sua scelta di emoji"
+    },
+    {
+      "id": 131,
+      "text": "essere stata mollata da un'amica per un ragazzo"
+    },
+    {
+      "id": 132,
+      "text": "finto di non aver pianificato la conversazione"
+    },
+    {
+      "id": 133,
+      "text": "avuto un pennello da trucco che non hai mai lavato"
+    },
+    {
+      "id": 134,
+      "text": "comprato qualcosa perché era di tendenza"
+    },
+    {
+      "id": 135,
+      "text": "mentito sulla tua routine di allenamento"
+    },
+    {
+      "id": 136,
+      "text": "avuto troppe forcine perse da qualche parte"
+    },
+    {
+      "id": 137,
+      "text": "finto di non guardare le vecchie foto"
+    },
+    {
+      "id": 138,
+      "text": "pianto con Adele"
+    },
+    {
+      "id": 139,
+      "text": "avuto una collezione di anelli"
+    },
+    {
+      "id": 140,
+      "text": "fatto un piano corpo estate fallito"
+    },
+    {
+      "id": 141,
+      "text": "essere stata esclusa da un gruppo"
+    },
+    {
+      "id": 142,
+      "text": "finto di non aver spiato le sue foto taggate"
+    },
+    {
+      "id": 143,
+      "text": "avuto un cimitero di gloss"
+    },
+    {
+      "id": 144,
+      "text": "comprato abiti da palestra in cui non hai mai fatto sport"
+    },
+    {
+      "id": 145,
+      "text": "mentito sulla tua dieta"
+    },
+    {
+      "id": 146,
+      "text": "avuto troppe borracce"
+    },
+    {
+      "id": 147,
+      "text": "finto di non aver notato che era online"
+    },
+    {
+      "id": 148,
+      "text": "guardato The Bachelor e appassionartici"
+    },
+    {
+      "id": 149,
+      "text": "avuto una collezione di orecchini con paia mancanti"
+    },
+    {
+      "id": 150,
+      "text": "analizzato i suoi tempi di risposta"
+    },
+    {
+      "id": 151,
+      "text": "litigato per un ragazzo"
+    },
+    {
+      "id": 152,
+      "text": "finto di non aver provato cosa dire"
+    },
+    {
+      "id": 153,
+      "text": "avuto una collezione di illuminanti"
+    },
+    {
+      "id": 154,
+      "text": "comprato scarpe per un solo outfit"
+    },
+    {
+      "id": 155,
+      "text": "mentito sui tuoi tratti naturali"
+    },
+    {
+      "id": 156,
+      "text": "avuto troppe borse riutilizzabili"
+    },
+    {
+      "id": 157,
+      "text": "finto di non sapere che era lui"
+    },
+    {
+      "id": 158,
+      "text": "pianto durante un film Disney"
+    },
+    {
+      "id": 159,
+      "text": "avuto una collezione di braccialetti"
+    },
+    {
+      "id": 160,
+      "text": "fatto una lista di pro e contro su un ragazzo"
+    },
+    {
+      "id": 161,
+      "text": "essere stata sostituita da una nuova amica"
+    },
+    {
+      "id": 162,
+      "text": "finto di non aver scritto di lui"
+    },
+    {
+      "id": 163,
+      "text": "avuto una palette di ombretti toccata una volta"
+    },
+    {
+      "id": 164,
+      "text": "comprato qualcosa visto su TikTok"
+    },
+    {
+      "id": 165,
+      "text": "mentito sulle tue abitudini di spesa"
+    },
+    {
+      "id": 166,
+      "text": "avuto troppi cover del telefono"
+    },
+    {
+      "id": 167,
+      "text": "finto di non controllare i suoi like"
+    },
+    {
+      "id": 168,
+      "text": "guardato Friends per la centesima volta"
+    },
+    {
+      "id": 169,
+      "text": "avuto un cassetto pieno di accessori per capelli"
+    },
+    {
+      "id": 170,
+      "text": "analizzato le sue didascalie su Instagram"
+    },
+    {
+      "id": 171,
+      "text": "essere stata parlata alle spalle"
+    },
+    {
+      "id": 172,
+      "text": "finto di non confrontarti con gli altri"
+    },
+    {
+      "id": 173,
+      "text": "avuto una collezione di blush"
+    },
+    {
+      "id": 174,
+      "text": "comprato qualcosa perché ce l'avevano tutti"
+    },
+    {
+      "id": 175,
+      "text": "mentito che la pelle è naturale"
+    },
+    {
+      "id": 176,
+      "text": "avuto troppi fermagli per capelli"
+    },
+    {
+      "id": 177,
+      "text": "finto di non sperare di vederlo"
+    },
+    {
+      "id": 178,
+      "text": "pianto con le canzoni delle rotture"
+    },
+    {
+      "id": 179,
+      "text": "avuto una collezione di collane"
+    },
+    {
+      "id": 180,
+      "text": "fatto un piano glow up della vendetta"
+    },
+    {
+      "id": 181,
+      "text": "essere stata esclusa dai piani"
+    },
+    {
+      "id": 182,
+      "text": "finto di non aver notato l'unfollow"
+    },
+    {
+      "id": 183,
+      "text": "avuto un correttore per ogni problema"
+    },
+    {
+      "id": 184,
+      "text": "comprato qualcosa per l'estetica"
+    },
+    {
+      "id": 185,
+      "text": "mentito che il selfie era senza filtro"
+    },
+    {
+      "id": 186,
+      "text": "avuto troppi scrunchie"
+    },
+    {
+      "id": 187,
+      "text": "finto di non aspettare il suo messaggio"
+    },
+    {
+      "id": 188,
+      "text": "guardato Gossip Girl riconoscendosi troppo"
+    },
+    {
+      "id": 189,
+      "text": "avuto una fase cavigliera"
+    },
+    {
+      "id": 190,
+      "text": "analizzato la sua attività su Spotify"
+    },
+    {
+      "id": 191,
+      "text": "fatto parte di una situazione di amicizia complicata"
+    },
+    {
+      "id": 192,
+      "text": "finto di non aver modificato le tue foto"
+    },
+    {
+      "id": 193,
+      "text": "avuto una collezione di mascara"
+    },
+    {
+      "id": 194,
+      "text": "comprato qualcosa che non hai mai indossato"
+    },
+    {
+      "id": 195,
+      "text": "mentito che le ciglia sono vere"
+    },
+    {
+      "id": 196,
+      "text": "avuto troppi cerchietti"
+    },
+    {
+      "id": 197,
+      "text": "finto di non voler essere la prima a scrivere"
+    },
+    {
+      "id": 198,
+      "text": "pianto durante This Is Us"
+    },
+    {
+      "id": 199,
+      "text": "avuto una piastra che usi raramente"
+    },
+    {
+      "id": 200,
+      "text": "fatto una lista di requisiti per un ragazzo"
+    },
+    {
+      "id": 201,
+      "text": "fatto parte di un'amicizia con problemi non detti"
+    },
+    {
+      "id": 202,
+      "text": "finto di non importarti di essere single"
+    },
+    {
+      "id": 203,
+      "text": "avuto una collezione di bronzer"
+    },
+    {
+      "id": 204,
+      "text": "comprato qualcosa perché era bello"
+    },
+    {
+      "id": 205,
+      "text": "mentito che le labbra sono naturali"
+    },
+    {
+      "id": 206,
+      "text": "avuto troppi beauty case"
+    },
+    {
+      "id": 207,
+      "text": "finto di non sentirgli la mancanza"
+    },
+    {
+      "id": 208,
+      "text": "guardato film romantici quando eri triste"
+    },
+    {
+      "id": 209,
+      "text": "avuto un arricciacapelli dimenticato"
+    },
+    {
+      "id": 210,
+      "text": "analizzato l'ordine delle visualizzazioni della sua storia"
+    },
+    {
+      "id": 211,
+      "text": "essere stata subtwittata da un'amica"
+    },
+    {
+      "id": 212,
+      "text": "finto di non volere impegno"
+    },
+    {
+      "id": 213,
+      "text": "avuto una collezione di spray fissanti"
+    },
+    {
+      "id": 214,
+      "text": "comprato lingerie che nessuno ha visto"
+    },
+    {
+      "id": 215,
+      "text": "mentito che le sopracciglia sono naturali"
+    },
+    {
+      "id": 216,
+      "text": "avuto troppi specchi"
+    },
+    {
+      "id": 217,
+      "text": "finto di non analizzare tutto"
+    },
+    {
+      "id": 218,
+      "text": "pianto durante un film di Hallmark"
+    },
+    {
+      "id": 219,
+      "text": "avuto un asciugacapelli che usi appena"
+    },
+    {
+      "id": 220,
+      "text": "fatto una vision board per la vita"
+    },
+    {
+      "id": 221,
+      "text": "fatto parte di un'amicizia a senso unico"
+    },
+    {
+      "id": 222,
+      "text": "finto di non volere etichette"
+    },
+    {
+      "id": 223,
+      "text": "avuto una collezione di primer"
+    },
+    {
+      "id": 224,
+      "text": "comprato qualcosa sperando che ti cambiasse"
+    },
+    {
+      "id": 225,
+      "text": "mentito che l'abbronzatura è naturale"
+    },
+    {
+      "id": 226,
+      "text": "avuto troppi burrocacao"
+    },
+    {
+      "id": 227,
+      "text": "finto di non aver tenuto le sue cose"
+    },
+    {
+      "id": 228,
+      "text": "guardato commedie romantiche da sola"
+    },
+    {
+      "id": 229,
+      "text": "avuto un diffusore per capelli mai usato"
+    },
+    {
+      "id": 230,
+      "text": "analizzato cosa significasse la sua mancanza di risposta"
+    },
+    {
+      "id": 231,
+      "text": "essere stata paragonata a un'altra ragazza"
+    },
+    {
+      "id": 232,
+      "text": "finto di non voler esclusività"
+    },
+    {
+      "id": 233,
+      "text": "avuto un fondotinta che non va bene"
+    },
+    {
+      "id": 234,
+      "text": "comprato qualcosa che non potevi restituire"
+    },
+    {
+      "id": 235,
+      "text": "mentito che le lentiggini sono vere"
+    },
+    {
+      "id": 236,
+      "text": "avuto troppi elastici al polso"
+    },
+    {
+      "id": 237,
+      "text": "finto di non sperare in qualcosa di più"
+    },
+    {
+      "id": 238,
+      "text": "pianto durante un video di proposta di matrimonio"
+    },
+    {
+      "id": 239,
+      "text": "avuto una piastra che raccoglie polvere"
+    },
+    {
+      "id": 240,
+      "text": "fatto una bacheca matrimonio su Pinterest da single"
+    },
+    {
+      "id": 241,
+      "text": "fatto parte di drammi nel gruppo di amiche"
+    },
+    {
+      "id": 242,
+      "text": "finto di non volere una relazione"
+    },
+    {
+      "id": 243,
+      "text": "avuto un cimitero di eyeliner"
+    },
+    {
+      "id": 244,
+      "text": "comprato outfit coordinati con la tua migliore amica"
+    },
+    {
+      "id": 245,
+      "text": "mentito che il glow è naturale"
+    },
+    {
+      "id": 246,
+      "text": "avuto troppi campioncini mai usati"
+    },
+    {
+      "id": 247,
+      "text": "finto di non aver fatto screenshot di tutto"
+    },
+    {
+      "id": 248,
+      "text": "guardato The Proposal e sospirare"
+    },
+    {
+      "id": 249,
+      "text": "avuto un tavolo da trucco dei sogni"
+    },
+    {
+      "id": 250,
+      "text": "analizzato il suo commento sul post di un'altra ragazza"
+    },
+    {
+      "id": 251,
+      "text": "provato gelosia per la relazione di un'amica"
+    },
+    {
+      "id": 252,
+      "text": "finto di non voler definire le cose"
+    },
+    {
+      "id": 253,
+      "text": "avuto una collezione di matite labbra"
+    },
+    {
+      "id": 254,
+      "text": "comprato qualcosa perché ce l'aveva la tua amica"
+    },
+    {
+      "id": 255,
+      "text": "mentito che il contouring è naturale"
+    },
+    {
+      "id": 256,
+      "text": "avuto troppi sample di bellezza"
+    },
+    {
+      "id": 257,
+      "text": "finto di non pensare al futuro"
+    },
+    {
+      "id": 258,
+      "text": "pianto durante una scena di matrimonio"
+    },
+    {
+      "id": 259,
+      "text": "avuto un organizer di trucchi pieno di prodotti vecchi"
+    },
+    {
+      "id": 260,
+      "text": "fatto un piano glow up post-rottura"
+    },
+    {
+      "id": 261,
+      "text": "essere stata mollata per un'altra amica"
+    },
+    {
+      "id": 262,
+      "text": "finto di stare bene con una situazione informale"
+    },
+    {
+      "id": 263,
+      "text": "avuto un prodotto per sopracciglia per ogni look"
+    },
+    {
+      "id": 264,
+      "text": "comprato qualcosa perché era limited edition"
+    },
+    {
+      "id": 265,
+      "text": "mentito che il corpo è naturale"
+    },
+    {
+      "id": 266,
+      "text": "avuto troppi salviettine struccanti"
+    },
+    {
+      "id": 267,
+      "text": "finto di non volerlo indietro"
+    },
+    {
+      "id": 268,
+      "text": "guardato Orgoglio e Pregiudizio ripetutamente"
+    },
+    {
+      "id": 269,
+      "text": "avuto un cassetto pieno di campioni gratuiti"
+    },
+    {
+      "id": 270,
+      "text": "analizzato la sua nuova lista di following"
+    },
+    {
+      "id": 271,
+      "text": "fatto parte di un'amicizia competitiva"
+    },
+    {
+      "id": 272,
+      "text": "finto di non importarti della sua opinione"
+    },
+    {
+      "id": 273,
+      "text": "avuto una cipria fissante per tutto"
+    },
+    {
+      "id": 274,
+      "text": "comprato qualcosa visto su Pinterest"
+    },
+    {
+      "id": 275,
+      "text": "mentito che il colore dei capelli è naturale"
+    },
+    {
+      "id": 276,
+      "text": "avuto troppe maschere viso"
+    },
+    {
+      "id": 277,
+      "text": "finto di aver voltato pagina quando non era così"
+    },
+    {
+      "id": 278,
+      "text": "pianto durante un film di Nicholas Sparks"
+    },
+    {
+      "id": 279,
+      "text": "avuto un mini frigo per la skincare che usi appena"
+    },
+    {
+      "id": 280,
+      "text": "fatto una timeline di quando sareste stati insieme"
+    },
+    {
+      "id": 281,
+      "text": "essere stata ignorata da una cara amica"
+    },
+    {
+      "id": 282,
+      "text": "finto di non voler ufficializzare"
+    },
+    {
+      "id": 283,
+      "text": "avuto uno strumento di bellezza usato una volta"
+    },
+    {
+      "id": 284,
+      "text": "comprato qualcosa perché era degno di Instagram"
+    },
+    {
+      "id": 285,
+      "text": "mentito che gli zigomi sono naturali"
+    },
+    {
+      "id": 286,
+      "text": "avuto troppi cotton fioc"
+    },
+    {
+      "id": 287,
+      "text": "finto di non aver spiato la sua nuova ragazza"
+    },
+    {
+      "id": 288,
+      "text": "guardato To All The Boys e sentirti capita"
+    },
+    {
+      "id": 289,
+      "text": "avuto un mini frigo per la skincare"
+    },
+    {
+      "id": 290,
+      "text": "analizzato cosa significasse la sua storia"
+    },
+    {
+      "id": 291,
+      "text": "essere stata sostituita in un'amicizia"
+    },
+    {
+      "id": 292,
+      "text": "finto di stare bene con il solo essere amiche"
+    },
+    {
+      "id": 293,
+      "text": "avuto un jade roller dimenticato"
+    },
+    {
+      "id": 294,
+      "text": "comprato qualcosa per il packaging"
+    },
+    {
+      "id": 295,
+      "text": "mentito che la magrezza è naturale"
+    },
+    {
+      "id": 296,
+      "text": "avuto troppe sheet mask"
+    },
+    {
+      "id": 297,
+      "text": "finto di non importarti con chi uscisse"
+    },
+    {
+      "id": 298,
+      "text": "pianto durante Colpa delle stelle"
+    },
+    {
+      "id": 299,
+      "text": "avuto un gua sha usato due volte"
+    },
+    {
+      "id": 300,
+      "text": "fatto un piano per incontrarla per caso"
+    }
   ]
 }

@@ -50,3 +50,4 @@ app.*.map.json
 /android/app/release
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
+functions/node_modules/

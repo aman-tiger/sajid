@@ -22,18 +22,18 @@ class LanguagePage extends StatelessWidget {
   const LanguagePage({super.key});
 
   static const List<LanguageModel> _languages = [
-    LanguageModel(code: 'en', flag: 'US'),
-    LanguageModel(code: 'es', flag: 'ES'),
-    LanguageModel(code: 'de', flag: 'DE'),
-    LanguageModel(code: 'fr', flag: 'FR'),
-    LanguageModel(code: 'it', flag: 'IT'),
-    LanguageModel(code: 'ja', flag: 'JP'),
-    LanguageModel(code: 'ko', flag: 'KR'),
-    LanguageModel(code: 'nb', flag: 'NO'),
-    LanguageModel(code: 'nl', flag: 'NL'),
-    LanguageModel(code: 'pt_BR', flag: 'BR'),
-    LanguageModel(code: 'ru', flag: 'RU'),
-    LanguageModel(code: 'sv', flag: 'SE'),
+    LanguageModel(code: 'en', flag: '🇺🇸'),
+    LanguageModel(code: 'es', flag: '🇪🇸'),
+    LanguageModel(code: 'de', flag: '🇩🇪'),
+    LanguageModel(code: 'fr', flag: '🇫🇷'),
+    LanguageModel(code: 'it', flag: '🇮🇹'),
+    LanguageModel(code: 'ja', flag: '🇯🇵'),
+    LanguageModel(code: 'ko', flag: '🇰🇷'),
+    LanguageModel(code: 'nb', flag: '🇳🇴'),
+    LanguageModel(code: 'nl', flag: '🇳🇱'),
+    LanguageModel(code: 'pt_BR', flag: '🇧🇷'),
+    LanguageModel(code: 'ru', flag: '🇷🇺'),
+    LanguageModel(code: 'sv', flag: '🇸🇪'),
   ];
 
   @override
@@ -231,7 +231,7 @@ class _LanguageItem extends StatelessWidget {
                     ),
                     SizedBox(height: 4.h),
                     Text(
-                      language.code.toUpperCase(),
+                      language.code.replaceAll('_', '-').toUpperCase(),
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: AppColors.textGreyLight,

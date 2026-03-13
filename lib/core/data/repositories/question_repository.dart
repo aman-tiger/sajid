@@ -52,18 +52,18 @@ class QuestionRepository {
       'sv': 'assets/questions/girls only/girls_only_sv.json',
     },
     'couples': {
-      'en': 'assets/questions/Сouple/couples_en.json',
-      'es': 'assets/questions/Сouple/couples_es.json',
-      'de': 'assets/questions/Сouple/couples_de.json',
-      'fr': 'assets/questions/Сouple/couples_fr.json',
-      'ko': 'assets/questions/Сouple/couples_ko.json',
-      'it': 'assets/questions/Сouple/couples_it.json',
-      'ja': 'assets/questions/Сouple/couples_ja.json',
-      'nb': 'assets/questions/Сouple/couples_nb.json',
-      'nl': 'assets/questions/Сouple/couples_nl.json',
-      'pt_BR': 'assets/questions/Сouple/couples_pt_BR.json',
-      'ru': 'assets/questions/Сouple/couples_ru.json',
-      'sv': 'assets/questions/Сouple/couples_sv.json',
+      'en': 'assets/questions/Couple/couples_en.json',
+      'es': 'assets/questions/Couple/couples_es.json',
+      'de': 'assets/questions/Couple/couples_de.json',
+      'fr': 'assets/questions/Couple/couples_fr.json',
+      'ko': 'assets/questions/Couple/couples_ko.json',
+      'it': 'assets/questions/Couple/couples_it.json',
+      'ja': 'assets/questions/Couple/couples_ja.json',
+      'nb': 'assets/questions/Couple/couples_nb.json',
+      'nl': 'assets/questions/Couple/couples_nl.json',
+      'pt_BR': 'assets/questions/Couple/couples_pt_BR.json',
+      'ru': 'assets/questions/Couple/couples_ru.json',
+      'sv': 'assets/questions/Couple/couples_sv.json',
     },
     'hot': {
       'en': 'assets/questions/hot-spicy/hot_spicy_en.json',
@@ -148,6 +148,16 @@ class QuestionRepository {
           questionsData = jsonData['classic_mode'] as List;
         } else if (jsonData.containsKey('party_vibe_pack')) {
           questionsData = jsonData['party_vibe_pack'] as List;
+        } else if (jsonData.containsKey('girls_only_pack')) {
+          questionsData = jsonData['girls_only_pack'] as List;
+        } else if (jsonData.containsKey('bros_only_pack')) {
+          questionsData = jsonData['bros_only_pack'] as List;
+        } else if (jsonData.containsKey('hot_n_spicy_pack')) {
+          questionsData = jsonData['hot_n_spicy_pack'] as List;
+        } else if (jsonData.containsKey('couples_deep_pack')) {
+          questionsData = jsonData['couples_deep_pack'] as List;
+        } else if (jsonData.containsKey('couples_pack')) {
+          questionsData = jsonData['couples_pack'] as List;
         } else {
           // Get the first array value from the map
           final firstValue = jsonData.values.firstWhere(
@@ -193,3 +203,4 @@ class QuestionRepository {
     _questionsCache.clear();
   }
 }
+

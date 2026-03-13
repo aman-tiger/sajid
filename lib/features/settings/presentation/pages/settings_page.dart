@@ -162,7 +162,7 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
         ),
         SettingsItem(
           icon: Icons.support_agent,
-          title: 'Contact Support',
+          title: _localizedContactSupportTitle(state.language),
           subtitle: 'support@flyprox.com',
           iconColor: AppColors.primary,
           onTap: _contactSupport,
@@ -208,7 +208,9 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
           icon: Icons.privacy_tip,
           title: t.settings_privacy,
           iconColor: AppColors.textGrey,
-          onTap: () => _openExternalLink(AppLinks.privacyPolicyUrl),
+          onTap: () => _openExternalLink(
+            AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context)),
+          ),
         ),
 
         SizedBox(height: 32.h),
@@ -395,8 +397,28 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
   }
 
   Future<void> _openExternalLink(String url) async {
-    final uri = Uri.parse(url);
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
+    final t = AppLocalizations.of(context)!;
+    final uri = Uri.tryParse(url);
+    if (uri == null) {
+      _showLinkError(t);
+      return;
+    }
+
+    final openedExternally = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    );
+    if (openedExternally) {
+      return;
+    }
+
+    final openedInApp = await launchUrl(
+      uri,
+      mode: LaunchMode.inAppBrowserView,
+    );
+    if (!openedInApp && mounted) {
+      _showLinkError(t);
+    }
   }
 
   Future<void> _contactSupport() async {
@@ -405,6 +427,44 @@ class _SettingsPageContentState extends State<_SettingsPageContent> {
     );
     final uri = Uri.parse('mailto:support@flyprox.com?subject=$subject');
     await launchUrl(uri, mode: LaunchMode.externalApplication);
+  }
+
+  String _localizedContactSupportTitle(String languageCode) {
+    switch (languageCode) {
+      case 'de':
+        return 'Support kontaktieren';
+      case 'es':
+        return 'Contactar soporte';
+      case 'fr':
+        return 'Contacter le support';
+      case 'it':
+        return 'Contatta il supporto';
+      case 'ja':
+        return 'サポートに連絡';
+      case 'ko':
+        return '지원팀 문의';
+      case 'nb':
+        return 'Kontakt support';
+      case 'nl':
+        return 'Contact opnemen met support';
+      case 'pt':
+      case 'pt_BR':
+        return 'Falar com o suporte';
+      case 'ru':
+        return 'Связаться с поддержкой';
+      case 'sv':
+        return 'Kontakta support';
+      case 'en':
+      default:
+        return 'Contact Support';
+    }
+  }
+
+  void _showLinkError(AppLocalizations t) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text(t.common_error)),
+    );
   }
 
   void _showRestoreDialog(BuildContext context) {

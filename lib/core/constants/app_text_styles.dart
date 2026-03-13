@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
+import 'app_typography.dart';
 
 /// App text styles using Outfit font
 /// Modern, geometric font - different from competitor's chunky display fonts
 class AppTextStyles {
   AppTextStyles._();
-  static const String _fontFamily = 'Outfit';
 
   static TextStyle _style({
     required double size,
@@ -15,7 +15,8 @@ class AppTextStyles {
     double? letterSpacing,
   }) {
     return TextStyle(
-      fontFamily: _fontFamily,
+      fontFamily: AppTypography.primaryFamily,
+      fontFamilyFallback: AppTypography.fallbackFamilies,
       fontSize: size,
       fontWeight: weight,
       color: color,

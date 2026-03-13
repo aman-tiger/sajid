@@ -94,7 +94,9 @@ class OnboardingScreen1 extends StatelessWidget {
                     style: AppTextStyles.caption(),
                   ),
                   GestureDetector(
-                    onTap: () => _openExternalLink(AppLinks.privacyPolicyUrl),
+                    onTap: () => _openExternalLink(
+                      AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context)),
+                    ),
                     child: Text(
                       t.settings_privacy,
                       style: AppTextStyles.caption(color: AppColors.primary),
@@ -112,7 +114,19 @@ class OnboardingScreen1 extends StatelessWidget {
   }
 
   Future<void> _openExternalLink(String url) async {
-    final uri = Uri.parse(url);
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
+    final uri = Uri.tryParse(url);
+    if (uri == null) {
+      return;
+    }
+
+    final openedExternally = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    );
+    if (openedExternally) {
+      return;
+    }
+
+    await launchUrl(uri, mode: LaunchMode.inAppBrowserView);
   }
 }

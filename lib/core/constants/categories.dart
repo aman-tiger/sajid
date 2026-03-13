@@ -45,7 +45,10 @@ class AppCategories {
   ];
 
   static CategoryModel getById(String id) {
-    return all.firstWhere((category) => category.id == id);
+    return all.firstWhere(
+      (category) => category.id == id,
+      orElse: () => all.first,
+    );
   }
 
   static String localizedName(AppLocalizations t, String id) {

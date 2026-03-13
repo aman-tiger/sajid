@@ -1,190 +1,88 @@
-# Never Have I Ever - Mobile Party Game
+# Never Have I Ever (Flutter)
 
-A fun, interactive mobile party game application built with Flutter for iOS and Android.
+Production mobile app for iOS and Android with:
+- Multi-language question packs
+- Qonversion subscriptions
+- Firebase Analytics / Crashlytics / FCM
+- AppsFlyer and Amplitude instrumentation
+- Sentry error reporting
 
-## 📱 Project Overview
+## Requirements
+- Flutter SDK (project currently uses `l10n.yaml` for localization generation)
+- Firebase project connected (`google-services.json`, `GoogleService-Info.plist`)
+- Qonversion project key configured in app secrets
+- AppsFlyer keys configured in app secrets
 
-**Never Have I Ever** is a cross-platform mobile application that brings the classic party game to your smartphone. Users can choose from various question categories, swipe through cards, and enjoy a seamless gaming experience with friends.
-
-### Platforms
-- **iOS:** 15.0+
-- **Android:** 9.0+ (API 24+)
-
-### Tech Stack
-- **Framework:** Flutter 3.38.7
-- **Language:** Dart 3.10.7
-- **State Management:** Flutter Bloc / Provider
-- **Analytics:** Firebase, Amplitude
-- **Monetization:** In-App Purchases, Superwall SDK
-- **Crash Reporting:** Sentry
-
-## 🎯 Features
-
-### Phase 1 (Current)
-- ✅ 4 Onboarding screens with push notifications & review request
-- ✅ Main menu with category selection carousel
-- 🔒 6 game categories (Classic free, 5 premium)
-
-### Upcoming Phases
-- Question card swipe interface
-- Settings & language selection
-- Paywall integration
-- In-app purchases
-- Multi-language support (EN, ES, DE, FR, KO)
-- Offline-first functionality
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Flutter SDK 3.38.7 or higher
-- Dart SDK 3.10.7 or higher
-- iOS development: Xcode 14+, macOS
-- Android development: Android Studio, Android SDK
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd sajid
-   ```
-
-2. **Install dependencies**
-   ```bash
-   flutter pub get
-   ```
-
-3. **Run the app**
-   ```bash
-   # iOS
-   flutter run -d ios
-
-   # Android
-   flutter run -d android
-   ```
-
-### Project Structure
-
-```
-lib/
-├── main.dart
-├── app.dart
-├── core/
-│   ├── constants/
-│   ├── routes/
-│   ├── theme/
-│   └── utils/
-├── features/
-│   ├── onboarding/
-│   ├── main_menu/
-│   ├── game/
-│   └── settings/
-└── l10n/
-```
-
-## 🎨 Design Guidelines
-
-This project follows a unique design system that is **70%+ different** from competitors:
-- Custom color palette
-- Unique typography
-- Original illustrations (no copyright)
-- Cohesive spacing system
-- Consistent UI components
-
-**Note:** All designs are original and do not copy competitor apps.
-
-## 📦 Dependencies
-
-See `pubspec.yaml` for the complete list of dependencies.
-
-### Core Packages
-- `flutter_bloc` - State management
-- `go_router` - Navigation
-- `carousel_slider` - Category carousel
-- `permission_handler` - Permissions handling
-- `in_app_review` - Review requests
-- `flutter_screenutil` - Responsive design
-
-### Integrations (to be added)
-- Firebase (Analytics, Crashlytics, FCM)
-- Amplitude (Analytics)
-- Superwall (Paywall management)
-- Sentry (Error tracking)
-
-## 🧪 Testing
-
+## Run
 ```bash
-# Run all tests
-flutter test
-
-# Run tests with coverage
-flutter test --coverage
-
-# Run on specific device
-flutter run -d <device-id>
+flutter pub get
+flutter gen-l10n
+flutter run
 ```
 
-## 📋 Development Workflow
+## Localization
+Localization source files are under `lib/l10n/*.arb`.
 
-1. Check project plan: `info/PROJECT_PLAN.md`
-2. Track progress: `info/PROGRESS_LOG.md`
-3. Create feature branch
-4. Implement & test
-5. Commit with clear messages
-6. Push to repository
+After any localization change:
+```bash
+flutter gen-l10n
+```
 
-## 🔐 Environment Setup
+## Question Assets
+Question JSON files are in:
+- `assets/questions/Classic/`
+- `assets/questions/party-vibe-check/`
+- `assets/questions/girls only/`
+- `assets/questions/Couple/`
+- `assets/questions/hot-spicy/`
+- `assets/questions/bros only/`
 
-Configuration files and credentials are provided separately:
-- Firebase configuration
-- Amplitude API keys
-- Superwall credentials
-- Store credentials (App Store Connect, Google Play Console)
+## Subscription Flow
+- Qonversion offerings are loaded in `PaywallPage`.
+- Purchase emits one final success state to prevent double-transition UI bugs.
+- Subscription segment is synced to Firebase user properties:
+  - `no_subscription`
+  - `active_subscription`
+  - `churned`
 
-## 📱 App Store Release
+## Push Notifications (FCM + Cloud Functions)
+Server code is in `functions/`.
 
-### Pre-Release Checklist
-- [ ] All features implemented per specification
-- [ ] E2E tests passing
-- [ ] TestFlight internal testing complete
-- [ ] Firebase Test Lab / BrowserStack testing complete
-- [ ] App Store Connect metadata complete
-- [ ] Google Play Console metadata complete
-- [ ] Screenshots prepared
-- [ ] Privacy Policy URL configured
+### Implemented Contract
+- Scheduled dispatcher: `functions/index.js` (`sendScheduledPushes`)
+- Target collection: `user_push_state`
+- Segment field: `subscriptionSegment`
+- Notification texts come from Firebase Remote Config parameters:
+  - `push_no_sub_h1`
+  - `push_no_sub_d2`
+  - `push_no_sub_d5`
+  - `push_no_sub_d7`
+  - `push_inactive_day_2`
+  - `push_inactive_day_4`
+  - `push_inactive_day_7`
+  - `push_inactive_day_10`
+  - `push_inactive_day_15`
+  - `push_inactive_day_20`
+  - `push_inactive_day_30`
+  - `push_weekend_gamenight`
+  - `push_active_welcome`
+  - `push_churned_d1`
 
-## 📄 Documentation
+### Client-side state written for scheduling
+- `fcmToken`
+- `subscriptionSegment`
+- `onboardingCompletedAt`
+- `subscriptionPurchasedAt`
+- `subscriptionExpiredAt`
+- `lastActiveAt`
+- `localHour`
+- `localWeekday`
 
-- **Technical Specification:** See `info/technical_specification_ever.pdf`
-- **Project Plan:** See `info/PROJECT_PLAN.md`
-- **Progress Tracking:** See `info/PROGRESS_LOG.md`
-- **Figma Reference (functionality only):** [Link in specification]
+## Release Checklist
+- iOS TestFlight build tested end-to-end purchase flow
+- Android Internal Testing build tested end-to-end purchase flow
+- Privacy policy and terms links verified on device
+- Firebase Analytics, Crashlytics, AppsFlyer, Amplitude, and Qonversion events verified with screenshots
+- App Store Connect metadata complete
+- Google Play Console metadata complete
 
-## 🐛 Issue Reporting
-
-Report issues via GitHub Issues with:
-- Device & OS version
-- Steps to reproduce
-- Expected vs actual behavior
-- Screenshots/logs if applicable
-
-## 📞 Support & Communication
-
-- Text-based communication (no audio messages)
-- Video calls with pre-planned agenda
-- All tasks tracked in GitHub Issues
-- Response time for critical bugs: 24 hours
-
-## 📝 License
-
-This project is proprietary. All rights reserved.
-
-## 🤝 Contributing
-
-This is a client project. External contributions are not accepted.
-
----
-
-**Project Status:** Phase 1 - In Development
-**Last Updated:** 2026-01-25
-**Version:** 1.0.0-dev

@@ -1,0 +1,1204 @@
+{
+  "couples_deep_pack": [
+    {
+      "id": 1,
+      "text": "kysset på den første daten"
+    },
+    {
+      "id": 2,
+      "text": "holdt hender offentlig"
+    },
+    {
+      "id": 3,
+      "text": "kost seg mens dere så på en film"
+    },
+    {
+      "id": 4,
+      "text": "laget mat sammen"
+    },
+    {
+      "id": 5,
+      "text": "tatt bad eller dusj sammen"
+    },
+    {
+      "id": 6,
+      "text": "sovnet under en telefonsamtale"
+    },
+    {
+      "id": 7,
+      "text": "våknet opp ved siden av noen du elsker"
+    },
+    {
+      "id": 8,
+      "text": "laget frokost på senga for noen"
+    },
+    {
+      "id": 9,
+      "text": "fått frokost på senga"
+    },
+    {
+      "id": 10,
+      "text": "danset på kjøkkenet med noen"
+    },
+    {
+      "id": 11,
+      "text": "sunget karaoke sammen"
+    },
+    {
+      "id": 12,
+      "text": "hatt parmassasje"
+    },
+    {
+      "id": 13,
+      "text": "vært på par-yoga"
+    },
+    {
+      "id": 14,
+      "text": "trent sammen"
+    },
+    {
+      "id": 15,
+      "text": "vært hverandres treningsinspirasjoner"
+    },
+    {
+      "id": 16,
+      "text": "dratt på biltur sammen"
+    },
+    {
+      "id": 17,
+      "text": "reist til utlandet sammen"
+    },
+    {
+      "id": 18,
+      "text": "gått seg vill sammen"
+    },
+    {
+      "id": 19,
+      "text": "kranglet om veien"
+    },
+    {
+      "id": 20,
+      "text": "mistet et fly sammen"
+    },
+    {
+      "id": 21,
+      "text": "campet sammen"
+    },
+    {
+      "id": 22,
+      "text": "bodd i en hytte sammen"
+    },
+    {
+      "id": 23,
+      "text": "vandret i naturen sammen"
+    },
+    {
+      "id": 24,
+      "text": "sett en meteorregn sammen"
+    },
+    {
+      "id": 25,
+      "text": "bygd noe sammen"
+    },
+    {
+      "id": 26,
+      "text": "malt eller dekorert sammen"
+    },
+    {
+      "id": 27,
+      "text": "flyttet inn sammen"
+    },
+    {
+      "id": 28,
+      "text": "handlet møbler sammen"
+    },
+    {
+      "id": 29,
+      "text": "kranglet om dekorasjonsvalg"
+    },
+    {
+      "id": 30,
+      "text": "kompromisst om leilighets- eller husvalg"
+    },
+    {
+      "id": 31,
+      "text": "delt plass i garderoben"
+    },
+    {
+      "id": 32,
+      "text": "slått sammen tingene sine"
+    },
+    {
+      "id": 33,
+      "text": "kastet ting for en partners skyld"
+    },
+    {
+      "id": 34,
+      "text": "beholdt noe partneren hatet"
+    },
+    {
+      "id": 35,
+      "text": "dekorert til høytider sammen"
+    },
+    {
+      "id": 36,
+      "text": "arrangert fest sammen"
+    },
+    {
+      "id": 37,
+      "text": "møtt hverandres venner"
+    },
+    {
+      "id": 38,
+      "text": "blitt venner med partnerens venner"
+    },
+    {
+      "id": 39,
+      "text": "introdusert partneren for vennegjengen din"
+    },
+    {
+      "id": 40,
+      "text": "hatt venner som ble parvennene"
+    },
+    {
+      "id": 41,
+      "text": "gått på doble dater regelmessig"
+    },
+    {
+      "id": 42,
+      "text": "vært på ferie med et annet par"
+    },
+    {
+      "id": 43,
+      "text": "vært det tredje paret"
+    },
+    {
+      "id": 44,
+      "text": "feiret bursdag sammen"
+    },
+    {
+      "id": 45,
+      "text": "arrangert en overraskelse for partneren din"
+    },
+    {
+      "id": 46,
+      "text": "planlagt en spesiell bursdag"
+    },
+    {
+      "id": 47,
+      "text": "feiret Valentinsdag"
+    },
+    {
+      "id": 48,
+      "text": "gjort noe spesielt uten grunn"
+    },
+    {
+      "id": 49,
+      "text": "feiret 'bare fordi'-dager"
+    },
+    {
+      "id": 50,
+      "text": "skapt egne tradisjoner"
+    },
+    {
+      "id": 51,
+      "text": "hatt en favorittrestaurant sammen"
+    },
+    {
+      "id": 52,
+      "text": "hatt en fast datenatt"
+    },
+    {
+      "id": 53,
+      "text": "prøvd nye restauranter sammen"
+    },
+    {
+      "id": 54,
+      "text": "tatt et matkurs sammen"
+    },
+    {
+      "id": 55,
+      "text": "forberedt måltider for uken sammen"
+    },
+    {
+      "id": 56,
+      "text": "handlet dagligvarer sammen"
+    },
+    {
+      "id": 57,
+      "text": "kranglet i en dagligvarebutikk"
+    },
+    {
+      "id": 58,
+      "text": "hatt ulike matpreferanser"
+    },
+    {
+      "id": 59,
+      "text": "prøvd å endre partnerens matvaner"
+    },
+    {
+      "id": 60,
+      "text": "laget partnerens favorittmåltid"
+    },
+    {
+      "id": 61,
+      "text": "bakt sammen"
+    },
+    {
+      "id": 62,
+      "text": "laget rot på kjøkkenet sammen"
+    },
+    {
+      "id": 63,
+      "text": "bestilt mat i stedet for å lage"
+    },
+    {
+      "id": 64,
+      "text": "spist pizza i senga"
+    },
+    {
+      "id": 65,
+      "text": "delt mat fra hverandres tallerken"
+    },
+    {
+      "id": 66,
+      "text": "matet hverandre"
+    },
+    {
+      "id": 67,
+      "text": "stjålet mat fra partnerens tallerken"
+    },
+    {
+      "id": 68,
+      "text": "kranglet om den siste biten"
+    },
+    {
+      "id": 69,
+      "text": "delt en is"
+    },
+    {
+      "id": 70,
+      "text": "delt en milkshake med to sugerør"
+    },
+    {
+      "id": 71,
+      "text": "vært på drive-in kino"
+    },
+    {
+      "id": 72,
+      "text": "sett en TV-serie på rappen"
+    },
+    {
+      "id": 73,
+      "text": "hatt en serie som er 'vår serie'"
+    },
+    {
+      "id": 74,
+      "text": "sett videre uten partneren"
+    },
+    {
+      "id": 75,
+      "text": "vært sint fordi partneren så videre"
+    },
+    {
+      "id": 76,
+      "text": "sovnet under en film"
+    },
+    {
+      "id": 77,
+      "text": "kranglet om hva dere skal se"
+    },
+    {
+      "id": 78,
+      "text": "kompromisst om underholdningsvalg"
+    },
+    {
+      "id": 79,
+      "text": "later som om du liker noe partneren elsker"
+    },
+    {
+      "id": 80,
+      "text": "sett noe du hater for partnerens skyld"
+    },
+    {
+      "id": 81,
+      "text": "vært på konsert sammen"
+    },
+    {
+      "id": 82,
+      "text": "vært på musikkfestival sammen"
+    },
+    {
+      "id": 83,
+      "text": "oppdaget ny musikk sammen"
+    },
+    {
+      "id": 84,
+      "text": "laget en spilleliste sammen"
+    },
+    {
+      "id": 85,
+      "text": "hatt 'vår sang'"
+    },
+    {
+      "id": 86,
+      "text": "danset sakte hjemme"
+    },
+    {
+      "id": 87,
+      "text": "danset i regnet sammen"
+    },
+    {
+      "id": 88,
+      "text": "kysset i regnet"
+    },
+    {
+      "id": 89,
+      "text": "gått i regnet sammen"
+    },
+    {
+      "id": 90,
+      "text": "delt en paraply"
+    },
+    {
+      "id": 91,
+      "text": "bygd en snømann sammen"
+    },
+    {
+      "id": 92,
+      "text": "hatt en snøballkamp"
+    },
+    {
+      "id": 93,
+      "text": "gått på skøyter sammen"
+    },
+    {
+      "id": 94,
+      "text": "besøkt et julemarked sammen"
+    },
+    {
+      "id": 95,
+      "text": "pyntet et juletre sammen"
+    },
+    {
+      "id": 96,
+      "text": "byttet gaver"
+    },
+    {
+      "id": 97,
+      "text": "slitt med hva du skulle gi partneren"
+    },
+    {
+      "id": 98,
+      "text": "beholdt en gavekvittering i tilfelle"
+    },
+    {
+      "id": 99,
+      "text": "levert tilbake en gave fra partneren"
+    },
+    {
+      "id": 100,
+      "text": "later som du elsker en gave du ikke likte"
+    },
+    {
+      "id": 101,
+      "text": "videresolgt en gave fra partneren"
+    },
+    {
+      "id": 102,
+      "text": "gitt en gjennomtenkt håndlaget gave"
+    },
+    {
+      "id": 103,
+      "text": "mottatt en håndlaget gave"
+    },
+    {
+      "id": 104,
+      "text": "skrevet et kjærlighetsdikt"
+    },
+    {
+      "id": 105,
+      "text": "mottatt et kjærlighetsdikt"
+    },
+    {
+      "id": 106,
+      "text": "laget en minnebok sammen"
+    },
+    {
+      "id": 107,
+      "text": "tatt par-bilder"
+    },
+    {
+      "id": 108,
+      "text": "gjort en profesjonell fotoshoot"
+    },
+    {
+      "id": 109,
+      "text": "vært kamerasky sammen"
+    },
+    {
+      "id": 110,
+      "text": "tatt for mange selfies sammen"
+    },
+    {
+      "id": 111,
+      "text": "kranglet om hvilket bilde som skal postes"
+    },
+    {
+      "id": 112,
+      "text": "blitt tagget i et dårlig par-bilde"
+    },
+    {
+      "id": 113,
+      "text": "untagget deg selv fra et bilde"
+    },
+    {
+      "id": 114,
+      "text": "bedt partneren slette et bilde"
+    },
+    {
+      "id": 115,
+      "text": "slettet bilder sammen"
+    },
+    {
+      "id": 116,
+      "text": "hatt par-bakgrunner på telefonen"
+    },
+    {
+      "id": 117,
+      "text": "stått i hverandres telefonkontakter med emojier"
+    },
+    {
+      "id": 118,
+      "text": "lagret hverandre under søte navn"
+    },
+    {
+      "id": 119,
+      "text": "hatt spesielle ringetoner for hverandre"
+    },
+    {
+      "id": 120,
+      "text": "sendt meldinger hele dagen hver dag"
+    },
+    {
+      "id": 121,
+      "text": "sendt talemeldinger"
+    },
+    {
+      "id": 122,
+      "text": "videoringt i timevis"
+    },
+    {
+      "id": 123,
+      "text": "sovnet under en videosamtale"
+    },
+    {
+      "id": 124,
+      "text": "sendt tilfeldige bilder gjennom dagen"
+    },
+    {
+      "id": 125,
+      "text": "sendt memes til hverandre"
+    },
+    {
+      "id": 126,
+      "text": "hatt interne vitser"
+    },
+    {
+      "id": 127,
+      "text": "snakket på et oppfunnet språk"
+    },
+    {
+      "id": 128,
+      "text": "hatt kjælenavn for hverandre"
+    },
+    {
+      "id": 129,
+      "text": "kalt hverandre 'baby'"
+    },
+    {
+      "id": 130,
+      "text": "brukt pinlige kjælenavn"
+    },
+    {
+      "id": 131,
+      "text": "blitt kalt et kleint par"
+    },
+    {
+      "id": 132,
+      "text": "vært for kjærlige offentlig"
+    },
+    {
+      "id": 133,
+      "text": "frastøtt vennene dine"
+    },
+    {
+      "id": 134,
+      "text": "fått beskjed om å ta dere et sted"
+    },
+    {
+      "id": 135,
+      "text": "kysset foran venner"
+    },
+    {
+      "id": 136,
+      "text": "holdt hender hele tiden"
+    },
+    {
+      "id": 137,
+      "text": "ikke klart å holde hendene borte fra hverandre"
+    },
+    {
+      "id": 138,
+      "text": "vært i forelskelsens første fase"
+    },
+    {
+      "id": 139,
+      "text": "trodd at forelskelsen ville vare evig"
+    },
+    {
+      "id": 140,
+      "text": "lagt merke til når forelskelsen tok slutt"
+    },
+    {
+      "id": 141,
+      "text": "blitt for komfortable"
+    },
+    {
+      "id": 142,
+      "text": "sluttet å prøve like hardt"
+    },
+    {
+      "id": 143,
+      "text": "tatt partneren for gitt"
+    },
+    {
+      "id": 144,
+      "text": "innse at du tok dem for gitt"
+    },
+    {
+      "id": 145,
+      "text": "gjort en innsats for å være mer romantisk"
+    },
+    {
+      "id": 146,
+      "text": "planlagt datenetter igjen"
+    },
+    {
+      "id": 147,
+      "text": "jobbet med forholdet"
+    },
+    {
+      "id": 148,
+      "text": "lest forholdsbøker sammen"
+    },
+    {
+      "id": 149,
+      "text": "hørt på forholdspodkaster"
+    },
+    {
+      "id": 150,
+      "text": "bedt venner om råd om forholdet"
+    },
+    {
+      "id": 151,
+      "text": "spurt internett om råd om forholdet"
+    },
+    {
+      "id": 152,
+      "text": "googlet spørsmål om forholdet"
+    },
+    {
+      "id": 153,
+      "text": "sammenlignet forholdet ditt med andres"
+    },
+    {
+      "id": 154,
+      "text": "vært sjalu på et annet par"
+    },
+    {
+      "id": 155,
+      "text": "lurt på om dere passer godt sammen"
+    },
+    {
+      "id": 156,
+      "text": "stilt spørsmål ved kompatibiliteten"
+    },
+    {
+      "id": 157,
+      "text": "hatt tvil om forholdet"
+    },
+    {
+      "id": 158,
+      "text": "ignorert røde flagg"
+    },
+    {
+      "id": 159,
+      "text": "overbevist deg selv om at det ville bli bedre"
+    },
+    {
+      "id": 160,
+      "text": "blitt lenger enn du burde"
+    },
+    {
+      "id": 161,
+      "text": "visst at det ikke var riktig men blitt"
+    },
+    {
+      "id": 162,
+      "text": "vært redd for å være alene"
+    },
+    {
+      "id": 163,
+      "text": "blitt for bekvemmelighetens skyld"
+    },
+    {
+      "id": 164,
+      "text": "blitt på grunn av felles leieavtale"
+    },
+    {
+      "id": 165,
+      "text": "blitt av økonomiske grunner"
+    },
+    {
+      "id": 166,
+      "text": "blitt på grunn av et kjæledyr"
+    },
+    {
+      "id": 167,
+      "text": "blitt på grunn av vennegjenger"
+    },
+    {
+      "id": 168,
+      "text": "blitt for å unngå ubehag"
+    },
+    {
+      "id": 169,
+      "text": "villet dra men ikke visst hvordan"
+    },
+    {
+      "id": 170,
+      "text": "utarbeidet en bruddtale"
+    },
+    {
+      "id": 171,
+      "text": "øvd på å avslutte forholdet"
+    },
+    {
+      "id": 172,
+      "text": "knytt og ikke orket å si opp"
+    },
+    {
+      "id": 173,
+      "text": "ventet på at de skulle si opp forholdet"
+    },
+    {
+      "id": 174,
+      "text": "villet at de skulle avslutte det"
+    },
+    {
+      "id": 175,
+      "text": "fått dem til å si opp forholdet"
+    },
+    {
+      "id": 176,
+      "text": "vært passiv-aggressiv for å dytte dem bort"
+    },
+    {
+      "id": 177,
+      "text": "begynt krangler i håp om at de ville gå"
+    },
+    {
+      "id": 178,
+      "text": "bevisst sluttet å gjøre en innsats"
+    },
+    {
+      "id": 179,
+      "text": "meldt seg følelsesmessig ut"
+    },
+    {
+      "id": 180,
+      "text": "gått gjennom bevegelsene"
+    },
+    {
+      "id": 181,
+      "text": "late som at du var lykkelig"
+    },
+    {
+      "id": 182,
+      "text": "late som at alt var greit"
+    },
+    {
+      "id": 183,
+      "text": "skjult problemer for venner"
+    },
+    {
+      "id": 184,
+      "text": "forsvart forholdet for andre"
+    },
+    {
+      "id": 185,
+      "text": "nektet for at det var problemer"
+    },
+    {
+      "id": 186,
+      "text": "vært i benektelse"
+    },
+    {
+      "id": 187,
+      "text": "nektet å se sannheten"
+    },
+    {
+      "id": 188,
+      "text": "unnskyldt partneren"
+    },
+    {
+      "id": 189,
+      "text": "rettferdiggjort dårlig oppførsel"
+    },
+    {
+      "id": 190,
+      "text": "normalisert giftig oppførsel"
+    },
+    {
+      "id": 191,
+      "text": "trodd at kjærlighet betyr offer"
+    },
+    {
+      "id": 192,
+      "text": "mistet deg selv i et forhold"
+    },
+    {
+      "id": 193,
+      "text": "endret hvem du er"
+    },
+    {
+      "id": 194,
+      "text": "gitt opp hobbyer for en partner"
+    },
+    {
+      "id": 195,
+      "text": "gitt opp venner for en partner"
+    },
+    {
+      "id": 196,
+      "text": "isolert deg selv"
+    },
+    {
+      "id": 197,
+      "text": "blitt isolert av en partner"
+    },
+    {
+      "id": 198,
+      "text": "blitt kontrollert"
+    },
+    {
+      "id": 199,
+      "text": "blitt manipulert"
+    },
+    {
+      "id": 200,
+      "text": "blitt utsatt for gaslighting"
+    },
+    {
+      "id": 201,
+      "text": "stilt spørsmål ved din egen virkelighet"
+    },
+    {
+      "id": 202,
+      "text": "fått deg til å føle deg gal"
+    },
+    {
+      "id": 203,
+      "text": "beklaget ting som ikke var din feil"
+    },
+    {
+      "id": 204,
+      "text": "gått på egg"
+    },
+    {
+      "id": 205,
+      "text": "vært redd for å opprøre partneren"
+    },
+    {
+      "id": 206,
+      "text": "skjult ting for å unngå konflikter"
+    },
+    {
+      "id": 207,
+      "text": "løyet for fredens skyld"
+    },
+    {
+      "id": 208,
+      "text": "unngått vanskelige samtaler"
+    },
+    {
+      "id": 209,
+      "text": "feid problemer under teppet"
+    },
+    {
+      "id": 210,
+      "text": "håpet at ting ville ordne seg selv"
+    },
+    {
+      "id": 211,
+      "text": "ventet for lenge med å ta opp problemer"
+    },
+    {
+      "id": 212,
+      "text": "latt småting bli store problemer"
+    },
+    {
+      "id": 213,
+      "text": "eksplodert over noe lite"
+    },
+    {
+      "id": 214,
+      "text": "hatt en krangel om ingenting"
+    },
+    {
+      "id": 215,
+      "text": "kranglet om noe dumt"
+    },
+    {
+      "id": 216,
+      "text": "ikke klart å huske hva dere kranglet om"
+    },
+    {
+      "id": 217,
+      "text": "innse at krangelen egentlig handlet om noe annet"
+    },
+    {
+      "id": 218,
+      "text": "projisert egne problemer på partneren"
+    },
+    {
+      "id": 219,
+      "text": "skyldt på partneren for dårlig humør"
+    },
+    {
+      "id": 220,
+      "text": "tatt ut stress på partneren"
+    },
+    {
+      "id": 221,
+      "text": "vært kortfattet med partneren"
+    },
+    {
+      "id": 222,
+      "text": "snappet til partneren"
+    },
+    {
+      "id": 223,
+      "text": "sagt noe stygt"
+    },
+    {
+      "id": 224,
+      "text": "kalt partneren noe dumt"
+    },
+    {
+      "id": 225,
+      "text": "banna til partneren"
+    },
+    {
+      "id": 226,
+      "text": "hevet stemmen"
+    },
+    {
+      "id": 227,
+      "text": "smellt en dør"
+    },
+    {
+      "id": 228,
+      "text": "kastet noe (ikke på dem)"
+    },
+    {
+      "id": 229,
+      "text": "slått i veggen"
+    },
+    {
+      "id": 230,
+      "text": "ødelagt noe i sinne"
+    },
+    {
+      "id": 231,
+      "text": "angret på sint oppførsel"
+    },
+    {
+      "id": 232,
+      "text": "skremt partneren"
+    },
+    {
+      "id": 233,
+      "text": "vært redd for partneren"
+    },
+    {
+      "id": 234,
+      "text": "følt seg utrygg"
+    },
+    {
+      "id": 235,
+      "text": "fått partneren til å føle seg utrygg"
+    },
+    {
+      "id": 236,
+      "text": "krysset en grense"
+    },
+    {
+      "id": 237,
+      "text": "gjort noe utilgivelig"
+    },
+    {
+      "id": 238,
+      "text": "visst at du gikk for langt"
+    },
+    {
+      "id": 239,
+      "text": "villet ta noe tilbake"
+    },
+    {
+      "id": 240,
+      "text": "ønsket at du kunne angre noe"
+    },
+    {
+      "id": 241,
+      "text": "nådd et punkt uten å vende tilbake"
+    },
+    {
+      "id": 242,
+      "text": "visst at forholdet var over"
+    },
+    {
+      "id": 243,
+      "text": "blitt etter at det var over"
+    },
+    {
+      "id": 244,
+      "text": "dratt ut et brudd"
+    },
+    {
+      "id": 245,
+      "text": "brutt opp flere ganger"
+    },
+    {
+      "id": 246,
+      "text": "kommet tilbake til hverandre flere ganger"
+    },
+    {
+      "id": 247,
+      "text": "hatt et av-og-til-forhold"
+    },
+    {
+      "id": 248,
+      "text": "forvirret alle med forholdsstatusen din"
+    },
+    {
+      "id": 249,
+      "text": "ikke visst om dere var sammen"
+    },
+    {
+      "id": 250,
+      "text": "vært i en 'situationship'"
+    },
+    {
+      "id": 251,
+      "text": "unngått merkelapper"
+    },
+    {
+      "id": 252,
+      "text": "vært redd for forpliktelse"
+    },
+    {
+      "id": 253,
+      "text": "hatt bindingsangst"
+    },
+    {
+      "id": 254,
+      "text": "hatt problemer med forpliktelse"
+    },
+    {
+      "id": 255,
+      "text": "dyttet noen bort"
+    },
+    {
+      "id": 256,
+      "text": "sabotert seg selv"
+    },
+    {
+      "id": 257,
+      "text": "ødelagt noe bra"
+    },
+    {
+      "id": 258,
+      "text": "vært din egen verste fiende"
+    },
+    {
+      "id": 259,
+      "text": "ikke trodd at du fortjente kjærlighet"
+    },
+    {
+      "id": 260,
+      "text": "slitt med selvfølelse"
+    },
+    {
+      "id": 261,
+      "text": "hatt behov for bekreftelse fra partneren"
+    },
+    {
+      "id": 262,
+      "text": "vært medsavhengig"
+    },
+    {
+      "id": 263,
+      "text": "ikke klart å fungere uten partneren"
+    },
+    {
+      "id": 264,
+      "text": "gjort partneren til hele din verden"
+    },
+    {
+      "id": 265,
+      "text": "mistet identiteten din"
+    },
+    {
+      "id": 266,
+      "text": "glemt hvem du var før dem"
+    },
+    {
+      "id": 267,
+      "text": "måttet gjenoppdage deg selv"
+    },
+    {
+      "id": 268,
+      "text": "jobbet med deg selv"
+    },
+    {
+      "id": 269,
+      "text": "vokst som person"
+    },
+    {
+      "id": 270,
+      "text": "blitt et bedre menneske"
+    },
+    {
+      "id": 271,
+      "text": "lært av et forhold"
+    },
+    {
+      "id": 272,
+      "text": "visst hva du vil ha"
+    },
+    {
+      "id": 273,
+      "text": "visst hva du ikke vil ha"
+    },
+    {
+      "id": 274,
+      "text": "satt bedre grenser"
+    },
+    {
+      "id": 275,
+      "text": "lært å kommunisere"
+    },
+    {
+      "id": 276,
+      "text": "lært å kompromisse"
+    },
+    {
+      "id": 277,
+      "text": "lært tålmodighet"
+    },
+    {
+      "id": 278,
+      "text": "lært å tilgi"
+    },
+    {
+      "id": 279,
+      "text": "lært å stole igjen"
+    },
+    {
+      "id": 280,
+      "text": "lært å elske igjen"
+    },
+    {
+      "id": 281,
+      "text": "trodd på kjærlighet"
+    },
+    {
+      "id": 282,
+      "text": "sluttet å tro på kjærlighet"
+    },
+    {
+      "id": 283,
+      "text": "blitt kynisk"
+    },
+    {
+      "id": 284,
+      "text": "svoret at du aldri ville ha et forhold igjen"
+    },
+    {
+      "id": 285,
+      "text": "trengt en pause fra dating"
+    },
+    {
+      "id": 286,
+      "text": "fokusert på deg selv"
+    },
+    {
+      "id": 287,
+      "text": "vært lykkelig singel"
+    },
+    {
+      "id": 288,
+      "text": "likt å være alene"
+    },
+    {
+      "id": 289,
+      "text": "ikke trengt et forhold"
+    },
+    {
+      "id": 290,
+      "text": "vært komplett på egenhånd"
+    },
+    {
+      "id": 291,
+      "text": "kjent verdien din"
+    },
+    {
+      "id": 292,
+      "text": "nektet å nøye seg med mindre"
+    },
+    {
+      "id": 293,
+      "text": "hatt standarder"
+    },
+    {
+      "id": 294,
+      "text": "visst hva du fortjener"
+    },
+    {
+      "id": 295,
+      "text": "ventet på den rette personen"
+    },
+    {
+      "id": 296,
+      "text": "trodd på sjelevenner"
+    },
+    {
+      "id": 297,
+      "text": "funnet din person"
+    },
+    {
+      "id": 298,
+      "text": "visst at de var den rette"
+    },
+    {
+      "id": 299,
+      "text": "vært virkelig lykkelig"
+    },
+    {
+      "id": 300,
+      "text": "blitt elsket på den måten du fortjener"
+    }
+  ]
+}

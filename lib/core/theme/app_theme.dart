@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_dimensions.dart';
+import '../constants/app_typography.dart';
 
 class AppTheme {
   AppTheme._();
 
-  static const String _fontFamily = 'Outfit';
-
   static ThemeData lightTheme() {
+    final textTheme = ThemeData.light().textTheme.apply(
+          fontFamily: AppTypography.primaryFamily,
+        );
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
@@ -37,8 +39,9 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         foregroundColor: AppColors.textDark,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
-        titleTextStyle: const TextStyle(
-          fontFamily: _fontFamily,
+        titleTextStyle: TextStyle(
+          fontFamily: AppTypography.primaryFamily,
+          fontFamilyFallback: AppTypography.fallbackFamilies,
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.textDark,
@@ -46,9 +49,17 @@ class AppTheme {
       ),
 
       // Text Theme
-      textTheme: ThemeData.light().textTheme.apply(
-            fontFamily: _fontFamily,
-          ),
+      textTheme: textTheme.copyWith(
+        bodyLarge: textTheme.bodyLarge?.copyWith(
+          fontFamilyFallback: AppTypography.fallbackFamilies,
+        ),
+        bodyMedium: textTheme.bodyMedium?.copyWith(
+          fontFamilyFallback: AppTypography.fallbackFamilies,
+        ),
+        bodySmall: textTheme.bodySmall?.copyWith(
+          fontFamilyFallback: AppTypography.fallbackFamilies,
+        ),
+      ),
 
       // Button Themes
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -67,8 +78,9 @@ class AppTheme {
             double.infinity,
             AppDimensions.buttonHeightLarge,
           ),
-          textStyle: const TextStyle(
-            fontFamily: _fontFamily,
+          textStyle: TextStyle(
+            fontFamily: AppTypography.primaryFamily,
+            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
@@ -91,8 +103,9 @@ class AppTheme {
             double.infinity,
             AppDimensions.buttonHeightLarge,
           ),
-          textStyle: const TextStyle(
-            fontFamily: _fontFamily,
+          textStyle: TextStyle(
+            fontFamily: AppTypography.primaryFamily,
+            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
@@ -103,8 +116,9 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
-          textStyle: const TextStyle(
-            fontFamily: _fontFamily,
+          textStyle: TextStyle(
+            fontFamily: AppTypography.primaryFamily,
+            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 14,
             fontWeight: FontWeight.w600,
           ),
@@ -156,6 +170,9 @@ class AppTheme {
   }
 
   static ThemeData darkTheme() {
+    final textTheme = ThemeData.dark().textTheme.apply(
+          fontFamily: AppTypography.primaryFamily,
+        );
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
@@ -184,8 +201,9 @@ class AppTheme {
         backgroundColor: Colors.transparent,
         foregroundColor: AppColors.textLight,
         systemOverlayStyle: SystemUiOverlayStyle.light,
-        titleTextStyle: const TextStyle(
-          fontFamily: _fontFamily,
+        titleTextStyle: TextStyle(
+          fontFamily: AppTypography.primaryFamily,
+          fontFamilyFallback: AppTypography.fallbackFamilies,
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.textLight,
@@ -193,9 +211,17 @@ class AppTheme {
       ),
 
       // Text Theme
-      textTheme: ThemeData.dark().textTheme.apply(
-            fontFamily: _fontFamily,
-          ),
+      textTheme: textTheme.copyWith(
+        bodyLarge: textTheme.bodyLarge?.copyWith(
+          fontFamilyFallback: AppTypography.fallbackFamilies,
+        ),
+        bodyMedium: textTheme.bodyMedium?.copyWith(
+          fontFamilyFallback: AppTypography.fallbackFamilies,
+        ),
+        bodySmall: textTheme.bodySmall?.copyWith(
+          fontFamilyFallback: AppTypography.fallbackFamilies,
+        ),
+      ),
 
       // Button Themes
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -214,8 +240,9 @@ class AppTheme {
             double.infinity,
             AppDimensions.buttonHeightLarge,
           ),
-          textStyle: const TextStyle(
-            fontFamily: _fontFamily,
+          textStyle: TextStyle(
+            fontFamily: AppTypography.primaryFamily,
+            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,

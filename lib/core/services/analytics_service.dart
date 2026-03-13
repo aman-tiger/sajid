@@ -49,6 +49,13 @@ class AnalyticsService {
 
   Future<void> logAppOpened() async {
     await logEvent('App_Open');
+    await _firebase.logEvent(
+      'user_activity_ping',
+      parameters: {
+        'opened_at': DateTime.now().toUtc().toIso8601String(),
+      },
+    );
+    await _firebase.updateActivityPing();
   }
 
   Future<void> logOnboardingCompleted() async {
@@ -184,5 +191,21 @@ class AnalyticsService {
     await logEvent('Notification_Tapped', parameters: {
       if (title != null && title.isNotEmpty) 'title': title,
     });
+  }
+
+  Future<void> setPushAudienceSegment(String segment) async {
+    await _firebase.setPushAudienceSegment(segment);
+  }
+
+  Future<void> markOnboardingCompletedForPush() async {
+    await _firebase.markOnboardingCompleted();
+  }
+
+  Future<void> markSubscriptionActivatedForPush() async {
+    await _firebase.markPurchaseActivated();
+  }
+
+  Future<void> markSubscriptionExpiredForPush() async {
+    await _firebase.markSubscriptionExpired();
   }
 }

@@ -1,7 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'analytics_service.dart';
 
 /// Service class for managing Firebase integrations
@@ -14,6 +16,8 @@ class FirebaseService {
   late final FirebaseAnalytics _analytics;
   late final FirebaseCrashlytics _crashlytics;
   late final FirebaseMessaging _messaging;
+  late final FirebaseFirestore _firestore;
+  static const String _pushStateIdKey = 'push_state_id';
 
   /// Initialize Firebase services
   Future<void> initialize() async {
@@ -21,6 +25,7 @@ class FirebaseService {
       _analytics = FirebaseAnalytics.instance;
       _crashlytics = FirebaseCrashlytics.instance;
       _messaging = FirebaseMessaging.instance;
+      _firestore = FirebaseFirestore.instance;
 
       // Configure Crashlytics
       // Pass all uncaught errors to Crashlytics
@@ -71,6 +76,7 @@ class FirebaseService {
 
     _messaging.getToken().then((token) {
       debugPrint('FCM Token: $token');
+      _upsertPushState({'fcmToken': token});
     });
   }
 
@@ -116,6 +122,51 @@ class FirebaseService {
       debugPrint('🏷️ User property set: $name = $value');
     } catch (e) {
       debugPrint('Error setting user property: $e');
+    }
+  }
+
+  Future<void> setPushAudienceSegment(String segment) async {
+    try {
+      await _analytics.setUserProperty(name: 'subscription_segment', value: segment);
+      await _analytics.logEvent(
+        name: 'push_segment_updated',
+        parameters: {'segment': segment},
+      );
+      await _upsertPushState({
+        'subscriptionSegment': segment,
+      });
+    } catch (e) {
+      debugPrint('Error setting push audience segment: $e');
+    }
+  }
+
+  Future<void> markOnboardingCompleted() async {
+    try {
+      await _upsertPushState({
+        'onboardingCompletedAt': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      debugPrint('Error marking onboarding completion for push state: $e');
+    }
+  }
+
+  Future<void> markPurchaseActivated() async {
+    try {
+      await _upsertPushState({
+        'subscriptionPurchasedAt': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      debugPrint('Error marking purchase activation for push state: $e');
+    }
+  }
+
+  Future<void> markSubscriptionExpired() async {
+    try {
+      await _upsertPushState({
+        'subscriptionExpiredAt': FieldValue.serverTimestamp(),
+      });
+    } catch (e) {
+      debugPrint('Error marking subscription expiration for push state: $e');
     }
   }
 
@@ -171,5 +222,39 @@ class FirebaseService {
     } catch (e) {
       debugPrint('Error unsubscribing from topic: $e');
     }
+  }
+
+  Future<void> updateActivityPing() async {
+    try {
+      final now = DateTime.now();
+      await _upsertPushState({
+        'lastActiveAt': FieldValue.serverTimestamp(),
+        'localHour': now.hour,
+        'localWeekday': now.weekday,
+      });
+    } catch (e) {
+      debugPrint('Error updating push activity ping: $e');
+    }
+  }
+
+  Future<String> _getPushStateId() async {
+    final prefs = await SharedPreferences.getInstance();
+    final existing = prefs.getString(_pushStateIdKey);
+    if (existing != null && existing.isNotEmpty) {
+      return existing;
+    }
+
+    final generated =
+        'u_${DateTime.now().millisecondsSinceEpoch}_${UniqueKey().hashCode}';
+    await prefs.setString(_pushStateIdKey, generated);
+    return generated;
+  }
+
+  Future<void> _upsertPushState(Map<String, dynamic> data) async {
+    final userId = await _getPushStateId();
+    await _firestore.collection('user_push_state').doc(userId).set(
+      data,
+      SetOptions(merge: true),
+    );
   }
 }

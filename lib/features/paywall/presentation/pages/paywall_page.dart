@@ -31,6 +31,7 @@ class PaywallPage extends StatefulWidget {
 }
 
 class _PaywallPageState extends State<PaywallPage> {
+  final SubscriptionService _subscriptionService = SubscriptionService();
   QOfferings? _offerings;
   QOffering? _activeOffering;
   List<QProduct> _displayProducts = <QProduct>[];
@@ -47,9 +48,8 @@ class _PaywallPageState extends State<PaywallPage> {
 
   Future<void> _loadOfferings() async {
     try {
-      final subscriptionService = SubscriptionService();
-      final offerings = await subscriptionService.getOfferings();
-      final payload = await subscriptionService.getPaywallRemoteConfig(
+      final offerings = await _subscriptionService.getOfferings();
+      final payload = await _subscriptionService.getPaywallRemoteConfig(
         contextKey: widget.contextKey,
       );
       final settings = PaywallRemoteSettings.fromPayload(payload);
@@ -82,7 +82,7 @@ class _PaywallPageState extends State<PaywallPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SubscriptionBloc(
-        subscriptionService: SubscriptionService(),
+        subscriptionService: _subscriptionService,
       ),
       child: BlocListener<SubscriptionBloc, SubscriptionState>(
         listener: (context, state) {
@@ -349,7 +349,9 @@ class _PaywallPageState extends State<PaywallPage> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () => _openExternalLink(AppLinks.privacyPolicyUrl),
+                  onPressed: () => _openExternalLink(
+                    AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context)),
+                  ),
                   child: Text(
                     t.paywall_privacy,
                     style: TextStyle(
@@ -658,8 +660,28 @@ class _PaywallPageState extends State<PaywallPage> {
   }
 
   Future<void> _openExternalLink(String url) async {
-    final uri = Uri.parse(url);
-    await launchUrl(uri, mode: LaunchMode.externalApplication);
+    final t = AppLocalizations.of(context)!;
+    final uri = Uri.tryParse(url);
+    if (uri == null) {
+      _showErrorDialog(t.common_error);
+      return;
+    }
+
+    final openedExternally = await launchUrl(
+      uri,
+      mode: LaunchMode.externalApplication,
+    );
+    if (openedExternally) {
+      return;
+    }
+
+    final openedInApp = await launchUrl(
+      uri,
+      mode: LaunchMode.inAppBrowserView,
+    );
+    if (!openedInApp && mounted) {
+      _showErrorDialog(t.common_error);
+    }
   }
 
   List<QProduct> _filterProducts(

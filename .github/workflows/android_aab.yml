@@ -2,27 +2,6 @@ name: Android AAB (Release)
 
 on:
   workflow_dispatch:
-    inputs:
-      track:
-        description: Google Play track
-        required: true
-        default: internal
-        type: choice
-        options:
-          - internal
-          - alpha
-          - beta
-          - production
-      release_status:
-        description: Google Play release status
-        required: true
-        default: completed
-        type: choice
-        options:
-          - completed
-          - draft
-          - inProgress
-          - halted
 
 jobs:
   build-aab:
@@ -141,11 +120,12 @@ jobs:
           serviceAccountJson: ${{ steps.prepare_play.outputs.service_account_path }}
           packageName: ${{ env.ANDROID_PACKAGE_NAME }}
           releaseFiles: ${{ steps.locate_aab.outputs.aab_path }}
-          track: ${{ inputs.track }}
-          status: ${{ inputs.release_status }}
+          track: internal
+          status: completed
 
       - name: Clean up
         if: always()
         run: |
           rm -f android/key.properties
           rm -f android/app/upload-keystore.jks
+

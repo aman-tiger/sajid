@@ -1,0 +1,1204 @@
+{
+  "couples_deep_pack": [
+    {
+      "id": 1,
+      "text": "se beijou no primeiro encontro"
+    },
+    {
+      "id": 2,
+      "text": "andou de mãos dadas em público"
+    },
+    {
+      "id": 3,
+      "text": "ficou abraçado assistindo a um filme"
+    },
+    {
+      "id": 4,
+      "text": "cozinhou junto"
+    },
+    {
+      "id": 5,
+      "text": "tomou banho de banheira ou chuveiro junto"
+    },
+    {
+      "id": 6,
+      "text": "dormiu durante uma ligação com alguém"
+    },
+    {
+      "id": 7,
+      "text": "acordou ao lado de alguém que ama"
+    },
+    {
+      "id": 8,
+      "text": "fez café da manhã na cama para alguém"
+    },
+    {
+      "id": 9,
+      "text": "recebeu café da manhã na cama"
+    },
+    {
+      "id": 10,
+      "text": "dançou na cozinha com alguém"
+    },
+    {
+      "id": 11,
+      "text": "cantou karaokê junto"
+    },
+    {
+      "id": 12,
+      "text": "fez massagem para casais"
+    },
+    {
+      "id": 13,
+      "text": "foi à aula de yoga para casais"
+    },
+    {
+      "id": 14,
+      "text": "treinou junto"
+    },
+    {
+      "id": 15,
+      "text": "foi motivação de academia um do outro"
+    },
+    {
+      "id": 16,
+      "text": "fez uma viagem de carro junto"
+    },
+    {
+      "id": 17,
+      "text": "viajou para o exterior junto"
+    },
+    {
+      "id": 18,
+      "text": "se perdeu junto"
+    },
+    {
+      "id": 19,
+      "text": "brigou sobre direções"
+    },
+    {
+      "id": 20,
+      "text": "perdeu um voo junto"
+    },
+    {
+      "id": 21,
+      "text": "acampou junto"
+    },
+    {
+      "id": 22,
+      "text": "ficou em uma cabana junto"
+    },
+    {
+      "id": 23,
+      "text": "fez trilha junto"
+    },
+    {
+      "id": 24,
+      "text": "assistiu a uma chuva de meteoros junto"
+    },
+    {
+      "id": 25,
+      "text": "construiu algo junto"
+    },
+    {
+      "id": 26,
+      "text": "pintou ou decorou junto"
+    },
+    {
+      "id": 27,
+      "text": "mudou junto"
+    },
+    {
+      "id": 28,
+      "text": "comprou móveis junto"
+    },
+    {
+      "id": 29,
+      "text": "brigou sobre escolhas de decoração"
+    },
+    {
+      "id": 30,
+      "text": "chegou a um acordo sobre decisões do apartamento ou casa"
+    },
+    {
+      "id": 31,
+      "text": "dividiu espaço no armário"
+    },
+    {
+      "id": 32,
+      "text": "juntou as coisas"
+    },
+    {
+      "id": 33,
+      "text": "se livrou de coisas por causa de um parceiro"
+    },
+    {
+      "id": 34,
+      "text": "guardou algo que seu parceiro odiava"
+    },
+    {
+      "id": 35,
+      "text": "decorou para as festas junto"
+    },
+    {
+      "id": 36,
+      "text": "organizou uma festa junto"
+    },
+    {
+      "id": 37,
+      "text": "conheceu os amigos um do outro"
+    },
+    {
+      "id": 38,
+      "text": "fez amizade com os amigos do seu parceiro"
+    },
+    {
+      "id": 39,
+      "text": "apresentou seu parceiro ao seu grupo de amigos"
+    },
+    {
+      "id": 40,
+      "text": "teve amigos que se tornaram amigos do casal"
+    },
+    {
+      "id": 41,
+      "text": "fez programa a quatro regularmente"
+    },
+    {
+      "id": 42,
+      "text": "tirou férias com outro casal"
+    },
+    {
+      "id": 43,
+      "text": "foi o terceiro casal no meio"
+    },
+    {
+      "id": 44,
+      "text": "comemorou um aniversário junto"
+    },
+    {
+      "id": 45,
+      "text": "organizou uma festa surpresa para seu parceiro"
+    },
+    {
+      "id": 46,
+      "text": "planejou um aniversário especial"
+    },
+    {
+      "id": 47,
+      "text": "comemorou o Dia dos Namorados"
+    },
+    {
+      "id": 48,
+      "text": "fez algo especial sem motivo"
+    },
+    {
+      "id": 49,
+      "text": "comemorou dias 'só porque sim'"
+    },
+    {
+      "id": 50,
+      "text": "criou suas próprias tradições"
+    },
+    {
+      "id": 51,
+      "text": "teve um restaurante favorito junto"
+    },
+    {
+      "id": 52,
+      "text": "teve uma noite de encontro regular"
+    },
+    {
+      "id": 53,
+      "text": "experimentou novos restaurantes junto"
+    },
+    {
+      "id": 54,
+      "text": "fez aula de culinária junto"
+    },
+    {
+      "id": 55,
+      "text": "preparou refeições da semana junto"
+    },
+    {
+      "id": 56,
+      "text": "foi ao supermercado junto"
+    },
+    {
+      "id": 57,
+      "text": "brigou em um supermercado"
+    },
+    {
+      "id": 58,
+      "text": "teve preferências alimentares diferentes"
+    },
+    {
+      "id": 59,
+      "text": "tentou mudar os hábitos alimentares do seu parceiro"
+    },
+    {
+      "id": 60,
+      "text": "cozinhou o prato favorito do seu parceiro"
+    },
+    {
+      "id": 61,
+      "text": "assou junto"
+    },
+    {
+      "id": 62,
+      "text": "fez bagunça na cozinha junto"
+    },
+    {
+      "id": 63,
+      "text": "pediu comida em vez de cozinhar"
+    },
+    {
+      "id": 64,
+      "text": "comeu pizza na cama"
+    },
+    {
+      "id": 65,
+      "text": "compartilhou comida do prato um do outro"
+    },
+    {
+      "id": 66,
+      "text": "deu comida na boca um do outro"
+    },
+    {
+      "id": 67,
+      "text": "roubou comida do prato do seu parceiro"
+    },
+    {
+      "id": 68,
+      "text": "brigou pelo último pedaço de algo"
+    },
+    {
+      "id": 69,
+      "text": "compartilhou um sorvete"
+    },
+    {
+      "id": 70,
+      "text": "compartilhou um milkshake com dois canudos"
+    },
+    {
+      "id": 71,
+      "text": "foi ao cinema drive-in"
+    },
+    {
+      "id": 72,
+      "text": "maratonou uma série de TV junto"
+    },
+    {
+      "id": 73,
+      "text": "teve uma série que é 'a série de vocês'"
+    },
+    {
+      "id": 74,
+      "text": "assistiu à frente sem seu parceiro"
+    },
+    {
+      "id": 75,
+      "text": "ficou bravo que seu parceiro assistiu sem você"
+    },
+    {
+      "id": 76,
+      "text": "dormiu durante um filme"
+    },
+    {
+      "id": 77,
+      "text": "brigou sobre o que assistir"
+    },
+    {
+      "id": 78,
+      "text": "chegou a um acordo sobre escolhas de entretenimento"
+    },
+    {
+      "id": 79,
+      "text": "fingiu gostar de algo que seu parceiro ama"
+    },
+    {
+      "id": 80,
+      "text": "assistiu algo que odeia pelo seu parceiro"
+    },
+    {
+      "id": 81,
+      "text": "foi a um show junto"
+    },
+    {
+      "id": 82,
+      "text": "foi a um festival de música junto"
+    },
+    {
+      "id": 83,
+      "text": "descobriu músicas novas junto"
+    },
+    {
+      "id": 84,
+      "text": "criou uma playlist junto"
+    },
+    {
+      "id": 85,
+      "text": "teve 'a música de vocês'"
+    },
+    {
+      "id": 86,
+      "text": "dançou uma valsa devagar em casa"
+    },
+    {
+      "id": 87,
+      "text": "dançou na chuva junto"
+    },
+    {
+      "id": 88,
+      "text": "se beijou na chuva"
+    },
+    {
+      "id": 89,
+      "text": "caminhou na chuva junto"
+    },
+    {
+      "id": 90,
+      "text": "compartilhou um guarda-chuva"
+    },
+    {
+      "id": 91,
+      "text": "fez um boneco de neve junto"
+    },
+    {
+      "id": 92,
+      "text": "teve uma batalha de bolas de neve"
+    },
+    {
+      "id": 93,
+      "text": "foi patinar junto"
+    },
+    {
+      "id": 94,
+      "text": "visitou uma feira de Natal junto"
+    },
+    {
+      "id": 95,
+      "text": "decorou uma árvore de Natal junto"
+    },
+    {
+      "id": 96,
+      "text": "trocou presentes"
+    },
+    {
+      "id": 97,
+      "text": "teve dificuldade em escolher um presente para seu parceiro"
+    },
+    {
+      "id": 98,
+      "text": "guardou o comprovante de um presente por precaução"
+    },
+    {
+      "id": 99,
+      "text": "devolveu um presente do seu parceiro"
+    },
+    {
+      "id": 100,
+      "text": "fingiu amar um presente que não gostou"
+    },
+    {
+      "id": 101,
+      "text": "repassou um presente do seu parceiro"
+    },
+    {
+      "id": 102,
+      "text": "deu um presente artesanal e atencioso"
+    },
+    {
+      "id": 103,
+      "text": "recebeu um presente artesanal"
+    },
+    {
+      "id": 104,
+      "text": "escreveu um poema de amor"
+    },
+    {
+      "id": 105,
+      "text": "recebeu um poema de amor"
+    },
+    {
+      "id": 106,
+      "text": "fez um scrapbook junto"
+    },
+    {
+      "id": 107,
+      "text": "tirou fotos de casal"
+    },
+    {
+      "id": 108,
+      "text": "fez um ensaio fotográfico profissional"
+    },
+    {
+      "id": 109,
+      "text": "ficou com vergonha da câmera junto"
+    },
+    {
+      "id": 110,
+      "text": "tirou fotos demais juntos"
+    },
+    {
+      "id": 111,
+      "text": "brigou sobre qual foto postar"
+    },
+    {
+      "id": 112,
+      "text": "foi marcado em uma foto de casal desfavorável"
+    },
+    {
+      "id": 113,
+      "text": "removeu a marcação de uma foto"
+    },
+    {
+      "id": 114,
+      "text": "pediu ao seu parceiro para deletar uma foto"
+    },
+    {
+      "id": 115,
+      "text": "deletou fotos junto"
+    },
+    {
+      "id": 116,
+      "text": "teve papel de parede de casal no celular"
+    },
+    {
+      "id": 117,
+      "text": "ficou nos contatos um do outro com emojis"
+    },
+    {
+      "id": 118,
+      "text": "salvou um ao outro com apelidos fofos"
+    },
+    {
+      "id": 119,
+      "text": "teve toques especiais um para o outro"
+    },
+    {
+      "id": 120,
+      "text": "mandou mensagem o dia todo todos os dias"
+    },
+    {
+      "id": 121,
+      "text": "enviou mensagens de voz"
+    },
+    {
+      "id": 122,
+      "text": "ficou horas no FaceTime"
+    },
+    {
+      "id": 123,
+      "text": "dormiu no FaceTime"
+    },
+    {
+      "id": 124,
+      "text": "enviou fotos aleatórias ao longo do dia"
+    },
+    {
+      "id": 125,
+      "text": "mandou memes um para o outro"
+    },
+    {
+      "id": 126,
+      "text": "teve piadas internas"
+    },
+    {
+      "id": 127,
+      "text": "falou em uma língua inventada"
+    },
+    {
+      "id": 128,
+      "text": "teve apelidos carinhosos um para o outro"
+    },
+    {
+      "id": 129,
+      "text": "chamou um ao outro de 'bebê'"
+    },
+    {
+      "id": 130,
+      "text": "usou apelidos constrangedores"
+    },
+    {
+      "id": 131,
+      "text": "foi chamado de casal brega"
+    },
+    {
+      "id": 132,
+      "text": "foi carinhoso demais em público"
+    },
+    {
+      "id": 133,
+      "text": "perturbou seus amigos"
+    },
+    {
+      "id": 134,
+      "text": "foi mandado arranjar um quarto"
+    },
+    {
+      "id": 135,
+      "text": "se beijou na frente dos amigos"
+    },
+    {
+      "id": 136,
+      "text": "ficou de mãos dadas o tempo todo"
+    },
+    {
+      "id": 137,
+      "text": "não conseguiu largar as mãos um do outro"
+    },
+    {
+      "id": 138,
+      "text": "estava na fase da lua de mel"
+    },
+    {
+      "id": 139,
+      "text": "achou que a fase da lua de mel duraria para sempre"
+    },
+    {
+      "id": 140,
+      "text": "percebeu quando a fase da lua de mel terminou"
+    },
+    {
+      "id": 141,
+      "text": "ficou confortável demais"
+    },
+    {
+      "id": 142,
+      "text": "parou de se esforçar tanto"
+    },
+    {
+      "id": 143,
+      "text": "considerou seu parceiro como garantido"
+    },
+    {
+      "id": 144,
+      "text": "percebeu que estava considerando-o como garantido"
+    },
+    {
+      "id": 145,
+      "text": "fez esforço para ser mais romântico"
+    },
+    {
+      "id": 146,
+      "text": "planejou noites de encontro novamente"
+    },
+    {
+      "id": 147,
+      "text": "trabalhou no relacionamento"
+    },
+    {
+      "id": 148,
+      "text": "leu livros de relacionamento junto"
+    },
+    {
+      "id": 149,
+      "text": "ouviu podcasts de relacionamento"
+    },
+    {
+      "id": 150,
+      "text": "pediu conselho de relacionamento a amigos"
+    },
+    {
+      "id": 151,
+      "text": "pediu ao Google conselhos de relacionamento"
+    },
+    {
+      "id": 152,
+      "text": "pesquisou perguntas de relacionamento no Google"
+    },
+    {
+      "id": 153,
+      "text": "comparou seu relacionamento com o dos outros"
+    },
+    {
+      "id": 154,
+      "text": "teve ciúme de outro casal"
+    },
+    {
+      "id": 155,
+      "text": "se perguntou se vocês se dão bem"
+    },
+    {
+      "id": 156,
+      "text": "questionou sua compatibilidade"
+    },
+    {
+      "id": 157,
+      "text": "teve dúvidas sobre o relacionamento"
+    },
+    {
+      "id": 158,
+      "text": "ignorou sinais de alerta"
+    },
+    {
+      "id": 159,
+      "text": "se convenceu de que melhoraria"
+    },
+    {
+      "id": 160,
+      "text": "ficou mais tempo do que deveria"
+    },
+    {
+      "id": 161,
+      "text": "sabia que não estava certo, mas ficou"
+    },
+    {
+      "id": 162,
+      "text": "teve medo de ficar sozinho"
+    },
+    {
+      "id": 163,
+      "text": "ficou por conveniência"
+    },
+    {
+      "id": 164,
+      "text": "ficou por causa do contrato de aluguel compartilhado"
+    },
+    {
+      "id": 165,
+      "text": "ficou por razões financeiras"
+    },
+    {
+      "id": 166,
+      "text": "ficou por causa de um animal de estimação"
+    },
+    {
+      "id": 167,
+      "text": "ficou por causa dos grupos de amigos"
+    },
+    {
+      "id": 168,
+      "text": "ficou para evitar situações embaraçosas"
+    },
+    {
+      "id": 169,
+      "text": "queria ir embora, mas não sabia como"
+    },
+    {
+      "id": 170,
+      "text": "redigiu um discurso de término"
+    },
+    {
+      "id": 171,
+      "text": "praticou terminar o relacionamento"
+    },
+    {
+      "id": 172,
+      "text": "não teve coragem de terminar"
+    },
+    {
+      "id": 173,
+      "text": "esperou que eles terminassem primeiro"
+    },
+    {
+      "id": 174,
+      "text": "queria que eles terminassem"
+    },
+    {
+      "id": 175,
+      "text": "fez com que eles terminassem primeiro"
+    },
+    {
+      "id": 176,
+      "text": "foi passivo-agressivo para afastá-los"
+    },
+    {
+      "id": 177,
+      "text": "arrumou briga na esperança de que eles fossem embora"
+    },
+    {
+      "id": 178,
+      "text": "parou de se esforçar de propósito"
+    },
+    {
+      "id": 179,
+      "text": "se desconectou emocionalmente"
+    },
+    {
+      "id": 180,
+      "text": "fez as coisas no piloto automático"
+    },
+    {
+      "id": 181,
+      "text": "fingiu felicidade"
+    },
+    {
+      "id": 182,
+      "text": "fingiu que tudo estava bem"
+    },
+    {
+      "id": 183,
+      "text": "escondeu problemas dos amigos"
+    },
+    {
+      "id": 184,
+      "text": "defendeu seu relacionamento para os outros"
+    },
+    {
+      "id": 185,
+      "text": "negou que havia problemas"
+    },
+    {
+      "id": 186,
+      "text": "esteve em negação"
+    },
+    {
+      "id": 187,
+      "text": "se recusou a ver a verdade"
+    },
+    {
+      "id": 188,
+      "text": "arranjou desculpas para seu parceiro"
+    },
+    {
+      "id": 189,
+      "text": "justificou comportamento ruim"
+    },
+    {
+      "id": 190,
+      "text": "normalizou comportamento tóxico"
+    },
+    {
+      "id": 191,
+      "text": "pensou que amor significava sacrifício"
+    },
+    {
+      "id": 192,
+      "text": "se perdeu em um relacionamento"
+    },
+    {
+      "id": 193,
+      "text": "mudou quem você é"
+    },
+    {
+      "id": 194,
+      "text": "abriu mão de hobbies por causa de um parceiro"
+    },
+    {
+      "id": 195,
+      "text": "abriu mão de amigos por causa de um parceiro"
+    },
+    {
+      "id": 196,
+      "text": "se isolou"
+    },
+    {
+      "id": 197,
+      "text": "foi isolado por um parceiro"
+    },
+    {
+      "id": 198,
+      "text": "foi controlado"
+    },
+    {
+      "id": 199,
+      "text": "foi manipulado"
+    },
+    {
+      "id": 200,
+      "text": "sofreu gaslighting"
+    },
+    {
+      "id": 201,
+      "text": "questionou sua própria realidade"
+    },
+    {
+      "id": 202,
+      "text": "foi feito de se sentir louco"
+    },
+    {
+      "id": 203,
+      "text": "pediu desculpa por coisas que não eram sua culpa"
+    },
+    {
+      "id": 204,
+      "text": "pisou em ovos"
+    },
+    {
+      "id": 205,
+      "text": "teve medo de chatear seu parceiro"
+    },
+    {
+      "id": 206,
+      "text": "escondeu coisas para evitar conflitos"
+    },
+    {
+      "id": 207,
+      "text": "mentiu para manter a paz"
+    },
+    {
+      "id": 208,
+      "text": "evitou conversas difíceis"
+    },
+    {
+      "id": 209,
+      "text": "varreu problemas para debaixo do tapete"
+    },
+    {
+      "id": 210,
+      "text": "esperou que as coisas se resolvessem sozinhas"
+    },
+    {
+      "id": 211,
+      "text": "esperou tempo demais para resolver problemas"
+    },
+    {
+      "id": 212,
+      "text": "deixou coisas pequenas se tornarem grandes"
+    },
+    {
+      "id": 213,
+      "text": "explodiu por algo pequeno"
+    },
+    {
+      "id": 214,
+      "text": "brigou por nada"
+    },
+    {
+      "id": 215,
+      "text": "brigou por algo idiota"
+    },
+    {
+      "id": 216,
+      "text": "não lembrou pelo que estava brigando"
+    },
+    {
+      "id": 217,
+      "text": "percebeu que a briga era sobre outra coisa"
+    },
+    {
+      "id": 218,
+      "text": "projetou seus problemas no seu parceiro"
+    },
+    {
+      "id": 219,
+      "text": "culpou seu parceiro pelo seu mau humor"
+    },
+    {
+      "id": 220,
+      "text": "descarregou seu estresse no seu parceiro"
+    },
+    {
+      "id": 221,
+      "text": "foi grosso com seu parceiro"
+    },
+    {
+      "id": 222,
+      "text": "foi rude com seu parceiro"
+    },
+    {
+      "id": 223,
+      "text": "disse algo cruel"
+    },
+    {
+      "id": 224,
+      "text": "chamou seu parceiro de um nome feio"
+    },
+    {
+      "id": 225,
+      "text": "xingou seu parceiro"
+    },
+    {
+      "id": 226,
+      "text": "levantou a voz"
+    },
+    {
+      "id": 227,
+      "text": "bateu uma porta"
+    },
+    {
+      "id": 228,
+      "text": "jogou algo (não neles)"
+    },
+    {
+      "id": 229,
+      "text": "deu um soco na parede"
+    },
+    {
+      "id": 230,
+      "text": "quebrou algo com raiva"
+    },
+    {
+      "id": 231,
+      "text": "se arrependeu do seu temperamento"
+    },
+    {
+      "id": 232,
+      "text": "assustou seu parceiro"
+    },
+    {
+      "id": 233,
+      "text": "teve medo do seu parceiro"
+    },
+    {
+      "id": 234,
+      "text": "se sentiu inseguro"
+    },
+    {
+      "id": 235,
+      "text": "fez seu parceiro se sentir inseguro"
+    },
+    {
+      "id": 236,
+      "text": "cruzou uma linha"
+    },
+    {
+      "id": 237,
+      "text": "fez algo imperdoável"
+    },
+    {
+      "id": 238,
+      "text": "sabia que foi longe demais"
+    },
+    {
+      "id": 239,
+      "text": "quis voltar atrás em algo"
+    },
+    {
+      "id": 240,
+      "text": "desejou poder desfazer algo"
+    },
+    {
+      "id": 241,
+      "text": "chegou a um ponto sem retorno"
+    },
+    {
+      "id": 242,
+      "text": "sabia que o relacionamento havia acabado"
+    },
+    {
+      "id": 243,
+      "text": "ficou depois que acabou"
+    },
+    {
+      "id": 244,
+      "text": "arrastou o término"
+    },
+    {
+      "id": 245,
+      "text": "terminou várias vezes"
+    },
+    {
+      "id": 246,
+      "text": "voltou várias vezes"
+    },
+    {
+      "id": 247,
+      "text": "teve um relacionamento vai e volta"
+    },
+    {
+      "id": 248,
+      "text": "confundiu todo mundo com seu status de relacionamento"
+    },
+    {
+      "id": 249,
+      "text": "não sabia se estavam juntos"
+    },
+    {
+      "id": 250,
+      "text": "estava em uma 'situationship'"
+    },
+    {
+      "id": 251,
+      "text": "evitou rótulos"
+    },
+    {
+      "id": 252,
+      "text": "teve medo de compromisso"
+    },
+    {
+      "id": 253,
+      "text": "teve fobia de compromisso"
+    },
+    {
+      "id": 254,
+      "text": "teve problemas com compromisso"
+    },
+    {
+      "id": 255,
+      "text": "afastou alguém"
+    },
+    {
+      "id": 256,
+      "text": "se sabotou"
+    },
+    {
+      "id": 257,
+      "text": "estragou algo bom"
+    },
+    {
+      "id": 258,
+      "text": "foi seu próprio pior inimigo"
+    },
+    {
+      "id": 259,
+      "text": "não acreditou que merecia amor"
+    },
+    {
+      "id": 260,
+      "text": "lutou com a autoestima"
+    },
+    {
+      "id": 261,
+      "text": "precisou de validação do seu parceiro"
+    },
+    {
+      "id": 262,
+      "text": "foi codependente"
+    },
+    {
+      "id": 263,
+      "text": "não conseguiu funcionar sem seu parceiro"
+    },
+    {
+      "id": 264,
+      "text": "fez do seu parceiro seu mundo inteiro"
+    },
+    {
+      "id": 265,
+      "text": "perdeu sua identidade"
+    },
+    {
+      "id": 266,
+      "text": "esqueceu quem era antes dele ou dela"
+    },
+    {
+      "id": 267,
+      "text": "precisou se redescobrir"
+    },
+    {
+      "id": 268,
+      "text": "trabalhou em si mesmo"
+    },
+    {
+      "id": 269,
+      "text": "cresceu como pessoa"
+    },
+    {
+      "id": 270,
+      "text": "se tornou uma pessoa melhor"
+    },
+    {
+      "id": 271,
+      "text": "aprendeu com um relacionamento"
+    },
+    {
+      "id": 272,
+      "text": "soube o que quer"
+    },
+    {
+      "id": 273,
+      "text": "soube o que não quer"
+    },
+    {
+      "id": 274,
+      "text": "estabeleceu limites melhores"
+    },
+    {
+      "id": 275,
+      "text": "aprendeu a se comunicar"
+    },
+    {
+      "id": 276,
+      "text": "aprendeu a ceder"
+    },
+    {
+      "id": 277,
+      "text": "aprendeu paciência"
+    },
+    {
+      "id": 278,
+      "text": "aprendeu o perdão"
+    },
+    {
+      "id": 279,
+      "text": "aprendeu a confiar novamente"
+    },
+    {
+      "id": 280,
+      "text": "aprendeu a amar novamente"
+    },
+    {
+      "id": 281,
+      "text": "acreditou no amor"
+    },
+    {
+      "id": 282,
+      "text": "parou de acreditar no amor"
+    },
+    {
+      "id": 283,
+      "text": "ficou cínico"
+    },
+    {
+      "id": 284,
+      "text": "jurou não ter mais relacionamentos"
+    },
+    {
+      "id": 285,
+      "text": "precisou de uma pausa dos encontros"
+    },
+    {
+      "id": 286,
+      "text": "focou em si mesmo"
+    },
+    {
+      "id": 287,
+      "text": "foi feliz solteiro"
+    },
+    {
+      "id": 288,
+      "text": "curtiu ficar sozinho"
+    },
+    {
+      "id": 289,
+      "text": "não precisou de um relacionamento"
+    },
+    {
+      "id": 290,
+      "text": "se sentiu completo por conta própria"
+    },
+    {
+      "id": 291,
+      "text": "conheceu seu valor"
+    },
+    {
+      "id": 292,
+      "text": "recusou a se contentar com menos"
+    },
+    {
+      "id": 293,
+      "text": "teve padrões"
+    },
+    {
+      "id": 294,
+      "text": "soube o que merece"
+    },
+    {
+      "id": 295,
+      "text": "esperou pela pessoa certa"
+    },
+    {
+      "id": 296,
+      "text": "acreditou em almas gêmeas"
+    },
+    {
+      "id": 297,
+      "text": "encontrou sua pessoa"
+    },
+    {
+      "id": 298,
+      "text": "soube que ele ou ela era a pessoa certa"
+    },
+    {
+      "id": 299,
+      "text": "foi verdadeiramente feliz"
+    },
+    {
+      "id": 300,
+      "text": "foi amado do jeito que merece"
+    }
+  ]
+}

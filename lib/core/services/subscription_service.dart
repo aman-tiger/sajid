@@ -17,6 +17,7 @@ class PurchaseOutcome {
 
 class SubscriptionService {
   static const String _subscriptionKey = 'has_subscription';
+  static const String _hadEverSubscriptionKey = 'had_ever_subscription';
   static const String _subscriptionCheckedAtKey = 'subscription_checked_at';
   static const String _premiumEntitlementId = 'premium';
 
@@ -47,10 +48,27 @@ class SubscriptionService {
   Future<void> _cacheSubscriptionStatus(bool isActive) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_subscriptionKey, isActive);
+    if (isActive) {
+      await prefs.setBool(_hadEverSubscriptionKey, true);
+    }
     await prefs.setInt(
       _subscriptionCheckedAtKey,
       DateTime.now().millisecondsSinceEpoch,
     );
+  }
+
+  Future<String> resolvePushSegment() async {
+    final isActive = await hasActiveSubscription();
+    if (isActive) {
+      return 'active_subscription';
+    }
+
+    final prefs = await SharedPreferences.getInstance();
+    final hadEverSubscription = prefs.getBool(_hadEverSubscriptionKey) ?? false;
+    if (hadEverSubscription) {
+      return 'churned';
+    }
+    return 'no_subscription';
   }
 
   /// Purchase a subscription product

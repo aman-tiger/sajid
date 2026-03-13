@@ -73,6 +73,7 @@ dependencies:
   # Phase 4: Backend Integration
   # Firebase - using latest versions compatible with Kotlin 2.2
   firebase_core: ^4.4.0
+  cloud_firestore: ^6.0.0
   firebase_analytics: ^12.1.1
   firebase_crashlytics: ^5.0.7
   firebase_messaging: ^16.1.1
@@ -123,7 +124,7 @@ flutter:
     - assets/questions/Classic/
     - assets/questions/party-vibe-check/
     - assets/questions/girls only/
-    - assets/questions/Сouple/
+    - assets/questions/Couple/
     - assets/questions/hot-spicy/
     - assets/questions/bros only/
 

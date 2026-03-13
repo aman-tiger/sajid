@@ -12,6 +12,7 @@ import 'core/services/firebase_service.dart';
 import 'core/services/amplitude_service.dart';
 import 'core/services/analytics_service.dart';
 import 'core/services/sentry_service.dart';
+import 'core/services/subscription_service.dart';
 import 'core/config/app_secrets.dart';
 import 'features/settings/bloc/settings_bloc.dart';
 import 'features/settings/bloc/settings_event.dart';
@@ -59,6 +60,7 @@ void main() async {
     }
 
     await AnalyticsService().logAppOpened();
+    await _syncPushAudienceSegment();
 
     runApp(const MyApp());
   });
@@ -159,5 +161,20 @@ Future<void> _stitchQonversionAndAppsflyer() async {
     sdk.setCustomerUserId(qonversionUser.qonversionId);
   } catch (e) {
     debugPrint('AppsFlyer/Qonversion stitch failed: $e');
+  }
+}
+
+Future<void> _syncPushAudienceSegment() async {
+  try {
+    final segment = await SubscriptionService().resolvePushSegment();
+    final analytics = AnalyticsService();
+    await analytics.setPushAudienceSegment(segment);
+    if (segment == 'active_subscription') {
+      await analytics.markSubscriptionActivatedForPush();
+    } else if (segment == 'churned') {
+      await analytics.markSubscriptionExpiredForPush();
+    }
+  } catch (e) {
+    debugPrint('Push segment sync failed: $e');
   }
 }
