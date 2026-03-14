@@ -121,11 +121,12 @@ jobs:
           packageName: ${{ env.ANDROID_PACKAGE_NAME }}
           releaseFiles: ${{ steps.locate_aab.outputs.aab_path }}
           track: internal
-          status: completed
+          status: draft
 
       - name: Clean up
         if: always()
         run: |
           rm -f android/key.properties
           rm -f android/app/upload-keystore.jks
+
 
