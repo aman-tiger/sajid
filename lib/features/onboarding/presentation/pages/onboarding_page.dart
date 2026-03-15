@@ -30,14 +30,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
   Future<void> _completeOnboarding() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('onboarding_completed', true);
-    await AnalyticsService().logOnboardingCompleted();
-    await AnalyticsService().markOnboardingCompletedForPush();
-    await AnalyticsService().setPushAudienceSegment('no_subscription');
 
     if (!mounted) return;
 
-    // Navigate to main menu
-    context.go('/main');
+    context.go('/onboarding-permissions');
   }
 
   void _nextPage() {

@@ -77,7 +77,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get common_and => 'en';
 
   @override
-  String get main_menu_title => 'Never Have I Ever';
+  String get main_menu_title => 'Ik heb nog nooit';
 
   @override
   String get main_menu_subtitle => 'Kies je pakket';
@@ -134,7 +134,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get category_guys_desc => 'Epische uitdagingen voor de boys!';
 
   @override
-  String get game_never_have_i_ever => 'Never Have I Ever...';
+  String get game_never_have_i_ever => 'Ik heb nog nooit...';
 
   @override
   String get game_swipe_hint => 'Swipe om te navigeren';
@@ -258,7 +258,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get how_to_play_title => 'Hoe te spelen';
 
   @override
-  String get how_to_play_header_title => 'Never Have I Ever';
+  String get how_to_play_header_title => 'Ik heb nog nooit';
 
   @override
   String get how_to_play_header_subtitle => 'De ultieme partygame';
@@ -327,6 +327,26 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get onboarding_terms_of_use => 'Gebruiksvoorwaarden';
+
+  @override
+  String get onboarding_att_title => 'Tracking toestaan';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Help ons campagnes te meten en de ervaring voor nieuwe spelers te verbeteren.';
+
+  @override
+  String get onboarding_att_button => 'Tracking toestaan';
+
+  @override
+  String get onboarding_push_title => 'Blijf op de hoogte';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Schakel meldingen in voor updates, herinneringen en speciale aanbiedingen.';
+
+  @override
+  String get onboarding_push_button => 'Meldingen toestaan';
 
   @override
   String get language_title => 'Taal';
@@ -410,6 +430,9 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Beste keuze';
+
+  @override
+  String get paywall_three_days_free => '3 dagen gratis';
 
   @override
   String paywall_trial_text(String price) {

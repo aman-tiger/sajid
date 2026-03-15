@@ -9,522 +9,576 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get onboarding_1_title => 'Готов к эпичной ночи?';
+  String get onboarding_1_title => 'Ð“Ð¾Ñ‚Ð¾Ð² Ðº ÑÐ¿Ð¸Ñ‡Ð½Ð¾Ð¹ Ð½Ð¾Ñ‡Ð¸?';
 
   @override
-  String get onboarding_1_subtitle => 'Погрузись в лучшую игру для компании!';
+  String get onboarding_1_subtitle =>
+      'ÐŸÐ¾Ð³Ñ€ÑƒÐ·Ð¸ÑÑŒ Ð² Ð»ÑƒÑ‡ÑˆÑƒÑŽ Ð¸Ð³Ñ€Ñƒ Ð´Ð»Ñ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸!';
 
   @override
-  String get onboarding_2_title => '6 эпичных наборов';
+  String get onboarding_2_title => '6 ÑÐ¿Ð¸Ñ‡Ð½Ñ‹Ñ… Ð½Ð°Ð±Ð¾Ñ€Ð¾Ð²';
 
   @override
   String get onboarding_2_subtitle =>
-      'От классики до острых — найди свой вайб!';
+      'ÐžÑ‚ ÐºÐ»Ð°ÑÑÐ¸ÐºÐ¸ Ð´Ð¾ Ð¾ÑÑ‚Ñ€Ñ‹Ñ… â€” Ð½Ð°Ð¹Ð´Ð¸ ÑÐ²Ð¾Ð¹ Ð²Ð°Ð¹Ð±!';
 
   @override
-  String get onboarding_3_title => '1 500 вопросов';
+  String get onboarding_3_title => '1 500 Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ¾Ð²';
 
   @override
   String get onboarding_3_subtitle =>
-      'Бесконечное веселье с друзьями ждёт тебя!';
+      'Ð‘ÐµÑÐºÐ¾Ð½ÐµÑ‡Ð½Ð¾Ðµ Ð²ÐµÑÐµÐ»ÑŒÐµ Ñ Ð´Ñ€ÑƒÐ·ÑŒÑÐ¼Ð¸ Ð¶Ð´Ñ‘Ñ‚ Ñ‚ÐµÐ±Ñ!';
 
   @override
-  String get onboarding_4_title => 'Оцени впечатления';
+  String get onboarding_4_title => 'ÐžÑ†ÐµÐ½Ð¸ Ð²Ð¿ÐµÑ‡Ð°Ñ‚Ð»ÐµÐ½Ð¸Ñ';
 
   @override
-  String get onboarding_4_subtitle => 'Помоги нам сделать игру ещё лучше!';
+  String get onboarding_4_subtitle =>
+      'ÐŸÐ¾Ð¼Ð¾Ð³Ð¸ Ð½Ð°Ð¼ ÑÐ´ÐµÐ»Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ ÐµÑ‰Ñ‘ Ð»ÑƒÑ‡ÑˆÐµ!';
 
   @override
-  String get button_continue => 'Продолжить';
+  String get button_continue => 'ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð¸Ñ‚ÑŒ';
 
   @override
-  String get button_start_game => 'Начать игру';
+  String get button_start_game => 'ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð¸Ð³Ñ€Ñƒ';
 
   @override
-  String get button_skip => 'Пропустить';
+  String get button_skip => 'ÐŸÑ€Ð¾Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ';
 
   @override
-  String get button_get_started => 'Начать';
+  String get button_get_started => 'ÐÐ°Ñ‡Ð°Ñ‚ÑŒ';
 
   @override
-  String get button_back => 'Назад';
+  String get button_back => 'ÐÐ°Ð·Ð°Ð´';
 
   @override
-  String get button_next => 'Далее';
+  String get button_next => 'Ð”Ð°Ð»ÐµÐµ';
 
   @override
-  String get button_save => 'Сохранить';
+  String get button_save => 'Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ';
 
   @override
-  String get button_cancel => 'Отмена';
+  String get button_cancel => 'ÐžÑ‚Ð¼ÐµÐ½Ð°';
 
   @override
-  String get button_ok => 'ОК';
+  String get button_ok => 'ÐžÐš';
 
   @override
-  String get button_close => 'Закрыть';
+  String get button_close => 'Ð—Ð°ÐºÑ€Ñ‹Ñ‚ÑŒ';
 
   @override
-  String get button_share => 'Поделиться';
+  String get button_share => 'ÐŸÐ¾Ð´ÐµÐ»Ð¸Ñ‚ÑŒÑÑ';
 
   @override
-  String get button_rate_now => 'Оценить сейчас';
+  String get button_rate_now => 'ÐžÑ†ÐµÐ½Ð¸Ñ‚ÑŒ ÑÐµÐ¹Ñ‡Ð°Ñ';
 
   @override
-  String get button_maybe_later => 'Может позже';
+  String get button_maybe_later => 'ÐœÐ¾Ð¶ÐµÑ‚ Ð¿Ð¾Ð·Ð¶Ðµ';
 
   @override
-  String get common_and => 'и';
+  String get common_and => 'Ð¸';
 
   @override
-  String get main_menu_title => 'Я никогда не...';
+  String get main_menu_title => 'Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ...';
 
   @override
-  String get main_menu_subtitle => 'Выбери набор';
+  String get main_menu_subtitle => 'Ð’Ñ‹Ð±ÐµÑ€Ð¸ Ð½Ð°Ð±Ð¾Ñ€';
 
   @override
-  String get main_menu_buy_subscription => 'Открыть все наборы';
+  String get main_menu_buy_subscription => 'ÐžÑ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð²ÑÐµ Ð½Ð°Ð±Ð¾Ñ€Ñ‹';
 
   @override
-  String get main_menu_settings => 'Настройки';
+  String get main_menu_settings => 'ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸';
 
   @override
-  String get main_menu_free => 'Бесплатно';
+  String get main_menu_free => 'Ð‘ÐµÑÐ¿Ð»Ð°Ñ‚Ð½Ð¾';
 
   @override
-  String get main_menu_premium => 'Премиум';
+  String get main_menu_premium => 'ÐŸÑ€ÐµÐ¼Ð¸ÑƒÐ¼';
 
   @override
-  String get category_classic_name => 'Классический набор';
+  String get category_classic_name => 'ÐšÐ»Ð°ÑÑÐ¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ð½Ð°Ð±Ð¾Ñ€';
 
   @override
-  String get category_classic_desc => 'Идеальный старт для любой компании!';
+  String get category_classic_desc =>
+      'Ð˜Ð´ÐµÐ°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÑ‚Ð°Ñ€Ñ‚ Ð´Ð»Ñ Ð»ÑŽÐ±Ð¾Ð¹ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸!';
 
   @override
-  String get category_party_name => 'Набор «Вечеринка»';
+  String get category_party_name => 'ÐÐ°Ð±Ð¾Ñ€ Â«Ð’ÐµÑ‡ÐµÑ€Ð¸Ð½ÐºÐ°Â»';
 
   @override
   String get category_party_desc =>
-      'Добавь драйва празднику с крутыми заданиями!';
+      'Ð”Ð¾Ð±Ð°Ð²ÑŒ Ð´Ñ€Ð°Ð¹Ð²Ð° Ð¿Ñ€Ð°Ð·Ð´Ð½Ð¸ÐºÑƒ Ñ ÐºÑ€ÑƒÑ‚Ñ‹Ð¼Ð¸ Ð·Ð°Ð´Ð°Ð½Ð¸ÑÐ¼Ð¸!';
 
   @override
-  String get category_girls_name => 'Девочки 18+';
+  String get category_girls_name => 'Ð”ÐµÐ²Ð¾Ñ‡ÐºÐ¸ 18+';
 
   @override
-  String get category_girls_desc => 'Смелые вопросы для девичника!';
+  String get category_girls_desc =>
+      'Ð¡Ð¼ÐµÐ»Ñ‹Ðµ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹ Ð´Ð»Ñ Ð´ÐµÐ²Ð¸Ñ‡Ð½Ð¸ÐºÐ°!';
 
   @override
-  String get category_couples_name => 'Набор для пар';
+  String get category_couples_name => 'ÐÐ°Ð±Ð¾Ñ€ Ð´Ð»Ñ Ð¿Ð°Ñ€';
 
   @override
-  String get category_couples_desc => 'Сблизьтесь с партнёром как никогда!';
+  String get category_couples_desc =>
+      'Ð¡Ð±Ð»Ð¸Ð·ÑŒÑ‚ÐµÑÑŒ Ñ Ð¿Ð°Ñ€Ñ‚Ð½Ñ‘Ñ€Ð¾Ð¼ ÐºÐ°Ðº Ð½Ð¸ÐºÐ¾Ð³Ð´Ð°!';
 
   @override
-  String get category_hot_name => 'Горячие вопросы 18+';
+  String get category_hot_name => 'Ð“Ð¾Ñ€ÑÑ‡Ð¸Ðµ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹ 18+';
 
   @override
-  String get category_hot_desc => 'Добавь перчинки с острыми вопросами!';
+  String get category_hot_desc =>
+      'Ð”Ð¾Ð±Ð°Ð²ÑŒ Ð¿ÐµÑ€Ñ‡Ð¸Ð½ÐºÐ¸ Ñ Ð¾ÑÑ‚Ñ€Ñ‹Ð¼Ð¸ Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ°Ð¼Ð¸!';
 
   @override
-  String get category_guys_name => 'Набор для парней';
+  String get category_guys_name => 'ÐÐ°Ð±Ð¾Ñ€ Ð´Ð»Ñ Ð¿Ð°Ñ€Ð½ÐµÐ¹';
 
   @override
-  String get category_guys_desc => 'Эпичные задания для бро!';
+  String get category_guys_desc =>
+      'Ð­Ð¿Ð¸Ñ‡Ð½Ñ‹Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ Ð´Ð»Ñ Ð±Ñ€Ð¾!';
 
   @override
-  String get game_never_have_i_ever => 'Я никогда не...';
+  String get game_never_have_i_ever => 'Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ...';
 
   @override
-  String get game_swipe_hint => 'Свайпни для навигации';
+  String get game_swipe_hint => 'Ð¡Ð²Ð°Ð¹Ð¿Ð½Ð¸ Ð´Ð»Ñ Ð½Ð°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ð¸';
 
   @override
-  String get game_loading => 'Загружаем вопросы...';
+  String get game_loading => 'Ð—Ð°Ð³Ñ€ÑƒÐ¶Ð°ÐµÐ¼ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹...';
 
   @override
-  String get game_error_title => 'Упс!';
+  String get game_error_title => 'Ð£Ð¿Ñ!';
 
   @override
-  String get game_error_no_questions => 'Для этой категории нет вопросов';
+  String get game_error_no_questions =>
+      'Ð”Ð»Ñ ÑÑ‚Ð¾Ð¹ ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¸ Ð½ÐµÑ‚ Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ¾Ð²';
 
   @override
-  String get game_error_failed_load => 'Не удалось загрузить вопросы';
+  String get game_error_failed_load =>
+      'ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð·Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹';
 
   @override
-  String get game_button_previous => 'Назад';
+  String get game_button_previous => 'ÐÐ°Ð·Ð°Ð´';
 
   @override
-  String get game_button_next => 'Далее';
+  String get game_button_next => 'Ð”Ð°Ð»ÐµÐµ';
 
   @override
-  String get game_button_shuffle => 'Перемешать';
+  String get game_button_shuffle => 'ÐŸÐµÑ€ÐµÐ¼ÐµÑˆÐ°Ñ‚ÑŒ';
 
   @override
-  String get game_button_share => 'Поделиться';
+  String get game_button_share => 'ÐŸÐ¾Ð´ÐµÐ»Ð¸Ñ‚ÑŒÑÑ';
 
   @override
   String game_share_text(String question) {
-    return 'Я никогда не... $question\n\nСкачай «Я никогда не...» и играй с друзьями!';
+    return 'Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ... $question\n\nÐ¡ÐºÐ°Ñ‡Ð°Ð¹ Â«Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ...Â» Ð¸ Ð¸Ð³Ñ€Ð°Ð¹ Ñ Ð´Ñ€ÑƒÐ·ÑŒÑÐ¼Ð¸!';
   }
 
   @override
-  String get settings_title => 'Настройки';
+  String get settings_title => 'ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸';
 
   @override
-  String get settings_section_account => 'Аккаунт';
+  String get settings_section_account => 'ÐÐºÐºÐ°ÑƒÐ½Ñ‚';
 
   @override
-  String get settings_section_app => 'Настройки приложения';
+  String get settings_section_app => 'ÐÐ°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ';
 
   @override
-  String get settings_section_support => 'Поддержка и отзывы';
+  String get settings_section_support => 'ÐŸÐ¾Ð´Ð´ÐµÑ€Ð¶ÐºÐ° Ð¸ Ð¾Ñ‚Ð·Ñ‹Ð²Ñ‹';
 
   @override
-  String get settings_section_about => 'О приложении';
+  String get settings_section_about => 'Ðž Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ð¸';
 
   @override
-  String get settings_premium_member => 'Премиум';
+  String get settings_premium_member => 'ÐŸÑ€ÐµÐ¼Ð¸ÑƒÐ¼';
 
   @override
-  String get settings_free_plan => 'Бесплатный план';
+  String get settings_free_plan => 'Ð‘ÐµÑÐ¿Ð»Ð°Ñ‚Ð½Ñ‹Ð¹ Ð¿Ð»Ð°Ð½';
 
   @override
-  String get settings_premium_desc => 'Безлимитный доступ ко всем наборам!';
+  String get settings_premium_desc =>
+      'Ð‘ÐµÐ·Ð»Ð¸Ð¼Ð¸Ñ‚Ð½Ñ‹Ð¹ Ð´Ð¾ÑÑ‚ÑƒÐ¿ ÐºÐ¾ Ð²ÑÐµÐ¼ Ð½Ð°Ð±Ð¾Ñ€Ð°Ð¼!';
 
   @override
   String get settings_free_desc =>
-      'Обновись, чтобы открыть весь премиум-контент';
+      'ÐžÐ±Ð½Ð¾Ð²Ð¸ÑÑŒ, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ð²ÐµÑÑŒ Ð¿Ñ€ÐµÐ¼Ð¸ÑƒÐ¼-ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚';
 
   @override
-  String get settings_restore_purchases => 'Восстановить покупки';
+  String get settings_restore_purchases =>
+      'Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸';
 
   @override
   String get settings_restore_purchases_desc =>
-      'Восстановить предыдущие покупки';
+      'Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ðµ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸';
 
   @override
-  String get settings_language => 'Язык';
+  String get settings_language => 'Ð¯Ð·Ñ‹Ðº';
 
   @override
-  String get settings_language_desc => 'Изменить язык приложения';
+  String get settings_language_desc =>
+      'Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ ÑÐ·Ñ‹Ðº Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ';
 
   @override
-  String get settings_dark_mode => 'Тёмная тема';
+  String get settings_dark_mode => 'Ð¢Ñ‘Ð¼Ð½Ð°Ñ Ñ‚ÐµÐ¼Ð°';
 
   @override
-  String get settings_how_to_play => 'Как играть';
+  String get settings_how_to_play => 'ÐšÐ°Ðº Ð¸Ð³Ñ€Ð°Ñ‚ÑŒ';
 
   @override
-  String get settings_how_to_play_desc => 'Узнай, как играть';
+  String get settings_how_to_play_desc => 'Ð£Ð·Ð½Ð°Ð¹, ÐºÐ°Ðº Ð¸Ð³Ñ€Ð°Ñ‚ÑŒ';
 
   @override
-  String get settings_share_app => 'Поделиться приложением';
+  String get settings_share_app =>
+      'ÐŸÐ¾Ð´ÐµÐ»Ð¸Ñ‚ÑŒÑÑ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸ÐµÐ¼';
 
   @override
-  String get settings_share_app_desc => 'Поделись с друзьями';
+  String get settings_share_app_desc => 'ÐŸÐ¾Ð´ÐµÐ»Ð¸ÑÑŒ Ñ Ð´Ñ€ÑƒÐ·ÑŒÑÐ¼Ð¸';
 
   @override
-  String get settings_rate_us => 'Оценить нас';
+  String get settings_rate_us => 'ÐžÑ†ÐµÐ½Ð¸Ñ‚ÑŒ Ð½Ð°Ñ';
 
   @override
-  String get settings_rate_us_desc => 'Оцени нас в магазине';
+  String get settings_rate_us_desc => 'ÐžÑ†ÐµÐ½Ð¸ Ð½Ð°Ñ Ð² Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ðµ';
 
   @override
-  String get settings_app_version => 'Версия приложения';
+  String get settings_app_version => 'Ð’ÐµÑ€ÑÐ¸Ñ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ';
 
   @override
-  String get settings_terms => 'Условия использования';
+  String get settings_terms => 'Ð£ÑÐ»Ð¾Ð²Ð¸Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ';
 
   @override
-  String get settings_privacy => 'Политика конфиденциальности';
+  String get settings_privacy =>
+      'ÐŸÐ¾Ð»Ð¸Ñ‚Ð¸ÐºÐ° ÐºÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚Ð¸';
 
   @override
-  String get settings_restore_dialog_title => 'Восстановление покупок';
+  String get settings_restore_dialog_title =>
+      'Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¿Ð¾ÐºÑƒÐ¿Ð¾Ðº';
 
   @override
   String get settings_restore_dialog_message =>
-      'Покупки будут восстановлены, когда будет реализована Фаза 3.';
+      'ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ¸ Ð±ÑƒÐ´ÑƒÑ‚ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ñ‹, ÐºÐ¾Ð³Ð´Ð° Ð±ÑƒÐ´ÐµÑ‚ Ñ€ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð° Ð¤Ð°Ð·Ð° 3.';
 
   @override
   String get settings_share_message =>
-      'Попробуй «Я никогда не...» — лучшая игра для вечеринок. Скачай сейчас!';
+      'ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹ Â«Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ...Â» â€” Ð»ÑƒÑ‡ÑˆÐ°Ñ Ð¸Ð³Ñ€Ð° Ð´Ð»Ñ Ð²ÐµÑ‡ÐµÑ€Ð¸Ð½Ð¾Ðº. Ð¡ÐºÐ°Ñ‡Ð°Ð¹ ÑÐµÐ¹Ñ‡Ð°Ñ!';
 
   @override
-  String get settings_share_subject => 'Я никогда не... — игра для вечеринок';
+  String get settings_share_subject =>
+      'Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ... â€” Ð¸Ð³Ñ€Ð° Ð´Ð»Ñ Ð²ÐµÑ‡ÐµÑ€Ð¸Ð½Ð¾Ðº';
 
   @override
-  String get how_to_play_title => 'Как играть';
+  String get how_to_play_title => 'ÐšÐ°Ðº Ð¸Ð³Ñ€Ð°Ñ‚ÑŒ';
 
   @override
-  String get how_to_play_header_title => 'Я никогда не...';
+  String get how_to_play_header_title => 'Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ...';
 
   @override
-  String get how_to_play_header_subtitle => 'Лучшая игра для вечеринок';
+  String get how_to_play_header_subtitle =>
+      'Ð›ÑƒÑ‡ÑˆÐ°Ñ Ð¸Ð³Ñ€Ð° Ð´Ð»Ñ Ð²ÐµÑ‡ÐµÑ€Ð¸Ð½Ð¾Ðº';
 
   @override
-  String get how_to_play_step_1_title => 'Выбери набор';
+  String get how_to_play_step_1_title => 'Ð’Ñ‹Ð±ÐµÑ€Ð¸ Ð½Ð°Ð±Ð¾Ñ€';
 
   @override
   String get how_to_play_step_1_desc =>
-      'Выбирай из 6 категорий под настроение вашей компании.';
+      'Ð’Ñ‹Ð±Ð¸Ñ€Ð°Ð¹ Ð¸Ð· 6 ÐºÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ð¹ Ð¿Ð¾Ð´ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐ½Ð¸Ðµ Ð²Ð°ÑˆÐµÐ¹ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸Ð¸.';
 
   @override
-  String get how_to_play_step_2_title => 'Прочитай вопрос';
+  String get how_to_play_step_2_title => 'ÐŸÑ€Ð¾Ñ‡Ð¸Ñ‚Ð°Ð¹ Ð²Ð¾Ð¿Ñ€Ð¾Ñ';
 
   @override
   String get how_to_play_step_2_desc =>
-      'Игроки по очереди читают вопросы «Я никогда не...» вслух.';
+      'Ð˜Ð³Ñ€Ð¾ÐºÐ¸ Ð¿Ð¾ Ð¾Ñ‡ÐµÑ€ÐµÐ´Ð¸ Ñ‡Ð¸Ñ‚Ð°ÑŽÑ‚ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹ Â«Ð¯ Ð½Ð¸ÐºÐ¾Ð³Ð´Ð° Ð½Ðµ...Â» Ð²ÑÐ»ÑƒÑ….';
 
   @override
-  String get how_to_play_step_3_title => 'Правда или действие';
+  String get how_to_play_step_3_title => 'ÐŸÑ€Ð°Ð²Ð´Ð° Ð¸Ð»Ð¸ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ðµ';
 
   @override
   String get how_to_play_step_3_desc =>
-      'Те, кто ДЕЛАЛ это, признаются или выполняют весёлое задание!';
+      'Ð¢Ðµ, ÐºÑ‚Ð¾ Ð”Ð•Ð›ÐÐ› ÑÑ‚Ð¾, Ð¿Ñ€Ð¸Ð·Ð½Ð°ÑŽÑ‚ÑÑ Ð¸Ð»Ð¸ Ð²Ñ‹Ð¿Ð¾Ð»Ð½ÑÑŽÑ‚ Ð²ÐµÑÑ‘Ð»Ð¾Ðµ Ð·Ð°Ð´Ð°Ð½Ð¸Ðµ!';
 
   @override
-  String get how_to_play_step_4_title => 'Следующий вопрос';
+  String get how_to_play_step_4_title => 'Ð¡Ð»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹ Ð²Ð¾Ð¿Ñ€Ð¾Ñ';
 
   @override
   String get how_to_play_step_4_desc =>
-      'Свайпай или нажимай, чтобы перейти дальше и продолжать веселье!';
+      'Ð¡Ð²Ð°Ð¹Ð¿Ð°Ð¹ Ð¸Ð»Ð¸ Ð½Ð°Ð¶Ð¸Ð¼Ð°Ð¹, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿ÐµÑ€ÐµÐ¹Ñ‚Ð¸ Ð´Ð°Ð»ÑŒÑˆÐµ Ð¸ Ð¿Ñ€Ð¾Ð´Ð¾Ð»Ð¶Ð°Ñ‚ÑŒ Ð²ÐµÑÐµÐ»ÑŒÐµ!';
 
   @override
-  String get how_to_play_step_5_title => 'Веселитесь!';
+  String get how_to_play_step_5_title => 'Ð’ÐµÑÐµÐ»Ð¸Ñ‚ÐµÑÑŒ!';
 
   @override
   String get how_to_play_step_5_desc =>
-      'Лови смешные моменты и узнавай друзей лучше!';
+      'Ð›Ð¾Ð²Ð¸ ÑÐ¼ÐµÑˆÐ½Ñ‹Ðµ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚Ñ‹ Ð¸ ÑƒÐ·Ð½Ð°Ð²Ð°Ð¹ Ð´Ñ€ÑƒÐ·ÐµÐ¹ Ð»ÑƒÑ‡ÑˆÐµ!';
 
   @override
   String how_to_play_step_label(String number) {
-    return 'Шаг $number';
+    return 'Ð¨Ð°Ð³ $number';
   }
 
   @override
-  String get how_to_play_pro_tips => 'Советы';
+  String get how_to_play_pro_tips => 'Ð¡Ð¾Ð²ÐµÑ‚Ñ‹';
 
   @override
   String get how_to_play_tip_1 =>
-      'Используй кнопку «Перемешать», чтобы менять порядок вопросов';
+      'Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐ¹ ÐºÐ½Ð¾Ð¿ÐºÑƒ Â«ÐŸÐµÑ€ÐµÐ¼ÐµÑˆÐ°Ñ‚ÑŒÂ», Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¿Ð¾Ñ€ÑÐ´Ð¾Ðº Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ¾Ð²';
 
   @override
-  String get how_to_play_tip_2 => 'Делись любимыми вопросами с друзьями';
+  String get how_to_play_tip_2 =>
+      'Ð”ÐµÐ»Ð¸ÑÑŒ Ð»ÑŽÐ±Ð¸Ð¼Ñ‹Ð¼Ð¸ Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ°Ð¼Ð¸ Ñ Ð´Ñ€ÑƒÐ·ÑŒÑÐ¼Ð¸';
 
   @override
   String get how_to_play_tip_3 =>
-      'Премиум-наборы открывают 1 500+ эксклюзивных вопросов';
+      'ÐŸÑ€ÐµÐ¼Ð¸ÑƒÐ¼-Ð½Ð°Ð±Ð¾Ñ€Ñ‹ Ð¾Ñ‚ÐºÑ€Ñ‹Ð²Ð°ÑŽÑ‚ 1 500+ ÑÐºÑÐºÐ»ÑŽÐ·Ð¸Ð²Ð½Ñ‹Ñ… Ð²Ð¾Ð¿Ñ€Ð¾ÑÐ¾Ð²';
 
   @override
-  String get how_to_play_tip_4 => 'Лучше всего играть компанией 3+ человек!';
+  String get how_to_play_tip_4 =>
+      'Ð›ÑƒÑ‡ÑˆÐµ Ð²ÑÐµÐ³Ð¾ Ð¸Ð³Ñ€Ð°Ñ‚ÑŒ ÐºÐ¾Ð¼Ð¿Ð°Ð½Ð¸ÐµÐ¹ 3+ Ñ‡ÐµÐ»Ð¾Ð²ÐµÐº!';
 
   @override
-  String get onboarding_terms_prefix => 'Продолжая, вы соглашаетесь с ';
+  String get onboarding_terms_prefix =>
+      'ÐŸÑ€Ð¾Ð´Ð¾Ð»Ð¶Ð°Ñ, Ð²Ñ‹ ÑÐ¾Ð³Ð»Ð°ÑˆÐ°ÐµÑ‚ÐµÑÑŒ Ñ ';
 
   @override
   String get onboarding_terms_of_use => 'Условиями использования';
 
   @override
-  String get language_title => 'Язык';
+  String get onboarding_att_title => 'Разрешить отслеживание';
 
   @override
-  String get language_subtitle => 'Выберите язык';
+  String get onboarding_att_subtitle =>
+      'Помогите нам измерять кампании и улучшать опыт новых пользователей.';
 
   @override
-  String get language_english => 'Английский';
+  String get onboarding_att_button => 'Разрешить отслеживание';
 
   @override
-  String get language_spanish => 'Испанский';
+  String get onboarding_push_title => 'Оставайтесь в курсе';
 
   @override
-  String get language_german => 'Немецкий';
+  String get onboarding_push_subtitle =>
+      'Включите уведомления, чтобы получать обновления, напоминания и специальные предложения.';
 
   @override
-  String get language_french => 'Французский';
+  String get onboarding_push_button => 'Разрешить уведомления';
 
   @override
-  String get language_korean => 'Корейский';
+  String get language_title => 'Ð¯Ð·Ñ‹Ðº';
 
   @override
-  String get language_dutch => 'Нидерландский';
+  String get language_subtitle => 'Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ ÑÐ·Ñ‹Ðº';
 
   @override
-  String get language_swedish => 'Шведский';
+  String get language_english => 'ÐÐ½Ð³Ð»Ð¸Ð¹ÑÐºÐ¸Ð¹';
 
   @override
-  String get language_norwegian => 'Норвежский';
+  String get language_spanish => 'Ð˜ÑÐ¿Ð°Ð½ÑÐºÐ¸Ð¹';
 
   @override
-  String get language_russian => 'Русский';
+  String get language_german => 'ÐÐµÐ¼ÐµÑ†ÐºÐ¸Ð¹';
 
   @override
-  String get language_portuguese_brazil => 'Португальский (Бразилия)';
+  String get language_french => 'Ð¤Ñ€Ð°Ð½Ñ†ÑƒÐ·ÑÐºÐ¸Ð¹';
 
   @override
-  String get language_japanese => 'Японский';
+  String get language_korean => 'ÐšÐ¾Ñ€ÐµÐ¹ÑÐºÐ¸Ð¹';
 
   @override
-  String get language_italian => 'Итальянский';
+  String get language_dutch => 'ÐÐ¸Ð´ÐµÑ€Ð»Ð°Ð½Ð´ÑÐºÐ¸Ð¹';
 
   @override
-  String get language_changed_title => 'Язык изменён';
+  String get language_swedish => 'Ð¨Ð²ÐµÐ´ÑÐºÐ¸Ð¹';
+
+  @override
+  String get language_norwegian => 'ÐÐ¾Ñ€Ð²ÐµÐ¶ÑÐºÐ¸Ð¹';
+
+  @override
+  String get language_russian => 'Ð ÑƒÑÑÐºÐ¸Ð¹';
+
+  @override
+  String get language_portuguese_brazil =>
+      'ÐŸÐ¾Ñ€Ñ‚ÑƒÐ³Ð°Ð»ÑŒÑÐºÐ¸Ð¹ (Ð‘Ñ€Ð°Ð·Ð¸Ð»Ð¸Ñ)';
+
+  @override
+  String get language_japanese => 'Ð¯Ð¿Ð¾Ð½ÑÐºÐ¸Ð¹';
+
+  @override
+  String get language_italian => 'Ð˜Ñ‚Ð°Ð»ÑŒÑÐ½ÑÐºÐ¸Ð¹';
+
+  @override
+  String get language_changed_title => 'Ð¯Ð·Ñ‹Ðº Ð¸Ð·Ð¼ÐµÐ½Ñ‘Ð½';
 
   @override
   String language_changed_message(String language) {
-    return 'Язык изменён на $language. В финальной версии приложение будет полностью переведено.';
+    return 'Ð¯Ð·Ñ‹Ðº Ð¸Ð·Ð¼ÐµÐ½Ñ‘Ð½ Ð½Ð° $language. Ð’ Ñ„Ð¸Ð½Ð°Ð»ÑŒÐ½Ð¾Ð¹ Ð²ÐµÑ€ÑÐ¸Ð¸ Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ðµ Ð±ÑƒÐ´ÐµÑ‚ Ð¿Ð¾Ð»Ð½Ð¾ÑÑ‚ÑŒÑŽ Ð¿ÐµÑ€ÐµÐ²ÐµÐ´ÐµÐ½Ð¾.';
   }
 
   @override
-  String get paywall_title => 'ПРЕМИУМ';
+  String get paywall_title => 'ÐŸÐ Ð•ÐœÐ˜Ð£Ðœ';
 
   @override
-  String get paywall_subtitle => 'Веселье без остановки';
+  String get paywall_subtitle => 'Ð’ÐµÑÐµÐ»ÑŒÐµ Ð±ÐµÐ· Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ¸';
 
   @override
-  String get paywall_choose_plan => 'Выберите план';
+  String get paywall_choose_plan => 'Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿Ð»Ð°Ð½';
 
   @override
-  String get paywall_feature_1 => 'Открой эксклюзивный контент 18+';
+  String get paywall_feature_1 =>
+      'ÐžÑ‚ÐºÑ€Ð¾Ð¹ ÑÐºÑÐºÐ»ÑŽÐ·Ð¸Ð²Ð½Ñ‹Ð¹ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚ 18+';
 
   @override
-  String get paywall_feature_2 => 'Регулярные обновления';
+  String get paywall_feature_2 => 'Ð ÐµÐ³ÑƒÐ»ÑÑ€Ð½Ñ‹Ðµ Ð¾Ð±Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ';
 
   @override
-  String get paywall_feature_3 => 'Без рекламы';
+  String get paywall_feature_3 => 'Ð‘ÐµÐ· Ñ€ÐµÐºÐ»Ð°Ð¼Ñ‹';
 
   @override
-  String get paywall_feature_4 => 'Отменяй в любой момент';
+  String get paywall_feature_4 => 'ÐžÑ‚Ð¼ÐµÐ½ÑÐ¹ Ð² Ð»ÑŽÐ±Ð¾Ð¹ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚';
 
   @override
-  String get paywall_weekly_plan => 'Неделя';
+  String get paywall_weekly_plan => 'ÐÐµÐ´ÐµÐ»Ñ';
 
   @override
-  String get paywall_monthly_plan => 'Месяц';
+  String get paywall_monthly_plan => 'ÐœÐµÑÑÑ†';
 
   @override
-  String get paywall_yearly_plan => 'Год';
+  String get paywall_yearly_plan => 'Ð“Ð¾Ð´';
 
   @override
   String get paywall_best_value => 'Лучшая цена';
 
   @override
+  String get paywall_three_days_free => '3 дня бесплатно';
+
+  @override
   String paywall_trial_text(String price) {
-    return '3 дня БЕСПЛАТНО';
+    return '3 Ð´Ð½Ñ Ð‘Ð•Ð¡ÐŸÐ›ÐÐ¢ÐÐž';
   }
 
   @override
-  String get price_per_week => 'в неделю';
+  String get price_per_week => 'Ð² Ð½ÐµÐ´ÐµÐ»ÑŽ';
 
   @override
   String price_per_weeks(String count) {
-    return 'за $count нед.';
+    return 'Ð·Ð° $count Ð½ÐµÐ´.';
   }
 
   @override
-  String get price_per_month => 'в месяц';
+  String get price_per_month => 'Ð² Ð¼ÐµÑÑÑ†';
 
   @override
   String price_per_months(String count) {
-    return 'за $count мес.';
+    return 'Ð·Ð° $count Ð¼ÐµÑ.';
   }
 
   @override
-  String get price_per_year => 'в год';
+  String get price_per_year => 'Ð² Ð³Ð¾Ð´';
 
   @override
   String price_per_years(String count) {
-    return 'за $count г.';
+    return 'Ð·Ð° $count Ð³.';
   }
 
   @override
-  String get paywall_start_trial => 'Начать пробный период';
+  String get paywall_start_trial => 'ÐÐ°Ñ‡Ð°Ñ‚ÑŒ Ð¿Ñ€Ð¾Ð±Ð½Ñ‹Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´';
 
   @override
-  String get paywall_subscribe => 'Оформить подписку';
+  String get paywall_subscribe => 'ÐžÑ„Ð¾Ñ€Ð¼Ð¸Ñ‚ÑŒ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÑƒ';
 
   @override
-  String get paywall_restore => 'Восстановить покупки';
+  String get paywall_restore => 'Ð’Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð¸Ñ‚ÑŒ Ð¿Ð¾ÐºÑƒÐ¿ÐºÐ¸';
 
   @override
-  String get paywall_terms => 'Условия';
+  String get paywall_terms => 'Ð£ÑÐ»Ð¾Ð²Ð¸Ñ';
 
   @override
-  String get paywall_privacy => 'Конфиденциальность';
+  String get paywall_privacy => 'ÐšÐ¾Ð½Ñ„Ð¸Ð´ÐµÐ½Ñ†Ð¸Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ';
 
   @override
-  String get paywall_cancel_anytime => 'Отмена в любой момент';
+  String get paywall_cancel_anytime =>
+      'ÐžÑ‚Ð¼ÐµÐ½Ð° Ð² Ð»ÑŽÐ±Ð¾Ð¹ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚';
 
   @override
-  String get paywall_loading => 'Загружаем планы подписки...';
+  String get paywall_loading =>
+      'Ð—Ð°Ð³Ñ€ÑƒÐ¶Ð°ÐµÐ¼ Ð¿Ð»Ð°Ð½Ñ‹ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÐ¸...';
 
   @override
-  String get paywall_error => 'Не удалось загрузить планы. Попробуйте снова.';
+  String get paywall_error =>
+      'ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð·Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð¿Ð»Ð°Ð½Ñ‹. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ½Ð¾Ð²Ð°.';
 
   @override
-  String get subscription_active => 'У вас активная подписка';
+  String get subscription_active =>
+      'Ð£ Ð²Ð°Ñ Ð°ÐºÑ‚Ð¸Ð²Ð½Ð°Ñ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÐ°';
 
   @override
-  String get subscription_expired => 'Срок подписки истёк';
+  String get subscription_expired => 'Ð¡Ñ€Ð¾Ðº Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÐ¸ Ð¸ÑÑ‚Ñ‘Ðº';
 
   @override
   String get subscription_purchase_success =>
-      'Покупка успешна! Приятной игры с премиум-контентом.';
+      'ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° ÑƒÑÐ¿ÐµÑˆÐ½Ð°! ÐŸÑ€Ð¸ÑÑ‚Ð½Ð¾Ð¹ Ð¸Ð³Ñ€Ñ‹ Ñ Ð¿Ñ€ÐµÐ¼Ð¸ÑƒÐ¼-ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚Ð¾Ð¼.';
 
   @override
-  String get subscription_purchase_cancelled => 'Покупка отменена';
+  String get subscription_purchase_cancelled =>
+      'ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð¾Ñ‚Ð¼ÐµÐ½ÐµÐ½Ð°';
 
   @override
   String get subscription_purchase_error =>
-      'Покупка не удалась. Попробуйте снова.';
+      'ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ° Ð½Ðµ ÑƒÐ´Ð°Ð»Ð°ÑÑŒ. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ½Ð¾Ð²Ð°.';
 
   @override
-  String get subscription_restore_success => 'Покупки успешно восстановлены!';
+  String get subscription_restore_success =>
+      'ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ¸ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ñ‹!';
 
   @override
   String get subscription_restore_error =>
-      'Покупки для восстановления не найдены.';
+      'ÐŸÐ¾ÐºÑƒÐ¿ÐºÐ¸ Ð´Ð»Ñ Ð²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð¸Ñ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ñ‹.';
 
   @override
-  String get subscription_checking => 'Проверяем статус подписки...';
+  String get subscription_checking =>
+      'ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼ ÑÑ‚Ð°Ñ‚ÑƒÑ Ð¿Ð¾Ð´Ð¿Ð¸ÑÐºÐ¸...';
 
   @override
-  String get error_generic => 'Что-то пошло не так. Попробуйте снова.';
+  String get error_generic =>
+      'Ð§Ñ‚Ð¾-Ñ‚Ð¾ Ð¿Ð¾ÑˆÐ»Ð¾ Ð½Ðµ Ñ‚Ð°Ðº. ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ ÑÐ½Ð¾Ð²Ð°.';
 
   @override
-  String get error_network => 'Ошибка сети. Проверьте подключение.';
+  String get error_network =>
+      'ÐžÑˆÐ¸Ð±ÐºÐ° ÑÐµÑ‚Ð¸. ÐŸÑ€Ð¾Ð²ÐµÑ€ÑŒÑ‚Ðµ Ð¿Ð¾Ð´ÐºÐ»ÑŽÑ‡ÐµÐ½Ð¸Ðµ.';
 
   @override
   String error_loading_questions(String error) {
-    return 'Не удалось загрузить вопросы: $error';
+    return 'ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð·Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð²Ð¾Ð¿Ñ€Ð¾ÑÑ‹: $error';
   }
 
   @override
   String error_loading_settings(String error) {
-    return 'Не удалось загрузить настройки: $error';
+    return 'ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð·Ð°Ð³Ñ€ÑƒÐ·Ð¸Ñ‚ÑŒ Ð½Ð°ÑÑ‚Ñ€Ð¾Ð¹ÐºÐ¸: $error';
   }
 
   @override
-  String get common_loading => 'Загрузка...';
+  String get common_loading => 'Ð—Ð°Ð³Ñ€ÑƒÐ·ÐºÐ°...';
 
   @override
-  String get common_retry => 'Повторить';
+  String get common_retry => 'ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚ÑŒ';
 
   @override
-  String get common_done => 'Готово';
+  String get common_done => 'Ð“Ð¾Ñ‚Ð¾Ð²Ð¾';
 
   @override
-  String get common_error => 'Ошибка';
+  String get common_error => 'ÐžÑˆÐ¸Ð±ÐºÐ°';
 
   @override
-  String get common_success => 'Успешно';
+  String get common_success => 'Ð£ÑÐ¿ÐµÑˆÐ½Ð¾';
 
   @override
-  String get common_warning => 'Предупреждение';
+  String get common_warning => 'ÐŸÑ€ÐµÐ´ÑƒÐ¿Ñ€ÐµÐ¶Ð´ÐµÐ½Ð¸Ðµ';
 
   @override
-  String get common_info => 'Инфо';
+  String get common_info => 'Ð˜Ð½Ñ„Ð¾';
 
   @override
   String error_page_not_found(String path) {
-    return 'Страница не найдена: $path';
+    return 'Ð¡Ñ‚Ñ€Ð°Ð½Ð¸Ñ†Ð° Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð°: $path';
   }
 }

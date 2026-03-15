@@ -1,235 +1,241 @@
-{
-  "@@locale": "pt",
-  "onboarding_1_title": "Pronto para uma noite épica?",
-  "onboarding_1_subtitle": "Mergulhe na experiência definitiva do jogo!",
-  "onboarding_2_title": "6 pacotes épicos",
-  "onboarding_2_subtitle": "Do clássico ao spicy — encontre a sua vibe!",
-  "onboarding_3_title": "1.500 perguntas",
-  "onboarding_3_subtitle": "Diversão sem fim com amigos te espera!",
-  "onboarding_4_title": "Avalie sua experiência",
-  "onboarding_4_subtitle": "Ajude a gente a deixar o jogo ainda melhor!",
-  "button_continue": "Continuar",
-  "button_start_game": "Começar jogo",
-  "button_skip": "Pular",
-  "button_get_started": "Começar",
-  "button_back": "Voltar",
-  "button_next": "Próximo",
-  "button_save": "Salvar",
-  "button_cancel": "Cancelar",
-  "button_ok": "OK",
-  "button_close": "Fechar",
-  "button_share": "Compartilhar",
-  "button_rate_now": "Avaliar agora",
-  "button_maybe_later": "Talvez mais tarde",
-  "common_and": "e",
-  "main_menu_title": "Eu Nunca",
-  "main_menu_subtitle": "Escolha seu pacote",
-  "main_menu_buy_subscription": "Desbloquear todos os pacotes",
-  "main_menu_settings": "Configurações",
-  "main_menu_free": "Grátis",
-  "main_menu_premium": "Premium",
-  "category_classic_name": "Pacote Clássico",
-  "category_classic_desc": "O começo perfeito para qualquer reunião!",
-  "category_party_name": "Pacote Festa",
-  "category_party_desc": "Anime a comemoração com desafios incríveis!",
-  "category_girls_name": "Meninas 18+",
-  "category_girls_desc": "Perguntas ousadas para uma noite das meninas!",
-  "category_couples_name": "Pacote Casais",
-  "category_couples_desc": "Conecte-se com seu parceiro como nunca antes!",
-  "category_hot_name": "Perguntas Picantes 18+",
-  "category_hot_desc": "Aumente a temperatura com perguntas spicy!",
-  "category_guys_name": "Pacote Homens",
-  "category_guys_desc": "Desafios épicos feitos para a galera!",
-  "game_never_have_i_ever": "Eu nunca...",
-  "game_swipe_hint": "Deslize para navegar",
-  "game_loading": "Carregando perguntas...",
-  "game_error_title": "Ops!",
-  "game_error_no_questions": "Não há perguntas disponíveis para esta categoria",
-  "game_error_failed_load": "Falha ao carregar perguntas",
-  "game_button_previous": "Anterior",
-  "game_button_next": "Próximo",
-  "game_button_shuffle": "Embaralhar",
-  "game_button_share": "Compartilhar",
-  "game_share_text": "Eu nunca... {question}\n\nBaixe o app Eu Nunca e jogue com amigos!",
-  "@game_share_text": {
-    "placeholders": {
-      "question": {
-        "type": "String"
-      }
-    }
-  },
-  "settings_title": "Configurações",
-  "settings_section_account": "Conta",
-  "settings_section_app": "Configurações do app",
-  "settings_section_support": "Suporte e feedback",
-  "settings_section_about": "Sobre",
-  "settings_premium_member": "Membro Premium",
-  "settings_free_plan": "Plano grátis",
-  "settings_premium_desc": "Aproveite acesso ilimitado a todos os pacotes!",
-  "settings_free_desc": "Atualize para desbloquear todo o conteúdo premium",
-  "settings_restore_purchases": "Restaurar compras",
-  "settings_restore_purchases_desc": "Restaure suas compras anteriores",
-  "settings_language": "Idioma",
-  "settings_language_desc": "Alterar idioma do app",
-  "settings_dark_mode": "Modo escuro",
-  "settings_how_to_play": "Como jogar",
-  "settings_how_to_play_desc": "Aprenda como jogar",
-  "settings_share_app": "Compartilhar app",
-  "settings_share_app_desc": "Compartilhe com amigos",
-  "settings_rate_us": "Avalie-nos",
-  "settings_rate_us_desc": "Avalie na loja",
-  "settings_app_version": "Versão do app",
-  "settings_terms": "Termos e condições",
-  "settings_privacy": "Política de privacidade",
-  "settings_restore_dialog_title": "Restaurar compras",
-  "settings_restore_dialog_message": "Suas compras serão restauradas quando a Fase 3 for implementada.",
-  "settings_share_message": "Conheça Eu Nunca! O app definitivo para festas. Baixe agora!",
-  "settings_share_subject": "Eu Nunca - Jogo divertido de festa",
-  "how_to_play_title": "Como jogar",
-  "how_to_play_header_title": "Eu Nunca",
-  "how_to_play_header_subtitle": "O jogo definitivo de festa",
-  "how_to_play_step_1_title": "Escolha seu pacote",
-  "how_to_play_step_1_desc": "Selecione entre 6 categorias empolgantes que combinam com a vibe da festa.",
-  "how_to_play_step_2_title": "Leia a pergunta",
-  "how_to_play_step_2_desc": "Cada jogador se reveza lendo perguntas \"Eu nunca...\" em voz alta.",
-  "how_to_play_step_3_title": "Verdade ou desafio",
-  "how_to_play_step_3_desc": "Quem JÁ fez precisa admitir ou cumprir um desafio divertido!",
-  "how_to_play_step_4_title": "Próxima pergunta",
-  "how_to_play_step_4_desc": "Deslize ou toque para ir para a próxima pergunta e manter a diversão!",
-  "how_to_play_step_5_title": "Divirta-se!",
-  "how_to_play_step_5_desc": "Aproveite momentos hilários e conheça melhor seus amigos!",
-  "how_to_play_step_label": "Etapa {number}",
-  "@how_to_play_step_label": {
-    "placeholders": {
-      "number": {
-        "type": "String"
-      }
-    }
-  },
-  "how_to_play_pro_tips": "Dicas",
-  "how_to_play_tip_1": "Use o botão de embaralhar para randomizar as perguntas",
-  "how_to_play_tip_2": "Compartilhe suas perguntas favoritas com amigos",
-  "how_to_play_tip_3": "Pacotes premium liberam 1.500+ perguntas exclusivas",
-  "how_to_play_tip_4": "Melhor com 3+ jogadores para máximo divertimento!",
-  "onboarding_terms_prefix": "Ao continuar, você concorda com nossos ",
-  "onboarding_terms_of_use": "Termos de uso",
-  "language_title": "Idioma",
-  "language_subtitle": "Selecione seu idioma",
-  "language_english": "Inglês",
-  "language_spanish": "Espanhol",
-  "language_german": "Alemão",
-  "language_french": "Francês",
-  "language_korean": "Coreano",
-  "language_changed_title": "Idioma alterado",
-  "language_changed_message": "O idioma foi alterado para {language}. O app será totalmente traduzido na versão final.",
-  "@language_changed_message": {
-    "placeholders": {
-      "language": {
-        "type": "String"
-      }
-    }
-  },
-  "paywall_title": "VIRE PREMIUM",
-  "paywall_subtitle": "Diversão sem parar",
-  "paywall_choose_plan": "Escolha seu plano",
-  "paywall_feature_1": "Desbloqueie conteúdo exclusivo 18+",
-  "paywall_feature_2": "Novas atualizações regularmente",
-  "paywall_feature_3": "Zero anúncios",
-  "paywall_feature_4": "Cancele quando quiser",
-  "paywall_weekly_plan": "Semanal",
-  "paywall_monthly_plan": "Mensal",
-  "paywall_yearly_plan": "Anual",
-  "paywall_best_value": "Melhor custo-benefício",
-  "paywall_trial_text": "Experimente GRÁTIS por 3 dias",
-  "@paywall_trial_text": {
-    "placeholders": {
-      "price": {
-        "type": "String"
-      }
-    }
-  },
-  "price_per_week": "por semana",
-  "price_per_weeks": "por {count} semanas",
-  "@price_per_weeks": {
-    "placeholders": {
-      "count": {
-        "type": "String"
-      }
-    }
-  },
-  "price_per_month": "por mês",
-  "price_per_months": "por {count} meses",
-  "@price_per_months": {
-    "placeholders": {
-      "count": {
-        "type": "String"
-      }
-    }
-  },
-  "price_per_year": "por ano",
-  "price_per_years": "por {count} anos",
-  "@price_per_years": {
-    "placeholders": {
-      "count": {
-        "type": "String"
-      }
-    }
-  },
-  "paywall_start_trial": "Iniciar teste grátis",
-  "paywall_subscribe": "Assinar agora",
-  "paywall_restore": "Restaurar compras",
-  "paywall_terms": "Termos e condições",
-  "paywall_privacy": "Política de privacidade",
-  "paywall_cancel_anytime": "Cancele quando quiser",
-  "paywall_loading": "Carregando planos de assinatura...",
-  "paywall_error": "Falha ao carregar os planos. Tente novamente.",
-  "subscription_active": "Você tem uma assinatura ativa",
-  "subscription_expired": "Sua assinatura expirou",
-  "subscription_purchase_success": "Compra realizada! Aproveite o conteúdo premium.",
-  "subscription_purchase_cancelled": "Compra cancelada",
-  "subscription_purchase_error": "Falha na compra. Tente novamente.",
-  "subscription_restore_success": "Compras restauradas com sucesso!",
-  "subscription_restore_error": "Nenhuma compra encontrada para restaurar.",
-  "subscription_checking": "Verificando status da assinatura...",
-  "error_generic": "Algo deu errado. Tente novamente.",
-  "error_network": "Erro de rede. Verifique sua conexão.",
-  "error_loading_questions": "Falha ao carregar perguntas: {error}",
-  "@error_loading_questions": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "error_loading_settings": "Falha ao carregar configurações: {error}",
-  "@error_loading_settings": {
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
-  "common_loading": "Carregando...",
-  "common_retry": "Tentar novamente",
-  "common_done": "Concluído",
-  "common_error": "Erro",
-  "common_success": "Sucesso",
-  "common_warning": "Aviso",
-  "common_info": "Info",
-  "error_page_not_found": "Página não encontrada: {path}",
-  "@error_page_not_found": {
-    "placeholders": {
-      "path": {
-        "type": "String"
-      }
-    }
-  },
-  "language_dutch": "Holandês",
-  "language_swedish": "Sueco",
-  "language_norwegian": "Norueguês",
-  "language_russian": "Russo",
-  "language_portuguese_brazil": "Português (Brasil)",
-  "language_japanese": "Japonês",
-  "language_italian": "Italiano"
+﻿{
+    "@@locale":  "pt",
+    "onboarding_1_title":  "Pronto para uma noite Ã©pica?",
+    "onboarding_1_subtitle":  "Mergulhe na experiÃªncia definitiva do jogo!",
+    "onboarding_2_title":  "6 pacotes Ã©picos",
+    "onboarding_2_subtitle":  "Do clÃ¡ssico ao spicy â€” encontre a sua vibe!",
+    "onboarding_3_title":  "1.500 perguntas",
+    "onboarding_3_subtitle":  "DiversÃ£o sem fim com amigos te espera!",
+    "onboarding_4_title":  "Avalie sua experiÃªncia",
+    "onboarding_4_subtitle":  "Ajude a gente a deixar o jogo ainda melhor!",
+    "button_continue":  "Continuar",
+    "button_start_game":  "ComeÃ§ar jogo",
+    "button_skip":  "Pular",
+    "button_get_started":  "ComeÃ§ar",
+    "button_back":  "Voltar",
+    "button_next":  "PrÃ³ximo",
+    "button_save":  "Salvar",
+    "button_cancel":  "Cancelar",
+    "button_ok":  "OK",
+    "button_close":  "Fechar",
+    "button_share":  "Compartilhar",
+    "button_rate_now":  "Avaliar agora",
+    "button_maybe_later":  "Talvez mais tarde",
+    "common_and":  "e",
+    "main_menu_title":  "Eu Nunca",
+    "main_menu_subtitle":  "Escolha seu pacote",
+    "main_menu_buy_subscription":  "Desbloquear todos os pacotes",
+    "main_menu_settings":  "ConfiguraÃ§Ãµes",
+    "main_menu_free":  "GrÃ¡tis",
+    "main_menu_premium":  "Premium",
+    "category_classic_name":  "Pacote ClÃ¡ssico",
+    "category_classic_desc":  "O comeÃ§o perfeito para qualquer reuniÃ£o!",
+    "category_party_name":  "Pacote Festa",
+    "category_party_desc":  "Anime a comemoraÃ§Ã£o com desafios incrÃ­veis!",
+    "category_girls_name":  "Meninas 18+",
+    "category_girls_desc":  "Perguntas ousadas para uma noite das meninas!",
+    "category_couples_name":  "Pacote Casais",
+    "category_couples_desc":  "Conecte-se com seu parceiro como nunca antes!",
+    "category_hot_name":  "Perguntas Picantes 18+",
+    "category_hot_desc":  "Aumente a temperatura com perguntas spicy!",
+    "category_guys_name":  "Pacote Homens",
+    "category_guys_desc":  "Desafios Ã©picos feitos para a galera!",
+    "game_never_have_i_ever":  "Eu nunca...",
+    "game_swipe_hint":  "Deslize para navegar",
+    "game_loading":  "Carregando perguntas...",
+    "game_error_title":  "Ops!",
+    "game_error_no_questions":  "NÃ£o hÃ¡ perguntas disponÃ­veis para esta categoria",
+    "game_error_failed_load":  "Falha ao carregar perguntas",
+    "game_button_previous":  "Anterior",
+    "game_button_next":  "PrÃ³ximo",
+    "game_button_shuffle":  "Embaralhar",
+    "game_button_share":  "Compartilhar",
+    "game_share_text":  "Eu nunca... {question}\n\nBaixe o app Eu Nunca e jogue com amigos!",
+    "@game_share_text":  {
+                             "placeholders":  {
+                                                  "question":  {
+                                                                   "type":  "String"
+                                                               }
+                                              }
+                         },
+    "settings_title":  "ConfiguraÃ§Ãµes",
+    "settings_section_account":  "Conta",
+    "settings_section_app":  "ConfiguraÃ§Ãµes do app",
+    "settings_section_support":  "Suporte e feedback",
+    "settings_section_about":  "Sobre",
+    "settings_premium_member":  "Membro Premium",
+    "settings_free_plan":  "Plano grÃ¡tis",
+    "settings_premium_desc":  "Aproveite acesso ilimitado a todos os pacotes!",
+    "settings_free_desc":  "Atualize para desbloquear todo o conteÃºdo premium",
+    "settings_restore_purchases":  "Restaurar compras",
+    "settings_restore_purchases_desc":  "Restaure suas compras anteriores",
+    "settings_language":  "Idioma",
+    "settings_language_desc":  "Alterar idioma do app",
+    "settings_dark_mode":  "Modo escuro",
+    "settings_how_to_play":  "Como jogar",
+    "settings_how_to_play_desc":  "Aprenda como jogar",
+    "settings_share_app":  "Compartilhar app",
+    "settings_share_app_desc":  "Compartilhe com amigos",
+    "settings_rate_us":  "Avalie-nos",
+    "settings_rate_us_desc":  "Avalie na loja",
+    "settings_app_version":  "VersÃ£o do app",
+    "settings_terms":  "Termos e condiÃ§Ãµes",
+    "settings_privacy":  "PolÃ­tica de privacidade",
+    "settings_restore_dialog_title":  "Restaurar compras",
+    "settings_restore_dialog_message":  "Suas compras serÃ£o restauradas quando a Fase 3 for implementada.",
+    "settings_share_message":  "ConheÃ§a Eu Nunca! O app definitivo para festas. Baixe agora!",
+    "settings_share_subject":  "Eu Nunca - Jogo divertido de festa",
+    "how_to_play_title":  "Como jogar",
+    "how_to_play_header_title":  "Eu Nunca",
+    "how_to_play_header_subtitle":  "O jogo definitivo de festa",
+    "how_to_play_step_1_title":  "Escolha seu pacote",
+    "how_to_play_step_1_desc":  "Selecione entre 6 categorias empolgantes que combinam com a vibe da festa.",
+    "how_to_play_step_2_title":  "Leia a pergunta",
+    "how_to_play_step_2_desc":  "Cada jogador se reveza lendo perguntas \"Eu nunca...\" em voz alta.",
+    "how_to_play_step_3_title":  "Verdade ou desafio",
+    "how_to_play_step_3_desc":  "Quem JÃ fez precisa admitir ou cumprir um desafio divertido!",
+    "how_to_play_step_4_title":  "PrÃ³xima pergunta",
+    "how_to_play_step_4_desc":  "Deslize ou toque para ir para a prÃ³xima pergunta e manter a diversÃ£o!",
+    "how_to_play_step_5_title":  "Divirta-se!",
+    "how_to_play_step_5_desc":  "Aproveite momentos hilÃ¡rios e conheÃ§a melhor seus amigos!",
+    "how_to_play_step_label":  "Etapa {number}",
+    "@how_to_play_step_label":  {
+                                    "placeholders":  {
+                                                         "number":  {
+                                                                        "type":  "String"
+                                                                    }
+                                                     }
+                                },
+    "how_to_play_pro_tips":  "Dicas",
+    "how_to_play_tip_1":  "Use o botÃ£o de embaralhar para randomizar as perguntas",
+    "how_to_play_tip_2":  "Compartilhe suas perguntas favoritas com amigos",
+    "how_to_play_tip_4":  "Melhor com 3+ jogadores para máxima diversão!",
+    "onboarding_terms_prefix":  "Ao continuar, você concorda com nossos ",
+    "onboarding_terms_of_use":  "Termos de uso",
+    "onboarding_att_title":  "Permitir rastreamento",
+    "onboarding_att_subtitle":  "Ajude a medir campanhas e melhorar a experiência dos novos jogadores.",
+    "onboarding_att_button":  "Permitir rastreamento",
+    "onboarding_push_title":  "Fique por dentro",
+    "onboarding_push_subtitle":  "Ative notificações para receber novidades, lembretes e ofertas especiais.",
+    "onboarding_push_button":  "Permitir notificações",
+    "language_title":  "Idioma",
+    "language_subtitle":  "Selecione seu idioma",
+    "language_english":  "InglÃªs",
+    "language_spanish":  "Espanhol",
+    "language_german":  "AlemÃ£o",
+    "language_french":  "FrancÃªs",
+    "language_korean":  "Coreano",
+    "language_changed_title":  "Idioma alterado",
+    "language_changed_message":  "O idioma foi alterado para {language}. O app serÃ¡ totalmente traduzido na versÃ£o final.",
+    "@language_changed_message":  {
+                                      "placeholders":  {
+                                                           "language":  {
+                                                                            "type":  "String"
+                                                                        }
+                                                       }
+                                  },
+    "paywall_title":  "VIRE PREMIUM",
+    "paywall_subtitle":  "DiversÃ£o sem parar",
+    "paywall_choose_plan":  "Escolha seu plano",
+    "paywall_feature_1":  "Desbloqueie conteÃºdo exclusivo 18+",
+    "paywall_feature_2":  "Novas atualizaÃ§Ãµes regularmente",
+    "paywall_feature_3":  "Zero anÃºncios",
+    "paywall_feature_4":  "Cancele quando quiser",
+    "paywall_monthly_plan":  "Mensal",
+    "paywall_yearly_plan":  "Anual",
+    "paywall_best_value":  "Melhor custo-benefício",
+    "paywall_three_days_free":  "3 dias grátis",
+    "paywall_trial_text":  "Experimente GRÃTIS por 3 dias",
+    "@paywall_trial_text":  {
+                                "placeholders":  {
+                                                     "price":  {
+                                                                   "type":  "String"
+                                                               }
+                                                 }
+                            },
+    "price_per_week":  "por semana",
+    "price_per_weeks":  "por {count} semanas",
+    "@price_per_weeks":  {
+                             "placeholders":  {
+                                                  "count":  {
+                                                                "type":  "String"
+                                                            }
+                                              }
+                         },
+    "price_per_month":  "por mÃªs",
+    "price_per_months":  "por {count} meses",
+    "@price_per_months":  {
+                              "placeholders":  {
+                                                   "count":  {
+                                                                 "type":  "String"
+                                                             }
+                                               }
+                          },
+    "price_per_year":  "por ano",
+    "price_per_years":  "por {count} anos",
+    "@price_per_years":  {
+                             "placeholders":  {
+                                                  "count":  {
+                                                                "type":  "String"
+                                                            }
+                                              }
+                         },
+    "paywall_start_trial":  "Iniciar teste grÃ¡tis",
+    "paywall_subscribe":  "Assinar agora",
+    "paywall_restore":  "Restaurar compras",
+    "paywall_terms":  "Termos e condiÃ§Ãµes",
+    "paywall_privacy":  "PolÃ­tica de privacidade",
+    "paywall_cancel_anytime":  "Cancele quando quiser",
+    "paywall_loading":  "Carregando planos de assinatura...",
+    "paywall_error":  "Falha ao carregar os planos. Tente novamente.",
+    "subscription_active":  "VocÃª tem uma assinatura ativa",
+    "subscription_expired":  "Sua assinatura expirou",
+    "subscription_purchase_success":  "Compra realizada! Aproveite o conteÃºdo premium.",
+    "subscription_purchase_cancelled":  "Compra cancelada",
+    "subscription_purchase_error":  "Falha na compra. Tente novamente.",
+    "subscription_restore_success":  "Compras restauradas com sucesso!",
+    "subscription_restore_error":  "Nenhuma compra encontrada para restaurar.",
+    "subscription_checking":  "Verificando status da assinatura...",
+    "error_generic":  "Algo deu errado. Tente novamente.",
+    "error_network":  "Erro de rede. Verifique sua conexÃ£o.",
+    "error_loading_questions":  "Falha ao carregar perguntas: {error}",
+    "@error_loading_questions":  {
+                                     "placeholders":  {
+                                                          "error":  {
+                                                                        "type":  "String"
+                                                                    }
+                                                      }
+                                 },
+    "error_loading_settings":  "Falha ao carregar configuraÃ§Ãµes: {error}",
+    "@error_loading_settings":  {
+                                    "placeholders":  {
+                                                         "error":  {
+                                                                       "type":  "String"
+                                                                   }
+                                                     }
+                                },
+    "common_loading":  "Carregando...",
+    "common_retry":  "Tentar novamente",
+    "common_done":  "ConcluÃ­do",
+    "common_error":  "Erro",
+    "common_success":  "Sucesso",
+    "common_warning":  "Aviso",
+    "common_info":  "Info",
+    "error_page_not_found":  "PÃ¡gina nÃ£o encontrada: {path}",
+    "@error_page_not_found":  {
+                                  "placeholders":  {
+                                                       "path":  {
+                                                                    "type":  "String"
+                                                                }
+                                                   }
+                              },
+    "language_dutch":  "HolandÃªs",
+    "language_swedish":  "Sueco",
+    "language_norwegian":  "NorueguÃªs",
+    "language_russian":  "Russo",
+    "language_portuguese_brazil":  "PortuguÃªs (Brasil)",
+    "language_japanese":  "JaponÃªs",
+    "language_italian":  "Italiano",
+    "how_to_play_tip_3":  "Pacotes premium desbloqueiam mais de 1.500 perguntas exclusivas",
+    "paywall_weekly_plan":  "Semanal"
 }
-

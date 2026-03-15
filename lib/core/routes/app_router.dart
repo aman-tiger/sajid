@@ -8,30 +8,45 @@ import '../../features/settings/presentation/pages/settings_page.dart';
 import '../../features/how_to_play/presentation/pages/how_to_play_page.dart';
 import '../../features/language/presentation/pages/language_page.dart';
 import '../../features/paywall/presentation/pages/paywall_page.dart';
+import '../../features/onboarding/presentation/pages/onboarding_permissions_flow_page.dart';
 import '../../l10n/app_localizations.dart';
 
 class AppRouter {
+  static const String _onboardingCompletedKey = 'onboarding_completed';
+  static const String _hasSubscriptionKey = 'has_subscription';
+  static const String _introPaywallSeenKey = 'intro_paywall_seen';
+
   static Future<bool> _checkOnboardingCompleted() async {
     final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool('onboarding_completed') ?? false;
+    return prefs.getBool(_onboardingCompletedKey) ?? false;
+  }
+
+  static Future<bool> _shouldShowIntroPaywall() async {
+    final prefs = await SharedPreferences.getInstance();
+    final hasSubscription = prefs.getBool(_hasSubscriptionKey) ?? false;
+    final introPaywallSeen = prefs.getBool(_introPaywallSeenKey) ?? false;
+    return !hasSubscription && !introPaywallSeen;
   }
 
   static final GoRouter router = GoRouter(
     initialLocation: '/',
     redirect: (context, state) async {
       final onboardingCompleted = await _checkOnboardingCompleted();
+      final shouldShowIntroPaywall = await _shouldShowIntroPaywall();
 
-      // If user is on root and onboarding not completed, go to onboarding
       if (state.matchedLocation == '/' && !onboardingCompleted) {
         return '/onboarding';
       }
 
-      // If user is on root and onboarding completed, go to main
+      if (state.matchedLocation == '/' && shouldShowIntroPaywall) {
+        return '/paywall?context=onboarding&source=onboarding';
+      }
+
       if (state.matchedLocation == '/' && onboardingCompleted) {
         return '/main';
       }
 
-      return null; // No redirect needed
+      return null;
     },
     routes: [
       GoRoute(
@@ -42,6 +57,11 @@ class AppRouter {
         path: '/onboarding',
         name: 'onboarding',
         builder: (context, state) => const OnboardingPage(),
+      ),
+      GoRoute(
+        path: '/onboarding-permissions',
+        name: 'onboarding-permissions',
+        builder: (context, state) => const OnboardingPermissionsFlowPage(),
       ),
       GoRoute(
         path: '/main',

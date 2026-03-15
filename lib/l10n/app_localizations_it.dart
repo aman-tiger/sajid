@@ -13,14 +13,14 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get onboarding_1_subtitle =>
-      'Tuffati nell’esperienza di gioco definitiva!';
+      'Tuffati nellâ€™esperienza di gioco definitiva!';
 
   @override
   String get onboarding_2_title => '6 pacchetti epici';
 
   @override
   String get onboarding_2_subtitle =>
-      'Dal classico allo spicy — trova il vibe perfetto!';
+      'Dal classico allo spicy â€” trova il vibe perfetto!';
 
   @override
   String get onboarding_3_title => '1.500 domande';
@@ -100,7 +100,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get category_classic_name => 'Pacchetto Classico';
 
   @override
-  String get category_classic_desc => 'L’inizio perfetto per qualsiasi serata!';
+  String get category_classic_desc =>
+      'Lâ€™inizio perfetto per qualsiasi serata!';
 
   @override
   String get category_party_name => 'Pacchetto Party';
@@ -168,7 +169,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String game_share_text(String question) {
-    return 'Non ho mai... $question\n\nScarica l’app Non ho mai... e gioca con gli amici!';
+    return 'Non ho mai... $question\n\nScarica lâ€™app Non ho mai... e gioca con gli amici!';
   }
 
   @override
@@ -198,7 +199,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settings_free_desc =>
-      'Fai l’upgrade per sbloccare tutti i contenuti premium';
+      'Fai lâ€™upgrade per sbloccare tutti i contenuti premium';
 
   @override
   String get settings_restore_purchases => 'Ripristina acquisti';
@@ -211,10 +212,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get settings_language => 'Lingua';
 
   @override
-  String get settings_language_desc => 'Cambia la lingua dell’app';
+  String get settings_language_desc => 'Cambia la lingua dellâ€™app';
 
   @override
-  String get settings_dark_mode => 'Modalità scura';
+  String get settings_dark_mode => 'ModalitÃ  scura';
 
   @override
   String get settings_how_to_play => 'Come si gioca';
@@ -248,11 +249,11 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get settings_restore_dialog_message =>
-      'I tuoi acquisti verranno ripristinati quando verrà implementata la Fase 3.';
+      'I tuoi acquisti verranno ripristinati quando verrÃ  implementata la Fase 3.';
 
   @override
   String get settings_share_message =>
-      'Dai un’occhiata a Non ho mai...! L’app definitiva per i party. Scarica ora!';
+      'Dai unâ€™occhiata a Non ho mai...! Lâ€™app definitiva per i party. Scarica ora!';
 
   @override
   String get settings_share_subject => 'Non ho mai... - Party game divertente';
@@ -281,11 +282,11 @@ class AppLocalizationsIt extends AppLocalizations {
       'Ogni giocatore a turno legge ad alta voce le domande \"Non ho mai...\".';
 
   @override
-  String get how_to_play_step_3_title => 'Verità o sfida';
+  String get how_to_play_step_3_title => 'VeritÃ  o sfida';
 
   @override
   String get how_to_play_step_3_desc =>
-      'Chi L’HA fatto deve ammetterlo o fare una sfida divertente!';
+      'Chi Lâ€™HA fatto deve ammetterlo o fare una sfida divertente!';
 
   @override
   String get how_to_play_step_4_title => 'Prossima domanda';
@@ -319,17 +320,37 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get how_to_play_tip_3 =>
-      'I pacchetti premium sbloccano 1.500+ domande esclusive';
+      'I pacchetti premium sbloccano oltre 1.500 domande esclusive';
 
   @override
   String get how_to_play_tip_4 =>
-      'Meglio in 3+ giocatori per il massimo divertimento!';
+      'Il gioco è ancora più divertente con 3+ giocatori!';
 
   @override
   String get onboarding_terms_prefix => 'Continuando, accetti i nostri ';
 
   @override
   String get onboarding_terms_of_use => 'Termini di utilizzo';
+
+  @override
+  String get onboarding_att_title => 'Consenti il tracciamento';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Aiutaci a misurare le campagne e a migliorare ciò che vedono i nuovi utenti.';
+
+  @override
+  String get onboarding_att_button => 'Consenti tracciamento';
+
+  @override
+  String get onboarding_push_title => 'Resta aggiornato';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Attiva le notifiche per novità, promemoria e offerte speciali.';
+
+  @override
+  String get onboarding_push_button => 'Consenti notifiche';
 
   @override
   String get language_title => 'Lingua';
@@ -378,7 +399,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String language_changed_message(String language) {
-    return 'La lingua è stata cambiata in $language. L’app sarà completamente tradotta nella versione finale.';
+    return 'La lingua Ã¨ stata cambiata in $language. Lâ€™app sarÃ  completamente tradotta nella versione finale.';
   }
 
   @override
@@ -397,7 +418,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get paywall_feature_2 => 'Nuovi aggiornamenti regolarmente';
 
   @override
-  String get paywall_feature_3 => 'Zero pubblicità';
+  String get paywall_feature_3 => 'Zero pubblicitÃ ';
 
   @override
   String get paywall_feature_4 => 'Annulla quando vuoi';
@@ -413,6 +434,9 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Miglior valore';
+
+  @override
+  String get paywall_three_days_free => '3 giorni gratis';
 
   @override
   String paywall_trial_text(String price) {
@@ -436,7 +460,7 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get price_per_year => 'all’anno';
+  String get price_per_year => 'allâ€™anno';
 
   @override
   String price_per_years(String count) {
@@ -471,7 +495,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get subscription_active => 'Hai un abbonamento attivo';
 
   @override
-  String get subscription_expired => 'Il tuo abbonamento è scaduto';
+  String get subscription_expired => 'Il tuo abbonamento Ã¨ scaduto';
 
   @override
   String get subscription_purchase_success =>
@@ -494,7 +518,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get subscription_checking => 'Verifica stato abbonamento...';
 
   @override
-  String get error_generic => 'Qualcosa è andato storto. Riprova.';
+  String get error_generic => 'Qualcosa Ã¨ andato storto. Riprova.';
 
   @override
   String get error_network => 'Errore di rete. Controlla la connessione.';

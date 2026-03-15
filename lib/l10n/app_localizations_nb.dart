@@ -77,7 +77,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get common_and => 'og';
 
   @override
-  String get main_menu_title => 'Never Have I Ever';
+  String get main_menu_title => 'Jeg har aldri';
 
   @override
   String get main_menu_subtitle => 'Velg pakken din';
@@ -134,7 +134,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get category_guys_desc => 'Episke utfordringer for gutta!';
 
   @override
-  String get game_never_have_i_ever => 'Never Have I Ever...';
+  String get game_never_have_i_ever => 'Jeg har aldri...';
 
   @override
   String get game_swipe_hint => 'Sveip for å navigere';
@@ -257,7 +257,7 @@ class AppLocalizationsNb extends AppLocalizations {
   String get how_to_play_title => 'Slik spiller du';
 
   @override
-  String get how_to_play_header_title => 'Never Have I Ever';
+  String get how_to_play_header_title => 'Jeg har aldri';
 
   @override
   String get how_to_play_header_subtitle => 'Det ultimate partyspillet';
@@ -324,6 +324,26 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get onboarding_terms_of_use => 'Bruksvilkår';
+
+  @override
+  String get onboarding_att_title => 'Tillat sporing';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Hjelp oss med å måle kampanjer og forbedre opplevelsen for nye brukere.';
+
+  @override
+  String get onboarding_att_button => 'Tillat sporing';
+
+  @override
+  String get onboarding_push_title => 'Hold deg oppdatert';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Aktiver varsler for oppdateringer, påminnelser og spesialtilbud.';
+
+  @override
+  String get onboarding_push_button => 'Tillat varsler';
 
   @override
   String get language_title => 'Språk';
@@ -407,6 +427,9 @@ class AppLocalizationsNb extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Best verdi';
+
+  @override
+  String get paywall_three_days_free => '3 dager gratis';
 
   @override
   String paywall_trial_text(String price) {

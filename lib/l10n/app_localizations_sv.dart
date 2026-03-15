@@ -76,7 +76,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get common_and => 'och';
 
   @override
-  String get main_menu_title => 'Never Have I Ever';
+  String get main_menu_title => 'Jag har aldrig';
 
   @override
   String get main_menu_subtitle => 'Välj ditt paket';
@@ -132,7 +132,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get category_guys_desc => 'Episka utmaningar för grabbarna!';
 
   @override
-  String get game_never_have_i_ever => 'Never Have I Ever...';
+  String get game_never_have_i_ever => 'Jag har aldrig...';
 
   @override
   String get game_swipe_hint => 'Svep för att navigera';
@@ -256,7 +256,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String get how_to_play_title => 'Så spelar du';
 
   @override
-  String get how_to_play_header_title => 'Never Have I Ever';
+  String get how_to_play_header_title => 'Jag har aldrig';
 
   @override
   String get how_to_play_header_subtitle => 'Det ultimata partyspelet';
@@ -325,6 +325,26 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get onboarding_terms_of_use => 'Användarvillkor';
+
+  @override
+  String get onboarding_att_title => 'Tillåt spårning';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Hjälp oss att mäta kampanjer och förbättra upplevelsen för nya användare.';
+
+  @override
+  String get onboarding_att_button => 'Tillåt spårning';
+
+  @override
+  String get onboarding_push_title => 'Håll dig uppdaterad';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Aktivera notiser för uppdateringar, påminnelser och specialerbjudanden.';
+
+  @override
+  String get onboarding_push_button => 'Tillåt notiser';
 
   @override
   String get language_title => 'Språk';
@@ -408,6 +428,9 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Bästa värde';
+
+  @override
+  String get paywall_three_days_free => '3 dagar gratis';
 
   @override
   String paywall_trial_text(String price) {

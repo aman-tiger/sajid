@@ -2,7 +2,9 @@
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:never_have_ever/main.dart';
 import '../../../../core/constants/app_colors.dart';
@@ -31,6 +33,7 @@ class PaywallPage extends StatefulWidget {
 }
 
 class _PaywallPageState extends State<PaywallPage> {
+  static const String _introPaywallSeenKey = 'intro_paywall_seen';
   final SubscriptionService _subscriptionService = SubscriptionService();
   QOfferings? _offerings;
   QOffering? _activeOffering;
@@ -52,7 +55,10 @@ class _PaywallPageState extends State<PaywallPage> {
       final payload = await _subscriptionService.getPaywallRemoteConfig(
         contextKey: widget.contextKey,
       );
-      final settings = PaywallRemoteSettings.fromPayload(payload);
+      final settings = PaywallRemoteSettings.fromPayload(
+        payload,
+        Localizations.localeOf(context),
+      );
       final activeOffering = _resolveActiveOffering(offerings, settings);
       final filteredProducts = _filterProducts(
         activeOffering?.products ?? <QProduct>[],
@@ -131,7 +137,7 @@ class _PaywallPageState extends State<PaywallPage> {
               ),
               onPressed: () {
                 appsflyerSdk?.logEvent('Paywall_Close', {});
-                Navigator.of(context).pop();
+                _handleClose();
               },
             )
           : null,
@@ -331,6 +337,11 @@ class _PaywallPageState extends State<PaywallPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
                   onPressed: () => _openExternalLink(AppLinks.termsOfUseUrl),
                   child: Text(
                     t.paywall_terms,
@@ -349,6 +360,11 @@ class _PaywallPageState extends State<PaywallPage> {
                   ),
                 ),
                 TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                    minimumSize: Size.zero,
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  ),
                   onPressed: () => _openExternalLink(
                     AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context)),
                   ),
@@ -478,10 +494,12 @@ class _PaywallPageState extends State<PaywallPage> {
         ),
         actions: [
           TextButton(
-            onPressed: () {
+            onPressed: () async {
               if (!mounted) return;
               Navigator.of(context).pop(); // Close dialog
-              Navigator.of(context).pop(); // Close paywall
+              await _markIntroPaywallSeen();
+              if (!mounted) return;
+              _exitPaywall();
             },
             child: Text(
               t.button_start_game,
@@ -588,10 +606,12 @@ class _PaywallPageState extends State<PaywallPage> {
         ),
         actions: [
           TextButton(
-            onPressed: () {
+            onPressed: () async {
               if (!mounted) return;
               Navigator.of(context).pop(); // Close dialog
-              Navigator.of(context).pop(); // Close paywall
+              await _markIntroPaywallSeen();
+              if (!mounted) return;
+              _exitPaywall();
             },
             child: Text(
               t.common_done,
@@ -667,17 +687,14 @@ class _PaywallPageState extends State<PaywallPage> {
       return;
     }
 
-    final openedExternally = await launchUrl(
-      uri,
-      mode: LaunchMode.externalApplication,
-    );
-    if (openedExternally) {
+    final openedDefault = await launchUrl(uri);
+    if (openedDefault) {
       return;
     }
 
     final openedInApp = await launchUrl(
       uri,
-      mode: LaunchMode.inAppBrowserView,
+      mode: LaunchMode.inAppWebView,
     );
     if (!openedInApp && mounted) {
       _showErrorDialog(t.common_error);
@@ -693,7 +710,7 @@ class _PaywallPageState extends State<PaywallPage> {
     }
 
     if (!settings.showOnlyWeekly) {
-      return products;
+      return _sortAndDeduplicateProducts(products);
     }
 
     final weeklyById = products.where((product) {
@@ -703,7 +720,7 @@ class _PaywallPageState extends State<PaywallPage> {
     }).toList();
 
     if (weeklyById.isNotEmpty) {
-      return weeklyById;
+      return _sortAndDeduplicateProducts(weeklyById);
     }
 
     final weeklyByPeriod = products.where((product) {
@@ -711,10 +728,10 @@ class _PaywallPageState extends State<PaywallPage> {
     }).toList();
 
     if (weeklyByPeriod.isNotEmpty) {
-      return weeklyByPeriod;
+      return _sortAndDeduplicateProducts(weeklyByPeriod);
     }
 
-    return <QProduct>[products.first];
+    return _sortAndDeduplicateProducts(<QProduct>[products.first]);
   }
 
   QOffering? _resolveActiveOffering(
@@ -758,6 +775,68 @@ class _PaywallPageState extends State<PaywallPage> {
 
     return '';
   }
+
+  List<QProduct> _sortAndDeduplicateProducts(List<QProduct> products) {
+    final unique = <String, QProduct>{};
+    for (final product in products) {
+      unique[product.storeId ?? product.qonversionId] = product;
+    }
+
+    final sorted = unique.values.toList()
+      ..sort((a, b) => _sortOrderForProduct(a).compareTo(_sortOrderForProduct(b)));
+    return sorted;
+  }
+
+  int _sortOrderForProduct(QProduct product) {
+    final unit = product.subscriptionPeriod?.unit;
+    if (unit == QSubscriptionPeriodUnit.week) {
+      return 0;
+    }
+    if (unit == QSubscriptionPeriodUnit.month) {
+      return 1;
+    }
+    if (unit == QSubscriptionPeriodUnit.year) {
+      return 2;
+    }
+
+    final identifier =
+        '${product.qonversionId} ${product.storeId ?? ''}'.toLowerCase();
+    if (identifier.contains('week')) {
+      return 0;
+    }
+    if (identifier.contains('month')) {
+      return 1;
+    }
+    if (identifier.contains('year') || identifier.contains('annual')) {
+      return 2;
+    }
+    return 99;
+  }
+
+  Future<void> _markIntroPaywallSeen() async {
+    if (widget.source != 'onboarding') {
+      return;
+    }
+
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_introPaywallSeenKey, true);
+  }
+
+  Future<void> _handleClose() async {
+    await _markIntroPaywallSeen();
+    if (!mounted) {
+      return;
+    }
+    _exitPaywall();
+  }
+
+  void _exitPaywall() {
+    if (widget.source == 'onboarding') {
+      context.go('/main');
+      return;
+    }
+    Navigator.of(context).pop();
+  }
 }
 
 class PaywallRemoteSettings {
@@ -781,7 +860,10 @@ class PaywallRemoteSettings {
     this.subscribeText,
   });
 
-  factory PaywallRemoteSettings.fromPayload(Map<String, dynamic> payload) {
+  factory PaywallRemoteSettings.fromPayload(
+    Map<String, dynamic> payload,
+    Locale locale,
+  ) {
     bool readBool(String key, bool defaultValue) {
       final value = payload[key];
       if (value is bool) return value;
@@ -797,7 +879,20 @@ class PaywallRemoteSettings {
     String? readString(String key) {
       final value = payload[key];
       if (value is String && value.trim().isNotEmpty) {
+        if (locale.languageCode != 'en') {
+          return null;
+        }
         return value.trim();
+      }
+      if (value is Map) {
+        final fullCode = locale.countryCode == null
+            ? locale.languageCode
+            : '${locale.languageCode}_${locale.countryCode}';
+        final localized =
+            value[fullCode] ?? value[locale.languageCode] ?? value['en'];
+        if (localized is String && localized.trim().isNotEmpty) {
+          return localized.trim();
+        }
       }
       return null;
     }

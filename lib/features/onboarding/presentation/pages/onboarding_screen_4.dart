@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:flutter/foundation.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:never_have_ever/main.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/constants/app_text_styles.dart';
 import '../../../../core/constants/app_links.dart';
-import '../../../../core/services/analytics_service.dart';
 import '../widgets/onboarding_button.dart';
 import '../../../../l10n/app_localizations.dart';
 
@@ -92,12 +90,6 @@ class OnboardingScreen4 extends StatelessWidget {
                 text: t.button_get_started,
                 onPressed: () async {
                   await _requestReview();
-                  await FirebaseMessaging.instance.requestPermission(
-                    alert: true,
-                    badge: true,
-                    sound: true,
-                  );
-                  await AnalyticsService().logOnboardingCompleted();
                   appsflyerSdk?.logEvent('af_tutorial_completion', {});
                   onComplete();
                 },

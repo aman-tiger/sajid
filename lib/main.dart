@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:appsflyer_sdk/appsflyer_sdk.dart';
-import 'package:app_tracking_transparency/app_tracking_transparency.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_router.dart';
@@ -124,8 +123,6 @@ Future<void> _initializeAppsflyer() async {
   }
 
   try {
-    await AppTrackingTransparency.requestTrackingAuthorization();
-
     final options = AppsFlyerOptions(
       afDevKey: AppSecrets.appsflyerDevKey,
       appId: AppSecrets.appsflyerAppId,

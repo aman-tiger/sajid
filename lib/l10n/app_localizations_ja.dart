@@ -75,7 +75,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get common_and => 'と';
 
   @override
-  String get main_menu_title => 'Never Have I Ever';
+  String get main_menu_title => '私は今まで一度も';
 
   @override
   String get main_menu_subtitle => 'パックを選択';
@@ -129,7 +129,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get category_guys_desc => '男同士向けのエピックなお題！';
 
   @override
-  String get game_never_have_i_ever => 'Never Have I Ever...';
+  String get game_never_have_i_ever => '私は今まで一度も...';
 
   @override
   String get game_swipe_hint => 'スワイプして移動';
@@ -160,7 +160,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String game_share_text(String question) {
-    return 'Never Have I Ever... $question\n\n「Never Have I Ever」をダウンロードして友だちと遊ぼう！';
+    return '私は今まで一度も... $question\n\n「私は今まで一度も」をダウンロードして友だちと遊ぼう！';
   }
 
   @override
@@ -239,17 +239,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get settings_restore_dialog_message => 'フェーズ3の実装後に購入を復元できます。';
 
   @override
-  String get settings_share_message =>
-      'Never Have I Ever をチェック！究極のパーティーゲーム。今すぐダウンロード！';
+  String get settings_share_message => '「私は今まで一度も」をチェック！究極のパーティーゲームを今すぐダウンロード！';
 
   @override
-  String get settings_share_subject => 'Never Have I Ever - 楽しいパーティーゲーム';
+  String get settings_share_subject => '私は今まで一度も - 楽しいパーティーゲーム';
 
   @override
   String get how_to_play_title => '遊び方';
 
   @override
-  String get how_to_play_header_title => 'Never Have I Ever';
+  String get how_to_play_header_title => '私は今まで一度も';
 
   @override
   String get how_to_play_header_subtitle => '究極のパーティーゲーム';
@@ -264,8 +263,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String get how_to_play_step_2_title => '質問を読む';
 
   @override
-  String get how_to_play_step_2_desc =>
-      '順番に「Never Have I Ever...」の質問を声に出して読みます。';
+  String get how_to_play_step_2_desc => '順番に「私は今まで一度も...」の質問を声に出して読みます。';
 
   @override
   String get how_to_play_step_3_title => '告白 or チャレンジ';
@@ -310,6 +308,24 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get onboarding_terms_of_use => '利用規約';
+
+  @override
+  String get onboarding_att_title => 'トラッキングを許可';
+
+  @override
+  String get onboarding_att_subtitle => 'キャンペーン計測と新規ユーザー体験の改善のためにご協力ください。';
+
+  @override
+  String get onboarding_att_button => 'トラッキングを許可';
+
+  @override
+  String get onboarding_push_title => '最新情報を受け取る';
+
+  @override
+  String get onboarding_push_subtitle => 'アップデート、リマインダー、特別オファーの通知を受け取りましょう。';
+
+  @override
+  String get onboarding_push_button => '通知を許可';
 
   @override
   String get language_title => '言語';
@@ -393,6 +409,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'お得';
+
+  @override
+  String get paywall_three_days_free => '3日間無料';
 
   @override
   String paywall_trial_text(String price) {

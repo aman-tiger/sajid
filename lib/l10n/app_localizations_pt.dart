@@ -9,27 +9,27 @@ class AppLocalizationsPt extends AppLocalizations {
   AppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
-  String get onboarding_1_title => 'Pronto para uma noite épica?';
+  String get onboarding_1_title => 'Pronto para uma noite Ã©pica?';
 
   @override
   String get onboarding_1_subtitle =>
-      'Mergulhe na experiência definitiva do jogo!';
+      'Mergulhe na experiÃªncia definitiva do jogo!';
 
   @override
-  String get onboarding_2_title => '6 pacotes épicos';
+  String get onboarding_2_title => '6 pacotes Ã©picos';
 
   @override
   String get onboarding_2_subtitle =>
-      'Do clássico ao spicy — encontre a sua vibe!';
+      'Do clÃ¡ssico ao spicy â€” encontre a sua vibe!';
 
   @override
   String get onboarding_3_title => '1.500 perguntas';
 
   @override
-  String get onboarding_3_subtitle => 'Diversão sem fim com amigos te espera!';
+  String get onboarding_3_subtitle => 'DiversÃ£o sem fim com amigos te espera!';
 
   @override
-  String get onboarding_4_title => 'Avalie sua experiência';
+  String get onboarding_4_title => 'Avalie sua experiÃªncia';
 
   @override
   String get onboarding_4_subtitle =>
@@ -39,19 +39,19 @@ class AppLocalizationsPt extends AppLocalizations {
   String get button_continue => 'Continuar';
 
   @override
-  String get button_start_game => 'Começar jogo';
+  String get button_start_game => 'ComeÃ§ar jogo';
 
   @override
   String get button_skip => 'Pular';
 
   @override
-  String get button_get_started => 'Começar';
+  String get button_get_started => 'ComeÃ§ar';
 
   @override
   String get button_back => 'Voltar';
 
   @override
-  String get button_next => 'Próximo';
+  String get button_next => 'PrÃ³ximo';
 
   @override
   String get button_save => 'Salvar';
@@ -87,27 +87,27 @@ class AppLocalizationsPt extends AppLocalizations {
   String get main_menu_buy_subscription => 'Desbloquear todos os pacotes';
 
   @override
-  String get main_menu_settings => 'Configurações';
+  String get main_menu_settings => 'ConfiguraÃ§Ãµes';
 
   @override
-  String get main_menu_free => 'Grátis';
+  String get main_menu_free => 'GrÃ¡tis';
 
   @override
   String get main_menu_premium => 'Premium';
 
   @override
-  String get category_classic_name => 'Pacote Clássico';
+  String get category_classic_name => 'Pacote ClÃ¡ssico';
 
   @override
   String get category_classic_desc =>
-      'O começo perfeito para qualquer reunião!';
+      'O comeÃ§o perfeito para qualquer reuniÃ£o!';
 
   @override
   String get category_party_name => 'Pacote Festa';
 
   @override
   String get category_party_desc =>
-      'Anime a comemoração com desafios incríveis!';
+      'Anime a comemoraÃ§Ã£o com desafios incrÃ­veis!';
 
   @override
   String get category_girls_name => 'Meninas 18+';
@@ -133,7 +133,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get category_guys_name => 'Pacote Homens';
 
   @override
-  String get category_guys_desc => 'Desafios épicos feitos para a galera!';
+  String get category_guys_desc => 'Desafios Ã©picos feitos para a galera!';
 
   @override
   String get game_never_have_i_ever => 'Eu nunca...';
@@ -149,7 +149,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get game_error_no_questions =>
-      'Não há perguntas disponíveis para esta categoria';
+      'NÃ£o hÃ¡ perguntas disponÃ­veis para esta categoria';
 
   @override
   String get game_error_failed_load => 'Falha ao carregar perguntas';
@@ -158,7 +158,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get game_button_previous => 'Anterior';
 
   @override
-  String get game_button_next => 'Próximo';
+  String get game_button_next => 'PrÃ³ximo';
 
   @override
   String get game_button_shuffle => 'Embaralhar';
@@ -172,13 +172,13 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get settings_title => 'Configurações';
+  String get settings_title => 'ConfiguraÃ§Ãµes';
 
   @override
   String get settings_section_account => 'Conta';
 
   @override
-  String get settings_section_app => 'Configurações do app';
+  String get settings_section_app => 'ConfiguraÃ§Ãµes do app';
 
   @override
   String get settings_section_support => 'Suporte e feedback';
@@ -190,7 +190,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settings_premium_member => 'Membro Premium';
 
   @override
-  String get settings_free_plan => 'Plano grátis';
+  String get settings_free_plan => 'Plano grÃ¡tis';
 
   @override
   String get settings_premium_desc =>
@@ -198,7 +198,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get settings_free_desc =>
-      'Atualize para desbloquear todo o conteúdo premium';
+      'Atualize para desbloquear todo o conteÃºdo premium';
 
   @override
   String get settings_restore_purchases => 'Restaurar compras';
@@ -235,24 +235,24 @@ class AppLocalizationsPt extends AppLocalizations {
   String get settings_rate_us_desc => 'Avalie na loja';
 
   @override
-  String get settings_app_version => 'Versão do app';
+  String get settings_app_version => 'VersÃ£o do app';
 
   @override
-  String get settings_terms => 'Termos e condições';
+  String get settings_terms => 'Termos e condiÃ§Ãµes';
 
   @override
-  String get settings_privacy => 'Política de privacidade';
+  String get settings_privacy => 'PolÃ­tica de privacidade';
 
   @override
   String get settings_restore_dialog_title => 'Restaurar compras';
 
   @override
   String get settings_restore_dialog_message =>
-      'Suas compras serão restauradas quando a Fase 3 for implementada.';
+      'Suas compras serÃ£o restauradas quando a Fase 3 for implementada.';
 
   @override
   String get settings_share_message =>
-      'Conheça Eu Nunca! O app definitivo para festas. Baixe agora!';
+      'ConheÃ§a Eu Nunca! O app definitivo para festas. Baixe agora!';
 
   @override
   String get settings_share_subject => 'Eu Nunca - Jogo divertido de festa';
@@ -285,21 +285,21 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get how_to_play_step_3_desc =>
-      'Quem JÁ fez precisa admitir ou cumprir um desafio divertido!';
+      'Quem JÃ fez precisa admitir ou cumprir um desafio divertido!';
 
   @override
-  String get how_to_play_step_4_title => 'Próxima pergunta';
+  String get how_to_play_step_4_title => 'PrÃ³xima pergunta';
 
   @override
   String get how_to_play_step_4_desc =>
-      'Deslize ou toque para ir para a próxima pergunta e manter a diversão!';
+      'Deslize ou toque para ir para a prÃ³xima pergunta e manter a diversÃ£o!';
 
   @override
   String get how_to_play_step_5_title => 'Divirta-se!';
 
   @override
   String get how_to_play_step_5_desc =>
-      'Aproveite momentos hilários e conheça melhor seus amigos!';
+      'Aproveite momentos hilÃ¡rios e conheÃ§a melhor seus amigos!';
 
   @override
   String how_to_play_step_label(String number) {
@@ -311,7 +311,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get how_to_play_tip_1 =>
-      'Use o botão de embaralhar para randomizar as perguntas';
+      'Use o botÃ£o de embaralhar para randomizar as perguntas';
 
   @override
   String get how_to_play_tip_2 =>
@@ -319,11 +319,11 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get how_to_play_tip_3 =>
-      'Pacotes premium liberam 1.500+ perguntas exclusivas';
+      'Pacotes premium desbloqueiam mais de 1.500 perguntas exclusivas';
 
   @override
   String get how_to_play_tip_4 =>
-      'Melhor com 3+ jogadores para máximo divertimento!';
+      'Melhor com 3+ jogadores para máxima diversão!';
 
   @override
   String get onboarding_terms_prefix =>
@@ -333,43 +333,63 @@ class AppLocalizationsPt extends AppLocalizations {
   String get onboarding_terms_of_use => 'Termos de uso';
 
   @override
+  String get onboarding_att_title => 'Permitir rastreamento';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Ajude a medir campanhas e melhorar a experiência dos novos jogadores.';
+
+  @override
+  String get onboarding_att_button => 'Permitir rastreamento';
+
+  @override
+  String get onboarding_push_title => 'Fique por dentro';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Ative notificações para receber novidades, lembretes e ofertas especiais.';
+
+  @override
+  String get onboarding_push_button => 'Permitir notificações';
+
+  @override
   String get language_title => 'Idioma';
 
   @override
   String get language_subtitle => 'Selecione seu idioma';
 
   @override
-  String get language_english => 'Inglês';
+  String get language_english => 'InglÃªs';
 
   @override
   String get language_spanish => 'Espanhol';
 
   @override
-  String get language_german => 'Alemão';
+  String get language_german => 'AlemÃ£o';
 
   @override
-  String get language_french => 'Francês';
+  String get language_french => 'FrancÃªs';
 
   @override
   String get language_korean => 'Coreano';
 
   @override
-  String get language_dutch => 'Holandês';
+  String get language_dutch => 'HolandÃªs';
 
   @override
   String get language_swedish => 'Sueco';
 
   @override
-  String get language_norwegian => 'Norueguês';
+  String get language_norwegian => 'NorueguÃªs';
 
   @override
   String get language_russian => 'Russo';
 
   @override
-  String get language_portuguese_brazil => 'Português (Brasil)';
+  String get language_portuguese_brazil => 'PortuguÃªs (Brasil)';
 
   @override
-  String get language_japanese => 'Japonês';
+  String get language_japanese => 'JaponÃªs';
 
   @override
   String get language_italian => 'Italiano';
@@ -379,26 +399,26 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String language_changed_message(String language) {
-    return 'O idioma foi alterado para $language. O app será totalmente traduzido na versão final.';
+    return 'O idioma foi alterado para $language. O app serÃ¡ totalmente traduzido na versÃ£o final.';
   }
 
   @override
   String get paywall_title => 'VIRE PREMIUM';
 
   @override
-  String get paywall_subtitle => 'Diversão sem parar';
+  String get paywall_subtitle => 'DiversÃ£o sem parar';
 
   @override
   String get paywall_choose_plan => 'Escolha seu plano';
 
   @override
-  String get paywall_feature_1 => 'Desbloqueie conteúdo exclusivo 18+';
+  String get paywall_feature_1 => 'Desbloqueie conteÃºdo exclusivo 18+';
 
   @override
-  String get paywall_feature_2 => 'Novas atualizações regularmente';
+  String get paywall_feature_2 => 'Novas atualizaÃ§Ãµes regularmente';
 
   @override
-  String get paywall_feature_3 => 'Zero anúncios';
+  String get paywall_feature_3 => 'Zero anÃºncios';
 
   @override
   String get paywall_feature_4 => 'Cancele quando quiser';
@@ -416,8 +436,11 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywall_best_value => 'Melhor custo-benefício';
 
   @override
+  String get paywall_three_days_free => '3 dias grátis';
+
+  @override
   String paywall_trial_text(String price) {
-    return 'Experimente GRÁTIS por 3 dias';
+    return 'Experimente GRÃTIS por 3 dias';
   }
 
   @override
@@ -429,7 +452,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get price_per_month => 'por mês';
+  String get price_per_month => 'por mÃªs';
 
   @override
   String price_per_months(String count) {
@@ -445,7 +468,7 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get paywall_start_trial => 'Iniciar teste grátis';
+  String get paywall_start_trial => 'Iniciar teste grÃ¡tis';
 
   @override
   String get paywall_subscribe => 'Assinar agora';
@@ -454,10 +477,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywall_restore => 'Restaurar compras';
 
   @override
-  String get paywall_terms => 'Termos e condições';
+  String get paywall_terms => 'Termos e condiÃ§Ãµes';
 
   @override
-  String get paywall_privacy => 'Política de privacidade';
+  String get paywall_privacy => 'PolÃ­tica de privacidade';
 
   @override
   String get paywall_cancel_anytime => 'Cancele quando quiser';
@@ -469,14 +492,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String get paywall_error => 'Falha ao carregar os planos. Tente novamente.';
 
   @override
-  String get subscription_active => 'Você tem uma assinatura ativa';
+  String get subscription_active => 'VocÃª tem uma assinatura ativa';
 
   @override
   String get subscription_expired => 'Sua assinatura expirou';
 
   @override
   String get subscription_purchase_success =>
-      'Compra realizada! Aproveite o conteúdo premium.';
+      'Compra realizada! Aproveite o conteÃºdo premium.';
 
   @override
   String get subscription_purchase_cancelled => 'Compra cancelada';
@@ -498,7 +521,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get error_generic => 'Algo deu errado. Tente novamente.';
 
   @override
-  String get error_network => 'Erro de rede. Verifique sua conexão.';
+  String get error_network => 'Erro de rede. Verifique sua conexÃ£o.';
 
   @override
   String error_loading_questions(String error) {
@@ -507,7 +530,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String error_loading_settings(String error) {
-    return 'Falha ao carregar configurações: $error';
+    return 'Falha ao carregar configuraÃ§Ãµes: $error';
   }
 
   @override
@@ -517,7 +540,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get common_retry => 'Tentar novamente';
 
   @override
-  String get common_done => 'Concluído';
+  String get common_done => 'ConcluÃ­do';
 
   @override
   String get common_error => 'Erro';
@@ -533,7 +556,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String error_page_not_found(String path) {
-    return 'Página não encontrada: $path';
+    return 'PÃ¡gina nÃ£o encontrada: $path';
   }
 }
 
@@ -542,27 +565,27 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   AppLocalizationsPtBr() : super('pt_BR');
 
   @override
-  String get onboarding_1_title => 'Pronto para uma noite épica?';
+  String get onboarding_1_title => 'Pronto para uma noite Ã©pica?';
 
   @override
   String get onboarding_1_subtitle =>
-      'Mergulhe na experiência definitiva do jogo!';
+      'Mergulhe na experiÃªncia definitiva do jogo!';
 
   @override
-  String get onboarding_2_title => '6 pacotes épicos';
+  String get onboarding_2_title => '6 pacotes Ã©picos';
 
   @override
   String get onboarding_2_subtitle =>
-      'Do clássico ao spicy — encontre a sua vibe!';
+      'Do clÃ¡ssico ao spicy â€” encontre a sua vibe!';
 
   @override
   String get onboarding_3_title => '1.500 perguntas';
 
   @override
-  String get onboarding_3_subtitle => 'Diversão sem fim com amigos te espera!';
+  String get onboarding_3_subtitle => 'DiversÃ£o sem fim com amigos te espera!';
 
   @override
-  String get onboarding_4_title => 'Avalie sua experiência';
+  String get onboarding_4_title => 'Avalie sua experiÃªncia';
 
   @override
   String get onboarding_4_subtitle =>
@@ -572,19 +595,19 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get button_continue => 'Continuar';
 
   @override
-  String get button_start_game => 'Começar jogo';
+  String get button_start_game => 'ComeÃ§ar jogo';
 
   @override
   String get button_skip => 'Pular';
 
   @override
-  String get button_get_started => 'Começar';
+  String get button_get_started => 'ComeÃ§ar';
 
   @override
   String get button_back => 'Voltar';
 
   @override
-  String get button_next => 'Próximo';
+  String get button_next => 'PrÃ³ximo';
 
   @override
   String get button_save => 'Salvar';
@@ -620,27 +643,27 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get main_menu_buy_subscription => 'Desbloquear todos os pacotes';
 
   @override
-  String get main_menu_settings => 'Configurações';
+  String get main_menu_settings => 'ConfiguraÃ§Ãµes';
 
   @override
-  String get main_menu_free => 'Grátis';
+  String get main_menu_free => 'GrÃ¡tis';
 
   @override
   String get main_menu_premium => 'Premium';
 
   @override
-  String get category_classic_name => 'Pacote Clássico';
+  String get category_classic_name => 'Pacote ClÃ¡ssico';
 
   @override
   String get category_classic_desc =>
-      'O começo perfeito para qualquer reunião!';
+      'O comeÃ§o perfeito para qualquer reuniÃ£o!';
 
   @override
   String get category_party_name => 'Pacote Festa';
 
   @override
   String get category_party_desc =>
-      'Anime a comemoração com desafios incríveis!';
+      'Anime a comemoraÃ§Ã£o com desafios incrÃ­veis!';
 
   @override
   String get category_girls_name => 'Meninas 18+';
@@ -666,7 +689,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get category_guys_name => 'Pacote Homens';
 
   @override
-  String get category_guys_desc => 'Desafios épicos feitos para a galera!';
+  String get category_guys_desc => 'Desafios Ã©picos feitos para a galera!';
 
   @override
   String get game_never_have_i_ever => 'Eu nunca...';
@@ -682,7 +705,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get game_error_no_questions =>
-      'Não há perguntas disponíveis para esta categoria';
+      'NÃ£o hÃ¡ perguntas disponÃ­veis para esta categoria';
 
   @override
   String get game_error_failed_load => 'Falha ao carregar perguntas';
@@ -691,7 +714,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get game_button_previous => 'Anterior';
 
   @override
-  String get game_button_next => 'Próximo';
+  String get game_button_next => 'PrÃ³ximo';
 
   @override
   String get game_button_shuffle => 'Embaralhar';
@@ -705,13 +728,13 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get settings_title => 'Configurações';
+  String get settings_title => 'ConfiguraÃ§Ãµes';
 
   @override
   String get settings_section_account => 'Conta';
 
   @override
-  String get settings_section_app => 'Configurações do app';
+  String get settings_section_app => 'ConfiguraÃ§Ãµes do app';
 
   @override
   String get settings_section_support => 'Suporte e feedback';
@@ -723,7 +746,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get settings_premium_member => 'Membro Premium';
 
   @override
-  String get settings_free_plan => 'Plano grátis';
+  String get settings_free_plan => 'Plano grÃ¡tis';
 
   @override
   String get settings_premium_desc =>
@@ -731,7 +754,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get settings_free_desc =>
-      'Atualize para desbloquear todo o conteúdo premium';
+      'Atualize para desbloquear todo o conteÃºdo premium';
 
   @override
   String get settings_restore_purchases => 'Restaurar compras';
@@ -768,24 +791,24 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get settings_rate_us_desc => 'Avalie na loja';
 
   @override
-  String get settings_app_version => 'Versão do app';
+  String get settings_app_version => 'VersÃ£o do app';
 
   @override
-  String get settings_terms => 'Termos e condições';
+  String get settings_terms => 'Termos e condiÃ§Ãµes';
 
   @override
-  String get settings_privacy => 'Política de privacidade';
+  String get settings_privacy => 'PolÃ­tica de privacidade';
 
   @override
   String get settings_restore_dialog_title => 'Restaurar compras';
 
   @override
   String get settings_restore_dialog_message =>
-      'Suas compras serão restauradas quando a Fase 3 for implementada.';
+      'Suas compras serÃ£o restauradas quando a Fase 3 for implementada.';
 
   @override
   String get settings_share_message =>
-      'Conheça Eu Nunca! O app definitivo para festas. Baixe agora!';
+      'ConheÃ§a Eu Nunca! O app definitivo para festas. Baixe agora!';
 
   @override
   String get settings_share_subject => 'Eu Nunca - Jogo divertido de festa';
@@ -818,21 +841,21 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get how_to_play_step_3_desc =>
-      'Quem JÁ fez precisa admitir ou cumprir um desafio divertido!';
+      'Quem JÃ fez precisa admitir ou cumprir um desafio divertido!';
 
   @override
-  String get how_to_play_step_4_title => 'Próxima pergunta';
+  String get how_to_play_step_4_title => 'PrÃ³xima pergunta';
 
   @override
   String get how_to_play_step_4_desc =>
-      'Deslize ou toque para ir para a próxima pergunta e manter a diversão!';
+      'Deslize ou toque para ir para a prÃ³xima pergunta e manter a diversÃ£o!';
 
   @override
   String get how_to_play_step_5_title => 'Divirta-se!';
 
   @override
   String get how_to_play_step_5_desc =>
-      'Aproveite momentos hilários e conheça melhor seus amigos!';
+      'Aproveite momentos hilÃ¡rios e conheÃ§a melhor seus amigos!';
 
   @override
   String how_to_play_step_label(String number) {
@@ -844,7 +867,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get how_to_play_tip_1 =>
-      'Use o botão de embaralhar para randomizar as perguntas';
+      'Use o botÃ£o de embaralhar para randomizar as perguntas';
 
   @override
   String get how_to_play_tip_2 =>
@@ -856,14 +879,34 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String get how_to_play_tip_4 =>
-      'Melhor com 3+ jogadores para máximo divertimento!';
+      'Melhor com 3+ jogadores para mÃ¡ximo divertimento!';
 
   @override
   String get onboarding_terms_prefix =>
-      'Ao continuar, você concorda com nossos ';
+      'Ao continuar, vocÃª concorda com nossos ';
 
   @override
   String get onboarding_terms_of_use => 'Termos de uso';
+
+  @override
+  String get onboarding_att_title => 'Permitir rastreamento';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Ajude a medir campanhas e melhorar a experiência dos novos jogadores.';
+
+  @override
+  String get onboarding_att_button => 'Permitir rastreamento';
+
+  @override
+  String get onboarding_push_title => 'Fique por dentro';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Ative notificações para receber novidades, lembretes e ofertas especiais.';
+
+  @override
+  String get onboarding_push_button => 'Permitir notificações';
 
   @override
   String get language_title => 'Idioma';
@@ -872,37 +915,37 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get language_subtitle => 'Selecione seu idioma';
 
   @override
-  String get language_english => 'Inglês';
+  String get language_english => 'InglÃªs';
 
   @override
   String get language_spanish => 'Espanhol';
 
   @override
-  String get language_german => 'Alemão';
+  String get language_german => 'AlemÃ£o';
 
   @override
-  String get language_french => 'Francês';
+  String get language_french => 'FrancÃªs';
 
   @override
   String get language_korean => 'Coreano';
 
   @override
-  String get language_dutch => 'Holandês';
+  String get language_dutch => 'HolandÃªs';
 
   @override
   String get language_swedish => 'Sueco';
 
   @override
-  String get language_norwegian => 'Norueguês';
+  String get language_norwegian => 'NorueguÃªs';
 
   @override
   String get language_russian => 'Russo';
 
   @override
-  String get language_portuguese_brazil => 'Português (Brasil)';
+  String get language_portuguese_brazil => 'PortuguÃªs (Brasil)';
 
   @override
-  String get language_japanese => 'Japonês';
+  String get language_japanese => 'JaponÃªs';
 
   @override
   String get language_italian => 'Italiano';
@@ -912,26 +955,26 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String language_changed_message(String language) {
-    return 'O idioma foi alterado para $language. O app será totalmente traduzido na versão final.';
+    return 'O idioma foi alterado para $language. O app serÃ¡ totalmente traduzido na versÃ£o final.';
   }
 
   @override
   String get paywall_title => 'VIRE PREMIUM';
 
   @override
-  String get paywall_subtitle => 'Diversão sem parar';
+  String get paywall_subtitle => 'DiversÃ£o sem parar';
 
   @override
   String get paywall_choose_plan => 'Escolha seu plano';
 
   @override
-  String get paywall_feature_1 => 'Desbloqueie conteúdo exclusivo 18+';
+  String get paywall_feature_1 => 'Desbloqueie conteÃºdo exclusivo 18+';
 
   @override
-  String get paywall_feature_2 => 'Novas atualizações regularmente';
+  String get paywall_feature_2 => 'Novas atualizaÃ§Ãµes regularmente';
 
   @override
-  String get paywall_feature_3 => 'Zero anúncios';
+  String get paywall_feature_3 => 'Zero anÃºncios';
 
   @override
   String get paywall_feature_4 => 'Cancele quando quiser';
@@ -949,8 +992,11 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get paywall_best_value => 'Melhor custo-benefício';
 
   @override
+  String get paywall_three_days_free => '3 dias grátis';
+
+  @override
   String paywall_trial_text(String price) {
-    return 'Experimente GRÁTIS por 3 dias';
+    return 'Experimente GRÃTIS por 3 dias';
   }
 
   @override
@@ -962,7 +1008,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get price_per_month => 'por mês';
+  String get price_per_month => 'por mÃªs';
 
   @override
   String price_per_months(String count) {
@@ -978,7 +1024,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   }
 
   @override
-  String get paywall_start_trial => 'Iniciar teste grátis';
+  String get paywall_start_trial => 'Iniciar teste grÃ¡tis';
 
   @override
   String get paywall_subscribe => 'Assinar agora';
@@ -987,10 +1033,10 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get paywall_restore => 'Restaurar compras';
 
   @override
-  String get paywall_terms => 'Termos e condições';
+  String get paywall_terms => 'Termos e condiÃ§Ãµes';
 
   @override
-  String get paywall_privacy => 'Política de privacidade';
+  String get paywall_privacy => 'PolÃ­tica de privacidade';
 
   @override
   String get paywall_cancel_anytime => 'Cancele quando quiser';
@@ -1002,14 +1048,14 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get paywall_error => 'Falha ao carregar os planos. Tente novamente.';
 
   @override
-  String get subscription_active => 'Você tem uma assinatura ativa';
+  String get subscription_active => 'VocÃª tem uma assinatura ativa';
 
   @override
   String get subscription_expired => 'Sua assinatura expirou';
 
   @override
   String get subscription_purchase_success =>
-      'Compra realizada! Aproveite o conteúdo premium.';
+      'Compra realizada! Aproveite o conteÃºdo premium.';
 
   @override
   String get subscription_purchase_cancelled => 'Compra cancelada';
@@ -1031,7 +1077,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get error_generic => 'Algo deu errado. Tente novamente.';
 
   @override
-  String get error_network => 'Erro de rede. Verifique sua conexão.';
+  String get error_network => 'Erro de rede. Verifique sua conexÃ£o.';
 
   @override
   String error_loading_questions(String error) {
@@ -1040,7 +1086,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String error_loading_settings(String error) {
-    return 'Falha ao carregar configurações: $error';
+    return 'Falha ao carregar configuraÃ§Ãµes: $error';
   }
 
   @override
@@ -1050,7 +1096,7 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
   String get common_retry => 'Tentar novamente';
 
   @override
-  String get common_done => 'Concluído';
+  String get common_done => 'ConcluÃ­do';
 
   @override
   String get common_error => 'Erro';
@@ -1066,6 +1112,6 @@ class AppLocalizationsPtBr extends AppLocalizationsPt {
 
   @override
   String error_page_not_found(String path) {
-    return 'Página não encontrada: $path';
+    return 'PÃ¡gina nÃ£o encontrada: $path';
   }
 }

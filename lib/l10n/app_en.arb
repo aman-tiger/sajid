@@ -113,6 +113,12 @@
   "how_to_play_tip_4": "Best played with 3+ players for maximum fun!",
   "onboarding_terms_prefix": "By continuing, you agree to our ",
   "onboarding_terms_of_use": "Terms of Use",
+  "onboarding_att_title": "Allow Tracking",
+  "onboarding_att_subtitle": "Help us measure campaigns and improve what new players see.",
+  "onboarding_att_button": "Allow Tracking",
+  "onboarding_push_title": "Stay in the Loop",
+  "onboarding_push_subtitle": "Enable notifications for game updates, reminders, and special offers.",
+  "onboarding_push_button": "Allow Notifications",
   "language_title": "Language",
   "language_subtitle": "Select your preferred language",
   "language_english": "English",
@@ -147,6 +153,7 @@
   "paywall_monthly_plan": "Monthly",
   "paywall_yearly_plan": "Yearly",
   "paywall_best_value": "Best Value",
+  "paywall_three_days_free": "3 days free",
   "paywall_trial_text": "Try FREE for 3 days",
   "@paywall_trial_text": {
     "placeholders": {

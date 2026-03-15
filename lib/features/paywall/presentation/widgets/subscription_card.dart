@@ -89,7 +89,7 @@ class SubscriptionCard extends StatelessWidget {
                       if (product.trialPeriod != null) ...[
                         SizedBox(height: 4.h),
                         Text(
-                          t.paywall_trial_text(_displayPrice()),
+                          t.paywall_three_days_free,
                           style: TextStyle(
                             fontSize: 12.sp,
                             color: AppColors.accent,
@@ -162,7 +162,7 @@ class SubscriptionCard extends StatelessWidget {
 
   String _getPricePeriod(AppLocalizations t) {
     final duration = product.subscriptionPeriod?.unitCount ?? 1;
-    final unit = product.subscriptionPeriod?.unit;
+    final unit = _resolveUnit();
 
     if (unit == QSubscriptionPeriodUnit.week) {
       return duration == 1
@@ -181,17 +181,37 @@ class SubscriptionCard extends StatelessWidget {
   }
 
   String _getPlanName(AppLocalizations t) {
-    final unit = product.subscriptionPeriod?.unit;
+    final unit = _resolveUnit();
     if (unit == QSubscriptionPeriodUnit.week) {
-      return t.paywall_weekly_plan;
+      return '${t.paywall_weekly_plan} ${t.main_menu_premium}';
     }
     if (unit == QSubscriptionPeriodUnit.month) {
-      return t.paywall_monthly_plan;
+      return '${t.paywall_monthly_plan} ${t.main_menu_premium}';
     }
     if (unit == QSubscriptionPeriodUnit.year) {
-      return t.paywall_yearly_plan;
+      return '${t.paywall_yearly_plan} ${t.main_menu_premium}';
     }
     return product.storeTitle ?? product.qonversionId;
+  }
+
+  QSubscriptionPeriodUnit? _resolveUnit() {
+    final unit = product.subscriptionPeriod?.unit;
+    if (unit != null) {
+      return unit;
+    }
+
+    final identifier =
+        '${product.qonversionId} ${product.storeId ?? ''}'.toLowerCase();
+    if (identifier.contains('week')) {
+      return QSubscriptionPeriodUnit.week;
+    }
+    if (identifier.contains('month')) {
+      return QSubscriptionPeriodUnit.month;
+    }
+    if (identifier.contains('year') || identifier.contains('annual')) {
+      return QSubscriptionPeriodUnit.year;
+    }
+    return null;
   }
 
   String _displayPrice() {
