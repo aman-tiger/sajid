@@ -166,7 +166,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String game_share_text(String question) {
-    return 'Never Have I Ever... $question\n\nDownload de Never Have I Ever-app en speel met vrienden!';
+    return 'Ik heb nog nooit... $question\n\nDownload de app Ik heb nog nooit en speel met vrienden!';
   }
 
   @override
@@ -249,10 +249,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get settings_share_message =>
-      'Bekijk Never Have I Ever! De ultieme partygame-app. Download nu!';
+      'Bekijk Ik heb nog nooit, de ultieme partygame-app. Download nu!';
 
   @override
-  String get settings_share_subject => 'Never Have I Ever - Leuke partygame';
+  String get settings_share_subject => 'Ik heb nog nooit - Leuke partygame';
 
   @override
   String get how_to_play_title => 'Hoe te spelen';
@@ -275,7 +275,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get how_to_play_step_2_desc =>
-      'Elke speler leest om de beurt \"Never Have I Ever...\"-vragen hardop.';
+      'Elke speler leest om de beurt \"Ik heb nog nooit...\"-vragen hardop.';
 
   @override
   String get how_to_play_step_3_title => 'Waarheid of actie';
@@ -327,26 +327,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get onboarding_terms_of_use => 'Gebruiksvoorwaarden';
-
-  @override
-  String get onboarding_att_title => 'Tracking toestaan';
-
-  @override
-  String get onboarding_att_subtitle =>
-      'Help ons campagnes te meten en de ervaring voor nieuwe spelers te verbeteren.';
-
-  @override
-  String get onboarding_att_button => 'Tracking toestaan';
-
-  @override
-  String get onboarding_push_title => 'Blijf op de hoogte';
-
-  @override
-  String get onboarding_push_subtitle =>
-      'Schakel meldingen in voor updates, herinneringen en speciale aanbiedingen.';
-
-  @override
-  String get onboarding_push_button => 'Meldingen toestaan';
 
   @override
   String get language_title => 'Taal';
@@ -430,9 +410,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Beste keuze';
-
-  @override
-  String get paywall_three_days_free => '3 dagen gratis';
 
   @override
   String paywall_trial_text(String price) {
@@ -556,4 +533,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String error_page_not_found(String path) {
     return 'Pagina niet gevonden: $path';
   }
+
+  @override
+  String get onboarding_att_title => 'Tracking toestaan';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Help ons campagnes te meten en de ervaring voor nieuwe spelers te verbeteren.';
+
+  @override
+  String get onboarding_att_button => 'Tracking toestaan';
+
+  @override
+  String get onboarding_push_title => 'Blijf op de hoogte';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Schakel meldingen in voor updates, herinneringen en speciale aanbiedingen.';
+
+  @override
+  String get onboarding_push_button => 'Meldingen toestaan';
+
+  @override
+  String get paywall_three_days_free => '3 dagen gratis';
 }

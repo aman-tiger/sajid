@@ -1,241 +1,241 @@
-﻿{
-    "@@locale":  "ko",
-    "onboarding_1_title":  "ë©‹ì§„ ë°¤ì„ ì¤€ë¹„í•˜ì…¨ë‚˜ìš”?",
-    "onboarding_1_subtitle":  "ê¶ê·¹ì˜ ê²Œìž„ ê²½í—˜ì— ë¹ ì ¸ë³´ì„¸ìš”!",
-    "onboarding_2_title":  "6ê°œì˜ ë©‹ì§„ ê²Œìž„ íŒ©",
-    "onboarding_2_subtitle":  "í´ëž˜ì‹ë¶€í„° í•«í•œ ê²ƒê¹Œì§€ - ì™„ë²½í•œ ë¶„ìœ„ê¸°ë¥¼ ì°¾ìœ¼ì„¸ìš”!",
-    "onboarding_3_title":  "1,500ê°œì˜ ì§ˆë¬¸",
-    "onboarding_3_subtitle":  "ì¹œêµ¬ë“¤ê³¼ ëì—†ëŠ” ì¦ê±°ì›€ì´ ê¸°ë‹¤ë¦½ë‹ˆë‹¤!",
-    "onboarding_4_title":  "ê²½í—˜ì„ í‰ê°€í•´ì£¼ì„¸ìš”",
-    "onboarding_4_subtitle":  "ê²Œìž„ì„ ë” ì¢‹ê²Œ ë§Œë“œëŠ” ë° ë„ì›€ì„ ì£¼ì„¸ìš”!",
-    "button_continue":  "ê³„ì†í•˜ê¸°",
-    "button_start_game":  "ê²Œìž„ ì‹œìž‘",
-    "button_skip":  "ê±´ë„ˆë›°ê¸°",
-    "button_get_started":  "ì‹œìž‘í•˜ê¸°",
-    "button_back":  "ë’¤ë¡œ",
-    "button_next":  "ë‹¤ìŒ",
-    "button_save":  "ì €ìž¥",
-    "button_cancel":  "ì·¨ì†Œ",
-    "button_ok":  "í™•ì¸",
-    "button_close":  "ë‹«ê¸°",
-    "button_share":  "ê³µìœ ",
-    "button_rate_now":  "ì§€ê¸ˆ í‰ê°€í•˜ê¸°",
-    "button_maybe_later":  "ë‚˜ì¤‘ì—",
-    "main_menu_title":  "ë‚˜ëŠ” í•œ ë²ˆë„",
-    "main_menu_subtitle":  "íŒ©ì„ ì„ íƒí•˜ì„¸ìš”",
-    "main_menu_buy_subscription":  "ëª¨ë“  íŒ© ìž ê¸ˆ í•´ì œ",
-    "main_menu_settings":  "ì„¤ì •",
-    "main_menu_free":  "ë¬´ë£Œ",
-    "main_menu_premium":  "í”„ë¦¬ë¯¸ì—„",
-    "category_classic_name":  "í´ëž˜ì‹ íŒ©",
-    "category_classic_desc":  "ëª¨ë“  ëª¨ìž„ì„ ì‹œìž‘í•˜ê¸°ì— ì™„ë²½í•©ë‹ˆë‹¤!",
-    "category_party_name":  "íŒŒí‹° íŒ©",
-    "category_party_desc":  "í¥ë¯¸ì§„ì§„í•œ ë„ì „ìœ¼ë¡œ íŒŒí‹°ì— í™œë ¥ì„ ë¶ˆì–´ë„£ìœ¼ì„¸ìš”!",
-    "category_girls_name":  "ì—¬ì„±ìš© 18+",
-    "category_girls_desc":  "ëŒ€ë‹´í•˜ê³  ê³¼ê°í•œ ì—¬ìžë“¤ì˜ ë°¤ì„ ìœ„í•œ ì§ˆë¬¸ë“¤!",
-    "category_couples_name":  "ì»¤í”Œ íŒ©",
-    "category_couples_desc":  "íŒŒíŠ¸ë„ˆì™€ ì´ì „ê³¼ëŠ” ë‹¤ë¥´ê²Œ ì—°ê²°ë˜ì„¸ìš”!",
-    "category_hot_name":  "í•«í•œ ì§ˆë¬¸ 18+",
-    "category_hot_desc":  "ëœ¨ê±°ìš´ ì§ˆë¬¸ìœ¼ë¡œ ë¶„ìœ„ê¸°ë¥¼ ë‹¬êµ¬ì„¸ìš”!",
-    "category_guys_name":  "ë‚¨ì„±ìš© íŒ©",
-    "category_guys_desc":  "ë‚¨ìžë“¤ì„ ìœ„í•´ ì„¤ê³„ëœ ë©‹ì§„ ë„ì „ë“¤!",
-    "game_never_have_i_ever":  "ë‚˜ëŠ” í•œ ë²ˆë„...",
-    "game_swipe_hint":  "ìŠ¤ì™€ì´í”„í•˜ì—¬ ì´ë™",
-    "game_loading":  "ì§ˆë¬¸ì„ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘...",
-    "game_error_title":  "ì•—!",
-    "game_error_no_questions":  "ì´ ì¹´í…Œê³ ë¦¬ì— ì‚¬ìš© ê°€ëŠ¥í•œ ì§ˆë¬¸ì´ ì—†ìŠµë‹ˆë‹¤",
-    "game_error_failed_load":  "ì§ˆë¬¸ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤",
-    "game_button_previous":  "ì´ì „",
-    "game_button_next":  "ë‹¤ìŒ",
-    "game_button_shuffle":  "ì„žê¸°",
-    "game_button_share":  "ê³µìœ ",
-    "game_share_text":  "ë‚˜ëŠ” í•œ ë²ˆë„... {question}\n\në„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„ ì•±ì„ ë‹¤ìš´ë¡œë“œí•˜ê³  ì¹œêµ¬ë“¤ê³¼ í”Œë ˆì´í•˜ì„¸ìš”!",
-    "@game_share_text":  {
-                             "placeholders":  {
-                                                  "question":  {
-                                                                   "type":  "String"
-                                                               }
-                                              }
-                         },
-    "settings_title":  "ì„¤ì •",
-    "settings_section_account":  "ê³„ì •",
-    "settings_section_app":  "ì•± ì„¤ì •",
-    "settings_section_support":  "ì§€ì› ë° í”¼ë“œë°±",
-    "settings_section_about":  "ì •ë³´",
-    "settings_premium_member":  "í”„ë¦¬ë¯¸ì—„ íšŒì›",
-    "settings_free_plan":  "ë¬´ë£Œ í”Œëžœ",
-    "settings_premium_desc":  "ëª¨ë“  íŒ©ì— ëŒ€í•œ ë¬´ì œí•œ ì•¡ì„¸ìŠ¤ë¥¼ ì¦ê¸°ì„¸ìš”!",
-    "settings_free_desc":  "ëª¨ë“  í”„ë¦¬ë¯¸ì—„ ì½˜í…ì¸ ë¥¼ ìž ê¸ˆ í•´ì œí•˜ë ¤ë©´ ì—…ê·¸ë ˆì´ë“œí•˜ì„¸ìš”",
-    "settings_restore_purchases":  "êµ¬ë§¤ ë³µì›",
-    "settings_restore_purchases_desc":  "ì´ì „ êµ¬ë§¤ë¥¼ ë³µì›í•©ë‹ˆë‹¤",
-    "settings_language":  "ì–¸ì–´",
-    "settings_language_desc":  "ì•± ì–¸ì–´ ë³€ê²½",
-    "settings_dark_mode":  "ë‹¤í¬ ëª¨ë“œ",
-    "settings_how_to_play":  "ê²Œìž„ ë°©ë²•",
-    "settings_how_to_play_desc":  "ê²Œìž„ í”Œë ˆì´ ë°©ë²• ë°°ìš°ê¸°",
-    "settings_share_app":  "ì•± ê³µìœ ",
-    "settings_share_app_desc":  "ì¹œêµ¬ì™€ ê³µìœ ",
-    "settings_rate_us":  "í‰ê°€í•˜ê¸°",
-    "settings_rate_us_desc":  "ìŠ¤í† ì–´ì—ì„œ í‰ê°€í•˜ê¸°",
-    "settings_app_version":  "ì•± ë²„ì „",
-    "settings_terms":  "ì´ìš© ì•½ê´€",
-    "settings_privacy":  "ê°œì¸ì •ë³´ ë³´í˜¸ì •ì±…",
-    "settings_restore_dialog_title":  "êµ¬ë§¤ ë³µì›",
-    "settings_restore_dialog_message":  "3ë‹¨ê³„ê°€ êµ¬í˜„ë˜ë©´ êµ¬ë§¤ê°€ ë³µì›ë©ë‹ˆë‹¤.",
-    "settings_share_message":  "ë„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„ë¥¼ í™•ì¸í•´ë³´ì„¸ìš”! ìµœê³ ì˜ íŒŒí‹° ê²Œìž„ ì•±. ì§€ê¸ˆ ë‹¤ìš´ë¡œë“œí•˜ì„¸ìš”!",
-    "settings_share_subject":  "ë„¤ë²„ í•´ë¸Œ ì•„ì´ ì—ë²„ - ìž¬ë¯¸ìžˆëŠ” íŒŒí‹° ê²Œìž„",
-    "how_to_play_title":  "ê²Œìž„ ë°©ë²•",
-    "how_to_play_header_title":  "ë‚˜ëŠ” í•œ ë²ˆë„",
-    "how_to_play_header_subtitle":  "ê¶ê·¹ì˜ íŒŒí‹° ê²Œìž„",
-    "how_to_play_step_1_title":  "íŒ© ì„ íƒ",
-    "how_to_play_step_1_desc":  "íŒŒí‹° ë¶„ìœ„ê¸°ì— ë§žëŠ” 6ê°œì˜ í¥ë¯¸ì§„ì§„í•œ ì¹´í…Œê³ ë¦¬ ì¤‘ì—ì„œ ì„ íƒí•˜ì„¸ìš”.",
-    "how_to_play_step_2_title":  "ì§ˆë¬¸ ì½ê¸°",
-    "how_to_play_step_2_desc":  "ê° í”Œë ˆì´ì–´ëŠ” ì°¨ë¡€ë¡œ \"ë‚˜ëŠ” í•œ ë²ˆë„...\" ì§ˆë¬¸ì„ ì†Œë¦¬ ë‚´ì–´ ì½ìŠµë‹ˆë‹¤.",
-    "how_to_play_step_3_title":  "ì§„ì‹¤ ë˜ëŠ” í–‰ë™",
-    "how_to_play_step_3_desc":  "í•´ë³¸ ì ì´ ìžˆëŠ” í”Œë ˆì´ì–´ëŠ” ì¸ì •í•˜ê±°ë‚˜ ìž¬ë¯¸ìžˆëŠ” ë„ì „ì„ ì™„ìˆ˜í•´ì•¼ í•©ë‹ˆë‹¤!",
-    "how_to_play_step_4_title":  "ë‹¤ìŒ ì§ˆë¬¸",
-    "how_to_play_step_4_desc":  "ìŠ¤ì™€ì´í”„í•˜ê±°ë‚˜ íƒ­í•˜ì—¬ ë‹¤ìŒ ì§ˆë¬¸ìœ¼ë¡œ ì´ë™í•˜ê³  ì¦ê±°ì›€ì„ ê³„ì†í•˜ì„¸ìš”!",
-    "how_to_play_step_5_title":  "ì¦ê¸°ì„¸ìš”!",
-    "how_to_play_step_5_desc":  "ìž¬ë¯¸ìžˆëŠ” ìˆœê°„ì„ ì¦ê¸°ê³  ì¹œêµ¬ë“¤ì„ ë” ìž˜ ì•Œì•„ê°€ì„¸ìš”!",
-    "how_to_play_step_label":  "ë‹¨ê³„ {number}",
-    "@how_to_play_step_label":  {
-                                    "placeholders":  {
-                                                         "number":  {
-                                                                        "type":  "String"
-                                                                    }
-                                                     }
-                                },
-    "how_to_play_pro_tips":  "í”„ë¡œ íŒ",
-    "how_to_play_tip_1":  "ì„žê¸° ë²„íŠ¼ì„ ì‚¬ìš©í•˜ì—¬ ì§ˆë¬¸ì„ ë¬´ìž‘ìœ„ë¡œ ë§Œë“œì„¸ìš”",
-    "how_to_play_tip_2":  "ì¢‹ì•„í•˜ëŠ” ì§ˆë¬¸ì„ ì¹œêµ¬ë“¤ê³¼ ê³µìœ í•˜ì„¸ìš”",
-    "how_to_play_tip_4":  "3명 이상이 함께하면 더 재미있어요!",
-    "onboarding_terms_prefix":  "계속하면 우리의 ",
-    "language_title":  "ì–¸ì–´",
-    "language_subtitle":  "ì„ í˜¸í•˜ëŠ” ì–¸ì–´ë¥¼ ì„ íƒí•˜ì„¸ìš”",
-    "language_english":  "English",
-    "language_spanish":  "EspaÃ±ol",
-    "language_german":  "Deutsch",
-    "language_french":  "FranÃ§ais",
-    "language_korean":  "í•œêµ­ì–´",
-    "language_dutch":  "Dutch",
-    "language_swedish":  "Swedish",
-    "language_norwegian":  "Norwegian",
-    "language_russian":  "Russian",
-    "language_portuguese_brazil":  "Portuguese (Brazil)",
-    "language_japanese":  "Japanese",
-    "language_italian":  "Italian",
-    "language_changed_title":  "ì–¸ì–´ ë³€ê²½ë¨",
-    "language_changed_message":  "ì–¸ì–´ê°€ {language}(ìœ¼)ë¡œ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤. ìµœì¢… ë²„ì „ì—ì„œ ì•±ì´ ì™„ì „ížˆ ë²ˆì—­ë©ë‹ˆë‹¤.",
-    "@language_changed_message":  {
-                                      "placeholders":  {
-                                                           "language":  {
-                                                                            "type":  "String"
-                                                                        }
-                                                       }
-                                  },
-    "paywall_title":  "í”„ë¦¬ë¯¸ì—„ìœ¼ë¡œ ì—…ê·¸ë ˆì´ë“œ",
-    "paywall_subtitle":  "ëŠìž„ì—†ëŠ” ì¦ê±°ì›€ì´ ê¸°ë‹¤ë¦½ë‹ˆë‹¤",
-    "paywall_choose_plan":  "í”Œëžœ ì„ íƒ",
-    "paywall_feature_1":  "18+ ì „ìš© ì½˜í…ì¸  ìž ê¸ˆ í•´ì œ",
-    "paywall_feature_2":  "ì •ê¸°ì ìœ¼ë¡œ ìƒˆ ì—…ë°ì´íŠ¸",
-    "paywall_feature_3":  "ê´‘ê³  ì—†ìŒ",
-    "paywall_feature_4":  "ì–¸ì œë“ ì§€ ì·¨ì†Œ ê°€ëŠ¥",
-    "paywall_monthly_plan":  "월간",
-    "paywall_yearly_plan":  "연간",
-    "paywall_best_value":  "최고 가치",
-    "paywall_three_days_free":  "3일 무료",
-    "paywall_trial_text":  "3ì¼ ë¬´ë£Œ ì²´í—˜",
-    "@paywall_trial_text":  {
-                                "placeholders":  {
-                                                     "price":  {
-                                                                   "type":  "String"
-                                                               }
-                                                 }
-                            },
-    "paywall_start_trial":  "ë¬´ë£Œ ì²´í—˜ ì‹œìž‘",
-    "paywall_subscribe":  "ì§€ê¸ˆ êµ¬ë…",
-    "paywall_restore":  "êµ¬ë§¤ ë³µì›",
-    "paywall_terms":  "ì´ìš© ì•½ê´€",
-    "paywall_privacy":  "ê°œì¸ì •ë³´ ë³´í˜¸ì •ì±…",
-    "paywall_cancel_anytime":  "ì–¸ì œë“ ì§€ ì·¨ì†Œ ê°€ëŠ¥",
-    "paywall_loading":  "êµ¬ë… í”Œëžœì„ ë¶ˆëŸ¬ì˜¤ëŠ” ì¤‘...",
-    "paywall_error":  "êµ¬ë… í”Œëžœì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.",
-    "subscription_active":  "í™œì„± êµ¬ë…ì´ ìžˆìŠµë‹ˆë‹¤",
-    "subscription_expired":  "êµ¬ë…ì´ ë§Œë£Œë˜ì—ˆìŠµë‹ˆë‹¤",
-    "subscription_purchase_success":  "êµ¬ë§¤ ì„±ê³µ! í”„ë¦¬ë¯¸ì—„ ì½˜í…ì¸ ë¥¼ ì¦ê¸°ì„¸ìš”.",
-    "subscription_purchase_cancelled":  "êµ¬ë§¤ê°€ ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤",
-    "subscription_purchase_error":  "êµ¬ë§¤ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.",
-    "subscription_restore_success":  "êµ¬ë§¤ê°€ ì„±ê³µì ìœ¼ë¡œ ë³µì›ë˜ì—ˆìŠµë‹ˆë‹¤!",
-    "subscription_restore_error":  "ë³µì›í•  êµ¬ë§¤ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.",
-    "subscription_checking":  "êµ¬ë… ìƒíƒœë¥¼ í™•ì¸í•˜ëŠ” ì¤‘...",
-    "error_generic":  "ë¬¸ì œê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì‹œë„í•´ì£¼ì„¸ìš”.",
-    "error_network":  "ë„¤íŠ¸ì›Œí¬ ì˜¤ë¥˜. ì—°ê²°ì„ í™•ì¸í•´ì£¼ì„¸ìš”.",
-    "error_loading_questions":  "ì§ˆë¬¸ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤: {error}",
-    "@error_loading_questions":  {
-                                     "placeholders":  {
-                                                          "error":  {
-                                                                        "type":  "String"
-                                                                    }
-                                                      }
-                                 },
-    "error_loading_settings":  "ì„¤ì •ì„ ë¶ˆëŸ¬ì˜¤ì§€ ëª»í–ˆìŠµë‹ˆë‹¤: {error}",
-    "@error_loading_settings":  {
-                                    "placeholders":  {
-                                                         "error":  {
-                                                                       "type":  "String"
-                                                                   }
-                                                     }
-                                },
-    "common_loading":  "ë¡œë”© ì¤‘...",
-    "common_retry":  "ë‹¤ì‹œ ì‹œë„",
-    "common_done":  "ì™„ë£Œ",
-    "common_error":  "ì˜¤ë¥˜",
-    "common_success":  "ì„±ê³µ",
-    "common_warning":  "ê²½ê³ ",
-    "common_info":  "ì •ë³´",
-    "common_and":  "?",
-    "onboarding_terms_of_use":  "이용 약관",
-    "onboarding_att_title":  "추적 허용",
-    "onboarding_att_subtitle":  "캠페인 성과를 측정하고 새 사용자 경험을 개선하는 데 도움을 주세요.",
-    "onboarding_att_button":  "추적 허용",
-    "onboarding_push_title":  "새소식을 놓치지 마세요",
-    "onboarding_push_subtitle":  "업데이트, 리마인더, 특별 혜택 알림을 받으세요.",
-    "onboarding_push_button":  "알림 허용",
-    "price_per_week":  "??",
-    "price_per_weeks":  "{count}??",
-    "@price_per_weeks":  {
-                             "placeholders":  {
-                                                  "count":  {
-                                                                "type":  "String"
-                                                            }
-                                              }
-                         },
-    "price_per_month":  "??",
-    "price_per_months":  "{count}???",
-    "@price_per_months":  {
-                              "placeholders":  {
-                                                   "count":  {
-                                                                 "type":  "String"
-                                                             }
-                                               }
-                          },
-    "price_per_year":  "??",
-    "price_per_years":  "{count}??",
-    "@price_per_years":  {
-                             "placeholders":  {
-                                                  "count":  {
-                                                                "type":  "String"
-                                                            }
-                                              }
-                         },
-    "error_page_not_found":  "???? ?? ? ????: {path}",
-    "@error_page_not_found":  {
-                                  "placeholders":  {
-                                                       "path":  {
-                                                                    "type":  "String"
-                                                                }
-                                                   }
-                              },
-    "how_to_play_tip_3":  "프리미엄 팩으로 1,500개 이상의 독점 질문을 잠금 해제하세요",
-    "paywall_weekly_plan":  "주간"
+{
+  "@@locale": "ko",
+  "onboarding_1_title": "\uba4b\uc9c4 \ubc24\uc744 \uc900\ube44\ud558\uc168\ub098\uc694?",
+  "onboarding_1_subtitle": "\uad81\uadf9\uc758 \uac8c\uc784 \uacbd\ud5d8\uc5d0 \ube60\uc838\ubcf4\uc138\uc694!",
+  "onboarding_2_title": "6\uac1c\uc758 \uba4b\uc9c4 \uac8c\uc784 \ud329",
+  "onboarding_2_subtitle": "\ud074\ub798\uc2dd\ubd80\ud130 \ud56b\ud55c \uac83\uae4c\uc9c0 - \uc644\ubcbd\ud55c \ubd84\uc704\uae30\ub97c \ucc3e\uc73c\uc138\uc694!",
+  "onboarding_3_title": "1,500\uac1c\uc758 \uc9c8\ubb38",
+  "onboarding_3_subtitle": "\uce5c\uad6c\ub4e4\uacfc \ub05d\uc5c6\ub294 \uc990\uac70\uc6c0\uc774 \uae30\ub2e4\ub9bd\ub2c8\ub2e4!",
+  "onboarding_4_title": "\uacbd\ud5d8\uc744 \ud3c9\uac00\ud574\uc8fc\uc138\uc694",
+  "onboarding_4_subtitle": "\uac8c\uc784\uc744 \ub354 \uc88b\uac8c \ub9cc\ub4dc\ub294 \ub370 \ub3c4\uc6c0\uc744 \uc8fc\uc138\uc694!",
+  "button_continue": "\uacc4\uc18d\ud558\uae30",
+  "button_start_game": "\uac8c\uc784 \uc2dc\uc791",
+  "button_skip": "\uac74\ub108\ub6f0\uae30",
+  "button_get_started": "\uc2dc\uc791\ud558\uae30",
+  "button_back": "\ub4a4\ub85c",
+  "button_next": "\ub2e4\uc74c",
+  "button_save": "\uc800\uc7a5",
+  "button_cancel": "\ucde8\uc18c",
+  "button_ok": "\ud655\uc778",
+  "button_close": "\ub2eb\uae30",
+  "button_share": "\uacf5\uc720",
+  "button_rate_now": "\uc9c0\uae08 \ud3c9\uac00\ud558\uae30",
+  "button_maybe_later": "\ub098\uc911\uc5d0",
+  "main_menu_title": "\ub098\ub294 \ud55c \ubc88\ub3c4",
+  "main_menu_subtitle": "\ud329\uc744 \uc120\ud0dd\ud558\uc138\uc694",
+  "main_menu_buy_subscription": "\ubaa8\ub4e0 \ud329 \uc7a0\uae08 \ud574\uc81c",
+  "main_menu_settings": "\uc124\uc815",
+  "main_menu_free": "\ubb34\ub8cc",
+  "main_menu_premium": "\ud504\ub9ac\ubbf8\uc5c4",
+  "category_classic_name": "\ud074\ub798\uc2dd \ud329",
+  "category_classic_desc": "\ubaa8\ub4e0 \ubaa8\uc784\uc744 \uc2dc\uc791\ud558\uae30\uc5d0 \uc644\ubcbd\ud569\ub2c8\ub2e4!",
+  "category_party_name": "\ud30c\ud2f0 \ud329",
+  "category_party_desc": "\ud765\ubbf8\uc9c4\uc9c4\ud55c \ub3c4\uc804\uc73c\ub85c \ud30c\ud2f0\uc5d0 \ud65c\ub825\uc744 \ubd88\uc5b4\ub123\uc73c\uc138\uc694!",
+  "category_girls_name": "\uc5ec\uc131\uc6a9 18+",
+  "category_girls_desc": "\ub300\ub2f4\ud558\uace0 \uacfc\uac10\ud55c \uc5ec\uc790\ub4e4\uc758 \ubc24\uc744 \uc704\ud55c \uc9c8\ubb38\ub4e4!",
+  "category_couples_name": "\ucee4\ud50c \ud329",
+  "category_couples_desc": "\ud30c\ud2b8\ub108\uc640 \uc774\uc804\uacfc\ub294 \ub2e4\ub974\uac8c \uc5f0\uacb0\ub418\uc138\uc694!",
+  "category_hot_name": "\ud56b\ud55c \uc9c8\ubb38 18+",
+  "category_hot_desc": "\ub728\uac70\uc6b4 \uc9c8\ubb38\uc73c\ub85c \ubd84\uc704\uae30\ub97c \ub2ec\uad6c\uc138\uc694!",
+  "category_guys_name": "\ub0a8\uc131\uc6a9 \ud329",
+  "category_guys_desc": "\ub0a8\uc790\ub4e4\uc744 \uc704\ud574 \uc124\uacc4\ub41c \uba4b\uc9c4 \ub3c4\uc804\ub4e4!",
+  "game_never_have_i_ever": "\ub098\ub294 \ud55c \ubc88\ub3c4...",
+  "game_swipe_hint": "\uc2a4\uc640\uc774\ud504\ud558\uc5ec \uc774\ub3d9",
+  "game_loading": "\uc9c8\ubb38\uc744 \ubd88\ub7ec\uc624\ub294 \uc911...",
+  "game_error_title": "\uc557!",
+  "game_error_no_questions": "\uc774 \uce74\ud14c\uace0\ub9ac\uc5d0 \uc0ac\uc6a9 \uac00\ub2a5\ud55c \uc9c8\ubb38\uc774 \uc5c6\uc2b5\ub2c8\ub2e4",
+  "game_error_failed_load": "\uc9c8\ubb38\uc744 \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4",
+  "game_button_previous": "\uc774\uc804",
+  "game_button_next": "\ub2e4\uc74c",
+  "game_button_shuffle": "\uc11e\uae30",
+  "game_button_share": "\uacf5\uc720",
+  "game_share_text": "\ub098\ub294 \ud55c \ubc88\ub3c4... {question}\n\n\uc571 \"\ub098\ub294 \ud55c \ubc88\ub3c4\"\ub97c \ub2e4\uc6b4\ub85c\ub4dc\ud558\uace0 \uce5c\uad6c\ub4e4\uacfc \ud50c\ub808\uc774\ud558\uc138\uc694!",
+  "@game_share_text": {
+    "placeholders": {
+      "question": {
+        "type": "String"
+      }
+    }
+  },
+  "settings_title": "\uc124\uc815",
+  "settings_section_account": "\uacc4\uc815",
+  "settings_section_app": "\uc571 \uc124\uc815",
+  "settings_section_support": "\uc9c0\uc6d0 \ubc0f \ud53c\ub4dc\ubc31",
+  "settings_section_about": "\uc815\ubcf4",
+  "settings_premium_member": "\ud504\ub9ac\ubbf8\uc5c4 \ud68c\uc6d0",
+  "settings_free_plan": "\ubb34\ub8cc \ud50c\ub79c",
+  "settings_premium_desc": "\ubaa8\ub4e0 \ud329\uc5d0 \ub300\ud55c \ubb34\uc81c\ud55c \uc561\uc138\uc2a4\ub97c \uc990\uae30\uc138\uc694!",
+  "settings_free_desc": "\ubaa8\ub4e0 \ud504\ub9ac\ubbf8\uc5c4 \ucf58\ud150\uce20\ub97c \uc7a0\uae08 \ud574\uc81c\ud558\ub824\uba74 \uc5c5\uadf8\ub808\uc774\ub4dc\ud558\uc138\uc694",
+  "settings_restore_purchases": "\uad6c\ub9e4 \ubcf5\uc6d0",
+  "settings_restore_purchases_desc": "\uc774\uc804 \uad6c\ub9e4\ub97c \ubcf5\uc6d0\ud569\ub2c8\ub2e4",
+  "settings_language": "\uc5b8\uc5b4",
+  "settings_language_desc": "\uc571 \uc5b8\uc5b4 \ubcc0\uacbd",
+  "settings_dark_mode": "\ub2e4\ud06c \ubaa8\ub4dc",
+  "settings_how_to_play": "\uac8c\uc784 \ubc29\ubc95",
+  "settings_how_to_play_desc": "\uac8c\uc784 \ud50c\ub808\uc774 \ubc29\ubc95 \ubc30\uc6b0\uae30",
+  "settings_share_app": "\uc571 \uacf5\uc720",
+  "settings_share_app_desc": "\uce5c\uad6c\uc640 \uacf5\uc720",
+  "settings_rate_us": "\ud3c9\uac00\ud558\uae30",
+  "settings_rate_us_desc": "\uc2a4\ud1a0\uc5b4\uc5d0\uc11c \ud3c9\uac00\ud558\uae30",
+  "settings_app_version": "\uc571 \ubc84\uc804",
+  "settings_terms": "\uc774\uc6a9 \uc57d\uad00",
+  "settings_privacy": "\uac1c\uc778\uc815\ubcf4 \ubcf4\ud638\uc815\ucc45",
+  "settings_restore_dialog_title": "\uad6c\ub9e4 \ubcf5\uc6d0",
+  "settings_restore_dialog_message": "3\ub2e8\uacc4\uac00 \uad6c\ud604\ub418\uba74 \uad6c\ub9e4\uac00 \ubcf5\uc6d0\ub429\ub2c8\ub2e4.",
+  "settings_share_message": "\u2018\ub098\ub294 \ud55c \ubc88\ub3c4\u2019\ub97c \ud655\uc778\ud574 \ubcf4\uc138\uc694! \ucd5c\uace0\uc758 \ud30c\ud2f0 \uac8c\uc784 \uc571\uc744 \uc9c0\uae08 \ub2e4\uc6b4\ub85c\ub4dc\ud558\uc138\uc694.",
+  "settings_share_subject": "\ub098\ub294 \ud55c \ubc88\ub3c4 - \uc7ac\ubbf8\uc788\ub294 \ud30c\ud2f0 \uac8c\uc784",
+  "how_to_play_title": "\uac8c\uc784 \ubc29\ubc95",
+  "how_to_play_header_title": "\ub098\ub294 \ud55c \ubc88\ub3c4",
+  "how_to_play_header_subtitle": "\uad81\uadf9\uc758 \ud30c\ud2f0 \uac8c\uc784",
+  "how_to_play_step_1_title": "\ud329 \uc120\ud0dd",
+  "how_to_play_step_1_desc": "\ud30c\ud2f0 \ubd84\uc704\uae30\uc5d0 \ub9de\ub294 6\uac1c\uc758 \ud765\ubbf8\uc9c4\uc9c4\ud55c \uce74\ud14c\uace0\ub9ac \uc911\uc5d0\uc11c \uc120\ud0dd\ud558\uc138\uc694.",
+  "how_to_play_step_2_title": "\uc9c8\ubb38 \uc77d\uae30",
+  "how_to_play_step_2_desc": "\uac01 \ud50c\ub808\uc774\uc5b4\ub294 \ucc28\ub840\ub85c \"\ub098\ub294 \ud55c \ubc88\ub3c4...\" \uc9c8\ubb38\uc744 \uc18c\ub9ac \ub0b4\uc5b4 \uc77d\uc2b5\ub2c8\ub2e4.",
+  "how_to_play_step_3_title": "\uc9c4\uc2e4 \ub610\ub294 \ud589\ub3d9",
+  "how_to_play_step_3_desc": "\ud574\ubcf8 \uc801\uc774 \uc788\ub294 \ud50c\ub808\uc774\uc5b4\ub294 \uc778\uc815\ud558\uac70\ub098 \uc7ac\ubbf8\uc788\ub294 \ub3c4\uc804\uc744 \uc644\uc218\ud574\uc57c \ud569\ub2c8\ub2e4!",
+  "how_to_play_step_4_title": "\ub2e4\uc74c \uc9c8\ubb38",
+  "how_to_play_step_4_desc": "\uc2a4\uc640\uc774\ud504\ud558\uac70\ub098 \ud0ed\ud558\uc5ec \ub2e4\uc74c \uc9c8\ubb38\uc73c\ub85c \uc774\ub3d9\ud558\uace0 \uc990\uac70\uc6c0\uc744 \uacc4\uc18d\ud558\uc138\uc694!",
+  "how_to_play_step_5_title": "\uc990\uae30\uc138\uc694!",
+  "how_to_play_step_5_desc": "\uc7ac\ubbf8\uc788\ub294 \uc21c\uac04\uc744 \uc990\uae30\uace0 \uce5c\uad6c\ub4e4\uc744 \ub354 \uc798 \uc54c\uc544\uac00\uc138\uc694!",
+  "how_to_play_step_label": "\ub2e8\uacc4 {number}",
+  "@how_to_play_step_label": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "how_to_play_pro_tips": "\ud504\ub85c \ud301",
+  "how_to_play_tip_1": "\uc11e\uae30 \ubc84\ud2bc\uc744 \uc0ac\uc6a9\ud558\uc5ec \uc9c8\ubb38\uc744 \ubb34\uc791\uc704\ub85c \ub9cc\ub4dc\uc138\uc694",
+  "how_to_play_tip_2": "\uc88b\uc544\ud558\ub294 \uc9c8\ubb38\uc744 \uce5c\uad6c\ub4e4\uacfc \uacf5\uc720\ud558\uc138\uc694",
+  "how_to_play_tip_3": "\ud504\ub9ac\ubbf8\uc5c4 \ud329\uc740 1,500\uac1c \uc774\uc0c1\uc758 \ub3c5\uc810 \uc9c8\ubb38\uc744 \uc7a0\uae08 \ud574\uc81c\ud569\ub2c8\ub2e4",
+  "how_to_play_tip_4": "\ucd5c\ub300\ud55c\uc758 \uc7ac\ubbf8\ub97c \uc704\ud574 3\uba85 \uc774\uc0c1\uc758 \ud50c\ub808\uc774\uc5b4\uc640 \ud50c\ub808\uc774\ud558\uc138\uc694!",
+  "language_title": "\uc5b8\uc5b4",
+  "language_subtitle": "\uc120\ud638\ud558\ub294 \uc5b8\uc5b4\ub97c \uc120\ud0dd\ud558\uc138\uc694",
+  "language_english": "English",
+  "language_spanish": "Espa\u00f1ol",
+  "language_german": "Deutsch",
+  "language_french": "Fran\u00e7ais",
+  "language_korean": "\ud55c\uad6d\uc5b4",
+  "language_dutch": "Dutch",
+  "language_swedish": "Swedish",
+  "language_norwegian": "Norwegian",
+  "language_russian": "Russian",
+  "language_portuguese_brazil": "Portuguese (Brazil)",
+  "language_japanese": "Japanese",
+  "language_italian": "Italian",
+  "language_changed_title": "\uc5b8\uc5b4 \ubcc0\uacbd\ub428",
+  "language_changed_message": "\uc5b8\uc5b4\uac00 {language}(\uc73c)\ub85c \ubcc0\uacbd\ub418\uc5c8\uc2b5\ub2c8\ub2e4. \ucd5c\uc885 \ubc84\uc804\uc5d0\uc11c \uc571\uc774 \uc644\uc804\ud788 \ubc88\uc5ed\ub429\ub2c8\ub2e4.",
+  "@language_changed_message": {
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_title": "\ud504\ub9ac\ubbf8\uc5c4\uc73c\ub85c \uc5c5\uadf8\ub808\uc774\ub4dc",
+  "paywall_subtitle": "\ub04a\uc784\uc5c6\ub294 \uc990\uac70\uc6c0\uc774 \uae30\ub2e4\ub9bd\ub2c8\ub2e4",
+  "paywall_choose_plan": "\ud50c\ub79c \uc120\ud0dd",
+  "paywall_feature_1": "18+ \uc804\uc6a9 \ucf58\ud150\uce20 \uc7a0\uae08 \ud574\uc81c",
+  "paywall_feature_2": "\uc815\uae30\uc801\uc73c\ub85c \uc0c8 \uc5c5\ub370\uc774\ud2b8",
+  "paywall_feature_3": "\uad11\uace0 \uc5c6\uc74c",
+  "paywall_feature_4": "\uc5b8\uc81c\ub4e0\uc9c0 \ucde8\uc18c \uac00\ub2a5",
+  "paywall_weekly_plan": "\uc8fc\uac04",
+  "paywall_monthly_plan": "\uc6d4\uac04",
+  "paywall_yearly_plan": "\uc5f0\uac04",
+  "paywall_best_value": "\ucd5c\uace0 \uac00\uce58",
+  "paywall_trial_text": "3\uc77c \ubb34\ub8cc \uccb4\ud5d8",
+  "@paywall_trial_text": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "paywall_start_trial": "\ubb34\ub8cc \uccb4\ud5d8 \uc2dc\uc791",
+  "paywall_subscribe": "\uc9c0\uae08 \uad6c\ub3c5",
+  "paywall_restore": "\uad6c\ub9e4 \ubcf5\uc6d0",
+  "paywall_terms": "\uc774\uc6a9 \uc57d\uad00",
+  "paywall_privacy": "\uac1c\uc778\uc815\ubcf4 \ubcf4\ud638\uc815\ucc45",
+  "paywall_cancel_anytime": "\uc5b8\uc81c\ub4e0\uc9c0 \ucde8\uc18c \uac00\ub2a5",
+  "paywall_loading": "\uad6c\ub3c5 \ud50c\ub79c\uc744 \ubd88\ub7ec\uc624\ub294 \uc911...",
+  "paywall_error": "\uad6c\ub3c5 \ud50c\ub79c\uc744 \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. \ub2e4\uc2dc \uc2dc\ub3c4\ud574\uc8fc\uc138\uc694.",
+  "subscription_active": "\ud65c\uc131 \uad6c\ub3c5\uc774 \uc788\uc2b5\ub2c8\ub2e4",
+  "subscription_expired": "\uad6c\ub3c5\uc774 \ub9cc\ub8cc\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+  "subscription_purchase_success": "\uad6c\ub9e4 \uc131\uacf5! \ud504\ub9ac\ubbf8\uc5c4 \ucf58\ud150\uce20\ub97c \uc990\uae30\uc138\uc694.",
+  "subscription_purchase_cancelled": "\uad6c\ub9e4\uac00 \ucde8\uc18c\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+  "subscription_purchase_error": "\uad6c\ub9e4\uc5d0 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4. \ub2e4\uc2dc \uc2dc\ub3c4\ud574\uc8fc\uc138\uc694.",
+  "subscription_restore_success": "\uad6c\ub9e4\uac00 \uc131\uacf5\uc801\uc73c\ub85c \ubcf5\uc6d0\ub418\uc5c8\uc2b5\ub2c8\ub2e4!",
+  "subscription_restore_error": "\ubcf5\uc6d0\ud560 \uad6c\ub9e4\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.",
+  "subscription_checking": "\uad6c\ub3c5 \uc0c1\ud0dc\ub97c \ud655\uc778\ud558\ub294 \uc911...",
+  "error_generic": "\ubb38\uc81c\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4. \ub2e4\uc2dc \uc2dc\ub3c4\ud574\uc8fc\uc138\uc694.",
+  "error_network": "\ub124\ud2b8\uc6cc\ud06c \uc624\ub958. \uc5f0\uacb0\uc744 \ud655\uc778\ud574\uc8fc\uc138\uc694.",
+  "error_loading_questions": "\uc9c8\ubb38\uc744 \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4: {error}",
+  "@error_loading_questions": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "error_loading_settings": "\uc124\uc815\uc744 \ubd88\ub7ec\uc624\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4: {error}",
+  "@error_loading_settings": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "common_loading": "\ub85c\ub529 \uc911...",
+  "common_retry": "\ub2e4\uc2dc \uc2dc\ub3c4",
+  "common_done": "\uc644\ub8cc",
+  "common_error": "\uc624\ub958",
+  "common_success": "\uc131\uacf5",
+  "common_warning": "\uacbd\uace0",
+  "common_info": "\uc815\ubcf4",
+  "common_and": "\uacfc",
+  "onboarding_terms_prefix": "\uacc4\uc18d\ud558\uba74 \uc6b0\ub9ac\uc758 ",
+  "onboarding_terms_of_use": "\uc774\uc6a9 \uc57d\uad00",
+  "price_per_week": "\ub9e4\uc8fc",
+  "price_per_weeks": "{count}\uc8fc\ub9c8\ub2e4",
+  "@price_per_weeks": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_month": "\ub9e4\uc6d4",
+  "price_per_months": "{count}\uac1c\uc6d4\ub9c8\ub2e4",
+  "@price_per_months": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "price_per_year": "\ub9e4\ub144",
+  "price_per_years": "{count}\ub144\ub9c8\ub2e4",
+  "@price_per_years": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "error_page_not_found": "\ud398\uc774\uc9c0\ub97c \ucc3e\uc744 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4: {path}",
+  "@error_page_not_found": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "onboarding_att_title": "\ucd94\uc801 \ud5c8\uc6a9",
+  "onboarding_att_subtitle": "\ucea0\ud398\uc778 \uc131\uacfc\ub97c \uce21\uc815\ud558\uace0 \uc0c8 \uc0ac\uc6a9\uc790 \uacbd\ud5d8\uc744 \uac1c\uc120\ud558\ub294 \ub370 \ub3c4\uc6c0\uc744 \uc8fc\uc138\uc694.",
+  "onboarding_att_button": "\ucd94\uc801 \ud5c8\uc6a9",
+  "onboarding_push_title": "\uc0c8\uc18c\uc2dd\uc744 \ub193\uce58\uc9c0 \ub9c8\uc138\uc694",
+  "onboarding_push_subtitle": "\uc5c5\ub370\uc774\ud2b8, \ub9ac\ub9c8\uc778\ub354, \ud2b9\ubcc4 \ud61c\ud0dd \uc54c\ub9bc\uc744 \ubc1b\uc73c\uc138\uc694.",
+  "onboarding_push_button": "\uc54c\ub9bc \ud5c8\uc6a9",
+  "paywall_three_days_free": "3\uc77c \ubb34\ub8cc"
 }

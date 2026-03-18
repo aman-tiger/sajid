@@ -310,24 +310,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get onboarding_terms_of_use => '利用規約';
 
   @override
-  String get onboarding_att_title => 'トラッキングを許可';
-
-  @override
-  String get onboarding_att_subtitle => 'キャンペーン計測と新規ユーザー体験の改善のためにご協力ください。';
-
-  @override
-  String get onboarding_att_button => 'トラッキングを許可';
-
-  @override
-  String get onboarding_push_title => '最新情報を受け取る';
-
-  @override
-  String get onboarding_push_subtitle => 'アップデート、リマインダー、特別オファーの通知を受け取りましょう。';
-
-  @override
-  String get onboarding_push_button => '通知を許可';
-
-  @override
   String get language_title => '言語';
 
   @override
@@ -409,9 +391,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'お得';
-
-  @override
-  String get paywall_three_days_free => '3日間無料';
 
   @override
   String paywall_trial_text(String price) {
@@ -531,4 +510,25 @@ class AppLocalizationsJa extends AppLocalizations {
   String error_page_not_found(String path) {
     return 'ページが見つかりません: $path';
   }
+
+  @override
+  String get onboarding_att_title => 'トラッキングを許可';
+
+  @override
+  String get onboarding_att_subtitle => 'キャンペーン計測と新規ユーザー体験の改善のためにご協力ください。';
+
+  @override
+  String get onboarding_att_button => 'トラッキングを許可';
+
+  @override
+  String get onboarding_push_title => '最新情報を受け取る';
+
+  @override
+  String get onboarding_push_subtitle => 'アップデート、リマインダー、特別オファーの通知を受け取りましょう。';
+
+  @override
+  String get onboarding_push_button => '通知を許可';
+
+  @override
+  String get paywall_three_days_free => '3日間無料';
 }

@@ -713,42 +713,6 @@ abstract class AppLocalizations {
   /// **'Terms of Use'**
   String get onboarding_terms_of_use;
 
-  /// No description provided for @onboarding_att_title.
-  ///
-  /// In en, this message translates to:
-  /// **'Allow Tracking'**
-  String get onboarding_att_title;
-
-  /// No description provided for @onboarding_att_subtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Help us measure campaigns and improve what new players see.'**
-  String get onboarding_att_subtitle;
-
-  /// No description provided for @onboarding_att_button.
-  ///
-  /// In en, this message translates to:
-  /// **'Allow Tracking'**
-  String get onboarding_att_button;
-
-  /// No description provided for @onboarding_push_title.
-  ///
-  /// In en, this message translates to:
-  /// **'Stay in the Loop'**
-  String get onboarding_push_title;
-
-  /// No description provided for @onboarding_push_subtitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Enable notifications for game updates, reminders, and special offers.'**
-  String get onboarding_push_subtitle;
-
-  /// No description provided for @onboarding_push_button.
-  ///
-  /// In en, this message translates to:
-  /// **'Allow Notifications'**
-  String get onboarding_push_button;
-
   /// No description provided for @language_title.
   ///
   /// In en, this message translates to:
@@ -910,12 +874,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Best Value'**
   String get paywall_best_value;
-
-  /// No description provided for @paywall_three_days_free.
-  ///
-  /// In en, this message translates to:
-  /// **'3 days free'**
-  String get paywall_three_days_free;
 
   /// No description provided for @paywall_trial_text.
   ///
@@ -1126,6 +1084,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Page not found: {path}'**
   String error_page_not_found(String path);
+
+  /// No description provided for @onboarding_att_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow Tracking'**
+  String get onboarding_att_title;
+
+  /// No description provided for @onboarding_att_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Help us measure campaigns and improve what new players see.'**
+  String get onboarding_att_subtitle;
+
+  /// No description provided for @onboarding_att_button.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow Tracking'**
+  String get onboarding_att_button;
+
+  /// No description provided for @onboarding_push_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay in the Loop'**
+  String get onboarding_push_title;
+
+  /// No description provided for @onboarding_push_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enable notifications for game updates, reminders, and special offers.'**
+  String get onboarding_push_subtitle;
+
+  /// No description provided for @onboarding_push_button.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow Notifications'**
+  String get onboarding_push_button;
+
+  /// No description provided for @paywall_three_days_free.
+  ///
+  /// In en, this message translates to:
+  /// **'3 days free'**
+  String get paywall_three_days_free;
 }
 
 class _AppLocalizationsDelegate

@@ -164,7 +164,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String game_share_text(String question) {
-    return 'Never Have I Ever... $question\n\nLadda ner Never Have I Ever-appen och spela med vänner!';
+    return 'Jag har aldrig... $question\n\nLadda ner appen Jag har aldrig och spela med vänner!';
   }
 
   @override
@@ -247,10 +247,10 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get settings_share_message =>
-      'Kolla in Never Have I Ever! Den ultimata partyspel-appen. Ladda ner nu!';
+      'Kolla in Jag har aldrig, den ultimata partyspel-appen. Ladda ner nu!';
 
   @override
-  String get settings_share_subject => 'Never Have I Ever - Kul partyspel';
+  String get settings_share_subject => 'Jag har aldrig - Kul partyspel';
 
   @override
   String get how_to_play_title => 'Så spelar du';
@@ -273,7 +273,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get how_to_play_step_2_desc =>
-      'Varje spelare turas om att läsa \"Never Have I Ever...\"-frågor högt.';
+      'Varje spelare turas om att läsa \"Jag har aldrig...\"-frågor högt.';
 
   @override
   String get how_to_play_step_3_title => 'Sanning eller utmaning';
@@ -325,26 +325,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get onboarding_terms_of_use => 'Användarvillkor';
-
-  @override
-  String get onboarding_att_title => 'Tillåt spårning';
-
-  @override
-  String get onboarding_att_subtitle =>
-      'Hjälp oss att mäta kampanjer och förbättra upplevelsen för nya användare.';
-
-  @override
-  String get onboarding_att_button => 'Tillåt spårning';
-
-  @override
-  String get onboarding_push_title => 'Håll dig uppdaterad';
-
-  @override
-  String get onboarding_push_subtitle =>
-      'Aktivera notiser för uppdateringar, påminnelser och specialerbjudanden.';
-
-  @override
-  String get onboarding_push_button => 'Tillåt notiser';
 
   @override
   String get language_title => 'Språk';
@@ -428,9 +408,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Bästa värde';
-
-  @override
-  String get paywall_three_days_free => '3 dagar gratis';
 
   @override
   String paywall_trial_text(String price) {
@@ -551,4 +528,27 @@ class AppLocalizationsSv extends AppLocalizations {
   String error_page_not_found(String path) {
     return 'Sidan hittades inte: $path';
   }
+
+  @override
+  String get onboarding_att_title => 'Tillåt spårning';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Hjälp oss att mäta kampanjer och förbättra upplevelsen för nya användare.';
+
+  @override
+  String get onboarding_att_button => 'Tillåt spårning';
+
+  @override
+  String get onboarding_push_title => 'Håll dig uppdaterad';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Aktivera notiser för uppdateringar, påminnelser och specialerbjudanden.';
+
+  @override
+  String get onboarding_push_button => 'Tillåt notiser';
+
+  @override
+  String get paywall_three_days_free => '3 dagar gratis';
 }

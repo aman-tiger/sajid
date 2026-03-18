@@ -327,26 +327,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboarding_terms_of_use => 'Terms of Use';
 
   @override
-  String get onboarding_att_title => 'Allow Tracking';
-
-  @override
-  String get onboarding_att_subtitle =>
-      'Help us measure campaigns and improve what new players see.';
-
-  @override
-  String get onboarding_att_button => 'Allow Tracking';
-
-  @override
-  String get onboarding_push_title => 'Stay in the Loop';
-
-  @override
-  String get onboarding_push_subtitle =>
-      'Enable notifications for game updates, reminders, and special offers.';
-
-  @override
-  String get onboarding_push_button => 'Allow Notifications';
-
-  @override
   String get language_title => 'Language';
 
   @override
@@ -428,9 +408,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get paywall_best_value => 'Best Value';
-
-  @override
-  String get paywall_three_days_free => '3 days free';
 
   @override
   String paywall_trial_text(String price) {
@@ -553,4 +530,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String error_page_not_found(String path) {
     return 'Page not found: $path';
   }
+
+  @override
+  String get onboarding_att_title => 'Allow Tracking';
+
+  @override
+  String get onboarding_att_subtitle =>
+      'Help us measure campaigns and improve what new players see.';
+
+  @override
+  String get onboarding_att_button => 'Allow Tracking';
+
+  @override
+  String get onboarding_push_title => 'Stay in the Loop';
+
+  @override
+  String get onboarding_push_subtitle =>
+      'Enable notifications for game updates, reminders, and special offers.';
+
+  @override
+  String get onboarding_push_button => 'Allow Notifications';
+
+  @override
+  String get paywall_three_days_free => '3 days free';
 }
