@@ -1,4 +1,4 @@
-﻿name: iOS IPA (Release)
+name: iOS IPA (Release)
 
 on:
   workflow_dispatch:
