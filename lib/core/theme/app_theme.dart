@@ -2,15 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_dimensions.dart';
-import '../constants/app_typography.dart';
 
 class AppTheme {
   AppTheme._();
 
   static ThemeData lightTheme() {
-    final textTheme = ThemeData.light().textTheme.apply(
-          fontFamily: AppTypography.primaryFamily,
-        );
+    final textTheme = ThemeData.light().textTheme;
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
@@ -40,8 +37,6 @@ class AppTheme {
         foregroundColor: AppColors.textDark,
         systemOverlayStyle: SystemUiOverlayStyle.dark,
         titleTextStyle: TextStyle(
-          fontFamily: AppTypography.primaryFamily,
-          fontFamilyFallback: AppTypography.fallbackFamilies,
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.textDark,
@@ -50,15 +45,9 @@ class AppTheme {
 
       // Text Theme
       textTheme: textTheme.copyWith(
-        bodyLarge: textTheme.bodyLarge?.copyWith(
-          fontFamilyFallback: AppTypography.fallbackFamilies,
-        ),
-        bodyMedium: textTheme.bodyMedium?.copyWith(
-          fontFamilyFallback: AppTypography.fallbackFamilies,
-        ),
-        bodySmall: textTheme.bodySmall?.copyWith(
-          fontFamilyFallback: AppTypography.fallbackFamilies,
-        ),
+        bodyLarge: textTheme.bodyLarge,
+        bodyMedium: textTheme.bodyMedium,
+        bodySmall: textTheme.bodySmall,
       ),
 
       // Button Themes
@@ -79,8 +68,6 @@ class AppTheme {
             AppDimensions.buttonHeightLarge,
           ),
           textStyle: TextStyle(
-            fontFamily: AppTypography.primaryFamily,
-            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
@@ -104,8 +91,6 @@ class AppTheme {
             AppDimensions.buttonHeightLarge,
           ),
           textStyle: TextStyle(
-            fontFamily: AppTypography.primaryFamily,
-            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
@@ -117,8 +102,6 @@ class AppTheme {
         style: TextButton.styleFrom(
           foregroundColor: AppColors.primary,
           textStyle: TextStyle(
-            fontFamily: AppTypography.primaryFamily,
-            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 14,
             fontWeight: FontWeight.w600,
           ),
@@ -170,9 +153,7 @@ class AppTheme {
   }
 
   static ThemeData darkTheme() {
-    final textTheme = ThemeData.dark().textTheme.apply(
-          fontFamily: AppTypography.primaryFamily,
-        );
+    final textTheme = ThemeData.dark().textTheme;
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
@@ -202,8 +183,6 @@ class AppTheme {
         foregroundColor: AppColors.textLight,
         systemOverlayStyle: SystemUiOverlayStyle.light,
         titleTextStyle: TextStyle(
-          fontFamily: AppTypography.primaryFamily,
-          fontFamilyFallback: AppTypography.fallbackFamilies,
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: AppColors.textLight,
@@ -212,15 +191,9 @@ class AppTheme {
 
       // Text Theme
       textTheme: textTheme.copyWith(
-        bodyLarge: textTheme.bodyLarge?.copyWith(
-          fontFamilyFallback: AppTypography.fallbackFamilies,
-        ),
-        bodyMedium: textTheme.bodyMedium?.copyWith(
-          fontFamilyFallback: AppTypography.fallbackFamilies,
-        ),
-        bodySmall: textTheme.bodySmall?.copyWith(
-          fontFamilyFallback: AppTypography.fallbackFamilies,
-        ),
+        bodyLarge: textTheme.bodyLarge,
+        bodyMedium: textTheme.bodyMedium,
+        bodySmall: textTheme.bodySmall,
       ),
 
       // Button Themes
@@ -241,8 +214,6 @@ class AppTheme {
             AppDimensions.buttonHeightLarge,
           ),
           textStyle: TextStyle(
-            fontFamily: AppTypography.primaryFamily,
-            fontFamilyFallback: AppTypography.fallbackFamilies,
             fontSize: 16,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.5,
