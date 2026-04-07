@@ -212,7 +212,7 @@ class _PaywallPageState extends State<PaywallPage> {
             // Subscription plans
             if (products.length > 1) ...[
               Text(
-                t.paywall_choose_plan,
+                _settings.choosePlanText ?? t.paywall_choose_plan,
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold,
@@ -235,6 +235,12 @@ class _PaywallPageState extends State<PaywallPage> {
                       product.qonversionId,
                   onTap: () => setState(() => _selectedProduct = product),
                   showBestValue: isYearly,
+                  weeklyPlanText: _settings.weeklyPlanText,
+                  monthlyPlanText: _settings.monthlyPlanText,
+                  yearlyPlanText: _settings.yearlyPlanText,
+                  premiumText: _settings.premiumText,
+                  threeDaysFreeText: _settings.threeDaysFreeText,
+                  bestValueText: _settings.bestValueText,
                 ),
               );
             }),
@@ -244,9 +250,7 @@ class _PaywallPageState extends State<PaywallPage> {
             // Trial text (if available)
             if (_selectedProduct?.trialPeriod != null)
               Text(
-                t.paywall_trial_text(
-                  _displayPrice(_selectedProduct!),
-                ),
+                _trialInfoText(t, _selectedProduct!),
                 style: TextStyle(
                   fontSize: 14.sp,
                   color: AppColors.textGreyLight,
@@ -310,7 +314,7 @@ class _PaywallPageState extends State<PaywallPage> {
             TextButton(
               onPressed: () => _handleRestore(context),
               child: Text(
-                t.paywall_restore,
+                _settings.restoreText ?? t.paywall_restore,
                 style: TextStyle(
                   fontSize: 14.sp,
                   color: AppColors.accent,
@@ -323,7 +327,7 @@ class _PaywallPageState extends State<PaywallPage> {
 
             // Terms and privacy
             Text(
-              t.paywall_cancel_anytime,
+              _settings.cancelAnytimeText ?? t.paywall_cancel_anytime,
               style: TextStyle(
                 fontSize: 12.sp,
                 color: AppColors.textGrey,
@@ -344,7 +348,7 @@ class _PaywallPageState extends State<PaywallPage> {
                   ),
                   onPressed: () => _openExternalLink(AppLinks.termsOfUseUrl),
                   child: Text(
-                    t.paywall_terms,
+                    _settings.termsText ?? t.paywall_terms,
                     style: TextStyle(
                       fontSize: 12.sp,
                       color: AppColors.textGrey,
@@ -369,7 +373,7 @@ class _PaywallPageState extends State<PaywallPage> {
                     AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context)),
                   ),
                   child: Text(
-                    t.paywall_privacy,
+                    _settings.privacyText ?? t.paywall_privacy,
                     style: TextStyle(
                       fontSize: 12.sp,
                       color: AppColors.textGrey,
@@ -776,6 +780,15 @@ class _PaywallPageState extends State<PaywallPage> {
     return '';
   }
 
+  String _trialInfoText(AppLocalizations t, QProduct product) {
+    final remoteText = _settings.trialInfoText;
+    if (remoteText == null || remoteText.isEmpty) {
+      return t.paywall_trial_text(_displayPrice(product));
+    }
+
+    return remoteText.replaceAll('{price}', _displayPrice(product));
+  }
+
   List<QProduct> _sortAndDeduplicateProducts(List<QProduct> products) {
     final unique = <String, QProduct>{};
     for (final product in products) {
@@ -846,8 +859,20 @@ class PaywallRemoteSettings {
   final String? offeringId;
   final String? title;
   final String? subtitle;
+  final String? choosePlanText;
   final String? startTrialText;
   final String? subscribeText;
+  final String? restoreText;
+  final String? termsText;
+  final String? privacyText;
+  final String? cancelAnytimeText;
+  final String? weeklyPlanText;
+  final String? monthlyPlanText;
+  final String? yearlyPlanText;
+  final String? premiumText;
+  final String? bestValueText;
+  final String? threeDaysFreeText;
+  final String? trialInfoText;
 
   const PaywallRemoteSettings({
     this.showCloseButton = true,
@@ -856,8 +881,20 @@ class PaywallRemoteSettings {
     this.offeringId,
     this.title,
     this.subtitle,
+    this.choosePlanText,
     this.startTrialText,
     this.subscribeText,
+    this.restoreText,
+    this.termsText,
+    this.privacyText,
+    this.cancelAnytimeText,
+    this.weeklyPlanText,
+    this.monthlyPlanText,
+    this.yearlyPlanText,
+    this.premiumText,
+    this.bestValueText,
+    this.threeDaysFreeText,
+    this.trialInfoText,
   });
 
   factory PaywallRemoteSettings.fromPayload(
@@ -904,8 +941,20 @@ class PaywallRemoteSettings {
       offeringId: readString('offering_id'),
       title: readString('title'),
       subtitle: readString('subtitle'),
+      choosePlanText: readString('choose_plan_text'),
       startTrialText: readString('start_trial_text'),
       subscribeText: readString('subscribe_text'),
+      restoreText: readString('restore_text'),
+      termsText: readString('terms_text'),
+      privacyText: readString('privacy_text'),
+      cancelAnytimeText: readString('cancel_anytime_text'),
+      weeklyPlanText: readString('weekly_plan_text'),
+      monthlyPlanText: readString('monthly_plan_text'),
+      yearlyPlanText: readString('yearly_plan_text'),
+      premiumText: readString('premium_text'),
+      bestValueText: readString('best_value_text'),
+      threeDaysFreeText: readString('three_days_free_text'),
+      trialInfoText: readString('trial_info_text'),
     );
   }
 }

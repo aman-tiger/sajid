@@ -9,6 +9,12 @@ class SubscriptionCard extends StatelessWidget {
   final bool isSelected;
   final VoidCallback onTap;
   final bool showBestValue;
+  final String? weeklyPlanText;
+  final String? monthlyPlanText;
+  final String? yearlyPlanText;
+  final String? premiumText;
+  final String? threeDaysFreeText;
+  final String? bestValueText;
 
   const SubscriptionCard({
     super.key,
@@ -16,6 +22,12 @@ class SubscriptionCard extends StatelessWidget {
     required this.isSelected,
     required this.onTap,
     this.showBestValue = false,
+    this.weeklyPlanText,
+    this.monthlyPlanText,
+    this.yearlyPlanText,
+    this.premiumText,
+    this.threeDaysFreeText,
+    this.bestValueText,
   });
 
   @override
@@ -89,7 +101,7 @@ class SubscriptionCard extends StatelessWidget {
                       if (product.trialPeriod != null) ...[
                         SizedBox(height: 4.h),
                         Text(
-                          t.paywall_three_days_free,
+                          threeDaysFreeText ?? t.paywall_three_days_free,
                           style: TextStyle(
                             fontSize: 12.sp,
                             color: AppColors.accent,
@@ -145,7 +157,7 @@ class SubscriptionCard extends StatelessWidget {
                   ],
                 ),
                 child: Text(
-                  t.paywall_best_value,
+                  bestValueText ?? t.paywall_best_value,
                   style: TextStyle(
                     fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
@@ -182,16 +194,17 @@ class SubscriptionCard extends StatelessWidget {
 
   String _getPlanName(AppLocalizations t) {
     final unit = _resolveUnit();
+    final premiumLabel = premiumText ?? t.main_menu_premium;
     if (unit == QSubscriptionPeriodUnit.week) {
-      return '${t.paywall_weekly_plan} ${t.main_menu_premium}';
+      return '${weeklyPlanText ?? t.paywall_weekly_plan} $premiumLabel';
     }
     if (unit == QSubscriptionPeriodUnit.month) {
-      return '${t.paywall_monthly_plan} ${t.main_menu_premium}';
+      return '${monthlyPlanText ?? t.paywall_monthly_plan} $premiumLabel';
     }
     if (unit == QSubscriptionPeriodUnit.year) {
-      return '${t.paywall_yearly_plan} ${t.main_menu_premium}';
+      return '${yearlyPlanText ?? t.paywall_yearly_plan} $premiumLabel';
     }
-    return product.storeTitle ?? product.qonversionId;
+    return premiumLabel;
   }
 
   QSubscriptionPeriodUnit? _resolveUnit() {
