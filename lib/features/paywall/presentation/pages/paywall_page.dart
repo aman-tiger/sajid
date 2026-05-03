@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -248,7 +249,7 @@ class _PaywallPageState extends State<PaywallPage> {
             SizedBox(height: 24.h),
 
             // Trial text (if available)
-            if (_selectedProduct?.trialPeriod != null)
+            if (_selectedProduct?.trialPeriod != null || (_settings.threeDaysFreeText != null && _settings.threeDaysFreeText!.isNotEmpty))
               Text(
                 _trialInfoText(t, _selectedProduct!),
                 style: TextStyle(
@@ -292,7 +293,7 @@ class _PaywallPageState extends State<PaywallPage> {
                             ),
                           )
                         : Text(
-                            _selectedProduct?.trialPeriod != null
+                            (_selectedProduct?.trialPeriod != null || (_settings.threeDaysFreeText != null && _settings.threeDaysFreeText!.isNotEmpty))
                                 ? (_settings.startTrialText ??
                                     t.paywall_start_trial)
                                 : (_settings.subscribeText ??
@@ -770,11 +771,20 @@ class _PaywallPageState extends State<PaywallPage> {
     }
 
     if (product.price != null) {
-      final value = product.price!.toStringAsFixed(2);
-      if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
-        return '${product.currencyCode} $value';
+      try {
+        final locale = Localizations.localeOf(context).toString();
+        final format = NumberFormat.simpleCurrency(
+          locale: locale,
+          name: product.currencyCode ?? 'USD',
+        );
+        return format.format(product.price);
+      } catch (_) {
+        final value = product.price!.toStringAsFixed(2);
+        if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
+          return '${product.currencyCode} $value';
+        }
+        return value;
       }
-      return value;
     }
 
     return '';
@@ -915,12 +925,6 @@ class PaywallRemoteSettings {
 
     String? readString(String key) {
       final value = payload[key];
-      if (value is String && value.trim().isNotEmpty) {
-        if (locale.languageCode != 'en') {
-          return null;
-        }
-        return value.trim();
-      }
       if (value is Map) {
         final fullCode = locale.countryCode == null
             ? locale.languageCode
@@ -930,6 +934,9 @@ class PaywallRemoteSettings {
         if (localized is String && localized.trim().isNotEmpty) {
           return localized.trim();
         }
+      }
+      if (value is String && value.trim().isNotEmpty) {
+        return value.trim();
       }
       return null;
     }
@@ -958,5 +965,3 @@ class PaywallRemoteSettings {
     );
   }
 }
-
-

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
@@ -33,6 +34,8 @@ class SubscriptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
+    final formattedPrice = _displayPrice(context);
+
     return GestureDetector(
       onTap: onTap,
       child: Stack(
@@ -92,13 +95,13 @@ class SubscriptionCard extends StatelessWidget {
                       ),
                       SizedBox(height: 4.h),
                       Text(
-                        _displayPrice(),
+                        formattedPrice,
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: AppColors.textGreyLight,
                         ),
                       ),
-                      if (product.trialPeriod != null) ...[
+                      if (product.trialPeriod != null || (threeDaysFreeText != null && threeDaysFreeText!.isNotEmpty)) ...[
                         SizedBox(height: 4.h),
                         Text(
                           threeDaysFreeText ?? t.paywall_three_days_free,
@@ -118,7 +121,7 @@ class SubscriptionCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      _displayPrice(),
+                      formattedPrice,
                       style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.bold,
@@ -227,16 +230,25 @@ class SubscriptionCard extends StatelessWidget {
     return null;
   }
 
-  String _displayPrice() {
+  String _displayPrice(BuildContext context) {
     if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) {
       return product.prettyPrice!.trim();
     }
     if (product.price != null) {
-      final value = product.price!.toStringAsFixed(2);
-      if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
-        return '${product.currencyCode} $value';
+      try {
+        final locale = Localizations.localeOf(context).toString();
+        final format = NumberFormat.simpleCurrency(
+          locale: locale,
+          name: product.currencyCode ?? 'USD',
+        );
+        return format.format(product.price);
+      } catch (_) {
+        final value = product.price!.toStringAsFixed(2);
+        if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
+          return '${product.currencyCode} $value';
+        }
+        return value;
       }
-      return value;
     }
     return '';
   }
