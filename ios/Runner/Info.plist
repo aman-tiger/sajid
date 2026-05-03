@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -12,38 +14,6 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	<key>CFBundleName</key>
-	<string>Never Have I Ever: Adult IHNE</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
-	<key>CFBundleShortVersionString</key>
-	<string>$(FLUTTER_BUILD_NAME)</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
-	<key>CFBundleVersion</key>
-	<string>$(FLUTTER_BUILD_NUMBER)</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>UILaunchStoryboardName</key>
-	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UISupportedInterfaceOrientations~ipad</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-	<!-- Localization -->
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
@@ -59,36 +29,123 @@
 		<string>ru</string>
 		<string>sv</string>
 	</array>
-	<!-- App Transport Security Settings -->
+	<key>CFBundleName</key>
+	<string>Never Have I Ever: Adult IHNE</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(FLUTTER_BUILD_NAME)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://appsflyer-skadnetwork.com/</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 	</dict>
-	<!-- Firebase Cloud Messaging -->
-	<key>FirebaseAppDelegateProxyEnabled</key>
-	<false/>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>We use notifications to send game updates and important alerts.</string>
-	<key>NSAdvertisingAttributionReportEndpoint</key>
-	<string>https://appsflyer-skadnetwork.com/</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>We use this data to analyze app usage and improve performance and stability.</string>
 	<key>SKAdNetworkItems</key>
 	<array>
-		<dict><key>SKAdNetworkIdentifier</key><string>cstr6suwn9.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>v9wttpbfk9.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>n38lu8286q.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>4fzdc2evr5.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>8s468mfl3y.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>2fnua5tdw4.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>4468km3ulz.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>gc4jwzm4c4.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>6g9af3uyq4.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>p78axxw29g.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>wzmmz9fp6w.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>yclnxrl5pm.skadnetwork</string></dict>
-		<dict><key>SKAdNetworkIdentifier</key><string>gta9lk7p23.skadnetwork</string></dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>cstr6suwn9.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>v9wttpbfk9.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>n38lu8286q.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>4fzdc2evr5.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>8s468mfl3y.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>2fnua5tdw4.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>4468km3ulz.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>gc4jwzm4c4.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>6g9af3uyq4.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>p78axxw29g.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>wzmmz9fp6w.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>yclnxrl5pm.skadnetwork</string>
+		</dict>
+		<dict>
+			<key>SKAdNetworkIdentifier</key>
+			<string>gta9lk7p23.skadnetwork</string>
+		</dict>
+	</array>
+	<key>UIApplicationSceneManifest</key>
+	<dict>
+		<key>UIApplicationSupportsMultipleScenes</key>
+		<false/>
+		<key>UISceneConfigurations</key>
+		<dict>
+			<key>UIWindowSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneClassName</key>
+					<string>UIWindowScene</string>
+					<key>UISceneConfigurationName</key>
+					<string>flutter</string>
+					<key>UISceneDelegateClassName</key>
+					<string>FlutterSceneDelegate</string>
+					<key>UISceneStoryboardFile</key>
+					<string>Main</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>
