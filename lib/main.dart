@@ -23,13 +23,13 @@ import 'l10n/app_localizations.dart';
 AppsflyerSdk? appsflyerSdk;
 
 void main() async {
-  // Fix Sentry warning by using its specialized binding
+  // Use Sentry binding to fix the warning
   SentryWidgetsFlutterBinding.ensureInitialized();
 
-  // Log Bundle ID to verify mismatch
+  // Step 1: Log Bundle ID clearly
   final PackageInfo packageInfo = await PackageInfo.fromPlatform();
   debugPrint('----------------------------------------------');
-  debugPrint('🔍 CURRENT APP BUNDLE ID: ${packageInfo.packageName}');
+  debugPrint('🔍 BUNDLE ID: ${packageInfo.packageName}');
   debugPrint('----------------------------------------------');
 
   await _initializeAppsflyer();
@@ -59,30 +59,43 @@ void main() async {
           QLaunchMode.subscriptionManagement,
         ).build();
         Qonversion.initialize(config);
-        debugPrint('🚀 Qonversion initialized');
+        debugPrint('🚀 Qonversion initialize called');
         
-        // Validation check after a short delay
+        // Wait a bit and try to fetch user info to validate credentials
         Future.delayed(const Duration(seconds: 2), () async {
-          try {
-            final qUser = await Qonversion.getSharedInstance().userInfo();
-            debugPrint('✅ Qonversion Connected! ID: ${qUser.qonversionId}');
-          } catch (e) {
-            debugPrint('❌ Qonversion Validation Failed: $e');
-            if (e.toString().contains('InvalidCredentials')) {
-               debugPrint('🚨 ALERT: Qonversion key is REJECTED. This means the Bundle ID above does not match Qonversion Dashboard.');
-            }
-          }
+          await _validateQonversion();
         });
-        
-        await _stitchQonversionAndAppsflyer();
       } catch (e) {
-        debugPrint('❌ Qonversion error: $e');
+        debugPrint('❌ Qonversion Init Error: $e');
       }
     }
 
     await AnalyticsService().logAppOpened();
     runApp(const MyApp());
   });
+}
+
+Future<void> _validateQonversion() async {
+  try {
+    final qUser = await Qonversion.getSharedInstance().userInfo();
+    debugPrint('✅ Qonversion CONNECTED: ${qUser.qonversionId}');
+    
+    // Stitch with AppsFlyer if available
+    if (appsflyerSdk != null) {
+      final afId = await appsflyerSdk!.getAppsFlyerUID();
+      Qonversion.getSharedInstance().setUserProperty(
+        QUserPropertyKey.appsFlyerUserId,
+        afId ?? '',
+      );
+      appsflyerSdk!.setCustomerUserId(qUser.qonversionId);
+    }
+  } catch (e) {
+    debugPrint('❌ Qonversion Server Error: $e');
+    if (e.toString().contains('InvalidCredentials')) {
+      debugPrint('🚨 ERROR: Qonversion has REJECTED this Key/BundleID combination.');
+      debugPrint('👉 Please ask the client to verify the Project Key and if the App is added to Qonversion Dashboard.');
+    }
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -147,20 +160,5 @@ Future<void> _initializeAppsflyer() async {
     );
   } catch (e) {
     debugPrint('❌ AppsFlyer failed: $e');
-  }
-}
-
-Future<void> _stitchQonversionAndAppsflyer() async {
-  try {
-    final sdk = appsflyerSdk;
-    if (sdk != null) {
-      final afId = await sdk.getAppsFlyerUID();
-      Qonversion.getSharedInstance().setUserProperty(
-        QUserPropertyKey.appsFlyerUserId,
-        afId ?? '',
-      );
-    }
-  } catch (e) {
-    debugPrint('❌ Stitch failed: $e');
   }
 }
