@@ -69,7 +69,7 @@ jobs:
           APPSFLYER_APP_ID: ${{ secrets.APPSFLYER_APP_ID }}
         run: |
           flutter build appbundle --release \
-            --build-number=${{ github.run_number }} \
+            --build-number=$(( ${{ github.run_number }} + 1 )) \
             --dart-define=AMPLITUDE_API_KEY="$AMPLITUDE_API_KEY" \
             --dart-define=SENTRY_DSN="$SENTRY_DSN" \
             --dart-define=QONVERSION_PROJECT_KEY="$QONVERSION_PROJECT_KEY" \
@@ -128,5 +128,3 @@ jobs:
         run: |
           rm -f android/key.properties
           rm -f android/app/upload-keystore.jks
-
-
