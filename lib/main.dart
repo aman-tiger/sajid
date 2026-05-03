@@ -5,6 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:appsflyer_sdk/appsflyer_sdk.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
+import 'package:package_info_plus/package_info_plus.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 import 'core/theme/app_theme.dart';
 import 'core/routes/app_router.dart';
 import 'core/services/firebase_service.dart';
@@ -21,48 +23,79 @@ import 'l10n/app_localizations.dart';
 AppsflyerSdk? appsflyerSdk;
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // Use Sentry binding to fix the warning
+  SentryWidgetsFlutterBinding.ensureInitialized();
+
+  // Step 1: Log Bundle ID clearly
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  debugPrint('----------------------------------------------');
+  debugPrint('🔍 BUNDLE ID: ${packageInfo.packageName}');
+  debugPrint('----------------------------------------------');
 
   await _initializeAppsflyer();
 
-  // Initialize Sentry and wrap the app
   await SentryService.initialize(() async {
-    // Set preferred orientations
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
 
-    // Initialize Firebase (expects google-services files provided by CI/local setup).
     try {
       await Firebase.initializeApp();
+      debugPrint('✅ Firebase initialized');
     } catch (e) {
-      debugPrint('Firebase initialize failed: $e');
+      debugPrint('❌ Firebase failed: $e');
     }
 
-    // Initialize Firebase services (Analytics, Crashlytics, FCM)
     await FirebaseService().initialize();
-
-    // Initialize Amplitude
     await AmplitudeService().initialize();
 
-    // Initialize Qonversion SDK
-    if (AppSecrets.qonversionProjectKey.isNotEmpty) {
-      final config = QonversionConfigBuilder(
-        AppSecrets.qonversionProjectKey,
-        QLaunchMode.subscriptionManagement,
-      ).build();
-      Qonversion.initialize(config);
-      await _stitchQonversionAndAppsflyer();
-    } else {
-      debugPrint('Qonversion key missing. Set QONVERSION_PROJECT_KEY.');
+    // Qonversion Initialization
+    final String qKey = AppSecrets.qonversionProjectKey.trim();
+    if (qKey.isNotEmpty) {
+      try {
+        final config = QonversionConfigBuilder(
+          qKey,
+          QLaunchMode.subscriptionManagement,
+        ).build();
+        Qonversion.initialize(config);
+        debugPrint('🚀 Qonversion initialize called');
+        
+        // Wait a bit and try to fetch user info to validate credentials
+        Future.delayed(const Duration(seconds: 2), () async {
+          await _validateQonversion();
+        });
+      } catch (e) {
+        debugPrint('❌ Qonversion Init Error: $e');
+      }
     }
 
     await AnalyticsService().logAppOpened();
-    await _syncPushAudienceSegment();
-
     runApp(const MyApp());
   });
+}
+
+Future<void> _validateQonversion() async {
+  try {
+    final qUser = await Qonversion.getSharedInstance().userInfo();
+    debugPrint('✅ Qonversion CONNECTED: ${qUser.qonversionId}');
+    
+    // Stitch with AppsFlyer if available
+    if (appsflyerSdk != null) {
+      final afId = await appsflyerSdk!.getAppsFlyerUID();
+      Qonversion.getSharedInstance().setUserProperty(
+        QUserPropertyKey.appsFlyerUserId,
+        afId ?? '',
+      );
+      appsflyerSdk!.setCustomerUserId(qUser.qonversionId);
+    }
+  } catch (e) {
+    debugPrint('❌ Qonversion Server Error: $e');
+    if (e.toString().contains('InvalidCredentials')) {
+      debugPrint('🚨 ERROR: Qonversion has REJECTED this Key/BundleID combination.');
+      debugPrint('👉 Please ask the client to verify the Project Key and if the App is added to Qonversion Dashboard.');
+    }
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -71,7 +104,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812), // iPhone 11 Pro size as base
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -82,23 +115,16 @@ class MyApp extends StatelessWidget {
               return MaterialApp.router(
                 onGenerateTitle: (context) =>
                     AppLocalizations.of(context)?.main_menu_title ??
-                    'Never Have I Ever: Adult IHNE',
+                    'Never Have I Ever',
                 debugShowCheckedModeBanner: false,
-
-                // Theme
                 theme: AppTheme.lightTheme(),
                 darkTheme: AppTheme.darkTheme(),
                 themeMode: ThemeMode.light,
-
-                // Localization
                 locale: state is SettingsLoaded
                     ? _localeFromCode(state.language)
                     : null,
-                localizationsDelegates:
-                    AppLocalizations.localizationsDelegates,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
                 supportedLocales: AppLocalizations.supportedLocales,
-
-                // Routing
                 routerConfig: AppRouter.router,
               );
             },
@@ -109,27 +135,23 @@ class MyApp extends StatelessWidget {
   }
 
   Locale _localeFromCode(String code) {
-    if (code == 'pt_BR') {
-      return const Locale('pt', 'BR');
-    }
+    if (code == 'pt_BR') return const Locale('pt', 'BR');
     return Locale(code);
   }
 }
 
 Future<void> _initializeAppsflyer() async {
-  if (AppSecrets.appsflyerDevKey.isEmpty || AppSecrets.appsflyerAppId.isEmpty) {
-    debugPrint('AppsFlyer keys missing. Set APPSFLYER_DEV_KEY and APPSFLYER_APP_ID.');
-    return;
-  }
+  final devKey = AppSecrets.appsflyerDevKey.trim();
+  final appId = AppSecrets.appsflyerAppId.trim();
+  if (devKey.isEmpty || appId.isEmpty) return;
 
   try {
     final options = AppsFlyerOptions(
-      afDevKey: AppSecrets.appsflyerDevKey,
-      appId: AppSecrets.appsflyerAppId,
+      afDevKey: devKey,
+      appId: appId,
       showDebug: false,
       timeToWaitForATTUserAuthorization: 60,
     );
-
     appsflyerSdk = AppsflyerSdk(options);
     await appsflyerSdk!.initSdk(
       registerConversionDataCallback: true,
@@ -137,41 +159,6 @@ Future<void> _initializeAppsflyer() async {
       registerOnDeepLinkingCallback: true,
     );
   } catch (e) {
-    debugPrint('AppsFlyer init failed: $e');
-  }
-}
-
-Future<void> _stitchQonversionAndAppsflyer() async {
-  final sdk = appsflyerSdk;
-  if (sdk == null) {
-    return;
-  }
-
-  try {
-    final afId = await sdk.getAppsFlyerUID();
-    Qonversion.getSharedInstance().setUserProperty(
-      QUserPropertyKey.appsFlyerUserId,
-      afId ?? '',
-    );
-
-    final qonversionUser = await Qonversion.getSharedInstance().userInfo();
-    sdk.setCustomerUserId(qonversionUser.qonversionId);
-  } catch (e) {
-    debugPrint('AppsFlyer/Qonversion stitch failed: $e');
-  }
-}
-
-Future<void> _syncPushAudienceSegment() async {
-  try {
-    final segment = await SubscriptionService().resolvePushSegment();
-    final analytics = AnalyticsService();
-    await analytics.setPushAudienceSegment(segment);
-    if (segment == 'active_subscription') {
-      await analytics.markSubscriptionActivatedForPush();
-    } else if (segment == 'churned') {
-      await analytics.markSubscriptionExpiredForPush();
-    }
-  } catch (e) {
-    debugPrint('Push segment sync failed: $e');
+    debugPrint('❌ AppsFlyer failed: $e');
   }
 }
