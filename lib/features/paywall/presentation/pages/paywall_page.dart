@@ -73,7 +73,6 @@ class _PaywallPageState extends State<PaywallPage> {
         _displayProducts = filteredProducts;
         _isLoading = false;
 
-        // Auto-select the first product if available
         if (filteredProducts.isNotEmpty) {
           _selectedProduct = filteredProducts.first;
         }
@@ -83,6 +82,24 @@ class _PaywallPageState extends State<PaywallPage> {
         _isLoading = false;
       });
     }
+  }
+
+  bool _isTrialAvailable(QProduct product) {
+    if (product.trialPeriod != null) return true;
+    
+    final id = product.qonversionId.toLowerCase();
+    final sId = (product.storeId ?? '').toLowerCase();
+    final wId = _settings.weeklyProductId.toLowerCase();
+
+    // Force trial for weekly products by ID match (App Store Connect ID: weekly_premium)
+    if (id == wId || sId == wId || id.contains('week') || sId.contains('week') || id.contains('weekly_premium') || sId.contains('weekly_premium')) {
+      return true;
+    }
+
+    final unit = product.subscriptionPeriod?.unit;
+    if (unit == QSubscriptionPeriodUnit.week) return true;
+
+    return false;
   }
 
   @override
@@ -181,7 +198,6 @@ class _PaywallPageState extends State<PaywallPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Header
             Text(
               _settings.title ?? t.paywall_title,
               style: TextStyle(
@@ -191,9 +207,7 @@ class _PaywallPageState extends State<PaywallPage> {
               ),
               textAlign: TextAlign.center,
             ),
-
             SizedBox(height: 12.h),
-
             Text(
               _settings.subtitle ?? t.paywall_subtitle,
               style: TextStyle(
@@ -202,15 +216,9 @@ class _PaywallPageState extends State<PaywallPage> {
               ),
               textAlign: TextAlign.center,
             ),
-
             SizedBox(height: 32.h),
-
-            // Features
             const FeatureList(),
-
             SizedBox(height: 32.h),
-
-            // Subscription plans
             if (products.length > 1) ...[
               Text(
                 _settings.choosePlanText ?? t.paywall_choose_plan,
@@ -222,19 +230,17 @@ class _PaywallPageState extends State<PaywallPage> {
               ),
               SizedBox(height: 16.h),
             ],
-
             ...products.asMap().entries.map((entry) {
               final product = entry.value;
-              final isYearly = product.subscriptionPeriod?.unit ==
-                  QSubscriptionPeriodUnit.year;
+              final isYearly = product.subscriptionPeriod?.unit == QSubscriptionPeriodUnit.year;
 
               return Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SubscriptionCard(
                   product: product,
-                  isSelected: _selectedProduct?.qonversionId ==
-                      product.qonversionId,
+                  isSelected: _selectedProduct?.qonversionId == product.qonversionId,
                   onTap: () => setState(() => _selectedProduct = product),
+                  weeklyProductId: _settings.weeklyProductId,
                   showBestValue: isYearly,
                   weeklyPlanText: _settings.weeklyPlanText,
                   monthlyPlanText: _settings.monthlyPlanText,
@@ -245,11 +251,8 @@ class _PaywallPageState extends State<PaywallPage> {
                 ),
               );
             }),
-
             SizedBox(height: 24.h),
-
-            // Trial text (if available)
-            if (_selectedProduct?.trialPeriod != null || (_settings.threeDaysFreeText != null && _settings.threeDaysFreeText!.isNotEmpty))
+            if (_selectedProduct != null && _isTrialAvailable(_selectedProduct!))
               Text(
                 _trialInfoText(t, _selectedProduct!),
                 style: TextStyle(
@@ -258,129 +261,53 @@ class _PaywallPageState extends State<PaywallPage> {
                 ),
                 textAlign: TextAlign.center,
               ),
-
             SizedBox(height: 16.h),
-
-            // Subscribe button
             BlocBuilder<SubscriptionBloc, SubscriptionState>(
               builder: (context, state) {
                 final isPurchasing = state is SubscriptionPurchasing;
+                final hasTrial = _selectedProduct != null && _isTrialAvailable(_selectedProduct!);
 
                 return SizedBox(
                   width: double.infinity,
                   height: 56.h,
                   child: ElevatedButton(
-                    onPressed: isPurchasing || _selectedProduct == null
-                        ? null
-                        : () => _handlePurchase(context),
+                    onPressed: isPurchasing || _selectedProduct == null ? null : () => _handlePurchase(context),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.primary,
-                      disabledBackgroundColor:
-                          AppColors.primary.withValues(alpha: 0.5),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
+                      disabledBackgroundColor: AppColors.primary.withValues(alpha: 0.5),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
                     ),
                     child: isPurchasing
-                        ? SizedBox(
-                            width: 24.w,
-                            height: 24.w,
-                            child: const CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                AppColors.textLight,
-                              ),
-                            ),
-                          )
+                        ? SizedBox(width: 24.w, height: 24.w, child: const CircularProgressIndicator(strokeWidth: 2, valueColor: AlwaysStoppedAnimation<Color>(AppColors.textLight)))
                         : Text(
-                            (_selectedProduct?.trialPeriod != null || (_settings.threeDaysFreeText != null && _settings.threeDaysFreeText!.isNotEmpty))
-                                ? (_settings.startTrialText ??
-                                    t.paywall_start_trial)
-                                : (_settings.subscribeText ??
-                                    t.paywall_subscribe),
-                            style: TextStyle(
-                              fontSize: 18.sp,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.textLight,
-                            ),
+                            hasTrial ? (_settings.startTrialText ?? t.paywall_start_trial) : (_settings.subscribeText ?? t.paywall_subscribe),
+                            style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold, color: AppColors.textLight),
                           ),
                   ),
                 );
               },
             ),
-
             SizedBox(height: 24.h),
-
-            // Restore purchases
             TextButton(
               onPressed: () => _handleRestore(context),
-              child: Text(
-                _settings.restoreText ?? t.paywall_restore,
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: AppColors.accent,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              child: Text(_settings.restoreText ?? t.paywall_restore, style: TextStyle(fontSize: 14.sp, color: AppColors.accent, fontWeight: FontWeight.w600)),
             ),
-
             SizedBox(height: 16.h),
-
-            // Terms and privacy
-            Text(
-              _settings.cancelAnytimeText ?? t.paywall_cancel_anytime,
-              style: TextStyle(
-                fontSize: 12.sp,
-                color: AppColors.textGrey,
-              ),
-              textAlign: TextAlign.center,
-            ),
-
+            Text(_settings.cancelAnytimeText ?? t.paywall_cancel_anytime, style: TextStyle(fontSize: 12.sp, color: AppColors.textGrey), textAlign: TextAlign.center),
             SizedBox(height: 8.h),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextButton(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
+                  style: TextButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h), minimumSize: Size.zero, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
                   onPressed: () => _openExternalLink(AppLinks.termsOfUseUrl),
-                  child: Text(
-                    _settings.termsText ?? t.paywall_terms,
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      color: AppColors.textGrey,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
+                  child: Text(_settings.termsText ?? t.paywall_terms, style: TextStyle(fontSize: 12.sp, color: AppColors.textGrey, decoration: TextDecoration.underline)),
                 ),
-                Text(
-                  ' • ',
-                  style: TextStyle(
-                    fontSize: 12.sp,
-                    color: AppColors.textGrey,
-                  ),
-                ),
+                Text(' • ', style: TextStyle(fontSize: 12.sp, color: AppColors.textGrey)),
                 TextButton(
-                  style: TextButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                    minimumSize: Size.zero,
-                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  ),
-                  onPressed: () => _openExternalLink(
-                    AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context)),
-                  ),
-                  child: Text(
-                    _settings.privacyText ?? t.paywall_privacy,
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      color: AppColors.textGrey,
-                      decoration: TextDecoration.underline,
-                    ),
-                  ),
+                  style: TextButton.styleFrom(padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h), minimumSize: Size.zero, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
+                  onPressed: () => _openExternalLink(AppLinks.privacyPolicyUrlForLocale(Localizations.localeOf(context))),
+                  child: Text(_settings.privacyText ?? t.paywall_privacy, style: TextStyle(fontSize: 12.sp, color: AppColors.textGrey, decoration: TextDecoration.underline)),
                 ),
               ],
             ),
@@ -398,42 +325,17 @@ class _PaywallPageState extends State<PaywallPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.error_outline,
-              size: 64.sp,
-              color: AppColors.error,
-            ),
+            Icon(Icons.error_outline, size: 64.sp, color: AppColors.error),
             SizedBox(height: 24.h),
-            Text(
-              t.paywall_error,
-              style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLight,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            Text(t.paywall_error, style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold, color: AppColors.textLight), textAlign: TextAlign.center),
             SizedBox(height: 32.h),
             ElevatedButton(
               onPressed: () {
                 setState(() => _isLoading = true);
                 _loadOfferings();
               },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primary,
-                padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16.r),
-                ),
-              ),
-              child: Text(
-                t.common_retry,
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.textLight,
-                ),
-              ),
+              style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary, padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r))),
+              child: Text(t.common_retry, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: AppColors.textLight)),
             ),
           ],
         ),
@@ -443,15 +345,8 @@ class _PaywallPageState extends State<PaywallPage> {
 
   void _handlePurchase(BuildContext context) {
     if (_selectedProduct != null) {
-      AnalyticsService().logEvent(
-        'Paywall_Tap_Subscribe',
-        parameters: {
-          'product_id': _selectedProduct!.qonversionId,
-        },
-      );
-      context.read<SubscriptionBloc>().add(
-            PurchaseSubscriptionEvent(_selectedProduct!),
-          );
+      AnalyticsService().logEvent('Paywall_Tap_Subscribe', parameters: {'product_id': _selectedProduct!.qonversionId});
+      context.read<SubscriptionBloc>().add(PurchaseSubscriptionEvent(_selectedProduct!));
     }
   }
 
@@ -468,52 +363,18 @@ class _PaywallPageState extends State<PaywallPage> {
       barrierDismissible: false,
       builder: (context) => AlertDialog(
         backgroundColor: AppColors.backgroundLight,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        title: Column(
-          children: [
-            Icon(
-              Icons.check_circle,
-              color: AppColors.success,
-              size: 64.sp,
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              t.common_success,
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLight,
-              ),
-            ),
-          ],
-        ),
-        content: Text(
-          t.subscription_purchase_success,
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: AppColors.textGreyLight,
-          ),
-          textAlign: TextAlign.center,
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+        title: Column(children: [Icon(Icons.check_circle, color: AppColors.success, size: 64.sp), SizedBox(height: 16.h), Text(t.common_success, style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold, color: AppColors.textLight))]),
+        content: Text(t.subscription_purchase_success, style: TextStyle(fontSize: 14.sp, color: AppColors.textGreyLight), textAlign: TextAlign.center),
         actions: [
           TextButton(
             onPressed: () async {
-              if (!mounted) return;
-              Navigator.of(context).pop(); // Close dialog
+              Navigator.of(context).pop();
               await _markIntroPaywallSeen();
               if (!mounted) return;
               _exitPaywall();
             },
-            child: Text(
-              t.button_start_game,
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primary,
-              ),
-            ),
+            child: Text(t.button_start_game, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: AppColors.primary)),
           ),
         ],
       ),
@@ -527,47 +388,10 @@ class _PaywallPageState extends State<PaywallPage> {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: AppColors.backgroundLight,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        title: Row(
-          children: [
-            Icon(
-              Icons.error_outline,
-              color: AppColors.error,
-              size: 28.sp,
-            ),
-            SizedBox(width: 12.w),
-            Text(
-              t.common_error,
-              style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLight,
-              ),
-            ),
-          ],
-        ),
-        content: Text(
-          message,
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: AppColors.textGreyLight,
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(
-              t.button_ok,
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primary,
-              ),
-            ),
-          ),
-        ],
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+        title: Row(children: [Icon(Icons.error_outline, color: AppColors.error, size: 28.sp), SizedBox(width: 12.w), Text(t.common_error, style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold, color: AppColors.textLight))]),
+        content: Text(message, style: TextStyle(fontSize: 14.sp, color: AppColors.textGreyLight)),
+        actions: [TextButton(onPressed: () => Navigator.of(context).pop(), child: Text(t.button_ok, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: AppColors.primary)))],
       ),
     );
   }
@@ -580,52 +404,18 @@ class _PaywallPageState extends State<PaywallPage> {
       barrierDismissible: false,
       builder: (context) => AlertDialog(
         backgroundColor: AppColors.backgroundLight,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        title: Column(
-          children: [
-            Icon(
-              Icons.check_circle,
-              color: AppColors.success,
-              size: 64.sp,
-            ),
-            SizedBox(height: 16.h),
-            Text(
-              t.common_success,
-              style: TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLight,
-              ),
-            ),
-          ],
-        ),
-        content: Text(
-          t.subscription_restore_success,
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: AppColors.textGreyLight,
-          ),
-          textAlign: TextAlign.center,
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+        title: Column(children: [Icon(Icons.check_circle, color: AppColors.success, size: 64.sp), SizedBox(height: 16.h), Text(t.common_success, style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold, color: AppColors.textLight))]),
+        content: Text(t.subscription_restore_success, style: TextStyle(fontSize: 14.sp, color: AppColors.textGreyLight), textAlign: TextAlign.center),
         actions: [
           TextButton(
             onPressed: () async {
-              if (!mounted) return;
-              Navigator.of(context).pop(); // Close dialog
+              Navigator.of(context).pop();
               await _markIntroPaywallSeen();
               if (!mounted) return;
               _exitPaywall();
             },
-            child: Text(
-              t.common_done,
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primary,
-              ),
-            ),
+            child: Text(t.common_done, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: AppColors.primary)),
           ),
         ],
       ),
@@ -639,47 +429,10 @@ class _PaywallPageState extends State<PaywallPage> {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: AppColors.backgroundLight,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16.r),
-        ),
-        title: Row(
-          children: [
-            Icon(
-              Icons.info_outline,
-              color: AppColors.info,
-              size: 28.sp,
-            ),
-            SizedBox(width: 12.w),
-            Text(
-              t.common_info,
-              style: TextStyle(
-                fontSize: 18.sp,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLight,
-              ),
-            ),
-          ],
-        ),
-        content: Text(
-          t.subscription_restore_error,
-          style: TextStyle(
-            fontSize: 14.sp,
-            color: AppColors.textGreyLight,
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(
-              t.button_ok,
-              style: TextStyle(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                color: AppColors.primary,
-              ),
-            ),
-          ),
-        ],
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
+        title: Row(children: [Icon(Icons.info_outline, color: AppColors.info, size: 28.sp), SizedBox(width: 12.w), Text(t.common_info, style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold, color: AppColors.textLight))]),
+        content: Text(t.subscription_restore_error, style: TextStyle(fontSize: 14.sp, color: AppColors.textGreyLight)),
+        actions: [TextButton(onPressed: () => Navigator.of(context).pop(), child: Text(t.button_ok, style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w600, color: AppColors.primary)))],
       ),
     );
   }
@@ -691,111 +444,58 @@ class _PaywallPageState extends State<PaywallPage> {
       _showErrorDialog(t.common_error);
       return;
     }
-
-    final openedDefault = await launchUrl(uri);
-    if (openedDefault) {
-      return;
-    }
-
-    final openedInApp = await launchUrl(
-      uri,
-      mode: LaunchMode.inAppWebView,
-    );
-    if (!openedInApp && mounted) {
-      _showErrorDialog(t.common_error);
-    }
+    if (await launchUrl(uri)) return;
+    if (await launchUrl(uri, mode: LaunchMode.inAppWebView)) return;
+    if (mounted) _showErrorDialog(t.common_error);
   }
 
-  List<QProduct> _filterProducts(
-    List<QProduct> products,
-    PaywallRemoteSettings settings,
-  ) {
-    if (products.isEmpty) {
-      return <QProduct>[];
-    }
-
-    if (!settings.showOnlyWeekly) {
-      return _sortAndDeduplicateProducts(products);
-    }
-
-    final weeklyById = products.where((product) {
+  List<QProduct> _filterProducts(List<QProduct> products, PaywallRemoteSettings settings) {
+    // Only show products that were successfully found in the store (price > 0)
+    final validProducts = products.where((p) => p.price != null && p.price! > 0).toList();
+    
+    if (validProducts.isEmpty) return <QProduct>[];
+    
+    if (!settings.showOnlyWeekly) return _sortAndDeduplicateProducts(validProducts);
+    
+    final weeklyById = validProducts.where((product) {
       final id = settings.weeklyProductId.toLowerCase();
-      return product.qonversionId.toLowerCase() == id ||
-          (product.storeId?.toLowerCase() == id);
+      return product.qonversionId.toLowerCase() == id || (product.storeId?.toLowerCase() == id);
     }).toList();
+    
+    if (weeklyById.isNotEmpty) return _sortAndDeduplicateProducts(weeklyById);
+    
+    final weeklyByPeriod = validProducts.where((product) => product.subscriptionPeriod?.unit == QSubscriptionPeriodUnit.week).toList();
+    
+    if (weeklyByPeriod.isNotEmpty) return _sortAndDeduplicateProducts(weeklyByPeriod);
 
-    if (weeklyById.isNotEmpty) {
-      return _sortAndDeduplicateProducts(weeklyById);
-    }
-
-    final weeklyByPeriod = products.where((product) {
-      return product.subscriptionPeriod?.unit == QSubscriptionPeriodUnit.week;
-    }).toList();
-
-    if (weeklyByPeriod.isNotEmpty) {
-      return _sortAndDeduplicateProducts(weeklyByPeriod);
-    }
-
-    return _sortAndDeduplicateProducts(<QProduct>[products.first]);
+    return _sortAndDeduplicateProducts(<QProduct>[validProducts.first]);
   }
 
-  QOffering? _resolveActiveOffering(
-    QOfferings? offerings,
-    PaywallRemoteSettings settings,
-  ) {
-    if (offerings == null) {
-      return null;
-    }
-
+  QOffering? _resolveActiveOffering(QOfferings? offerings, PaywallRemoteSettings settings) {
+    if (offerings == null) return null;
     if (settings.offeringId != null && settings.offeringId!.isNotEmpty) {
       final match = offerings.offeringForIdentifier(settings.offeringId!);
-      if (match != null) {
-        return match;
-      }
+      if (match != null) return match;
     }
-
-    if (offerings.main != null) {
-      return offerings.main;
-    }
-
-    if (offerings.availableOfferings.isNotEmpty) {
-      return offerings.availableOfferings.first;
-    }
-
-    return null;
+    return offerings.main ?? (offerings.availableOfferings.isNotEmpty ? offerings.availableOfferings.first : null);
   }
 
   String _displayPrice(QProduct product) {
-    if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) {
-      return product.prettyPrice!.trim();
-    }
-
+    if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) return product.prettyPrice!.trim();
     if (product.price != null) {
       try {
-        final locale = Localizations.localeOf(context).toString();
-        final format = NumberFormat.simpleCurrency(
-          locale: locale,
-          name: product.currencyCode ?? 'USD',
-        );
+        final format = NumberFormat.simpleCurrency(locale: Localizations.localeOf(context).toString(), name: product.currencyCode ?? 'USD');
         return format.format(product.price);
       } catch (_) {
-        final value = product.price!.toStringAsFixed(2);
-        if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
-          return '${product.currencyCode} $value';
-        }
-        return value;
+        return product.currencyCode != null ? '${product.currencyCode} ${product.price!.toStringAsFixed(2)}' : product.price!.toStringAsFixed(2);
       }
     }
-
     return '';
   }
 
   String _trialInfoText(AppLocalizations t, QProduct product) {
     final remoteText = _settings.trialInfoText;
-    if (remoteText == null || remoteText.isEmpty) {
-      return t.paywall_trial_text(_displayPrice(product));
-    }
-
+    if (remoteText == null || remoteText.isEmpty) return t.paywall_trial_text(_displayPrice(product));
     return remoteText.replaceAll('{price}', _displayPrice(product));
   }
 
@@ -804,61 +504,38 @@ class _PaywallPageState extends State<PaywallPage> {
     for (final product in products) {
       unique[product.storeId ?? product.qonversionId] = product;
     }
-
-    final sorted = unique.values.toList()
-      ..sort((a, b) => _sortOrderForProduct(a).compareTo(_sortOrderForProduct(b)));
-    return sorted;
+    return unique.values.toList()..sort((a, b) => _sortOrderForProduct(a).compareTo(_sortOrderForProduct(b)));
   }
 
   int _sortOrderForProduct(QProduct product) {
     final unit = product.subscriptionPeriod?.unit;
-    if (unit == QSubscriptionPeriodUnit.week) {
-      return 0;
-    }
-    if (unit == QSubscriptionPeriodUnit.month) {
-      return 1;
-    }
-    if (unit == QSubscriptionPeriodUnit.year) {
-      return 2;
-    }
-
-    final identifier =
-        '${product.qonversionId} ${product.storeId ?? ''}'.toLowerCase();
-    if (identifier.contains('week')) {
-      return 0;
-    }
-    if (identifier.contains('month')) {
-      return 1;
-    }
-    if (identifier.contains('year') || identifier.contains('annual')) {
-      return 2;
-    }
+    if (unit == QSubscriptionPeriodUnit.week) return 0;
+    if (unit == QSubscriptionPeriodUnit.month) return 1;
+    if (unit == QSubscriptionPeriodUnit.year) return 2;
+    final id = '${product.qonversionId} ${product.storeId ?? ''}'.toLowerCase();
+    if (id.contains('week')) return 0;
+    if (id.contains('month')) return 1;
+    if (id.contains('year') || id.contains('annual')) return 2;
     return 99;
   }
 
   Future<void> _markIntroPaywallSeen() async {
-    if (widget.source != 'onboarding') {
-      return;
-    }
-
+    if (widget.source != 'onboarding') return;
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(_introPaywallSeenKey, true);
   }
 
   Future<void> _handleClose() async {
     await _markIntroPaywallSeen();
-    if (!mounted) {
-      return;
-    }
-    _exitPaywall();
+    if (mounted) _exitPaywall();
   }
 
   void _exitPaywall() {
     if (widget.source == 'onboarding') {
       context.go('/main');
-      return;
+    } else {
+      Navigator.of(context).pop();
     }
-    Navigator.of(context).pop();
   }
 }
 
@@ -886,7 +563,7 @@ class PaywallRemoteSettings {
 
   const PaywallRemoteSettings({
     this.showCloseButton = true,
-    this.showOnlyWeekly = true,
+    this.showOnlyWeekly = false,
     this.weeklyProductId = 'weekly_premium',
     this.offeringId,
     this.title,
@@ -907,43 +584,27 @@ class PaywallRemoteSettings {
     this.trialInfoText,
   });
 
-  factory PaywallRemoteSettings.fromPayload(
-    Map<String, dynamic> payload,
-    Locale locale,
-  ) {
+  factory PaywallRemoteSettings.fromPayload(Map<String, dynamic> payload, Locale locale) {
     bool readBool(String key, bool defaultValue) {
-      final value = payload[key];
-      if (value is bool) return value;
-      if (value is String) {
-        return value.toLowerCase() == 'true';
-      }
-      if (value is num) {
-        return value != 0;
-      }
+      final v = payload[key];
+      if (v is bool) return v;
+      if (v is String) return v.toLowerCase() == 'true';
       return defaultValue;
     }
 
     String? readString(String key) {
-      final value = payload[key];
-      if (value is Map) {
-        final fullCode = locale.countryCode == null
-            ? locale.languageCode
-            : '${locale.languageCode}_${locale.countryCode}';
-        final localized =
-            value[fullCode] ?? value[locale.languageCode] ?? value['en'];
-        if (localized is String && localized.trim().isNotEmpty) {
-          return localized.trim();
-        }
+      final v = payload[key];
+      if (v is Map) {
+        final code = locale.countryCode == null ? locale.languageCode : '${locale.languageCode}_${locale.countryCode}';
+        final loc = v[code] ?? v[locale.languageCode] ?? v['en'];
+        if (loc is String && loc.trim().isNotEmpty) return loc.trim();
       }
-      if (value is String && value.trim().isNotEmpty) {
-        return value.trim();
-      }
-      return null;
+      return (v is String && v.trim().isNotEmpty) ? v.trim() : null;
     }
 
     return PaywallRemoteSettings(
       showCloseButton: readBool('show_close_button', true),
-      showOnlyWeekly: readBool('show_only_weekly', true),
+      showOnlyWeekly: readBool('show_only_weekly', false),
       weeklyProductId: readString('weekly_product_id') ?? 'weekly_premium',
       offeringId: readString('offering_id'),
       title: readString('title'),

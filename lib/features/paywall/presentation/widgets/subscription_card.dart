@@ -16,12 +16,14 @@ class SubscriptionCard extends StatelessWidget {
   final String? premiumText;
   final String? threeDaysFreeText;
   final String? bestValueText;
+  final String weeklyProductId;
 
   const SubscriptionCard({
     super.key,
     required this.product,
     required this.isSelected,
     required this.onTap,
+    required this.weeklyProductId,
     this.showBestValue = false,
     this.weeklyPlanText,
     this.monthlyPlanText,
@@ -35,6 +37,18 @@ class SubscriptionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
     final formattedPrice = _displayPrice(context);
+    
+    final id = product.qonversionId.toLowerCase();
+    final sId = (product.storeId ?? '').toLowerCase();
+    final wId = weeklyProductId.toLowerCase();
+    
+    // Robust detection for IDs
+    final unit = product.subscriptionPeriod?.unit;
+    final isWeekly = unit == QSubscriptionPeriodUnit.week || 
+                     id.contains('week') || sId.contains('week') || 
+                     id == wId || sId == wId || id.contains('weekly_premium');
+                     
+    final hasTrial = product.trialPeriod != null || isWeekly;
 
     return GestureDetector(
       onTap: onTap,
@@ -45,26 +59,25 @@ class SubscriptionCard extends StatelessWidget {
             padding: EdgeInsets.all(20.w),
             decoration: BoxDecoration(
               color: isSelected
-                  ? AppColors.primary.withValues(alpha: 0.2)
-                  : AppColors.backgroundLight,
+                  ? AppColors.primary.withValues(alpha: 0.1)
+                  : AppColors.backgroundLight.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
                 color: isSelected
                     ? AppColors.primary
-                    : AppColors.textGrey.withValues(alpha: 0.2),
-                width: isSelected ? 3 : 2,
+                    : AppColors.textGrey.withValues(alpha: 0.1),
+                width: isSelected ? 2 : 1.5,
               ),
             ),
             child: Row(
               children: [
-                // Radio button
                 Container(
                   width: 24.w,
                   height: 24.w,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     border: Border.all(
-                      color: isSelected ? AppColors.primary : AppColors.textGrey,
+                      color: isSelected ? AppColors.primary : AppColors.textGrey.withValues(alpha: 0.5),
                       width: 2,
                     ),
                     color: isSelected ? AppColors.primary : Colors.transparent,
@@ -72,7 +85,7 @@ class SubscriptionCard extends StatelessWidget {
                   child: isSelected
                       ? Icon(
                           Icons.check,
-                          color: AppColors.textLight,
+                          color: Colors.white,
                           size: 16.sp,
                         )
                       : null,
@@ -80,20 +93,19 @@ class SubscriptionCard extends StatelessWidget {
 
                 SizedBox(width: 16.w),
 
-                // Plan details
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        _getPlanName(t),
+                        _getPlanName(t, isWeekly),
                         style: TextStyle(
                           fontSize: 18.sp,
                           fontWeight: FontWeight.bold,
                           color: AppColors.textLight,
                         ),
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 2.h),
                       Text(
                         formattedPrice,
                         style: TextStyle(
@@ -101,12 +113,12 @@ class SubscriptionCard extends StatelessWidget {
                           color: AppColors.textGreyLight,
                         ),
                       ),
-                      if (product.trialPeriod != null || (threeDaysFreeText != null && threeDaysFreeText!.isNotEmpty)) ...[
+                      if (hasTrial) ...[
                         SizedBox(height: 4.h),
                         Text(
                           threeDaysFreeText ?? t.paywall_three_days_free,
                           style: TextStyle(
-                            fontSize: 12.sp,
+                            fontSize: 14.sp,
                             color: AppColors.accent,
                             fontWeight: FontWeight.w600,
                           ),
@@ -116,7 +128,6 @@ class SubscriptionCard extends StatelessWidget {
                   ),
                 ),
 
-                // Price
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -129,7 +140,7 @@ class SubscriptionCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      _getPricePeriod(t),
+                      _getPricePeriod(t, isWeekly),
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: AppColors.textGreyLight,
@@ -141,7 +152,6 @@ class SubscriptionCard extends StatelessWidget {
             ),
           ),
 
-          // Best value badge
           if (showBestValue)
             Positioned(
               top: -12.h,
@@ -151,13 +161,6 @@ class SubscriptionCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   gradient: AppColors.secondaryGradient,
                   borderRadius: BorderRadius.circular(12.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: AppColors.secondary.withValues(alpha: 0.3),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
                 ),
                 child: Text(
                   bestValueText ?? t.paywall_best_value,
@@ -165,7 +168,6 @@ class SubscriptionCard extends StatelessWidget {
                     fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                     color: AppColors.textLight,
-                    letterSpacing: 0.5,
                   ),
                 ),
               ),
@@ -175,59 +177,37 @@ class SubscriptionCard extends StatelessWidget {
     );
   }
 
-  String _getPricePeriod(AppLocalizations t) {
+  String _getPricePeriod(AppLocalizations t, bool isWeeklyFallback) {
+    final unit = product.subscriptionPeriod?.unit;
     final duration = product.subscriptionPeriod?.unitCount ?? 1;
-    final unit = _resolveUnit();
 
-    if (unit == QSubscriptionPeriodUnit.week) {
-      return duration == 1
-          ? t.price_per_week
-          : t.price_per_weeks(duration.toString());
+    if (unit == QSubscriptionPeriodUnit.week || isWeeklyFallback) {
+      return duration == 1 ? t.price_per_week : t.price_per_weeks(duration.toString());
     } else if (unit == QSubscriptionPeriodUnit.month) {
-      return duration == 1
-          ? t.price_per_month
-          : t.price_per_months(duration.toString());
+      return duration == 1 ? t.price_per_month : t.price_per_months(duration.toString());
     } else if (unit == QSubscriptionPeriodUnit.year) {
-      return duration == 1
-          ? t.price_per_year
-          : t.price_per_years(duration.toString());
+      return duration == 1 ? t.price_per_year : t.price_per_years(duration.toString());
     }
-    return '';
+    return isWeeklyFallback ? t.price_per_week : '';
   }
 
-  String _getPlanName(AppLocalizations t) {
-    final unit = _resolveUnit();
+  String _getPlanName(AppLocalizations t, bool isWeeklyFallback) {
+    final unit = product.subscriptionPeriod?.unit;
     final premiumLabel = premiumText ?? t.main_menu_premium;
-    if (unit == QSubscriptionPeriodUnit.week) {
+    final id = product.qonversionId.toLowerCase();
+    final sId = (product.storeId ?? '').toLowerCase();
+    final wId = weeklyProductId.toLowerCase();
+
+    if (unit == QSubscriptionPeriodUnit.week || isWeeklyFallback || id.contains('week') || sId.contains('week') || id == wId || sId == wId) {
       return '${weeklyPlanText ?? t.paywall_weekly_plan} $premiumLabel';
     }
-    if (unit == QSubscriptionPeriodUnit.month) {
+    if (unit == QSubscriptionPeriodUnit.month || id.contains('month') || sId.contains('month')) {
       return '${monthlyPlanText ?? t.paywall_monthly_plan} $premiumLabel';
     }
-    if (unit == QSubscriptionPeriodUnit.year) {
+    if (unit == QSubscriptionPeriodUnit.year || id.contains('year') || sId.contains('year') || id.contains('annual') || sId.contains('annual')) {
       return '${yearlyPlanText ?? t.paywall_yearly_plan} $premiumLabel';
     }
     return premiumLabel;
-  }
-
-  QSubscriptionPeriodUnit? _resolveUnit() {
-    final unit = product.subscriptionPeriod?.unit;
-    if (unit != null) {
-      return unit;
-    }
-
-    final identifier =
-        '${product.qonversionId} ${product.storeId ?? ''}'.toLowerCase();
-    if (identifier.contains('week')) {
-      return QSubscriptionPeriodUnit.week;
-    }
-    if (identifier.contains('month')) {
-      return QSubscriptionPeriodUnit.month;
-    }
-    if (identifier.contains('year') || identifier.contains('annual')) {
-      return QSubscriptionPeriodUnit.year;
-    }
-    return null;
   }
 
   String _displayPrice(BuildContext context) {
@@ -236,18 +216,13 @@ class SubscriptionCard extends StatelessWidget {
     }
     if (product.price != null) {
       try {
-        final locale = Localizations.localeOf(context).toString();
         final format = NumberFormat.simpleCurrency(
-          locale: locale,
+          locale: Localizations.localeOf(context).toString(),
           name: product.currencyCode ?? 'USD',
         );
         return format.format(product.price);
       } catch (_) {
-        final value = product.price!.toStringAsFixed(2);
-        if (product.currencyCode != null && product.currencyCode!.isNotEmpty) {
-          return '${product.currencyCode} $value';
-        }
-        return value;
+        return product.currencyCode != null ? '${product.currencyCode} ${product.price!.toStringAsFixed(2)}' : product.price!.toStringAsFixed(2);
       }
     }
     return '';
