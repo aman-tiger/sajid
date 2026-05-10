@@ -210,7 +210,7 @@ class SubscriptionCard extends StatelessWidget {
     return premiumLabel;
   }
 
-  String _displayPrice(BuildContext context) {
+  /*String _displayPrice(BuildContext context) {
     if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) {
       return product.prettyPrice!.trim();
     }
@@ -226,5 +226,9 @@ class SubscriptionCard extends StatelessWidget {
       }
     }
     return '';
+  }*/
+  String _displayPrice(BuildContext context) {
+    debugPrint("currency is that ${product.prettyPrice!.trim()}");
+    return product.prettyPrice?.trim() ?? '';
   }
 }

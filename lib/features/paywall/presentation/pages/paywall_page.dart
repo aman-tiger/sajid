@@ -233,7 +233,7 @@ class _PaywallPageState extends State<PaywallPage> {
             ...products.asMap().entries.map((entry) {
               final product = entry.value;
               final isYearly = product.subscriptionPeriod?.unit == QSubscriptionPeriodUnit.year;
-
+debugPrint("product is that ${product.currencyCode}");
               return Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SubscriptionCard(
