@@ -88,7 +88,7 @@ class AnalyticsService {
     await logEvent('subscription_started', parameters: {
       'product_id': productId,
       'price': price,
-      'currency': 'USD',
+      'currency': 'KZT',
     });
     await _amplitude.logSubscriptionStarted(productId, price);
   }

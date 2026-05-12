@@ -121,7 +121,7 @@ class AmplitudeService {
     await logEvent('subscription_started', properties: {
       'product_id': productId,
       'price': price,
-      'currency': 'USD',
+      'currency': 'KZT',
     });
   }
 

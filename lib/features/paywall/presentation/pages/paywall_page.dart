@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -18,6 +17,7 @@ import '../../../../core/services/subscription_service.dart';
 import '../widgets/feature_list.dart';
 import '../widgets/subscription_card.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../../core/utils/store_product_price_format.dart';
 
 class PaywallPage extends StatefulWidget {
   final String contextKey;
@@ -233,7 +233,6 @@ class _PaywallPageState extends State<PaywallPage> {
             ...products.asMap().entries.map((entry) {
               final product = entry.value;
               final isYearly = product.subscriptionPeriod?.unit == QSubscriptionPeriodUnit.year;
-debugPrint("product is that ${product.currencyCode}");
               return Padding(
                 padding: EdgeInsets.only(bottom: 16.h),
                 child: SubscriptionCard(
@@ -481,16 +480,7 @@ debugPrint("product is that ${product.currencyCode}");
   }
 
   String _displayPrice(QProduct product) {
-    if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) return product.prettyPrice!.trim();
-    if (product.price != null) {
-      try {
-        final format = NumberFormat.simpleCurrency(locale: Localizations.localeOf(context).toString(), name: product.currencyCode ?? 'USD');
-        return format.format(product.price);
-      } catch (_) {
-        return product.currencyCode != null ? '${product.currencyCode} ${product.price!.toStringAsFixed(2)}' : product.price!.toStringAsFixed(2);
-      }
-    }
-    return '';
+    return formatStoreProductPrice(context, product);
   }
 
   String _trialInfoText(AppLocalizations t, QProduct product) {

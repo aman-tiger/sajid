@@ -48,7 +48,7 @@ class SubscriptionBloc extends Bloc<SubscriptionEvent, SubscriptionState> {
         case PurchaseOutcomeType.success:
           final hasTrial = event.product.trialPeriod != null;
           final price = event.product.price?.toDouble() ?? 0.0;
-          final currency = event.product.currencyCode ?? 'USD';
+          final currency = event.product.currencyCode ?? 'KZT';
           final productId = event.product.qonversionId;
 
           await AnalyticsService().logEvent(

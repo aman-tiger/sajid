@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:intl/intl.dart';
 import 'package:qonversion_flutter/qonversion_flutter.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../../core/utils/store_product_price_format.dart';
 
 class SubscriptionCard extends StatelessWidget {
   final QProduct product;
@@ -178,8 +178,17 @@ class SubscriptionCard extends StatelessWidget {
   }
 
   String _getPricePeriod(AppLocalizations t, bool isWeeklyFallback) {
-    final unit = product.subscriptionPeriod?.unit;
-    final duration = product.subscriptionPeriod?.unitCount ?? 1;
+    final period = product.subscriptionPeriod;
+    final unit = period?.unit;
+    final duration = period?.unitCount ?? 1;
+    final iso = period?.iso ?? '';
+
+    if (iso == 'P7D' ||
+        iso == 'P1W' ||
+        (unit == QSubscriptionPeriodUnit.week && duration == 7) ||
+        (unit == QSubscriptionPeriodUnit.day && duration == 7)) {
+      return t.price_per_week;
+    }
 
     if (unit == QSubscriptionPeriodUnit.week || isWeeklyFallback) {
       return duration == 1 ? t.price_per_week : t.price_per_weeks(duration.toString());
@@ -210,25 +219,7 @@ class SubscriptionCard extends StatelessWidget {
     return premiumLabel;
   }
 
-  /*String _displayPrice(BuildContext context) {
-    if (product.prettyPrice != null && product.prettyPrice!.trim().isNotEmpty) {
-      return product.prettyPrice!.trim();
-    }
-    if (product.price != null) {
-      try {
-        final format = NumberFormat.simpleCurrency(
-          locale: Localizations.localeOf(context).toString(),
-          name: product.currencyCode ?? 'USD',
-        );
-        return format.format(product.price);
-      } catch (_) {
-        return product.currencyCode != null ? '${product.currencyCode} ${product.price!.toStringAsFixed(2)}' : product.price!.toStringAsFixed(2);
-      }
-    }
-    return '';
-  }*/
   String _displayPrice(BuildContext context) {
-    debugPrint("currency is that ${product.prettyPrice!.trim()}");
-    return product.prettyPrice?.trim() ?? '';
+    return formatStoreProductPrice(context, product);
   }
 }
